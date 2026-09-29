@@ -1,0 +1,24 @@
+# ---- navigation & home ----
+navHome | Home | होम | ಮುಖಪುಟ
+navTranslate | Translate | अनुवाद | ಅನುವಾದ
+navLearn | Learn | सीखें | ಕಲಿಯಿರಿ
+navLive | Live | लाइव | ಲೈವ್
+navProfile | Profile | प्रोफ़ाइल | ಪ್ರೊಫೈಲ್
+greetingMorning | Good morning | सुप्रभात | ಶುಭೋದಯ
+greetingAfternoon | Good afternoon | नमस्कार | ಶುಭ ಮಧ್ಯಾಹ್ನ
+greetingEvening | Good evening | शुभ संध्या | ಶುಭ ಸಂಜೆ
+greetingWithName | {greeting}, {name} | {greeting}, {name} | {greeting}, {name}
+heroTitle | How can we help you communicate today? | आज हम आपको संवाद करने में कैसे मदद कर सकते हैं? | ಇಂದು ಸಂವಹನ ಮಾಡಲು ನಾವು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?
+heroCta | Start translating | अनुवाद शुरू करें | ಅನುವಾದ ಪ್ರಾರಂಭಿಸಿ
+quickActions | Quick actions | त्वरित कार्य | ತ್ವರಿತ ಕ್ರಿಯೆಗಳು
+qaSignToTextSub | Turn signs into text | साइन को टेक्स्ट में बदलें | ಸಂಜ್ಞೆಗಳನ್ನು ಪಠ್ಯವಾಗಿ ಬದಲಿಸಿ
+qaVoiceToSignSub | Speak and see signs | बोलें और साइन देखें | ಮಾತನಾಡಿ ಮತ್ತು ಸಂಜ್ಞೆ ನೋಡಿ
+qaSignToVoiceSub | Hear signs spoken aloud | साइन को बोलते हुए सुनें | ಸಂಜ್ಞೆಗಳನ್ನು ಧ್ವನಿಯಲ್ಲಿ ಕೇಳಿ
+qaInterpreterSub | Connect with a person | किसी व्यक्ति से जुड़ें | ವ್ಯಕ್ತಿಯೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ
+qaLearnSub | Lessons and dictionary | पाठ और शब्दकोश | ಪಾಠಗಳು ಮತ್ತು ನಿಘಂಟು
+qaPracticeSub | Practise with your camera | कैमरे से अभ्यास करें | ಕ್ಯಾಮೆರಾದೊಂದಿಗೆ ಅಭ್ಯಾಸ ಮಾಡಿ
+notificationsTooltip | Notifications | सूचनाएं | ಅಧಿಸೂಚನೆಗಳು
+openProfileTooltip | Open profile | प्रोफ़ाइल खोलें | ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ
+translateTabTitle | What would you like to do? | आप क्या करना चाहेंगे? | ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?
+translateTabSubtitle | Choose a way to communicate. | संवाद करने का तरीका चुनें। | ಸಂವಹನ ಮಾಡುವ ವಿಧಾನವನ್ನು ಆರಿಸಿ.
+practiceTitle | Practice | अभ्यास | ಅಭ್ಯಾಸ

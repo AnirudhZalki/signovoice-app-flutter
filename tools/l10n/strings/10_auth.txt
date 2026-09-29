@@ -1,0 +1,85 @@
+# ---- modes ----
+modeSignToText | Sign → Text | साइन → टेक्स्ट | ಸೈನ್ → ಪಠ್ಯ
+modeVoiceToSign | Voice → Sign | आवाज़ → साइन | ಧ್ವನಿ → ಸೈನ್
+modeSignToVoice | Sign → Voice | साइन → आवाज़ | ಸೈನ್ → ಧ್ವನಿ
+modeInterpreter | Live Interpreter | लाइव दुभाषिया | ಲೈವ್ ದುಭಾಷಿ
+# ---- onboarding ----
+onb1Title | Communication Without Barriers | बाधाओं के बिना संवाद | ಅಡೆತಡೆಗಳಿಲ್ಲದ ಸಂವಹನ
+onb1Body | SignoVoice helps people who sign and people who don't know sign language understand each other, using AI, voice, text and live interpreters. | साइनोवॉइस एआई, आवाज़, टेक्स्ट और लाइव दुभाषियों की मदद से साइन करने वालों और साइन भाषा न जानने वालों को एक-दूसरे को समझने में मदद करता है। | ಸೈನೋವಾಯ್ಸ್ ಎಐ, ಧ್ವನಿ, ಪಠ್ಯ ಮತ್ತು ಲೈವ್ ದುಭಾಷಿಗಳ ಮೂಲಕ ಸಂಜ್ಞೆ ಮಾಡುವವರು ಮತ್ತು ಸಂಜ್ಞಾ ಭಾಷೆ ತಿಳಿಯದವರು ಪರಸ್ಪರ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.
+onb2Title | Translate Sign Language | साइन भाषा का अनुवाद करें | ಸಂಜ್ಞಾ ಭಾಷೆಯನ್ನು ಅನುವಾದಿಸಿ
+onb2Body | Point your camera at a signer. Signs are recognised on your device and turned into text you can read or hear. | कैमरा साइन करने वाले की ओर करें। साइन आपके डिवाइस पर पहचाने जाते हैं और पढ़ने या सुनने योग्य टेक्स्ट में बदल जाते हैं। | ಕ್ಯಾಮೆರಾವನ್ನು ಸಂಜ್ಞೆ ಮಾಡುವವರ ಕಡೆಗೆ ತೋರಿಸಿ. ಸಂಜ್ಞೆಗಳು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಗುರುತಿಸಲ್ಪಟ್ಟು ಓದಬಹುದಾದ ಅಥವಾ ಕೇಳಬಹುದಾದ ಪಠ್ಯವಾಗುತ್ತವೆ.
+onb3Title | Talk Through Voice & Text | आवाज़ और टेक्स्ट से बात करें | ಧ್ವನಿ ಮತ್ತು ಪಠ್ಯದ ಮೂಲಕ ಮಾತನಾಡಿ
+onb3Body | Speak or type and see the matching signs. Turn recognised signs into spoken words in your language. | बोलें या टाइप करें और मेल खाते साइन देखें। पहचाने गए साइन को अपनी भाषा में बोले गए शब्दों में बदलें। | ಮಾತನಾಡಿ ಅಥವಾ ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಹೊಂದುವ ಸಂಜ್ಞೆಗಳನ್ನು ನೋಡಿ. ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳನ್ನು ನಿಮ್ಮ ಭಾಷೆಯ ಮಾತಾಗಿ ಬದಲಿಸಿ.
+onb4Title | Learn Indian Sign Language | भारतीय साइन भाषा सीखें | ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆಯನ್ನು ಕಲಿಯಿರಿ
+onb4Body | Short lessons, a searchable dictionary and camera practice with instant feedback. | छोटे पाठ, खोजने योग्य शब्दकोश और तुरंत प्रतिक्रिया के साथ कैमरा अभ्यास। | ಸಣ್ಣ ಪಾಠಗಳು, ಹುಡುಕಬಹುದಾದ ನಿಘಂಟು ಮತ್ತು ತಕ್ಷಣದ ಪ್ರತಿಕ್ರಿಯೆಯೊಂದಿಗೆ ಕ್ಯಾಮೆರಾ ಅಭ್ಯಾಸ.
+onb5Title | Connect With Interpreters | दुभाषियों से जुड़ें | ದುಭಾಷಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ
+onb5Body | Request a live sign-language interpreter by video, audio or chat when you need a human. | जब आपको किसी व्यक्ति की ज़रूरत हो, तो वीडियो, ऑडियो या चैट से लाइव साइन-भाषा दुभाषिया का अनुरोध करें। | ನಿಮಗೆ ಮನುಷ್ಯರ ಅಗತ್ಯವಿದ್ದಾಗ ವೀಡಿಯೊ, ಆಡಿಯೊ ಅಥವಾ ಚಾಟ್ ಮೂಲಕ ಲೈವ್ ಸಂಜ್ಞಾ ಭಾಷಾ ದುಭಾಷಿಯನ್ನು ವಿನಂತಿಸಿ.
+onb6Title | Your Privacy Matters | आपकी गोपनीयता महत्वपूर्ण है | ನಿಮ್ಮ ಗೌಪ್ಯತೆ ಮುಖ್ಯ
+onb6Body | The camera is used only while a translation screen is open, and sign recognition runs on your device. You choose what is saved. | कैमरा केवल तब उपयोग होता है जब अनुवाद स्क्रीन खुली हो, और साइन पहचान आपके डिवाइस पर चलती है। क्या सहेजा जाए, यह आप चुनते हैं। | ಅನುವಾದ ಪರದೆ ತೆರೆದಿರುವಾಗ ಮಾತ್ರ ಕ್ಯಾಮೆರಾ ಬಳಕೆಯಾಗುತ್ತದೆ ಮತ್ತು ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ನಡೆಯುತ್ತದೆ. ಏನನ್ನು ಉಳಿಸಬೇಕೆಂದು ನೀವೇ ಆಯ್ಕೆ ಮಾಡುತ್ತೀರಿ.
+getStarted | Get Started | शुरू करें | ಪ್ರಾರಂಭಿಸಿ
+pageOf | Page {current} of {total} | पृष्ठ {current} / {total} | ಪುಟ {current} / {total}
+# ---- auth ----
+loginTitle | Welcome back | वापसी पर स्वागत है | ಮತ್ತೆ ಸ್ವಾಗತ
+loginSubtitle | Sign in to sync your progress and unlock all features. | अपनी प्रगति सिंक करने और सभी सुविधाएं अनलॉक करने के लिए साइन इन करें। | ನಿಮ್ಮ ಪ್ರಗತಿಯನ್ನು ಸಿಂಕ್ ಮಾಡಲು ಮತ್ತು ಎಲ್ಲಾ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಸೈನ್ ಇನ್ ಮಾಡಿ.
+email | Email | ईमेल | ಇಮೇಲ್
+password | Password | पासवर्ड | ಪಾಸ್‌ವರ್ಡ್
+confirmPassword | Confirm password | पासवर्ड की पुष्टि करें | ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ
+showPassword | Show password | पासवर्ड दिखाएं | ಪಾಸ್‌ವರ್ಡ್ ತೋರಿಸಿ
+hidePassword | Hide password | पासवर्ड छिपाएं | ಪಾಸ್‌ವರ್ಡ್ ಮರೆಮಾಡಿ
+signIn | Sign in | साइन इन करें | ಸೈನ್ ಇನ್
+signOut | Sign out | साइन आउट करें | ಸೈನ್ ಔಟ್
+registerTitle | Create your account | अपना खाता बनाएं | ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಿ
+createAccount | Create account | खाता बनाएं | ಖಾತೆ ರಚಿಸಿ
+fullName | Full name | पूरा नाम | ಪೂರ್ಣ ಹೆಸರು
+forgotPassword | Forgot password? | पासवर्ड भूल गए? | ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿರಾ?
+forgotTitle | Reset your password | अपना पासवर्ड रीसेट करें | ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ
+forgotBody | Enter your email and we'll send you a link to choose a new password. | अपना ईमेल दर्ज करें, हम नया पासवर्ड चुनने का लिंक भेजेंगे। | ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ, ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆ ಮಾಡಲು ನಾವು ಲಿಂಕ್ ಕಳುಹಿಸುತ್ತೇವೆ.
+sendResetLink | Send reset link | रीसेट लिंक भेजें | ಮರುಹೊಂದಿಕೆ ಲಿಂಕ್ ಕಳುಹಿಸಿ
+resetLinkSent | If an account exists for that email, a reset link is on its way. | यदि उस ईमेल का खाता मौजूद है, तो रीसेट लिंक भेजा जा रहा है। | ಆ ಇಮೇಲ್‌ಗೆ ಖಾತೆ ಇದ್ದರೆ, ಮರುಹೊಂದಿಕೆ ಲಿಂಕ್ ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ.
+continueWithGoogle | Continue with Google | Google से जारी रखें | Google ನೊಂದಿಗೆ ಮುಂದುವರಿಸಿ
+continueWithPhone | Continue with phone | फ़ोन से जारी रखें | ಫೋನ್‌ನೊಂದಿಗೆ ಮುಂದುವರಿಸಿ
+continueAsGuest | Continue without an account | बिना खाते के जारी रखें | ಖಾತೆಯಿಲ್ಲದೆ ಮುಂದುವರಿಸಿ
+guestNote | Guest mode keeps everything on this device. Interpreters, sync and subscriptions need an account. | अतिथि मोड सब कुछ इसी डिवाइस पर रखता है। दुभाषिये, सिंक और सदस्यता के लिए खाता चाहिए। | ಅತಿಥಿ ಮೋಡ್ ಎಲ್ಲವನ್ನೂ ಈ ಸಾಧನದಲ್ಲೇ ಇಡುತ್ತದೆ. ದುಭಾಷಿಗಳು, ಸಿಂಕ್ ಮತ್ತು ಚಂದಾದಾರಿಕೆಗೆ ಖಾತೆ ಅಗತ್ಯ.
+orDivider | or | या | ಅಥವಾ
+noAccount | New here? Create an account | नए हैं? खाता बनाएं | ಹೊಸಬರೇ? ಖಾತೆ ರಚಿಸಿ
+haveAccount | Already have an account? Sign in | पहले से खाता है? साइन इन करें | ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ? ಸೈನ್ ಇನ್ ಮಾಡಿ
+agreeTerms | I agree to the Terms of Service and Privacy Policy | मैं सेवा की शर्तों और गोपनीयता नीति से सहमत हूँ | ನಾನು ಸೇವಾ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತಾ ನೀತಿಗೆ ಒಪ್ಪುತ್ತೇನೆ
+mustAgreeTerms | Please accept the Terms and Privacy Policy to continue | जारी रखने के लिए कृपया शर्तें और गोपनीयता नीति स्वीकार करें | ಮುಂದುವರಿಸಲು ದಯವಿಟ್ಟು ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತಾ ನೀತಿಯನ್ನು ಒಪ್ಪಿ
+termsOfService | Terms of Service | सेवा की शर्तें | ಸೇವಾ ನಿಯಮಗಳು
+privacyPolicy | Privacy Policy | गोपनीयता नीति | ಗೌಪ್ಯತಾ ನೀತಿ
+backendMissingBanner | Account sign-in isn't available in this build. You can still use SignoVoice without an account. | इस बिल्ड में खाता साइन-इन उपलब्ध नहीं है। आप फिर भी बिना खाते के साइनोवॉइस का उपयोग कर सकते हैं। | ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಖಾತೆ ಸೈನ್-ಇನ್ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಖಾತೆಯಿಲ್ಲದೆಯೂ ಸೈನೋವಾಯ್ಸ್ ಬಳಸಬಹುದು.
+phoneTitle | Sign in with your phone | अपने फ़ोन से साइन इन करें | ನಿಮ್ಮ ಫೋನ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ
+phoneBody | We'll text you a 6-digit code. Standard message rates may apply. | हम आपको 6 अंकों का कोड भेजेंगे। सामान्य संदेश शुल्क लग सकता है। | ನಾವು ನಿಮಗೆ 6 ಅಂಕಿಗಳ ಕೋಡ್ ಕಳುಹಿಸುತ್ತೇವೆ. ಸಾಮಾನ್ಯ ಸಂದೇಶ ಶುಲ್ಕ ಅನ್ವಯಿಸಬಹುದು.
+phoneNumber | Phone number (with country code) | फ़ोन नंबर (देश कोड सहित) | ಫೋನ್ ಸಂಖ್ಯೆ (ದೇಶದ ಕೋಡ್‌ನೊಂದಿಗೆ)
+sendCode | Send code | कोड भेजें | ಕೋಡ್ ಕಳುಹಿಸಿ
+otpTitle | Enter the code | कोड दर्ज करें | ಕೋಡ್ ನಮೂದಿಸಿ
+otpSentTo | We sent a 6-digit code to {phone} | हमने {phone} पर 6 अंकों का कोड भेजा है | ನಾವು {phone} ಗೆ 6 ಅಂಕಿಗಳ ಕೋಡ್ ಕಳುಹಿಸಿದ್ದೇವೆ
+verifyCode | Verify | सत्यापित करें | ಪರಿಶೀಲಿಸಿ
+resendCode | Resend code | कोड फिर भेजें | ಕೋಡ್ ಮತ್ತೆ ಕಳುಹಿಸಿ
+resendIn | Resend in {seconds}s | {seconds} सेकंड में फिर भेजें | {seconds}ಸೆ ನಲ್ಲಿ ಮತ್ತೆ ಕಳುಹಿಸಿ
+authInvalidCredentials | Email or password is incorrect. | ईमेल या पासवर्ड गलत है। | ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ತಪ್ಪಾಗಿದೆ.
+authEmailInUse | An account already exists for this email. | इस ईमेल के लिए खाता पहले से मौजूद है। | ಈ ಇಮೇಲ್‌ಗೆ ಈಗಾಗಲೇ ಖಾತೆ ಇದೆ.
+authWeakPassword | That password is too weak. | वह पासवर्ड बहुत कमज़ोर है। | ಆ ಪಾಸ್‌ವರ್ಡ್ ತುಂಬಾ ದುರ್ಬಲವಾಗಿದೆ.
+authTooMany | Too many attempts. Please wait a few minutes and try again. | बहुत अधिक प्रयास। कृपया कुछ मिनट प्रतीक्षा करें और पुनः प्रयास करें। | ತುಂಬಾ ಪ್ರಯತ್ನಗಳು. ದಯವಿಟ್ಟು ಕೆಲವು ನಿಮಿಷ ಕಾಯಿರಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+authInvalidCode | That code is not correct or has expired. | वह कोड सही नहीं है या समाप्त हो गया है। | ಆ ಕೋಡ್ ಸರಿಯಿಲ್ಲ ಅಥವಾ ಅವಧಿ ಮುಗಿದಿದೆ.
+authDisabled | This account has been disabled. | यह खाता अक्षम कर दिया गया है। | ಈ ಖಾತೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ.
+googleSignInCancelled | Google sign-in was cancelled. | Google साइन-इन रद्द किया गया। | Google ಸೈನ್-ಇನ್ ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ.
+# ---- profile setup ----
+profileSetupTitle | Set up your profile | अपनी प्रोफ़ाइल सेट करें | ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಹೊಂದಿಸಿ
+profileSetupSubtitle | Only your name is needed. Everything else is optional and can be changed later. | केवल आपका नाम आवश्यक है। बाकी सब वैकल्पिक है और बाद में बदला जा सकता है। | ನಿಮ್ಮ ಹೆಸರು ಮಾತ್ರ ಅಗತ್ಯ. ಉಳಿದೆಲ್ಲವೂ ಐಚ್ಛಿಕ ಮತ್ತು ನಂತರ ಬದಲಾಯಿಸಬಹುದು.
+addPhoto | Add photo | फ़ोटो जोड़ें | ಫೋಟೋ ಸೇರಿಸಿ
+changePhoto | Change photo | फ़ोटो बदलें | ಫೋಟೋ ಬದಲಾಯಿಸಿ
+preferredLanguage | Preferred language | पसंदीदा भाषा | ಆದ್ಯತೆಯ ಭಾಷೆ
+preferredMode | How do you mostly communicate? | आप ज़्यादातर कैसे संवाद करते हैं? | ನೀವು ಹೆಚ್ಚಾಗಿ ಹೇಗೆ ಸಂವಹನ ಮಾಡುತ್ತೀರಿ?
+accessibilityOptional | Accessibility preferences (optional) | पहुँच संबंधी प्राथमिकताएं (वैकल्पिक) | ಪ್ರವೇಶಸಾಧ್ಯತೆಯ ಆದ್ಯತೆಗಳು (ಐಚ್ಛಿಕ)
+needDeaf | I am Deaf | मैं बधिर हूँ | ನಾನು ಕಿವುಡ
+needHardOfHearing | I am hard of hearing | मुझे कम सुनाई देता है | ನನಗೆ ಕಡಿಮೆ ಕೇಳಿಸುತ್ತದೆ
+needSpeech | I have a speech difference | मुझे बोलने में कठिनाई है | ನನಗೆ ಮಾತನಾಡಲು ಕಷ್ಟವಿದೆ
+needLowVision | I have low vision | मुझे कम दिखाई देता है | ನನಗೆ ಕಡಿಮೆ ದೃಷ್ಟಿ ಇದೆ
+needMotor | I prefer larger touch targets | मुझे बड़े टच लक्ष्य पसंद हैं | ನನಗೆ ದೊಡ್ಡ ಸ್ಪರ್ಶ ಗುರಿಗಳು ಇಷ್ಟ
+skipForNow | Skip for now | अभी छोड़ें | ಈಗ ಬಿಟ್ಟುಬಿಡಿ
+saveAndContinue | Save and continue | सहेजें और जारी रखें | ಉಳಿಸಿ ಮುಂದುವರಿಸಿ
+langEnglish | English | अंग्रेज़ी | ಇಂಗ್ಲಿಷ್
+langHindi | हिन्दी (Hindi) | हिन्दी | ಹಿಂದಿ (हिन्दी)
+langKannada | ಕನ್ನಡ (Kannada) | कन्नड़ (ಕನ್ನಡ) | ಕನ್ನಡ
+langSystem | Device language | डिवाइस की भाषा | ಸಾಧನದ ಭಾಷೆ

@@ -1,0 +1,59 @@
+# ---- common ----
+appName | SignoVoice | साइनोवॉइस | ಸೈನೋವಾಯ್ಸ್
+tagline | Breaking Barriers | बाधाओं को तोड़ते हुए | ಅಡೆತಡೆಗಳನ್ನು ಮುರಿಯುತ್ತಾ
+coreIdea | One Gesture. One Voice. One Connection. | एक इशारा। एक आवाज़। एक जुड़ाव। | ಒಂದು ಸನ್ನೆ. ಒಂದು ಧ್ವನಿ. ಒಂದು ಸಂಪರ್ಕ.
+retry | Retry | पुनः प्रयास करें | ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ
+cancel | Cancel | रद्द करें | ರದ್ದುಮಾಡಿ
+ok | OK | ठीक है | ಸರಿ
+continueLabel | Continue | जारी रखें | ಮುಂದುವರಿಸಿ
+back | Back | वापस | ಹಿಂದೆ
+close | Close | बंद करें | ಮುಚ್ಚಿ
+save | Save | सहेजें | ಉಳಿಸಿ
+delete | Delete | हटाएं | ಅಳಿಸಿ
+copy | Copy | कॉपी करें | ನಕಲಿಸಿ
+share | Share | साझा करें | ಹಂಚಿಕೊಳ್ಳಿ
+search | Search | खोजें | ಹುಡುಕಿ
+clear | Clear | साफ़ करें | ತೆರವುಗೊಳಿಸಿ
+done | Done | पूर्ण | ಮುಗಿದಿದೆ
+next | Next | आगे | ಮುಂದೆ
+skip | Skip | छोड़ें | ಬಿಟ್ಟುಬಿಡಿ
+loading | Loading… | लोड हो रहा है… | ಲೋಡ್ ಆಗುತ್ತಿದೆ…
+copied | Copied to clipboard | क्लिपबोर्ड पर कॉपी किया गया | ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ
+offlineBanner | You're offline. Some features are limited. | आप ऑफ़लाइन हैं। कुछ सुविधाएं सीमित हैं। | ನೀವು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿದ್ದೀರಿ. ಕೆಲವು ವೈಶಿಷ್ಟ್ಯಗಳು ಸೀಮಿತವಾಗಿವೆ.
+internetRequired | Internet connection required for this recognition mode. | इस पहचान मोड के लिए इंटरनेट कनेक्शन आवश्यक है। | ಈ ಗುರುತಿಸುವ ಮೋಡ್‌ಗೆ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕ ಅಗತ್ಯವಿದೆ.
+emptyDefaultTitle | Nothing here yet | यहाँ अभी कुछ नहीं है | ಇಲ್ಲಿ ಇನ್ನೂ ಏನೂ ಇಲ್ಲ
+errorTitle | Something went wrong | कुछ गलत हो गया | ಏನೋ ತಪ್ಪಾಗಿದೆ
+statusOn | On | चालू | ಆನ್
+statusOff | Off | बंद | ಆಫ್
+openSettings | Open settings | सेटिंग्स खोलें | ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ
+grantPermission | Allow access | अनुमति दें | ಪ್ರವೇಶ ನೀಡಿ
+confidenceLabel | Confidence | विश्वसनीयता | ವಿಶ್ವಾಸಾರ್ಹತೆ
+confidenceHigh | High | उच्च | ಹೆಚ್ಚು
+confidenceMedium | Medium | मध्यम | ಮಧ್ಯಮ
+confidenceLow | Low | कम | ಕಡಿಮೆ
+confidenceValue | Confidence {percent} percent | विश्वसनीयता {percent} प्रतिशत | ವಿಶ್ವಾಸಾರ್ಹತೆ {percent} ಶೇಕಡಾ
+# ---- failures (human-readable; never raw exceptions) ----
+failureOffline | You're offline. Check your connection and try again. | आप ऑफ़लाइन हैं। अपना कनेक्शन जाँचें और पुनः प्रयास करें। | ನೀವು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿದ್ದೀರಿ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureNetwork | We couldn't reach the server. Please try again. | हम सर्वर तक नहीं पहुँच सके। कृपया पुनः प्रयास करें। | ಸರ್ವರ್ ಅನ್ನು ತಲುಪಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureTimeout | This is taking longer than expected. Please try again. | इसमें अपेक्षा से अधिक समय लग रहा है। कृपया पुनः प्रयास करें। | ಇದು ನಿರೀಕ್ಷೆಗಿಂತ ಹೆಚ್ಚು ಸಮಯ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureUnauthorized | Please sign in again to continue. | जारी रखने के लिए कृपया फिर से साइन इन करें। | ಮುಂದುವರಿಸಲು ದಯವಿಟ್ಟು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.
+failureNotConfigured | This service isn't set up yet. Please try again later. | यह सेवा अभी सेट अप नहीं है। कृपया बाद में पुनः प्रयास करें। | ಈ ಸೇವೆಯನ್ನು ಇನ್ನೂ ಸಿದ್ಧಪಡಿಸಲಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ.
+failurePermissionDenied | Permission is needed to continue. | जारी रखने के लिए अनुमति आवश्यक है। | ಮುಂದುವರಿಸಲು ಅನುಮತಿ ಅಗತ್ಯವಿದೆ.
+failurePermissionPermanent | Permission was denied. You can turn it on in your device settings. | अनुमति अस्वीकार की गई। आप इसे डिवाइस सेटिंग्स में चालू कर सकते हैं। | ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ. ನೀವು ಅದನ್ನು ಸಾಧನದ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಆನ್ ಮಾಡಬಹುದು.
+failureModelUnavailable | Sign recognition is temporarily unavailable. Please try again. | साइन पहचान अस्थायी रूप से उपलब्ध नहीं है। कृपया पुनः प्रयास करें। | ಸೈನ್ ಗುರುತಿಸುವಿಕೆ ತಾತ್ಕಾಲಿಕವಾಗಿ ಲಭ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureServiceUnavailable | The service is temporarily unavailable. Please try again. | सेवा अस्थायी रूप से उपलब्ध नहीं है। कृपया पुनः प्रयास करें। | ಸೇವೆ ತಾತ್ಕಾಲಿಕವಾಗಿ ಲಭ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureBilling | Purchases aren't available right now. Please try again later. | खरीदारी अभी उपलब्ध नहीं है। कृपया बाद में पुनः प्रयास करें। | ಖರೀದಿಗಳು ಈಗ ಲಭ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ.
+failureCancelled | Cancelled. | रद्द किया गया। | ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ.
+failureValidation | Please check the details and try again. | कृपया विवरण जाँचें और पुनः प्रयास करें। | ದಯವಿಟ್ಟು ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+failureNotFound | We couldn't find what you were looking for. | आप जो खोज रहे थे वह हमें नहीं मिला। | ನೀವು ಹುಡುಕುತ್ತಿದ್ದದ್ದು ನಮಗೆ ಸಿಗಲಿಲ್ಲ.
+failureRecentLogin | For your security, please sign in again, then retry. | आपकी सुरक्षा के लिए, कृपया फिर से साइन इन करें और पुनः प्रयास करें। | ನಿಮ್ಮ ಸುರಕ್ಷತೆಗಾಗಿ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ, ನಂತರ ಪ್ರಯತ್ನಿಸಿ.
+failureLimit | You've reached the limit for now. Please try again later. | आप फ़िलहाल सीमा तक पहुँच गए हैं। कृपया बाद में पुनः प्रयास करें। | ನೀವು ಸದ್ಯಕ್ಕೆ ಮಿತಿಯನ್ನು ತಲುಪಿದ್ದೀರಿ. ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ.
+failureUnknown | Something went wrong. Please try again. | कुछ गलत हो गया। कृपया पुनः प्रयास करें। | ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+# ---- validation ----
+validationRequired | This field is required | यह फ़ील्ड आवश्यक है | ಈ ಕ್ಷೇತ್ರ ಅಗತ್ಯವಿದೆ
+validationEmail | Enter a valid email address | मान्य ईमेल पता दर्ज करें | ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ
+validationPassword | Use at least 8 characters with a letter and a number | कम से कम 8 अक्षर, एक अक्षर और एक संख्या का उपयोग करें | ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳು, ಒಂದು ಅಕ್ಷರ ಮತ್ತು ಒಂದು ಸಂಖ್ಯೆಯನ್ನು ಬಳಸಿ
+validationPasswordMismatch | Passwords don't match | पासवर्ड मेल नहीं खाते | ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ
+validationPhone | Enter a valid phone number with country code | देश कोड के साथ मान्य फ़ोन नंबर दर्ज करें | ದೇಶದ ಕೋಡ್‌ನೊಂದಿಗೆ ಮಾನ್ಯ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ
+validationOtp | Enter the 6-digit code | 6 अंकों का कोड दर्ज करें | 6 ಅಂಕಿಗಳ ಕೋಡ್ ನಮೂದಿಸಿ
+validationName | Enter at least 2 characters | कम से कम 2 अक्षर दर्ज करें | ಕನಿಷ್ಠ 2 ಅಕ್ಷರಗಳನ್ನು ನಮೂದಿಸಿ
