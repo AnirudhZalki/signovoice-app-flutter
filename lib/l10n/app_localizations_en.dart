@@ -527,6 +527,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceTitle => 'Practice';
 
   @override
+  String get recentActivity => 'Recent activity';
+
+  @override
+  String get seeAll => 'See all';
+
+  @override
+  String get noRecentActivity => 'Your saved translations will appear here.';
+
+  @override
+  String get todayUsage => 'Today';
+
+  @override
+  String get aiShortcutTitle => 'Advanced AI translation';
+
+  @override
+  String get aiShortcutBody => 'Smoother sentences from an online AI service.';
+
+  @override
+  String get aiShortcutIncluded => 'Included with your plan';
+
+  @override
+  String get aiShortcutPremium => 'Premium feature';
+
+  @override
   String get signStatusReady => 'On-device model ready';
 
   @override
@@ -1504,4 +1528,439 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'See all benefits';
+
+  @override
+  String get notifLearnTitle => 'Time to practise';
+
+  @override
+  String get notifLearnBody =>
+      'A few signs a day keeps them fresh. Open SignoVoice to learn today.';
+
+  @override
+  String get notifStreakTitle => 'Keep your streak going';
+
+  @override
+  String get notifStreakBody => 'A quick practice keeps your streak alive.';
+
+  @override
+  String get notifTrialTitle => 'Your free trial is ending';
+
+  @override
+  String notifTrialBody(String date, String days) {
+    return 'Your free trial ends in $days day(s), on $date. Cancel in Google Play if you don\'t want to continue.';
+  }
+
+  @override
+  String get notifRenewalTitle => 'Premium renews soon';
+
+  @override
+  String notifRenewalBody(String date) {
+    return 'Your Premium subscription renews on $date. You can manage it in Google Play any time.';
+  }
+
+  @override
+  String get notificationsTitle => 'Notifications';
+
+  @override
+  String get notificationsEmpty => 'You\'re all caught up.';
+
+  @override
+  String get notificationsEmptyBody =>
+      'Reminders, subscription updates and interpreter messages will appear here.';
+
+  @override
+  String get markAllRead => 'Mark all as read';
+
+  @override
+  String get notificationNew => 'New';
+
+  @override
+  String unreadCount(String count) {
+    return '$count unread notifications';
+  }
+
+  @override
+  String get notifSettingsTitle => 'Notification settings';
+
+  @override
+  String get notifPermissionOff =>
+      'Notifications are turned off for SignoVoice on this device.';
+
+  @override
+  String get notifPermissionAsk => 'Allow notifications';
+
+  @override
+  String get notifLearning => 'Learning reminders';
+
+  @override
+  String get notifStreakSetting => 'Practice streak';
+
+  @override
+  String get notifTrialSetting => 'Free trial reminders';
+
+  @override
+  String get notifRenewalSetting => 'Renewal information';
+
+  @override
+  String get notifInterpreterSetting => 'Interpreter request updates';
+
+  @override
+  String get notifSystemSetting => 'System notifications';
+
+  @override
+  String get reminderTime => 'Reminder time';
+
+  @override
+  String get guestName => 'Guest';
+
+  @override
+  String get editProfile => 'Edit profile';
+
+  @override
+  String get usageTitle => 'Usage';
+
+  @override
+  String usageSigns(String count) {
+    return 'Signs recognised today: $count';
+  }
+
+  @override
+  String usageSignsOfLimit(String count, String limit) {
+    return 'Signs recognised today: $count of $limit';
+  }
+
+  @override
+  String usageHistory(String count) {
+    return 'Saved translations: $count';
+  }
+
+  @override
+  String usageLearned(String count) {
+    return 'Signs learned: $count';
+  }
+
+  @override
+  String get sectionAccount => 'Account';
+
+  @override
+  String get sectionPreferences => 'Preferences';
+
+  @override
+  String get sectionSupport => 'Support';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsLanguage => 'Language';
+
+  @override
+  String get settingsTheme => 'Theme';
+
+  @override
+  String get themeSystem => 'Match device';
+
+  @override
+  String get themeLight => 'Light';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get settingsAccessibility => 'Accessibility';
+
+  @override
+  String get settingsVoice => 'Voice';
+
+  @override
+  String get settingsTranslation => 'Translation';
+
+  @override
+  String get settingsPrivacy => 'Privacy & data';
+
+  @override
+  String get settingsSubscription => 'Subscription';
+
+  @override
+  String get settingsAbout => 'About SignoVoice';
+
+  @override
+  String get settingsHelp => 'Help & support';
+
+  @override
+  String get settingsSecurity => 'Security';
+
+  @override
+  String get accTextSize => 'Text size';
+
+  @override
+  String get accTextSizePreview => 'Hello! This is how text will look.';
+
+  @override
+  String get accHighContrast => 'High contrast';
+
+  @override
+  String get accHighContrastDesc => 'Stronger borders and text colours.';
+
+  @override
+  String get accReduceMotion => 'Reduce motion';
+
+  @override
+  String get accReduceMotionDesc =>
+      'Turns off scanning sweeps, pulses and page transitions.';
+
+  @override
+  String get accHaptics => 'Haptic feedback';
+
+  @override
+  String get accHapticsDesc => 'Short vibrations when a sign is recognised.';
+
+  @override
+  String get accVoiceFeedback => 'Spoken feedback';
+
+  @override
+  String get accVoiceFeedbackDesc => 'Speak practice results aloud.';
+
+  @override
+  String get transMode => 'Recognition mode';
+
+  @override
+  String get transOnDevice => 'On this device';
+
+  @override
+  String get transOnDeviceDesc => 'Private and works offline.';
+
+  @override
+  String get transOnline => 'Online (server)';
+
+  @override
+  String get transOnlineDesc =>
+      'Sends hand-landmark numbers, never video. Needs internet and a configured server.';
+
+  @override
+  String get transOnlineUnavailable =>
+      'Online recognition isn\'t set up in this build.';
+
+  @override
+  String get transConfidence => 'Confidence threshold';
+
+  @override
+  String get transConfidenceDesc =>
+      'Higher means fewer but more reliable signs.';
+
+  @override
+  String get transAutoSpeak => 'Speak signs automatically';
+
+  @override
+  String get transMirror => 'Mirror hand input';
+
+  @override
+  String get transMirrorDesc =>
+      'Matches the training data. Turn off only if left and right seem swapped.';
+
+  @override
+  String transModelNote(String count) {
+    return 'The on-device model currently recognises $count signs and can make mistakes.';
+  }
+
+  @override
+  String get privacyAnalytics => 'Share anonymous usage and crash data';
+
+  @override
+  String get privacyAnalyticsDesc =>
+      'Helps us fix problems. Never includes video, signs or translations.';
+
+  @override
+  String get privacySaveHistory => 'Save translation history on this device';
+
+  @override
+  String get privacyClearHistory => 'Clear translation history';
+
+  @override
+  String get privacyClearProgress => 'Reset learning progress';
+
+  @override
+  String get privacyClearProgressBody =>
+      'This removes learned signs, saved signs, XP, streak and badges from this device.';
+
+  @override
+  String get privacyProgressCleared => 'Learning progress reset';
+
+  @override
+  String get privacyDataTitle => 'What data is processed';
+
+  @override
+  String get privacyDataCamera =>
+      'Camera: analysed on your device to find hand positions. Video is never recorded or uploaded. In online mode only hand-landmark numbers are sent.';
+
+  @override
+  String get privacyDataMic =>
+      'Microphone: used only when you tap the mic or join an interpreter call. Speech-to-text uses your device\'s speech service.';
+
+  @override
+  String get privacyDataAccount =>
+      'Account: your name, email or phone, and profile photo are stored with our authentication and database provider (Firebase).';
+
+  @override
+  String get privacyDataHistory =>
+      'History and learning progress: stored only on this device.';
+
+  @override
+  String get privacyDataPurchases =>
+      'Subscriptions: payments are handled by Google Play. We receive a purchase token to verify your plan, not your card details.';
+
+  @override
+  String get privacyDataCalls =>
+      'Interpreter calls: audio and video are streamed to your interpreter through our call provider. We store call time, duration and your rating.';
+
+  @override
+  String get privacyDataAnalytics =>
+      'Usage and crash data: anonymous events (like \"practice started\") and crash reports, only if you allow it above.';
+
+  @override
+  String get privacyRequestDeletion => 'Request deletion of my server data';
+
+  @override
+  String get privacyDeletionRequested =>
+      'Deletion requested. Your server-side data will be erased.';
+
+  @override
+  String get privacyDeleteAccount => 'Delete account';
+
+  @override
+  String securitySignedInAs(String who) {
+    return 'Signed in as $who';
+  }
+
+  @override
+  String get securityChangePassword => 'Change password';
+
+  @override
+  String get securityPasswordSent =>
+      'We sent a password reset link to your email.';
+
+  @override
+  String get securityGuest =>
+      'Guest mode keeps data on this device only. Create an account to secure and sync your plan.';
+
+  @override
+  String get createAccountAction => 'Create an account';
+
+  @override
+  String get logoutTitle => 'Sign out?';
+
+  @override
+  String get logoutBody => 'You can sign back in any time.';
+
+  @override
+  String get logoutClearData =>
+      'Also clear history and progress on this device';
+
+  @override
+  String get deleteTitle => 'Delete your account';
+
+  @override
+  String get deleteBody =>
+      'This permanently deletes your account and the data we hold about you, and clears data on this device. This cannot be undone. Deleting your account does not cancel a Google Play subscription; cancel it in Google Play first.';
+
+  @override
+  String get deleteGuestBody =>
+      'This clears everything SignoVoice stored on this device.';
+
+  @override
+  String get deleteConfirmCheck => 'I understand this is permanent';
+
+  @override
+  String get deleteAction => 'Delete permanently';
+
+  @override
+  String get deleteRecentLogin =>
+      'For your security, sign in again, then delete your account.';
+
+  @override
+  String get deleteAndSignOut => 'Sign out and sign in again';
+
+  @override
+  String get helpTitle => 'Help & support';
+
+  @override
+  String get faq1q => 'Why isn\'t my sign recognised?';
+
+  @override
+  String faq1a(String count) {
+    return 'Use good light, keep your whole hand in view and sign at a steady pace. The on-device model currently recognises $count signs.';
+  }
+
+  @override
+  String get faq2q => 'Does SignoVoice record my video?';
+
+  @override
+  String get faq2a =>
+      'No. Video is analysed on your device to find hand positions and is never recorded or uploaded.';
+
+  @override
+  String get faq3q => 'How does the free trial work?';
+
+  @override
+  String get faq3a =>
+      'New accounts can start a one-month free trial. It renews automatically at the price shown unless you cancel in Google Play before it ends.';
+
+  @override
+  String get faq4q => 'How do I cancel my subscription?';
+
+  @override
+  String get faq4a =>
+      'Open Google Play › Payments & subscriptions › Subscriptions › SignoVoice › Cancel subscription.';
+
+  @override
+  String get faq5q => 'Can I use SignoVoice offline?';
+
+  @override
+  String get faq5a =>
+      'Yes for on-device sign recognition, the dictionary and lessons. Live interpreters, online recognition and AI translation need internet.';
+
+  @override
+  String get faq6q => 'Why do some signs have no video?';
+
+  @override
+  String get faq6a =>
+      'The dictionary lists more signs than we have videos for. Videos are added over time.';
+
+  @override
+  String get helpContact => 'Contact support';
+
+  @override
+  String get helpEmailSubject => 'SignoVoice support';
+
+  @override
+  String aboutVersion(String build, String version) {
+    return 'Version $version ($build)';
+  }
+
+  @override
+  String get aboutMission =>
+      'Breaking communication barriers with AI-powered sign-language technology.';
+
+  @override
+  String aboutModelNote(String count) {
+    return 'Sign recognition is an aid, not a certified interpreter. It currently knows $count signs and can make mistakes. For important conversations, use a human interpreter.';
+  }
+
+  @override
+  String get aboutLicenses => 'Open-source licenses';
+
+  @override
+  String get legalTitlePrivacy => 'Privacy Policy';
+
+  @override
+  String get legalTitleTerms => 'Terms of Service';
+
+  @override
+  String get legalEnglishOnly => 'The legal text is provided in English.';
+
+  @override
+  String get openInBrowser => 'Open online version';
+
+  @override
+  String get settingsNotifications => 'Notifications';
 }

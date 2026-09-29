@@ -201,6 +201,14 @@
   "translateTabTitle": "What would you like to do?",
   "translateTabSubtitle": "Choose a way to communicate.",
   "practiceTitle": "Practice",
+  "recentActivity": "Recent activity",
+  "seeAll": "See all",
+  "noRecentActivity": "Your saved translations will appear here.",
+  "todayUsage": "Today",
+  "aiShortcutTitle": "Advanced AI translation",
+  "aiShortcutBody": "Smoother sentences from an online AI service.",
+  "aiShortcutIncluded": "Included with your plan",
+  "aiShortcutPremium": "Premium feature",
   "signStatusReady": "On-device model ready",
   "signStatusOnline": "Online recognition",
   "signStatusLoading": "Loading model…",
@@ -798,5 +806,225 @@
   "benefitAnalyticsBody": "See accuracy, completion by topic and your activity over the last week.",
   "alwaysFreeTitle": "Always free",
   "alwaysFreeBody": "On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice.",
-  "seeAllBenefits": "See all benefits"
+  "seeAllBenefits": "See all benefits",
+  "notifLearnTitle": "Time to practise",
+  "notifLearnBody": "A few signs a day keeps them fresh. Open SignoVoice to learn today.",
+  "notifStreakTitle": "Keep your streak going",
+  "notifStreakBody": "A quick practice keeps your streak alive.",
+  "notifTrialTitle": "Your free trial is ending",
+  "notifTrialBody": "Your free trial ends in {days} day(s), on {date}. Cancel in Google Play if you don't want to continue.",
+  "@notifTrialBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "notifRenewalTitle": "Premium renews soon",
+  "notifRenewalBody": "Your Premium subscription renews on {date}. You can manage it in Google Play any time.",
+  "@notifRenewalBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationsTitle": "Notifications",
+  "notificationsEmpty": "You're all caught up.",
+  "notificationsEmptyBody": "Reminders, subscription updates and interpreter messages will appear here.",
+  "markAllRead": "Mark all as read",
+  "notificationNew": "New",
+  "unreadCount": "{count} unread notifications",
+  "@unreadCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "notifSettingsTitle": "Notification settings",
+  "notifPermissionOff": "Notifications are turned off for SignoVoice on this device.",
+  "notifPermissionAsk": "Allow notifications",
+  "notifLearning": "Learning reminders",
+  "notifStreakSetting": "Practice streak",
+  "notifTrialSetting": "Free trial reminders",
+  "notifRenewalSetting": "Renewal information",
+  "notifInterpreterSetting": "Interpreter request updates",
+  "notifSystemSetting": "System notifications",
+  "reminderTime": "Reminder time",
+  "guestName": "Guest",
+  "editProfile": "Edit profile",
+  "usageTitle": "Usage",
+  "usageSigns": "Signs recognised today: {count}",
+  "@usageSigns": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "usageSignsOfLimit": "Signs recognised today: {count} of {limit}",
+  "@usageSignsOfLimit": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "usageHistory": "Saved translations: {count}",
+  "@usageHistory": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "usageLearned": "Signs learned: {count}",
+  "@usageLearned": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionAccount": "Account",
+  "sectionPreferences": "Preferences",
+  "sectionSupport": "Support",
+  "settingsTitle": "Settings",
+  "settingsLanguage": "Language",
+  "settingsTheme": "Theme",
+  "themeSystem": "Match device",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "settingsAccessibility": "Accessibility",
+  "settingsVoice": "Voice",
+  "settingsTranslation": "Translation",
+  "settingsPrivacy": "Privacy & data",
+  "settingsSubscription": "Subscription",
+  "settingsAbout": "About SignoVoice",
+  "settingsHelp": "Help & support",
+  "settingsSecurity": "Security",
+  "accTextSize": "Text size",
+  "accTextSizePreview": "Hello! This is how text will look.",
+  "accHighContrast": "High contrast",
+  "accHighContrastDesc": "Stronger borders and text colours.",
+  "accReduceMotion": "Reduce motion",
+  "accReduceMotionDesc": "Turns off scanning sweeps, pulses and page transitions.",
+  "accHaptics": "Haptic feedback",
+  "accHapticsDesc": "Short vibrations when a sign is recognised.",
+  "accVoiceFeedback": "Spoken feedback",
+  "accVoiceFeedbackDesc": "Speak practice results aloud.",
+  "transMode": "Recognition mode",
+  "transOnDevice": "On this device",
+  "transOnDeviceDesc": "Private and works offline.",
+  "transOnline": "Online (server)",
+  "transOnlineDesc": "Sends hand-landmark numbers, never video. Needs internet and a configured server.",
+  "transOnlineUnavailable": "Online recognition isn't set up in this build.",
+  "transConfidence": "Confidence threshold",
+  "transConfidenceDesc": "Higher means fewer but more reliable signs.",
+  "transAutoSpeak": "Speak signs automatically",
+  "transMirror": "Mirror hand input",
+  "transMirrorDesc": "Matches the training data. Turn off only if left and right seem swapped.",
+  "transModelNote": "The on-device model currently recognises {count} signs and can make mistakes.",
+  "@transModelNote": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyAnalytics": "Share anonymous usage and crash data",
+  "privacyAnalyticsDesc": "Helps us fix problems. Never includes video, signs or translations.",
+  "privacySaveHistory": "Save translation history on this device",
+  "privacyClearHistory": "Clear translation history",
+  "privacyClearProgress": "Reset learning progress",
+  "privacyClearProgressBody": "This removes learned signs, saved signs, XP, streak and badges from this device.",
+  "privacyProgressCleared": "Learning progress reset",
+  "privacyDataTitle": "What data is processed",
+  "privacyDataCamera": "Camera: analysed on your device to find hand positions. Video is never recorded or uploaded. In online mode only hand-landmark numbers are sent.",
+  "privacyDataMic": "Microphone: used only when you tap the mic or join an interpreter call. Speech-to-text uses your device's speech service.",
+  "privacyDataAccount": "Account: your name, email or phone, and profile photo are stored with our authentication and database provider (Firebase).",
+  "privacyDataHistory": "History and learning progress: stored only on this device.",
+  "privacyDataPurchases": "Subscriptions: payments are handled by Google Play. We receive a purchase token to verify your plan, not your card details.",
+  "privacyDataCalls": "Interpreter calls: audio and video are streamed to your interpreter through our call provider. We store call time, duration and your rating.",
+  "privacyDataAnalytics": "Usage and crash data: anonymous events (like \"practice started\") and crash reports, only if you allow it above.",
+  "privacyRequestDeletion": "Request deletion of my server data",
+  "privacyDeletionRequested": "Deletion requested. Your server-side data will be erased.",
+  "privacyDeleteAccount": "Delete account",
+  "securitySignedInAs": "Signed in as {who}",
+  "@securitySignedInAs": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "securityChangePassword": "Change password",
+  "securityPasswordSent": "We sent a password reset link to your email.",
+  "securityGuest": "Guest mode keeps data on this device only. Create an account to secure and sync your plan.",
+  "createAccountAction": "Create an account",
+  "logoutTitle": "Sign out?",
+  "logoutBody": "You can sign back in any time.",
+  "logoutClearData": "Also clear history and progress on this device",
+  "deleteTitle": "Delete your account",
+  "deleteBody": "This permanently deletes your account and the data we hold about you, and clears data on this device. This cannot be undone. Deleting your account does not cancel a Google Play subscription; cancel it in Google Play first.",
+  "deleteGuestBody": "This clears everything SignoVoice stored on this device.",
+  "deleteConfirmCheck": "I understand this is permanent",
+  "deleteAction": "Delete permanently",
+  "deleteRecentLogin": "For your security, sign in again, then delete your account.",
+  "deleteAndSignOut": "Sign out and sign in again",
+  "helpTitle": "Help & support",
+  "faq1q": "Why isn't my sign recognised?",
+  "faq1a": "Use good light, keep your whole hand in view and sign at a steady pace. The on-device model currently recognises {count} signs.",
+  "@faq1a": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "faq2q": "Does SignoVoice record my video?",
+  "faq2a": "No. Video is analysed on your device to find hand positions and is never recorded or uploaded.",
+  "faq3q": "How does the free trial work?",
+  "faq3a": "New accounts can start a one-month free trial. It renews automatically at the price shown unless you cancel in Google Play before it ends.",
+  "faq4q": "How do I cancel my subscription?",
+  "faq4a": "Open Google Play › Payments & subscriptions › Subscriptions › SignoVoice › Cancel subscription.",
+  "faq5q": "Can I use SignoVoice offline?",
+  "faq5a": "Yes for on-device sign recognition, the dictionary and lessons. Live interpreters, online recognition and AI translation need internet.",
+  "faq6q": "Why do some signs have no video?",
+  "faq6a": "The dictionary lists more signs than we have videos for. Videos are added over time.",
+  "helpContact": "Contact support",
+  "helpEmailSubject": "SignoVoice support",
+  "aboutVersion": "Version {version} ({build})",
+  "@aboutVersion": {
+    "placeholders": {
+      "build": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutMission": "Breaking communication barriers with AI-powered sign-language technology.",
+  "aboutModelNote": "Sign recognition is an aid, not a certified interpreter. It currently knows {count} signs and can make mistakes. For important conversations, use a human interpreter.",
+  "@aboutModelNote": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutLicenses": "Open-source licenses",
+  "legalTitlePrivacy": "Privacy Policy",
+  "legalTitleTerms": "Terms of Service",
+  "legalEnglishOnly": "The legal text is provided in English.",
+  "openInBrowser": "Open online version",
+  "settingsNotifications": "Notifications"
 }

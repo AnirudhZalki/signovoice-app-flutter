@@ -1,0 +1,25 @@
+# ---- notifications ----
+notifLearnTitle | Time to practise | अभ्यास का समय | ಅಭ್ಯಾಸದ ಸಮಯ
+notifLearnBody | A few signs a day keeps them fresh. Open SignoVoice to learn today. | दिन में कुछ साइन उन्हें ताज़ा रखते हैं। आज सीखने के लिए साइनोवॉइस खोलें। | ದಿನಕ್ಕೆ ಕೆಲವು ಸಂಜ್ಞೆಗಳು ಅವನ್ನು ತಾಜಾವಾಗಿಡುತ್ತವೆ. ಇಂದು ಕಲಿಯಲು ಸೈನೋವಾಯ್ಸ್ ತೆರೆಯಿರಿ.
+notifStreakTitle | Keep your streak going | अपनी लगातार गतिविधि जारी रखें | ನಿಮ್ಮ ಸರಣಿಯನ್ನು ಮುಂದುವರಿಸಿ
+notifStreakBody | A quick practice keeps your streak alive. | थोड़ा अभ्यास आपकी लगातार गतिविधि बनाए रखता है। | ಸ್ವಲ್ಪ ಅಭ್ಯಾಸ ನಿಮ್ಮ ಸರಣಿಯನ್ನು ಜೀವಂತವಾಗಿಡುತ್ತದೆ.
+notifTrialTitle | Your free trial is ending | आपका निःशुल्क ट्रायल समाप्त होने वाला है | ನಿಮ್ಮ ಉಚಿತ ಟ್ರಯಲ್ ಮುಗಿಯುತ್ತಿದೆ
+notifTrialBody | Your free trial ends in {days} day(s), on {date}. Cancel in Google Play if you don't want to continue. | आपका निःशुल्क ट्रायल {days} दिन में, {date} को समाप्त होगा। जारी नहीं रखना चाहते तो Google Play में रद्द करें। | ನಿಮ್ಮ ಉಚಿತ ಟ್ರಯಲ್ {days} ದಿನಗಳಲ್ಲಿ, {date} ರಂದು ಮುಗಿಯುತ್ತದೆ. ಮುಂದುವರಿಸಲು ಬಯಸದಿದ್ದರೆ Google Play ನಲ್ಲಿ ರದ್ದುಮಾಡಿ.
+notifRenewalTitle | Premium renews soon | प्रीमियम जल्द नवीनीकृत होगा | ಪ್ರೀಮಿಯಂ ಶೀಘ್ರದಲ್ಲೇ ನವೀಕರಣವಾಗುತ್ತದೆ
+notifRenewalBody | Your Premium subscription renews on {date}. You can manage it in Google Play any time. | आपकी प्रीमियम सदस्यता {date} को नवीनीकृत होगी। आप इसे कभी भी Google Play में प्रबंधित कर सकते हैं। | ನಿಮ್ಮ ಪ್ರೀಮಿಯಂ ಚಂದಾದಾರಿಕೆ {date} ರಂದು ನವೀಕರಣವಾಗುತ್ತದೆ. ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ Google Play ನಲ್ಲಿ ನಿರ್ವಹಿಸಬಹುದು.
+notificationsTitle | Notifications | सूचनाएं | ಅಧಿಸೂಚನೆಗಳು
+notificationsEmpty | You're all caught up. | आप पूरी तरह अपडेट हैं। | ನೀವು ಎಲ್ಲವನ್ನೂ ನೋಡಿದ್ದೀರಿ.
+notificationsEmptyBody | Reminders, subscription updates and interpreter messages will appear here. | अनुस्मारक, सदस्यता अपडेट और दुभाषिया संदेश यहाँ दिखेंगे। | ಜ್ಞಾಪನೆಗಳು, ಚಂದಾದಾರಿಕೆ ನವೀಕರಣಗಳು ಮತ್ತು ದುಭಾಷಿ ಸಂದೇಶಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.
+markAllRead | Mark all as read | सभी को पढ़ा हुआ चिह्नित करें | ಎಲ್ಲವನ್ನೂ ಓದಿದೆ ಎಂದು ಗುರುತಿಸಿ
+notificationNew | New | नया | ಹೊಸದು
+unreadCount | {count} unread notifications | {count} अपठित सूचनाएं | {count} ಓದದ ಅಧಿಸೂಚನೆಗಳು
+notifSettingsTitle | Notification settings | सूचना सेटिंग्स | ಅಧಿಸೂಚನೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು
+notifPermissionOff | Notifications are turned off for SignoVoice on this device. | इस डिवाइस पर साइनोवॉइस के लिए सूचनाएं बंद हैं। | ಈ ಸಾಧನದಲ್ಲಿ ಸೈನೋವಾಯ್ಸ್‌ಗೆ ಅಧಿಸೂಚನೆಗಳು ಆಫ್ ಆಗಿವೆ.
+notifPermissionAsk | Allow notifications | सूचनाओं की अनुमति दें | ಅಧಿಸೂಚನೆಗಳನ್ನು ಅನುಮತಿಸಿ
+notifLearning | Learning reminders | सीखने के अनुस्मारक | ಕಲಿಕೆಯ ಜ್ಞಾಪನೆಗಳು
+notifStreakSetting | Practice streak | अभ्यास की लगातार गतिविधि | ಅಭ್ಯಾಸ ಸರಣಿ
+notifTrialSetting | Free trial reminders | निःशुल्क ट्रायल अनुस्मारक | ಉಚಿತ ಟ್ರಯಲ್ ಜ್ಞಾಪನೆಗಳು
+notifRenewalSetting | Renewal information | नवीनीकरण की जानकारी | ನವೀಕರಣ ಮಾಹಿತಿ
+notifInterpreterSetting | Interpreter request updates | दुभाषिया अनुरोध अपडेट | ದುಭಾಷಿ ವಿನಂತಿ ನವೀಕರಣಗಳು
+notifSystemSetting | System notifications | सिस्टम सूचनाएं | ಸಿಸ್ಟಮ್ ಅಧಿಸೂಚನೆಗಳು
+reminderTime | Reminder time | अनुस्मारक का समय | ಜ್ಞಾಪನೆ ಸಮಯ

@@ -44,7 +44,7 @@ class ErrorState extends StatelessWidget {
     final l = context.l10n;
     final scheme = Theme.of(context).colorScheme;
     final offline = failure.type == FailureType.offline;
-    return Center(
+    return _CenteredScroll(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Semantics(
@@ -91,7 +91,7 @@ class EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Center(
+    return _CenteredScroll(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
@@ -161,4 +161,21 @@ class OfflineBanner extends ConsumerWidget {
       ),
     );
   }
+}
+
+
+/// Centers [child] when there is room and scrolls when there isn't (large text, small panes).
+class _CenteredScroll extends StatelessWidget {
+  const _CenteredScroll({required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+        builder: (context, c) => SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: c.maxHeight.isFinite ? c.maxHeight : 0),
+            child: Center(child: child),
+          ),
+        ),
+      );
 }

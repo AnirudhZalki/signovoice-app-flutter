@@ -32,6 +32,8 @@ class _VoiceToSignScreenState extends ConsumerState<VoiceToSignScreen> {
     super.initState();
     ref.read(permissionServiceProvider).status(AppPermission.microphone).then((s) {
       if (mounted) setState(() => _mic = s);
+    }).catchError((Object _) {
+      // Unknown permission state: the mic button will request it on tap.
     });
   }
 

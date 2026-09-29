@@ -530,6 +530,30 @@ class AppLocalizationsKn extends AppLocalizations {
   String get practiceTitle => 'ಅಭ್ಯಾಸ';
 
   @override
+  String get recentActivity => 'ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆ';
+
+  @override
+  String get seeAll => 'ಎಲ್ಲವನ್ನೂ ನೋಡಿ';
+
+  @override
+  String get noRecentActivity => 'ನಿಮ್ಮ ಉಳಿಸಿದ ಅನುವಾದಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.';
+
+  @override
+  String get todayUsage => 'ಇಂದು';
+
+  @override
+  String get aiShortcutTitle => 'ಸುಧಾರಿತ ಎಐ ಅನುವಾದ';
+
+  @override
+  String get aiShortcutBody => 'ಆನ್‌ಲೈನ್ ಎಐ ಸೇವೆಯಿಂದ ಸುಗಮ ವಾಕ್ಯಗಳು.';
+
+  @override
+  String get aiShortcutIncluded => 'ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಸೇರಿದೆ';
+
+  @override
+  String get aiShortcutPremium => 'ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ';
+
+  @override
   String get signStatusReady => 'ಸಾಧನದ ಮಾದರಿ ಸಿದ್ಧ';
 
   @override
@@ -1507,4 +1531,440 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'ಎಲ್ಲಾ ಪ್ರಯೋಜನಗಳನ್ನು ನೋಡಿ';
+
+  @override
+  String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';
+
+  @override
+  String get notifLearnBody =>
+      'ದಿನಕ್ಕೆ ಕೆಲವು ಸಂಜ್ಞೆಗಳು ಅವನ್ನು ತಾಜಾವಾಗಿಡುತ್ತವೆ. ಇಂದು ಕಲಿಯಲು ಸೈನೋವಾಯ್ಸ್ ತೆರೆಯಿರಿ.';
+
+  @override
+  String get notifStreakTitle => 'ನಿಮ್ಮ ಸರಣಿಯನ್ನು ಮುಂದುವರಿಸಿ';
+
+  @override
+  String get notifStreakBody =>
+      'ಸ್ವಲ್ಪ ಅಭ್ಯಾಸ ನಿಮ್ಮ ಸರಣಿಯನ್ನು ಜೀವಂತವಾಗಿಡುತ್ತದೆ.';
+
+  @override
+  String get notifTrialTitle => 'ನಿಮ್ಮ ಉಚಿತ ಟ್ರಯಲ್ ಮುಗಿಯುತ್ತಿದೆ';
+
+  @override
+  String notifTrialBody(String date, String days) {
+    return 'ನಿಮ್ಮ ಉಚಿತ ಟ್ರಯಲ್ $days ದಿನಗಳಲ್ಲಿ, $date ರಂದು ಮುಗಿಯುತ್ತದೆ. ಮುಂದುವರಿಸಲು ಬಯಸದಿದ್ದರೆ Google Play ನಲ್ಲಿ ರದ್ದುಮಾಡಿ.';
+  }
+
+  @override
+  String get notifRenewalTitle => 'ಪ್ರೀಮಿಯಂ ಶೀಘ್ರದಲ್ಲೇ ನವೀಕರಣವಾಗುತ್ತದೆ';
+
+  @override
+  String notifRenewalBody(String date) {
+    return 'ನಿಮ್ಮ ಪ್ರೀಮಿಯಂ ಚಂದಾದಾರಿಕೆ $date ರಂದು ನವೀಕರಣವಾಗುತ್ತದೆ. ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ Google Play ನಲ್ಲಿ ನಿರ್ವಹಿಸಬಹುದು.';
+  }
+
+  @override
+  String get notificationsTitle => 'ಅಧಿಸೂಚನೆಗಳು';
+
+  @override
+  String get notificationsEmpty => 'ನೀವು ಎಲ್ಲವನ್ನೂ ನೋಡಿದ್ದೀರಿ.';
+
+  @override
+  String get notificationsEmptyBody =>
+      'ಜ್ಞಾಪನೆಗಳು, ಚಂದಾದಾರಿಕೆ ನವೀಕರಣಗಳು ಮತ್ತು ದುಭಾಷಿ ಸಂದೇಶಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.';
+
+  @override
+  String get markAllRead => 'ಎಲ್ಲವನ್ನೂ ಓದಿದೆ ಎಂದು ಗುರುತಿಸಿ';
+
+  @override
+  String get notificationNew => 'ಹೊಸದು';
+
+  @override
+  String unreadCount(String count) {
+    return '$count ಓದದ ಅಧಿಸೂಚನೆಗಳು';
+  }
+
+  @override
+  String get notifSettingsTitle => 'ಅಧಿಸೂಚನೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು';
+
+  @override
+  String get notifPermissionOff =>
+      'ಈ ಸಾಧನದಲ್ಲಿ ಸೈನೋವಾಯ್ಸ್‌ಗೆ ಅಧಿಸೂಚನೆಗಳು ಆಫ್ ಆಗಿವೆ.';
+
+  @override
+  String get notifPermissionAsk => 'ಅಧಿಸೂಚನೆಗಳನ್ನು ಅನುಮತಿಸಿ';
+
+  @override
+  String get notifLearning => 'ಕಲಿಕೆಯ ಜ್ಞಾಪನೆಗಳು';
+
+  @override
+  String get notifStreakSetting => 'ಅಭ್ಯಾಸ ಸರಣಿ';
+
+  @override
+  String get notifTrialSetting => 'ಉಚಿತ ಟ್ರಯಲ್ ಜ್ಞಾಪನೆಗಳು';
+
+  @override
+  String get notifRenewalSetting => 'ನವೀಕರಣ ಮಾಹಿತಿ';
+
+  @override
+  String get notifInterpreterSetting => 'ದುಭಾಷಿ ವಿನಂತಿ ನವೀಕರಣಗಳು';
+
+  @override
+  String get notifSystemSetting => 'ಸಿಸ್ಟಮ್ ಅಧಿಸೂಚನೆಗಳು';
+
+  @override
+  String get reminderTime => 'ಜ್ಞಾಪನೆ ಸಮಯ';
+
+  @override
+  String get guestName => 'ಅತಿಥಿ';
+
+  @override
+  String get editProfile => 'ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ';
+
+  @override
+  String get usageTitle => 'ಬಳಕೆ';
+
+  @override
+  String usageSigns(String count) {
+    return 'ಇಂದು ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು: $count';
+  }
+
+  @override
+  String usageSignsOfLimit(String count, String limit) {
+    return 'ಇಂದು ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು: $limit ರಲ್ಲಿ $count';
+  }
+
+  @override
+  String usageHistory(String count) {
+    return 'ಉಳಿಸಿದ ಅನುವಾದಗಳು: $count';
+  }
+
+  @override
+  String usageLearned(String count) {
+    return 'ಕಲಿತ ಸಂಜ್ಞೆಗಳು: $count';
+  }
+
+  @override
+  String get sectionAccount => 'ಖಾತೆ';
+
+  @override
+  String get sectionPreferences => 'ಆದ್ಯತೆಗಳು';
+
+  @override
+  String get sectionSupport => 'ಬೆಂಬಲ';
+
+  @override
+  String get settingsTitle => 'ಸೆಟ್ಟಿಂಗ್‌ಗಳು';
+
+  @override
+  String get settingsLanguage => 'ಭಾಷೆ';
+
+  @override
+  String get settingsTheme => 'ಥೀಮ್';
+
+  @override
+  String get themeSystem => 'ಸಾಧನಕ್ಕೆ ಹೊಂದಿಸಿ';
+
+  @override
+  String get themeLight => 'ಹಗುರ';
+
+  @override
+  String get themeDark => 'ಗಾಢ';
+
+  @override
+  String get settingsAccessibility => 'ಪ್ರವೇಶಸಾಧ್ಯತೆ';
+
+  @override
+  String get settingsVoice => 'ಧ್ವನಿ';
+
+  @override
+  String get settingsTranslation => 'ಅನುವಾದ';
+
+  @override
+  String get settingsPrivacy => 'ಗೌಪ್ಯತೆ ಮತ್ತು ಡೇಟಾ';
+
+  @override
+  String get settingsSubscription => 'ಚಂದಾದಾರಿಕೆ';
+
+  @override
+  String get settingsAbout => 'ಸೈನೋವಾಯ್ಸ್ ಬಗ್ಗೆ';
+
+  @override
+  String get settingsHelp => 'ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ';
+
+  @override
+  String get settingsSecurity => 'ಭದ್ರತೆ';
+
+  @override
+  String get accTextSize => 'ಪಠ್ಯದ ಗಾತ್ರ';
+
+  @override
+  String get accTextSizePreview => 'ನಮಸ್ಕಾರ! ಪಠ್ಯ ಹೀಗೆ ಕಾಣಿಸುತ್ತದೆ.';
+
+  @override
+  String get accHighContrast => 'ಹೆಚ್ಚಿನ ಕಾಂಟ್ರಾಸ್ಟ್';
+
+  @override
+  String get accHighContrastDesc => 'ಬಲವಾದ ಅಂಚುಗಳು ಮತ್ತು ಪಠ್ಯ ಬಣ್ಣಗಳು.';
+
+  @override
+  String get accReduceMotion => 'ಚಲನೆ ಕಡಿಮೆ ಮಾಡಿ';
+
+  @override
+  String get accReduceMotionDesc =>
+      'ಸ್ಕ್ಯಾನಿಂಗ್ ಸ್ವೀಪ್‌ಗಳು, ಪಲ್ಸ್‌ಗಳು ಮತ್ತು ಪುಟ ಪರಿವರ್ತನೆಗಳನ್ನು ಆಫ್ ಮಾಡುತ್ತದೆ.';
+
+  @override
+  String get accHaptics => 'ಹ್ಯಾಪ್ಟಿಕ್ ಪ್ರತಿಕ್ರಿಯೆ';
+
+  @override
+  String get accHapticsDesc => 'ಸಂಜ್ಞೆ ಗುರುತಿಸಿದಾಗ ಸಣ್ಣ ಕಂಪನ.';
+
+  @override
+  String get accVoiceFeedback => 'ಮಾತಿನ ಪ್ರತಿಕ್ರಿಯೆ';
+
+  @override
+  String get accVoiceFeedbackDesc => 'ಅಭ್ಯಾಸದ ಫಲಿತಾಂಶಗಳನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳಿ.';
+
+  @override
+  String get transMode => 'ಗುರುತಿಸುವ ಮೋಡ್';
+
+  @override
+  String get transOnDevice => 'ಈ ಸಾಧನದಲ್ಲಿ';
+
+  @override
+  String get transOnDeviceDesc => 'ಖಾಸಗಿ ಮತ್ತು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.';
+
+  @override
+  String get transOnline => 'ಆನ್‌ಲೈನ್ (ಸರ್ವರ್)';
+
+  @override
+  String get transOnlineDesc =>
+      'ಕೈ ಲ್ಯಾಂಡ್‌ಮಾರ್ಕ್ ಸಂಖ್ಯೆಗಳನ್ನು ಕಳುಹಿಸುತ್ತದೆ, ವೀಡಿಯೊ ಎಂದಿಗೂ ಅಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಮತ್ತು ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಸರ್ವರ್ ಬೇಕು.';
+
+  @override
+  String get transOnlineUnavailable =>
+      'ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ ಸಿದ್ಧವಾಗಿಲ್ಲ.';
+
+  @override
+  String get transConfidence => 'ವಿಶ್ವಾಸಾರ್ಹತೆಯ ಮಿತಿ';
+
+  @override
+  String get transConfidenceDesc =>
+      'ಹೆಚ್ಚು ಎಂದರೆ ಕಡಿಮೆ ಆದರೆ ಹೆಚ್ಚು ವಿಶ್ವಾಸಾರ್ಹ ಸಂಜ್ಞೆಗಳು.';
+
+  @override
+  String get transAutoSpeak => 'ಸಂಜ್ಞೆಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಹೇಳಿ';
+
+  @override
+  String get transMirror => 'ಕೈ ಇನ್‌ಪುಟ್ ಮಿರರ್ ಮಾಡಿ';
+
+  @override
+  String get transMirrorDesc =>
+      'ತರಬೇತಿ ಡೇಟಾಗೆ ಹೊಂದುತ್ತದೆ. ಎಡ-ಬಲ ಅದಲುಬದಲಾದಂತೆ ತೋರಿದರೆ ಮಾತ್ರ ಆಫ್ ಮಾಡಿ.';
+
+  @override
+  String transModelNote(String count) {
+    return 'ಸಾಧನದ ಮಾದರಿ ಪ್ರಸ್ತುತ $count ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸುತ್ತದೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಮಾಡಬಹುದು.';
+  }
+
+  @override
+  String get privacyAnalytics => 'ಅನಾಮಧೇಯ ಬಳಕೆ ಮತ್ತು ಕ್ರ್ಯಾಶ್ ಡೇಟಾ ಹಂಚಿಕೊಳ್ಳಿ';
+
+  @override
+  String get privacyAnalyticsDesc =>
+      'ಸಮಸ್ಯೆಗಳನ್ನು ಸರಿಪಡಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ವೀಡಿಯೊ, ಸಂಜ್ಞೆಗಳು ಅಥವಾ ಅನುವಾದಗಳು ಎಂದಿಗೂ ಇರುವುದಿಲ್ಲ.';
+
+  @override
+  String get privacySaveHistory => 'ಈ ಸಾಧನದಲ್ಲಿ ಅನುವಾದ ಇತಿಹಾಸ ಉಳಿಸಿ';
+
+  @override
+  String get privacyClearHistory => 'ಅನುವಾದ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get privacyClearProgress => 'ಕಲಿಕೆಯ ಪ್ರಗತಿ ಮರುಹೊಂದಿಸಿ';
+
+  @override
+  String get privacyClearProgressBody =>
+      'ಇದು ಈ ಸಾಧನದಿಂದ ಕಲಿತ ಸಂಜ್ಞೆಗಳು, ಉಳಿಸಿದ ಸಂಜ್ಞೆಗಳು, XP, ಸರಣಿ ಮತ್ತು ಬ್ಯಾಡ್ಜ್‌ಗಳನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ.';
+
+  @override
+  String get privacyProgressCleared => 'ಕಲಿಕೆಯ ಪ್ರಗತಿ ಮರುಹೊಂದಿಸಲಾಗಿದೆ';
+
+  @override
+  String get privacyDataTitle => 'ಯಾವ ಡೇಟಾವನ್ನು ಸಂಸ್ಕರಿಸಲಾಗುತ್ತದೆ';
+
+  @override
+  String get privacyDataCamera =>
+      'ಕ್ಯಾಮೆರಾ: ಕೈ ಸ್ಥಾನಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ. ವೀಡಿಯೊವನ್ನು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಆನ್‌ಲೈನ್ ಮೋಡ್‌ನಲ್ಲಿ ಕೈ ಲ್ಯಾಂಡ್‌ಮಾರ್ಕ್ ಸಂಖ್ಯೆಗಳನ್ನು ಮಾತ್ರ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.';
+
+  @override
+  String get privacyDataMic =>
+      'ಮೈಕ್ರೊಫೋನ್: ನೀವು ಮೈಕ್ ಒತ್ತಿದಾಗ ಅಥವಾ ದುಭಾಷಿ ಕರೆಗೆ ಸೇರಿದಾಗ ಮಾತ್ರ ಬಳಕೆ. ಮಾತು-ಪಠ್ಯ ನಿಮ್ಮ ಸಾಧನದ ಸ್ಪೀಚ್ ಸೇವೆಯನ್ನು ಬಳಸುತ್ತದೆ.';
+
+  @override
+  String get privacyDataAccount =>
+      'ಖಾತೆ: ನಿಮ್ಮ ಹೆಸರು, ಇಮೇಲ್ ಅಥವಾ ಫೋನ್, ಮತ್ತು ಪ್ರೊಫೈಲ್ ಫೋಟೋವನ್ನು ನಮ್ಮ ಪ್ರಮಾಣೀಕರಣ ಮತ್ತು ಡೇಟಾಬೇಸ್ ಪೂರೈಕೆದಾರರ (Firebase) ಬಳಿ ಇಡಲಾಗುತ್ತದೆ.';
+
+  @override
+  String get privacyDataHistory =>
+      'ಇತಿಹಾಸ ಮತ್ತು ಕಲಿಕೆಯ ಪ್ರಗತಿ: ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ.';
+
+  @override
+  String get privacyDataPurchases =>
+      'ಚಂದಾದಾರಿಕೆಗಳು: ಪಾವತಿಗಳನ್ನು Google Play ನಿರ್ವಹಿಸುತ್ತದೆ. ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಪರಿಶೀಲಿಸಲು ನಮಗೆ ಖರೀದಿ ಟೋಕನ್ ಸಿಗುತ್ತದೆ, ಕಾರ್ಡ್ ವಿವರಗಳಲ್ಲ.';
+
+  @override
+  String get privacyDataCalls =>
+      'ದುಭಾಷಿ ಕರೆಗಳು: ಆಡಿಯೊ ಮತ್ತು ವೀಡಿಯೊವನ್ನು ನಮ್ಮ ಕರೆ ಪೂರೈಕೆದಾರರ ಮೂಲಕ ನಿಮ್ಮ ದುಭಾಷಿಗೆ ಸ್ಟ್ರೀಮ್ ಮಾಡಲಾಗುತ್ತದೆ. ನಾವು ಕರೆ ಸಮಯ, ಅವಧಿ ಮತ್ತು ನಿಮ್ಮ ರೇಟಿಂಗ್ ಇಡುತ್ತೇವೆ.';
+
+  @override
+  String get privacyDataAnalytics =>
+      'ಬಳಕೆ ಮತ್ತು ಕ್ರ್ಯಾಶ್ ಡೇಟಾ: ಅನಾಮಧೇಯ ಈವೆಂಟ್‌ಗಳು (\"ಅಭ್ಯಾಸ ಪ್ರಾರಂಭ\" ನಂತಹ) ಮತ್ತು ಕ್ರ್ಯಾಶ್ ವರದಿಗಳು, ನೀವು ಮೇಲೆ ಅನುಮತಿಸಿದರೆ ಮಾತ್ರ.';
+
+  @override
+  String get privacyRequestDeletion => 'ನನ್ನ ಸರ್ವರ್ ಡೇಟಾ ಅಳಿಸಲು ವಿನಂತಿಸಿ';
+
+  @override
+  String get privacyDeletionRequested =>
+      'ಅಳಿಸಲು ವಿನಂತಿಸಲಾಗಿದೆ. ನಿಮ್ಮ ಸರ್ವರ್-ಬದಿಯ ಡೇಟಾ ಅಳಿಸಲಾಗುತ್ತದೆ.';
+
+  @override
+  String get privacyDeleteAccount => 'ಖಾತೆ ಅಳಿಸಿ';
+
+  @override
+  String securitySignedInAs(String who) {
+    return '$who ಆಗಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ';
+  }
+
+  @override
+  String get securityChangePassword => 'ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ';
+
+  @override
+  String get securityPasswordSent =>
+      'ನಿಮ್ಮ ಇಮೇಲ್‌ಗೆ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಕೆ ಲಿಂಕ್ ಕಳುಹಿಸಿದ್ದೇವೆ.';
+
+  @override
+  String get securityGuest =>
+      'ಅತಿಥಿ ಮೋಡ್ ಡೇಟಾವನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಇಡುತ್ತದೆ. ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ಸಿಂಕ್ ಮಾಡಲು ಖಾತೆ ರಚಿಸಿ.';
+
+  @override
+  String get createAccountAction => 'ಖಾತೆ ರಚಿಸಿ';
+
+  @override
+  String get logoutTitle => 'ಸೈನ್ ಔಟ್ ಮಾಡುವುದೇ?';
+
+  @override
+  String get logoutBody => 'ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು.';
+
+  @override
+  String get logoutClearData =>
+      'ಈ ಸಾಧನದಲ್ಲಿ ಇತಿಹಾಸ ಮತ್ತು ಪ್ರಗತಿಯನ್ನೂ ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get deleteTitle => 'ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಿ';
+
+  @override
+  String get deleteBody =>
+      'ಇದು ನಿಮ್ಮ ಖಾತೆ ಮತ್ತು ನಮ್ಮ ಬಳಿ ಇರುವ ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ ಮತ್ತು ಈ ಸಾಧನದ ಡೇಟಾವನ್ನು ತೆರವುಗೊಳಿಸುತ್ತದೆ. ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ. ಖಾತೆ ಅಳಿಸುವುದು Google Play ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸುವುದಿಲ್ಲ; ಮೊದಲು ಅದನ್ನು Google Play ನಲ್ಲಿ ರದ್ದುಮಾಡಿ.';
+
+  @override
+  String get deleteGuestBody =>
+      'ಇದು ಈ ಸಾಧನದಲ್ಲಿ ಸೈನೋವಾಯ್ಸ್ ಸಂಗ್ರಹಿಸಿದ ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸುತ್ತದೆ.';
+
+  @override
+  String get deleteConfirmCheck => 'ಇದು ಶಾಶ್ವತ ಎಂದು ನನಗೆ ಅರ್ಥವಾಗಿದೆ';
+
+  @override
+  String get deleteAction => 'ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ';
+
+  @override
+  String get deleteRecentLogin =>
+      'ನಿಮ್ಮ ಸುರಕ್ಷತೆಗಾಗಿ, ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ, ನಂತರ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಿ.';
+
+  @override
+  String get deleteAndSignOut => 'ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ';
+
+  @override
+  String get helpTitle => 'ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ';
+
+  @override
+  String get faq1q => 'ನನ್ನ ಸಂಜ್ಞೆ ಏಕೆ ಗುರುತಿಸಲಾಗಲಿಲ್ಲ?';
+
+  @override
+  String faq1a(String count) {
+    return 'ಒಳ್ಳೆಯ ಬೆಳಕಿನಲ್ಲಿರಿ, ಪೂರ್ಣ ಕೈಯನ್ನು ಕ್ಯಾಮೆರಾದಲ್ಲಿ ಇರಿಸಿ ಮತ್ತು ಸ್ಥಿರ ವೇಗದಲ್ಲಿ ಸಂಜ್ಞೆ ಮಾಡಿ. ಸಾಧನದ ಮಾದರಿ ಪ್ರಸ್ತುತ $count ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸುತ್ತದೆ.';
+  }
+
+  @override
+  String get faq2q => 'ಸೈನೋವಾಯ್ಸ್ ನನ್ನ ವೀಡಿಯೊವನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡುತ್ತದೆಯೇ?';
+
+  @override
+  String get faq2a =>
+      'ಇಲ್ಲ. ವೀಡಿಯೊವನ್ನು ಕೈ ಸ್ಥಾನಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.';
+
+  @override
+  String get faq3q => 'ಉಚಿತ ಟ್ರಯಲ್ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?';
+
+  @override
+  String get faq3a =>
+      'ಹೊಸ ಖಾತೆಗಳು ಒಂದು ತಿಂಗಳ ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಬಹುದು. ಅದು ಮುಗಿಯುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ರದ್ದುಗೊಳಿಸದಿದ್ದರೆ ತೋರಿಸಿದ ಬೆಲೆಯಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ.';
+
+  @override
+  String get faq4q => 'ನನ್ನ ಚಂದಾದಾರಿಕೆಯನ್ನು ಹೇಗೆ ರದ್ದುಗೊಳಿಸಲಿ?';
+
+  @override
+  String get faq4a =>
+      'Google Play ತೆರೆಯಿರಿ › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು › SignoVoice › ಚಂದಾದಾರಿಕೆ ರದ್ದುಮಾಡಿ.';
+
+  @override
+  String get faq5q => 'ನಾನು ಸೈನೋವಾಯ್ಸ್ ಅನ್ನು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಬಳಸಬಹುದೇ?';
+
+  @override
+  String get faq5a =>
+      'ಹೌದು, ಸಾಧನದ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ, ನಿಘಂಟು ಮತ್ತು ಪಾಠಗಳಿಗೆ. ಲೈವ್ ದುಭಾಷಿಗಳು, ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ ಮತ್ತು ಎಐ ಅನುವಾದಕ್ಕೆ ಇಂಟರ್ನೆಟ್ ಬೇಕು.';
+
+  @override
+  String get faq6q => 'ಕೆಲವು ಸಂಜ್ಞೆಗಳಿಗೆ ವೀಡಿಯೊ ಏಕೆ ಇಲ್ಲ?';
+
+  @override
+  String get faq6a =>
+      'ನಮ್ಮ ಬಳಿ ವೀಡಿಯೊ ಇರುವುದಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಂಜ್ಞೆಗಳನ್ನು ನಿಘಂಟು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ. ವೀಡಿಯೊಗಳನ್ನು ಕಾಲಕ್ರಮೇಣ ಸೇರಿಸಲಾಗುತ್ತದೆ.';
+
+  @override
+  String get helpContact => 'ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ';
+
+  @override
+  String get helpEmailSubject => 'ಸೈನೋವಾಯ್ಸ್ ಬೆಂಬಲ';
+
+  @override
+  String aboutVersion(String build, String version) {
+    return 'ಆವೃತ್ತಿ $version ($build)';
+  }
+
+  @override
+  String get aboutMission =>
+      'ಎಐ-ಚಾಲಿತ ಸಂಜ್ಞಾ ಭಾಷಾ ತಂತ್ರಜ್ಞಾನದಿಂದ ಸಂವಹನದ ಅಡೆತಡೆಗಳನ್ನು ಮುರಿಯುವುದು.';
+
+  @override
+  String aboutModelNote(String count) {
+    return 'ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ ಒಂದು ಸಹಾಯಕ, ಪ್ರಮಾಣೀಕೃತ ದುಭಾಷಿಯಲ್ಲ. ಇದು ಪ್ರಸ್ತುತ $count ಸಂಜ್ಞೆಗಳನ್ನು ತಿಳಿದಿದೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಮಾಡಬಹುದು. ಮುಖ್ಯ ಸಂಭಾಷಣೆಗಳಿಗೆ ಮಾನವ ದುಭಾಷಿಯನ್ನು ಬಳಸಿ.';
+  }
+
+  @override
+  String get aboutLicenses => 'ಓಪನ್-ಸೋರ್ಸ್ ಪರವಾನಗಿಗಳು';
+
+  @override
+  String get legalTitlePrivacy => 'ಗೌಪ್ಯತಾ ನೀತಿ';
+
+  @override
+  String get legalTitleTerms => 'ಸೇವಾ ನಿಯಮಗಳು';
+
+  @override
+  String get legalEnglishOnly => 'ಕಾನೂನು ಪಠ್ಯ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ.';
+
+  @override
+  String get openInBrowser => 'ಆನ್‌ಲೈನ್ ಆವೃತ್ತಿ ತೆರೆಯಿರಿ';
+
+  @override
+  String get settingsNotifications => 'ಅಧಿಸೂಚನೆಗಳು';
 }

@@ -16,6 +16,7 @@ class AppShell extends StatelessWidget {
       (Icons.translate_rounded, Icons.translate_rounded, l.navTranslate),
       (Icons.school_outlined, Icons.school_rounded, l.navLearn),
       (Icons.video_call_outlined, Icons.video_call_rounded, l.navLive),
+      (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),
     ];
     return Scaffold(
       body: shell,

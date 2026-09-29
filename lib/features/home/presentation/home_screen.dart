@@ -11,7 +11,12 @@ import '../../../l10n/app_localizations.dart';
 import '../../../shared/widgets/cards.dart';
 import '../../../shared/widgets/misc_widgets.dart';
 import '../../auth/presentation/auth_controller.dart';
+import '../../history/presentation/history_controller.dart';
+import '../../history/presentation/history_screen.dart';
+import '../../notifications/presentation/notification_providers.dart';
 import '../../profile/presentation/profile_controller.dart';
+import '../../subscription/presentation/subscription_providers.dart';
+import '../../subscription/presentation/widgets/trial_status_card.dart';
 
 String greetingFor(AppLocalizations l, DateTime now) => switch (dayPartOf(now)) {
       DayPart.morning => l.greetingMorning,
@@ -85,24 +90,26 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
-                IconButton(
-                  tooltip: l.notificationsTooltip,
-                  icon: const Icon(Icons.notifications_none_rounded),
-                  onPressed: () => context.push(Routes.notifications),
-                ),
+                Consumer(builder: (context, ref, _) {
+                  final unread = ref.watch(unreadCountProvider);
+                  return IconButton(
+                    tooltip: unread > 0 ? '${l.notificationsTooltip}. ${l.unreadCount('$unread')}' : l.notificationsTooltip,
+                    icon: Badge(
+                      isLabelVisible: unread > 0,
+                      label: Text('$unread'),
+                      child: const Icon(Icons.notifications_none_rounded),
+                    ),
+                    onPressed: () => context.push(Routes.notifications),
+                  );
+                }),
               ],
             ),
             const SizedBox(height: 16),
             _HeroCard(onStart: () => context.push(Routes.signToText)),
             const SizedBox(height: 8),
             SectionHeader(title: l.quickActions),
-            GridView.count(
-              crossAxisCount: wide ? 2 : 1,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: wide ? 1.05 : 2.6,
+            _ActionGrid(
+              columns: wide ? 2 : 1,
               children: [
                 for (final a in actions)
                   FeatureCard(
@@ -110,12 +117,17 @@ class HomeScreen extends ConsumerWidget {
                     title: a.title,
                     subtitle: a.subtitle,
                     accent: a.color,
-                    onTap: () => (a.route == Routes.live || a.route == Routes.learn)
-                        ? context.go(a.route)
-                        : context.push(a.route),
+                    onTap: () => (a.route == Routes.live || a.route == Routes.learn) ? context.go(a.route) : context.push(a.route),
                   ),
               ],
             ),
+            const SizedBox(height: 8),
+            SectionHeader(title: l.todayUsage),
+            _StatusRow(ref: ref),
+            const SizedBox(height: 12),
+            _AiShortcut(ref: ref),
+            SectionHeader(title: l.recentActivity, actionLabel: l.seeAll, onAction: () => context.push(Routes.history)),
+            _RecentActivity(ref: ref),
             SizedBox(height: AppSpacing.md, child: ColoredBox(color: scheme.surface)),
           ],
         ),
@@ -159,5 +171,113 @@ class _HeroCard extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+
+/// Plan status + today's usage.
+class _StatusRow extends StatelessWidget {
+  const _StatusRow({required this.ref});
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    final ent = ref.watch(entitlementProvider);
+    final usage = ref.watch(usageServiceProvider);
+    final limit = ent.dailySignLimit;
+    return Column(children: [
+      TrialStatusCard(entitlement: ent, onTap: () => context.push(Routes.premium)),
+      const SizedBox(height: 8),
+      AppCard(
+        semanticLabel: limit < 0 ? l.usageSigns('${usage.signsToday}') : l.usageSignsOfLimit('${usage.signsToday}', '$limit'),
+        child: Row(children: [
+          const Icon(Icons.bolt_rounded),
+          const SizedBox(width: 10),
+          Expanded(child: Text(limit < 0 ? l.usageSigns('${usage.signsToday}') : l.usageSignsOfLimit('${usage.signsToday}', '$limit'))),
+        ]),
+      ),
+    ]);
+  }
+}
+
+class _AiShortcut extends StatelessWidget {
+  const _AiShortcut({required this.ref});
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    final premium = ref.watch(isPremiumProvider);
+    return AppCard(
+      onTap: () => context.push(premium ? Routes.settingsTranslation : Routes.premium),
+      semanticLabel: '${l.aiShortcutTitle}. ${premium ? l.aiShortcutIncluded : l.aiShortcutPremium}',
+      child: Row(children: [
+        Icon(Icons.auto_awesome_rounded, color: Theme.of(context).colorScheme.primary),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(l.aiShortcutTitle, style: Theme.of(context).textTheme.titleMedium),
+            Text(l.aiShortcutBody, style: Theme.of(context).textTheme.bodySmall),
+          ]),
+        ),
+        Text(premium ? l.aiShortcutIncluded : l.aiShortcutPremium, style: Theme.of(context).textTheme.labelMedium),
+      ]),
+    );
+  }
+}
+
+class _RecentActivity extends StatelessWidget {
+  const _RecentActivity({required this.ref});
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    final items = (ref.watch(visibleHistoryProvider).value ?? const []).take(3).toList();
+    if (items.isEmpty) {
+      return AppCard(child: Row(children: [const Icon(Icons.history_rounded), const SizedBox(width: 10), Expanded(child: Text(l.noRecentActivity))]));
+    }
+    return Column(children: [
+      for (final e in items) ...[
+        AppCard(
+          onTap: () => context.push(Routes.history),
+          semanticLabel: '${historyTypeLabel(l, e.inputType)}. ${e.text}',
+          child: Row(children: [
+            Icon(historyTypeIcon(e.inputType)),
+            const SizedBox(width: 10),
+            Expanded(child: Text(e.text.isEmpty ? e.glosses.join(' ') : e.text, maxLines: 2, overflow: TextOverflow.ellipsis)),
+          ]),
+        ),
+        const SizedBox(height: 8),
+      ],
+    ]);
+  }
+}
+
+
+/// Content-sized grid: rows stretch to the tallest card, so wrapped text or a
+/// larger font never overflows (a fixed aspect ratio would).
+class _ActionGrid extends StatelessWidget {
+  const _ActionGrid({required this.columns, required this.children});
+  final int columns;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    final rows = <Widget>[];
+    for (var i = 0; i < children.length; i += columns) {
+      final slice = children.skip(i).take(columns).toList();
+      rows.add(IntrinsicHeight(
+        child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          for (var j = 0; j < columns; j++) ...[
+            if (j > 0) const SizedBox(width: 12),
+            Expanded(child: j < slice.length ? slice[j] : const SizedBox.shrink()),
+          ],
+        ]),
+      ));
+      if (i + columns < children.length) rows.add(const SizedBox(height: 12));
+    }
+    return Column(children: rows);
   }
 }

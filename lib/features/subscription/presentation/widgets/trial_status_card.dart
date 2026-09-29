@@ -43,8 +43,7 @@ class TrialStatusCard extends StatelessWidget {
       semanticLabel: '${statusLabel(l, status)}. ${lines.join('. ')}',
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
-          StatusBadge(label: statusLabel(l, status), tone: tone, icon: icon),
-          const Spacer(),
+          Expanded(child: Align(alignment: AlignmentDirectional.centerStart, child: StatusBadge(label: statusLabel(l, status), tone: tone, icon: icon))),
           if (onTap != null) const Icon(Icons.chevron_right_rounded),
         ]),
         for (final line in lines) ...[const SizedBox(height: 8), Text(line, style: text.bodyMedium)],

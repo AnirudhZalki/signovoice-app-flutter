@@ -44,7 +44,7 @@ class SubscriptionCard extends StatelessWidget {
                 Text(l.planPerPeriod(price, period), style: Theme.of(context).textTheme.bodyMedium),
               ]),
             ),
-            if (product.hasFreeTrial) StatusBadge(label: l.planFirstFree, tone: StatusTone.success, icon: Icons.card_giftcard_rounded),
+            if (product.hasFreeTrial) Flexible(child: StatusBadge(label: l.planFirstFree, tone: StatusTone.success, icon: Icons.card_giftcard_rounded)),
           ]),
         ),
       ),

@@ -57,7 +57,7 @@ class UserRepositoryImpl implements UserRepository {
         'preferredLanguage': p.preferredLanguage,
         'preferredMode': p.preferredMode.name,
         'accessibilityNeeds': p.accessibilityNeeds.map((e) => e.name).toList(),
-        'createdAt': FieldValue.serverTimestamp(),
+        // createdAt is owned by the backend; the client never writes it.
       }, SetOptions(merge: true));
     } catch (e) {
       throw toFailure(e);

@@ -18,6 +18,7 @@ class Routes {
   static const learn = '/learn';
   static const live = '/live';
   static const profile = '/profile';
+  static const profileEdit = '/profile/edit';
 
   // Translate
   static const signToText = '/translate/sign-to-text';
@@ -57,6 +58,7 @@ class Routes {
   static const settingsNotifications = '/settings/notifications';
   static const settingsPrivacy = '/settings/privacy';
   static const settingsLanguage = '/settings/language';
+  static const settingsSecurity = '/settings/security';
   static const help = '/help';
   static const about = '/about';
   static const legalPrivacy = '/legal/privacy';

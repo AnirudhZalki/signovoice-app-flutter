@@ -175,7 +175,7 @@ class _InterpreterCard extends StatelessWidget {
               ),
             ]),
           ),
-          StatusBadge(label: interpreterStatusLabel(l, interpreter.status), tone: tone, icon: icon),
+          Flexible(child: StatusBadge(label: interpreterStatusLabel(l, interpreter.status), tone: tone, icon: icon)),
         ]),
         if (interpreter.languages.isNotEmpty) ...[
           const SizedBox(height: 8),

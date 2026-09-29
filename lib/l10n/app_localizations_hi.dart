@@ -528,6 +528,30 @@ class AppLocalizationsHi extends AppLocalizations {
   String get practiceTitle => 'अभ्यास';
 
   @override
+  String get recentActivity => 'हाल की गतिविधि';
+
+  @override
+  String get seeAll => 'सभी देखें';
+
+  @override
+  String get noRecentActivity => 'आपके सहेजे गए अनुवाद यहाँ दिखेंगे।';
+
+  @override
+  String get todayUsage => 'आज';
+
+  @override
+  String get aiShortcutTitle => 'उन्नत एआई अनुवाद';
+
+  @override
+  String get aiShortcutBody => 'ऑनलाइन एआई सेवा से अधिक सहज वाक्य।';
+
+  @override
+  String get aiShortcutIncluded => 'आपकी योजना में शामिल';
+
+  @override
+  String get aiShortcutPremium => 'प्रीमियम सुविधा';
+
+  @override
   String get signStatusReady => 'ऑन-डिवाइस मॉडल तैयार';
 
   @override
@@ -1504,4 +1528,439 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'सभी लाभ देखें';
+
+  @override
+  String get notifLearnTitle => 'अभ्यास का समय';
+
+  @override
+  String get notifLearnBody =>
+      'दिन में कुछ साइन उन्हें ताज़ा रखते हैं। आज सीखने के लिए साइनोवॉइस खोलें।';
+
+  @override
+  String get notifStreakTitle => 'अपनी लगातार गतिविधि जारी रखें';
+
+  @override
+  String get notifStreakBody =>
+      'थोड़ा अभ्यास आपकी लगातार गतिविधि बनाए रखता है।';
+
+  @override
+  String get notifTrialTitle => 'आपका निःशुल्क ट्रायल समाप्त होने वाला है';
+
+  @override
+  String notifTrialBody(String date, String days) {
+    return 'आपका निःशुल्क ट्रायल $days दिन में, $date को समाप्त होगा। जारी नहीं रखना चाहते तो Google Play में रद्द करें।';
+  }
+
+  @override
+  String get notifRenewalTitle => 'प्रीमियम जल्द नवीनीकृत होगा';
+
+  @override
+  String notifRenewalBody(String date) {
+    return 'आपकी प्रीमियम सदस्यता $date को नवीनीकृत होगी। आप इसे कभी भी Google Play में प्रबंधित कर सकते हैं।';
+  }
+
+  @override
+  String get notificationsTitle => 'सूचनाएं';
+
+  @override
+  String get notificationsEmpty => 'आप पूरी तरह अपडेट हैं।';
+
+  @override
+  String get notificationsEmptyBody =>
+      'अनुस्मारक, सदस्यता अपडेट और दुभाषिया संदेश यहाँ दिखेंगे।';
+
+  @override
+  String get markAllRead => 'सभी को पढ़ा हुआ चिह्नित करें';
+
+  @override
+  String get notificationNew => 'नया';
+
+  @override
+  String unreadCount(String count) {
+    return '$count अपठित सूचनाएं';
+  }
+
+  @override
+  String get notifSettingsTitle => 'सूचना सेटिंग्स';
+
+  @override
+  String get notifPermissionOff =>
+      'इस डिवाइस पर साइनोवॉइस के लिए सूचनाएं बंद हैं।';
+
+  @override
+  String get notifPermissionAsk => 'सूचनाओं की अनुमति दें';
+
+  @override
+  String get notifLearning => 'सीखने के अनुस्मारक';
+
+  @override
+  String get notifStreakSetting => 'अभ्यास की लगातार गतिविधि';
+
+  @override
+  String get notifTrialSetting => 'निःशुल्क ट्रायल अनुस्मारक';
+
+  @override
+  String get notifRenewalSetting => 'नवीनीकरण की जानकारी';
+
+  @override
+  String get notifInterpreterSetting => 'दुभाषिया अनुरोध अपडेट';
+
+  @override
+  String get notifSystemSetting => 'सिस्टम सूचनाएं';
+
+  @override
+  String get reminderTime => 'अनुस्मारक का समय';
+
+  @override
+  String get guestName => 'अतिथि';
+
+  @override
+  String get editProfile => 'प्रोफ़ाइल संपादित करें';
+
+  @override
+  String get usageTitle => 'उपयोग';
+
+  @override
+  String usageSigns(String count) {
+    return 'आज पहचाने गए साइन: $count';
+  }
+
+  @override
+  String usageSignsOfLimit(String count, String limit) {
+    return 'आज पहचाने गए साइन: $limit में से $count';
+  }
+
+  @override
+  String usageHistory(String count) {
+    return 'सहेजे गए अनुवाद: $count';
+  }
+
+  @override
+  String usageLearned(String count) {
+    return 'सीखे गए साइन: $count';
+  }
+
+  @override
+  String get sectionAccount => 'खाता';
+
+  @override
+  String get sectionPreferences => 'प्राथमिकताएं';
+
+  @override
+  String get sectionSupport => 'सहायता';
+
+  @override
+  String get settingsTitle => 'सेटिंग्स';
+
+  @override
+  String get settingsLanguage => 'भाषा';
+
+  @override
+  String get settingsTheme => 'थीम';
+
+  @override
+  String get themeSystem => 'डिवाइस के अनुसार';
+
+  @override
+  String get themeLight => 'हल्की';
+
+  @override
+  String get themeDark => 'गहरी';
+
+  @override
+  String get settingsAccessibility => 'पहुँच-योग्यता';
+
+  @override
+  String get settingsVoice => 'आवाज़';
+
+  @override
+  String get settingsTranslation => 'अनुवाद';
+
+  @override
+  String get settingsPrivacy => 'गोपनीयता और डेटा';
+
+  @override
+  String get settingsSubscription => 'सदस्यता';
+
+  @override
+  String get settingsAbout => 'साइनोवॉइस के बारे में';
+
+  @override
+  String get settingsHelp => 'सहायता और समर्थन';
+
+  @override
+  String get settingsSecurity => 'सुरक्षा';
+
+  @override
+  String get accTextSize => 'टेक्स्ट का आकार';
+
+  @override
+  String get accTextSizePreview => 'नमस्ते! टेक्स्ट ऐसा दिखेगा।';
+
+  @override
+  String get accHighContrast => 'उच्च कंट्रास्ट';
+
+  @override
+  String get accHighContrastDesc => 'अधिक स्पष्ट किनारे और टेक्स्ट रंग।';
+
+  @override
+  String get accReduceMotion => 'गति कम करें';
+
+  @override
+  String get accReduceMotionDesc =>
+      'स्कैनिंग स्वीप, पल्स और पेज ट्रांज़िशन बंद करता है।';
+
+  @override
+  String get accHaptics => 'हैप्टिक फ़ीडबैक';
+
+  @override
+  String get accHapticsDesc => 'साइन पहचाने जाने पर छोटा कंपन।';
+
+  @override
+  String get accVoiceFeedback => 'बोला गया फ़ीडबैक';
+
+  @override
+  String get accVoiceFeedbackDesc => 'अभ्यास के परिणाम बोलकर बताएं।';
+
+  @override
+  String get transMode => 'पहचान मोड';
+
+  @override
+  String get transOnDevice => 'इसी डिवाइस पर';
+
+  @override
+  String get transOnDeviceDesc => 'निजी और ऑफ़लाइन काम करता है।';
+
+  @override
+  String get transOnline => 'ऑनलाइन (सर्वर)';
+
+  @override
+  String get transOnlineDesc =>
+      'हाथ के लैंडमार्क अंक भेजता है, वीडियो कभी नहीं। इंटरनेट और कॉन्फ़िगर किया सर्वर चाहिए।';
+
+  @override
+  String get transOnlineUnavailable =>
+      'इस बिल्ड में ऑनलाइन पहचान सेट अप नहीं है।';
+
+  @override
+  String get transConfidence => 'विश्वसनीयता सीमा';
+
+  @override
+  String get transConfidenceDesc => 'अधिक का मतलब कम लेकिन अधिक भरोसेमंद साइन।';
+
+  @override
+  String get transAutoSpeak => 'साइन अपने आप बोलें';
+
+  @override
+  String get transMirror => 'हाथ का इनपुट मिरर करें';
+
+  @override
+  String get transMirrorDesc =>
+      'प्रशिक्षण डेटा से मेल खाता है। केवल तब बंद करें जब बायाँ-दायाँ उलटा लगे।';
+
+  @override
+  String transModelNote(String count) {
+    return 'ऑन-डिवाइस मॉडल अभी $count साइन पहचानता है और गलतियाँ कर सकता है।';
+  }
+
+  @override
+  String get privacyAnalytics => 'अनाम उपयोग और क्रैश डेटा साझा करें';
+
+  @override
+  String get privacyAnalyticsDesc =>
+      'समस्याएं ठीक करने में मदद करता है। इसमें वीडियो, साइन या अनुवाद कभी शामिल नहीं होते।';
+
+  @override
+  String get privacySaveHistory => 'इस डिवाइस पर अनुवाद इतिहास सहेजें';
+
+  @override
+  String get privacyClearHistory => 'अनुवाद इतिहास साफ़ करें';
+
+  @override
+  String get privacyClearProgress => 'सीखने की प्रगति रीसेट करें';
+
+  @override
+  String get privacyClearProgressBody =>
+      'यह इस डिवाइस से सीखे गए साइन, सहेजे गए साइन, XP, लगातार गतिविधि और बैज हटा देगा।';
+
+  @override
+  String get privacyProgressCleared => 'सीखने की प्रगति रीसेट हुई';
+
+  @override
+  String get privacyDataTitle => 'कौन सा डेटा संसाधित होता है';
+
+  @override
+  String get privacyDataCamera =>
+      'कैमरा: हाथ की स्थिति खोजने के लिए आपके डिवाइस पर विश्लेषित। वीडियो कभी रिकॉर्ड या अपलोड नहीं होता। ऑनलाइन मोड में केवल हाथ के लैंडमार्क अंक भेजे जाते हैं।';
+
+  @override
+  String get privacyDataMic =>
+      'माइक्रोफ़ोन: केवल तब जब आप माइक दबाएं या दुभाषिया कॉल में जुड़ें। बोली-से-टेक्स्ट आपके डिवाइस की स्पीच सेवा उपयोग करता है।';
+
+  @override
+  String get privacyDataAccount =>
+      'खाता: आपका नाम, ईमेल या फ़ोन, और प्रोफ़ाइल फ़ोटो हमारे प्रमाणीकरण और डेटाबेस प्रदाता (Firebase) के पास रखे जाते हैं।';
+
+  @override
+  String get privacyDataHistory =>
+      'इतिहास और सीखने की प्रगति: केवल इसी डिवाइस पर संग्रहीत।';
+
+  @override
+  String get privacyDataPurchases =>
+      'सदस्यताएं: भुगतान Google Play संभालता है। हमें आपका प्लान सत्यापित करने के लिए खरीद टोकन मिलता है, कार्ड विवरण नहीं।';
+
+  @override
+  String get privacyDataCalls =>
+      'दुभाषिया कॉल: ऑडियो और वीडियो हमारे कॉल प्रदाता के माध्यम से आपके दुभाषिये तक स्ट्रीम होते हैं। हम कॉल का समय, अवधि और आपकी रेटिंग रखते हैं।';
+
+  @override
+  String get privacyDataAnalytics =>
+      'उपयोग और क्रैश डेटा: अनाम इवेंट (जैसे \"अभ्यास शुरू\") और क्रैश रिपोर्ट, केवल यदि आप ऊपर अनुमति दें।';
+
+  @override
+  String get privacyRequestDeletion =>
+      'मेरे सर्वर डेटा को हटाने का अनुरोध करें';
+
+  @override
+  String get privacyDeletionRequested =>
+      'हटाने का अनुरोध किया गया। आपका सर्वर-साइड डेटा मिटाया जाएगा।';
+
+  @override
+  String get privacyDeleteAccount => 'खाता हटाएं';
+
+  @override
+  String securitySignedInAs(String who) {
+    return '$who के रूप में साइन इन';
+  }
+
+  @override
+  String get securityChangePassword => 'पासवर्ड बदलें';
+
+  @override
+  String get securityPasswordSent =>
+      'हमने आपके ईमेल पर पासवर्ड रीसेट लिंक भेजा है।';
+
+  @override
+  String get securityGuest =>
+      'अतिथि मोड डेटा केवल इसी डिवाइस पर रखता है। अपना प्लान सुरक्षित और सिंक करने के लिए खाता बनाएं।';
+
+  @override
+  String get createAccountAction => 'खाता बनाएं';
+
+  @override
+  String get logoutTitle => 'साइन आउट करें?';
+
+  @override
+  String get logoutBody => 'आप कभी भी फिर से साइन इन कर सकते हैं।';
+
+  @override
+  String get logoutClearData => 'इस डिवाइस पर इतिहास और प्रगति भी साफ़ करें';
+
+  @override
+  String get deleteTitle => 'अपना खाता हटाएं';
+
+  @override
+  String get deleteBody =>
+      'यह आपका खाता और हमारे पास आपका डेटा स्थायी रूप से हटा देगा, और इस डिवाइस का डेटा साफ़ करेगा। इसे पूर्ववत नहीं किया जा सकता। खाता हटाने से Google Play सदस्यता रद्द नहीं होती; पहले उसे Google Play में रद्द करें।';
+
+  @override
+  String get deleteGuestBody =>
+      'यह इस डिवाइस पर साइनोवॉइस द्वारा संग्रहीत सब कुछ साफ़ कर देगा।';
+
+  @override
+  String get deleteConfirmCheck => 'मैं समझता/समझती हूँ कि यह स्थायी है';
+
+  @override
+  String get deleteAction => 'स्थायी रूप से हटाएं';
+
+  @override
+  String get deleteRecentLogin =>
+      'आपकी सुरक्षा के लिए, फिर से साइन इन करें, फिर अपना खाता हटाएं।';
+
+  @override
+  String get deleteAndSignOut => 'साइन आउट करें और फिर साइन इन करें';
+
+  @override
+  String get helpTitle => 'सहायता और समर्थन';
+
+  @override
+  String get faq1q => 'मेरा साइन क्यों नहीं पहचाना गया?';
+
+  @override
+  String faq1a(String count) {
+    return 'अच्छी रोशनी में रहें, पूरा हाथ कैमरे में रखें और स्थिर गति से साइन करें। ऑन-डिवाइस मॉडल अभी $count साइन पहचानता है।';
+  }
+
+  @override
+  String get faq2q => 'क्या साइनोवॉइस मेरा वीडियो रिकॉर्ड करता है?';
+
+  @override
+  String get faq2a =>
+      'नहीं। वीडियो हाथ की स्थिति खोजने के लिए आपके डिवाइस पर विश्लेषित होता है और कभी रिकॉर्ड या अपलोड नहीं होता।';
+
+  @override
+  String get faq3q => 'निःशुल्क ट्रायल कैसे काम करता है?';
+
+  @override
+  String get faq3a =>
+      'नए खाते एक महीने का निःशुल्क ट्रायल शुरू कर सकते हैं। जब तक आप समाप्त होने से पहले Google Play में रद्द न करें, यह दिखाई गई कीमत पर अपने आप नवीनीकृत होता है।';
+
+  @override
+  String get faq4q => 'मैं अपनी सदस्यता कैसे रद्द करूँ?';
+
+  @override
+  String get faq4a =>
+      'Google Play खोलें › भुगतान और सदस्यताएं › सदस्यताएं › SignoVoice › सदस्यता रद्द करें।';
+
+  @override
+  String get faq5q => 'क्या मैं साइनोवॉइस ऑफ़लाइन उपयोग कर सकता/सकती हूँ?';
+
+  @override
+  String get faq5a =>
+      'हाँ, ऑन-डिवाइस साइन पहचान, शब्दकोश और पाठों के लिए। लाइव दुभाषिये, ऑनलाइन पहचान और एआई अनुवाद के लिए इंटरनेट चाहिए।';
+
+  @override
+  String get faq6q => 'कुछ साइन के वीडियो क्यों नहीं हैं?';
+
+  @override
+  String get faq6a =>
+      'शब्दकोश में उन साइन से अधिक हैं जिनके वीडियो हमारे पास हैं। वीडियो समय के साथ जोड़े जाते हैं।';
+
+  @override
+  String get helpContact => 'सहायता से संपर्क करें';
+
+  @override
+  String get helpEmailSubject => 'साइनोवॉइस सहायता';
+
+  @override
+  String aboutVersion(String build, String version) {
+    return 'संस्करण $version ($build)';
+  }
+
+  @override
+  String get aboutMission =>
+      'एआई-संचालित साइन-भाषा तकनीक से संवाद की बाधाएं तोड़ना।';
+
+  @override
+  String aboutModelNote(String count) {
+    return 'साइन पहचान एक सहायक है, प्रमाणित दुभाषिया नहीं। यह अभी $count साइन जानता है और गलतियाँ कर सकता है। महत्वपूर्ण बातचीत के लिए मानव दुभाषिये का उपयोग करें।';
+  }
+
+  @override
+  String get aboutLicenses => 'ओपन-सोर्स लाइसेंस';
+
+  @override
+  String get legalTitlePrivacy => 'गोपनीयता नीति';
+
+  @override
+  String get legalTitleTerms => 'सेवा की शर्तें';
+
+  @override
+  String get legalEnglishOnly => 'कानूनी पाठ अंग्रेज़ी में उपलब्ध है।';
+
+  @override
+  String get openInBrowser => 'ऑनलाइन संस्करण खोलें';
+
+  @override
+  String get settingsNotifications => 'सूचनाएं';
 }

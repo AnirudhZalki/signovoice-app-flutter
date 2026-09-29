@@ -1060,6 +1060,54 @@ abstract class AppLocalizations {
   /// **'Practice'**
   String get practiceTitle;
 
+  /// No description provided for @recentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity'**
+  String get recentActivity;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAll;
+
+  /// No description provided for @noRecentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Your saved translations will appear here.'**
+  String get noRecentActivity;
+
+  /// No description provided for @todayUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get todayUsage;
+
+  /// No description provided for @aiShortcutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced AI translation'**
+  String get aiShortcutTitle;
+
+  /// No description provided for @aiShortcutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Smoother sentences from an online AI service.'**
+  String get aiShortcutBody;
+
+  /// No description provided for @aiShortcutIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included with your plan'**
+  String get aiShortcutIncluded;
+
+  /// No description provided for @aiShortcutPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium feature'**
+  String get aiShortcutPremium;
+
   /// No description provided for @signStatusReady.
   ///
   /// In en, this message translates to:
@@ -2787,6 +2835,768 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See all benefits'**
   String get seeAllBenefits;
+
+  /// No description provided for @notifLearnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time to practise'**
+  String get notifLearnTitle;
+
+  /// No description provided for @notifLearnBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A few signs a day keeps them fresh. Open SignoVoice to learn today.'**
+  String get notifLearnBody;
+
+  /// No description provided for @notifStreakTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your streak going'**
+  String get notifStreakTitle;
+
+  /// No description provided for @notifStreakBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A quick practice keeps your streak alive.'**
+  String get notifStreakBody;
+
+  /// No description provided for @notifTrialTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your free trial is ending'**
+  String get notifTrialTitle;
+
+  /// No description provided for @notifTrialBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your free trial ends in {days} day(s), on {date}. Cancel in Google Play if you don\'t want to continue.'**
+  String notifTrialBody(String date, String days);
+
+  /// No description provided for @notifRenewalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium renews soon'**
+  String get notifRenewalTitle;
+
+  /// No description provided for @notifRenewalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Premium subscription renews on {date}. You can manage it in Google Play any time.'**
+  String notifRenewalBody(String date);
+
+  /// No description provided for @notificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationsTitle;
+
+  /// No description provided for @notificationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re all caught up.'**
+  String get notificationsEmpty;
+
+  /// No description provided for @notificationsEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders, subscription updates and interpreter messages will appear here.'**
+  String get notificationsEmptyBody;
+
+  /// No description provided for @markAllRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get markAllRead;
+
+  /// No description provided for @notificationNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get notificationNew;
+
+  /// No description provided for @unreadCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread notifications'**
+  String unreadCount(String count);
+
+  /// No description provided for @notifSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings'**
+  String get notifSettingsTitle;
+
+  /// No description provided for @notifPermissionOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are turned off for SignoVoice on this device.'**
+  String get notifPermissionOff;
+
+  /// No description provided for @notifPermissionAsk.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow notifications'**
+  String get notifPermissionAsk;
+
+  /// No description provided for @notifLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning reminders'**
+  String get notifLearning;
+
+  /// No description provided for @notifStreakSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice streak'**
+  String get notifStreakSetting;
+
+  /// No description provided for @notifTrialSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Free trial reminders'**
+  String get notifTrialSetting;
+
+  /// No description provided for @notifRenewalSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Renewal information'**
+  String get notifRenewalSetting;
+
+  /// No description provided for @notifInterpreterSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter request updates'**
+  String get notifInterpreterSetting;
+
+  /// No description provided for @notifSystemSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'System notifications'**
+  String get notifSystemSetting;
+
+  /// No description provided for @reminderTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get reminderTime;
+
+  /// No description provided for @guestName.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest'**
+  String get guestName;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get editProfile;
+
+  /// No description provided for @usageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Usage'**
+  String get usageTitle;
+
+  /// No description provided for @usageSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs recognised today: {count}'**
+  String usageSigns(String count);
+
+  /// No description provided for @usageSignsOfLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs recognised today: {count} of {limit}'**
+  String usageSignsOfLimit(String count, String limit);
+
+  /// No description provided for @usageHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved translations: {count}'**
+  String usageHistory(String count);
+
+  /// No description provided for @usageLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs learned: {count}'**
+  String usageLearned(String count);
+
+  /// No description provided for @sectionAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get sectionAccount;
+
+  /// No description provided for @sectionPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get sectionPreferences;
+
+  /// No description provided for @sectionSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get sectionSupport;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguage;
+
+  /// No description provided for @settingsTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsTheme;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Match device'**
+  String get themeSystem;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @settingsAccessibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility'**
+  String get settingsAccessibility;
+
+  /// No description provided for @settingsVoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice'**
+  String get settingsVoice;
+
+  /// No description provided for @settingsTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Translation'**
+  String get settingsTranslation;
+
+  /// No description provided for @settingsPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & data'**
+  String get settingsPrivacy;
+
+  /// No description provided for @settingsSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription'**
+  String get settingsSubscription;
+
+  /// No description provided for @settingsAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About SignoVoice'**
+  String get settingsAbout;
+
+  /// No description provided for @settingsHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & support'**
+  String get settingsHelp;
+
+  /// No description provided for @settingsSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get settingsSecurity;
+
+  /// No description provided for @accTextSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Text size'**
+  String get accTextSize;
+
+  /// No description provided for @accTextSizePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! This is how text will look.'**
+  String get accTextSizePreview;
+
+  /// No description provided for @accHighContrast.
+  ///
+  /// In en, this message translates to:
+  /// **'High contrast'**
+  String get accHighContrast;
+
+  /// No description provided for @accHighContrastDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Stronger borders and text colours.'**
+  String get accHighContrastDesc;
+
+  /// No description provided for @accReduceMotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce motion'**
+  String get accReduceMotion;
+
+  /// No description provided for @accReduceMotionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Turns off scanning sweeps, pulses and page transitions.'**
+  String get accReduceMotionDesc;
+
+  /// No description provided for @accHaptics.
+  ///
+  /// In en, this message translates to:
+  /// **'Haptic feedback'**
+  String get accHaptics;
+
+  /// No description provided for @accHapticsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Short vibrations when a sign is recognised.'**
+  String get accHapticsDesc;
+
+  /// No description provided for @accVoiceFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Spoken feedback'**
+  String get accVoiceFeedback;
+
+  /// No description provided for @accVoiceFeedbackDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak practice results aloud.'**
+  String get accVoiceFeedbackDesc;
+
+  /// No description provided for @transMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognition mode'**
+  String get transMode;
+
+  /// No description provided for @transOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'On this device'**
+  String get transOnDevice;
+
+  /// No description provided for @transOnDeviceDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Private and works offline.'**
+  String get transOnDeviceDesc;
+
+  /// No description provided for @transOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Online (server)'**
+  String get transOnline;
+
+  /// No description provided for @transOnlineDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends hand-landmark numbers, never video. Needs internet and a configured server.'**
+  String get transOnlineDesc;
+
+  /// No description provided for @transOnlineUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Online recognition isn\'t set up in this build.'**
+  String get transOnlineUnavailable;
+
+  /// No description provided for @transConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence threshold'**
+  String get transConfidence;
+
+  /// No description provided for @transConfidenceDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher means fewer but more reliable signs.'**
+  String get transConfidenceDesc;
+
+  /// No description provided for @transAutoSpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak signs automatically'**
+  String get transAutoSpeak;
+
+  /// No description provided for @transMirror.
+  ///
+  /// In en, this message translates to:
+  /// **'Mirror hand input'**
+  String get transMirror;
+
+  /// No description provided for @transMirrorDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Matches the training data. Turn off only if left and right seem swapped.'**
+  String get transMirrorDesc;
+
+  /// No description provided for @transModelNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The on-device model currently recognises {count} signs and can make mistakes.'**
+  String transModelNote(String count);
+
+  /// No description provided for @privacyAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Share anonymous usage and crash data'**
+  String get privacyAnalytics;
+
+  /// No description provided for @privacyAnalyticsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Helps us fix problems. Never includes video, signs or translations.'**
+  String get privacyAnalyticsDesc;
+
+  /// No description provided for @privacySaveHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Save translation history on this device'**
+  String get privacySaveHistory;
+
+  /// No description provided for @privacyClearHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear translation history'**
+  String get privacyClearHistory;
+
+  /// No description provided for @privacyClearProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset learning progress'**
+  String get privacyClearProgress;
+
+  /// No description provided for @privacyClearProgressBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This removes learned signs, saved signs, XP, streak and badges from this device.'**
+  String get privacyClearProgressBody;
+
+  /// No description provided for @privacyProgressCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning progress reset'**
+  String get privacyProgressCleared;
+
+  /// No description provided for @privacyDataTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What data is processed'**
+  String get privacyDataTitle;
+
+  /// No description provided for @privacyDataCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera: analysed on your device to find hand positions. Video is never recorded or uploaded. In online mode only hand-landmark numbers are sent.'**
+  String get privacyDataCamera;
+
+  /// No description provided for @privacyDataMic.
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone: used only when you tap the mic or join an interpreter call. Speech-to-text uses your device\'s speech service.'**
+  String get privacyDataMic;
+
+  /// No description provided for @privacyDataAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Account: your name, email or phone, and profile photo are stored with our authentication and database provider (Firebase).'**
+  String get privacyDataAccount;
+
+  /// No description provided for @privacyDataHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History and learning progress: stored only on this device.'**
+  String get privacyDataHistory;
+
+  /// No description provided for @privacyDataPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions: payments are handled by Google Play. We receive a purchase token to verify your plan, not your card details.'**
+  String get privacyDataPurchases;
+
+  /// No description provided for @privacyDataCalls.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter calls: audio and video are streamed to your interpreter through our call provider. We store call time, duration and your rating.'**
+  String get privacyDataCalls;
+
+  /// No description provided for @privacyDataAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Usage and crash data: anonymous events (like \"practice started\") and crash reports, only if you allow it above.'**
+  String get privacyDataAnalytics;
+
+  /// No description provided for @privacyRequestDeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Request deletion of my server data'**
+  String get privacyRequestDeletion;
+
+  /// No description provided for @privacyDeletionRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Deletion requested. Your server-side data will be erased.'**
+  String get privacyDeletionRequested;
+
+  /// No description provided for @privacyDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get privacyDeleteAccount;
+
+  /// No description provided for @securitySignedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {who}'**
+  String securitySignedInAs(String who);
+
+  /// No description provided for @securityChangePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change password'**
+  String get securityChangePassword;
+
+  /// No description provided for @securityPasswordSent.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a password reset link to your email.'**
+  String get securityPasswordSent;
+
+  /// No description provided for @securityGuest.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest mode keeps data on this device only. Create an account to secure and sync your plan.'**
+  String get securityGuest;
+
+  /// No description provided for @createAccountAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get createAccountAction;
+
+  /// No description provided for @logoutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out?'**
+  String get logoutTitle;
+
+  /// No description provided for @logoutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You can sign back in any time.'**
+  String get logoutBody;
+
+  /// No description provided for @logoutClearData.
+  ///
+  /// In en, this message translates to:
+  /// **'Also clear history and progress on this device'**
+  String get logoutClearData;
+
+  /// No description provided for @deleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account'**
+  String get deleteTitle;
+
+  /// No description provided for @deleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes your account and the data we hold about you, and clears data on this device. This cannot be undone. Deleting your account does not cancel a Google Play subscription; cancel it in Google Play first.'**
+  String get deleteBody;
+
+  /// No description provided for @deleteGuestBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This clears everything SignoVoice stored on this device.'**
+  String get deleteGuestBody;
+
+  /// No description provided for @deleteConfirmCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'I understand this is permanent'**
+  String get deleteConfirmCheck;
+
+  /// No description provided for @deleteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete permanently'**
+  String get deleteAction;
+
+  /// No description provided for @deleteRecentLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'For your security, sign in again, then delete your account.'**
+  String get deleteRecentLogin;
+
+  /// No description provided for @deleteAndSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out and sign in again'**
+  String get deleteAndSignOut;
+
+  /// No description provided for @helpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & support'**
+  String get helpTitle;
+
+  /// No description provided for @faq1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Why isn\'t my sign recognised?'**
+  String get faq1q;
+
+  /// No description provided for @faq1a.
+  ///
+  /// In en, this message translates to:
+  /// **'Use good light, keep your whole hand in view and sign at a steady pace. The on-device model currently recognises {count} signs.'**
+  String faq1a(String count);
+
+  /// No description provided for @faq2q.
+  ///
+  /// In en, this message translates to:
+  /// **'Does SignoVoice record my video?'**
+  String get faq2q;
+
+  /// No description provided for @faq2a.
+  ///
+  /// In en, this message translates to:
+  /// **'No. Video is analysed on your device to find hand positions and is never recorded or uploaded.'**
+  String get faq2a;
+
+  /// No description provided for @faq3q.
+  ///
+  /// In en, this message translates to:
+  /// **'How does the free trial work?'**
+  String get faq3q;
+
+  /// No description provided for @faq3a.
+  ///
+  /// In en, this message translates to:
+  /// **'New accounts can start a one-month free trial. It renews automatically at the price shown unless you cancel in Google Play before it ends.'**
+  String get faq3a;
+
+  /// No description provided for @faq4q.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I cancel my subscription?'**
+  String get faq4q;
+
+  /// No description provided for @faq4a.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Google Play › Payments & subscriptions › Subscriptions › SignoVoice › Cancel subscription.'**
+  String get faq4a;
+
+  /// No description provided for @faq5q.
+  ///
+  /// In en, this message translates to:
+  /// **'Can I use SignoVoice offline?'**
+  String get faq5q;
+
+  /// No description provided for @faq5a.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes for on-device sign recognition, the dictionary and lessons. Live interpreters, online recognition and AI translation need internet.'**
+  String get faq5a;
+
+  /// No description provided for @faq6q.
+  ///
+  /// In en, this message translates to:
+  /// **'Why do some signs have no video?'**
+  String get faq6q;
+
+  /// No description provided for @faq6a.
+  ///
+  /// In en, this message translates to:
+  /// **'The dictionary lists more signs than we have videos for. Videos are added over time.'**
+  String get faq6a;
+
+  /// No description provided for @helpContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support'**
+  String get helpContact;
+
+  /// No description provided for @helpEmailSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'SignoVoice support'**
+  String get helpEmailSubject;
+
+  /// No description provided for @aboutVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version} ({build})'**
+  String aboutVersion(String build, String version);
+
+  /// No description provided for @aboutMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Breaking communication barriers with AI-powered sign-language technology.'**
+  String get aboutMission;
+
+  /// No description provided for @aboutModelNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign recognition is an aid, not a certified interpreter. It currently knows {count} signs and can make mistakes. For important conversations, use a human interpreter.'**
+  String aboutModelNote(String count);
+
+  /// No description provided for @aboutLicenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source licenses'**
+  String get aboutLicenses;
+
+  /// No description provided for @legalTitlePrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get legalTitlePrivacy;
+
+  /// No description provided for @legalTitleTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get legalTitleTerms;
+
+  /// No description provided for @legalEnglishOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'The legal text is provided in English.'**
+  String get legalEnglishOnly;
+
+  /// No description provided for @openInBrowser.
+  ///
+  /// In en, this message translates to:
+  /// **'Open online version'**
+  String get openInBrowser;
+
+  /// No description provided for @settingsNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get settingsNotifications;
 }
 
 class _AppLocalizationsDelegate

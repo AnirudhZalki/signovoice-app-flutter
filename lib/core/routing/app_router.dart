@@ -17,6 +17,20 @@ import '../../features/learning/presentation/category_screen.dart';
 import '../../features/learning/presentation/learn_screen.dart';
 import '../../features/learning/presentation/lesson_screen.dart';
 import '../../features/learning/presentation/progress_screen.dart';
+import '../../features/notifications/presentation/notifications_screen.dart';
+import '../../features/profile/presentation/info/about_screen.dart';
+import '../../features/profile/presentation/info/help_screen.dart';
+import '../../features/profile/presentation/legal/legal_screen.dart';
+import '../../features/profile/presentation/profile_screen.dart';
+import '../../features/profile/presentation/settings/accessibility_screen.dart';
+import '../../features/profile/presentation/settings/delete_account_screen.dart';
+import '../../features/profile/presentation/settings/language_screen.dart';
+import '../../features/profile/presentation/settings/notification_settings_screen.dart';
+import '../../features/profile/presentation/settings/privacy_screen.dart';
+import '../../features/profile/presentation/settings/security_screen.dart';
+import '../../features/profile/presentation/settings/settings_hub_screen.dart';
+import '../../features/profile/presentation/settings/translation_settings_screen.dart';
+import '../../features/profile/presentation/settings/voice_settings_screen.dart';
 import '../../features/practice/presentation/practice_hub_screen.dart';
 import '../../features/practice/presentation/practice_screen.dart';
 import '../../features/subscription/domain/entitlement.dart';
@@ -123,6 +137,21 @@ final routerProvider = Provider<GoRouter>((ref) {
         redirect: (_, _) => ref.read(entitlementProvider).allows(PremiumFeature.learningAnalytics) ? null : Routes.premium,
         builder: (_, _) => const ProgressScreen(),
       ),
+      GoRoute(path: Routes.notifications, builder: (_, _) => const NotificationsScreen()),
+      GoRoute(path: Routes.settings, builder: (_, _) => const SettingsHubScreen()),
+      GoRoute(path: Routes.settingsLanguage, builder: (_, _) => const LanguageScreen()),
+      GoRoute(path: Routes.settingsAccessibility, builder: (_, _) => const AccessibilityScreen()),
+      GoRoute(path: Routes.settingsVoice, builder: (_, _) => const VoiceSettingsScreen()),
+      GoRoute(path: Routes.settingsTranslation, builder: (_, _) => const TranslationSettingsScreen()),
+      GoRoute(path: Routes.settingsNotifications, builder: (_, _) => const NotificationSettingsScreen()),
+      GoRoute(path: Routes.settingsPrivacy, builder: (_, _) => const PrivacyScreen()),
+      GoRoute(path: Routes.settingsSecurity, builder: (_, _) => const SecurityScreen()),
+      GoRoute(path: Routes.deleteAccount, builder: (_, _) => const DeleteAccountScreen()),
+      GoRoute(path: Routes.profileEdit, builder: (_, _) => const ProfileSetupScreen(editing: true)),
+      GoRoute(path: Routes.help, builder: (_, _) => const HelpScreen()),
+      GoRoute(path: Routes.about, builder: (_, _) => const AboutScreen()),
+      GoRoute(path: Routes.legalPrivacy, builder: (_, _) => const LegalScreen(doc: LegalDoc.privacy)),
+      GoRoute(path: Routes.legalTerms, builder: (_, _) => const LegalScreen(doc: LegalDoc.terms)),
       GoRoute(path: Routes.trialOffer, builder: (_, _) => const TrialOfferScreen()),
       GoRoute(path: Routes.premium, builder: (_, _) => const SubscriptionScreen()),
       GoRoute(path: Routes.premiumBenefits, builder: (_, _) => const PremiumBenefitsScreen()),
@@ -140,6 +169,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           StatefulShellBranch(routes: [GoRoute(path: Routes.translate, builder: (_, _) => const TranslateHubScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.learn, builder: (_, _) => const LearnScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.live, builder: (_, _) => const LiveScreen())]),
+          StatefulShellBranch(routes: [GoRoute(path: Routes.profile, builder: (_, _) => const ProfileScreen())]),
         ],
       ),
     ],

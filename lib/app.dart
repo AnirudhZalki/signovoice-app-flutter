@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'features/notifications/presentation/notification_providers.dart';
 import 'features/profile/domain/user_preferences.dart';
 import 'features/subscription/presentation/purchase_flow_controller.dart';
 import 'features/profile/presentation/preferences_controller.dart';
@@ -18,6 +19,8 @@ class SignoVoiceApp extends ConsumerWidget {
     final prefs = ref.watch(preferencesProvider);
     final router = ref.watch(routerProvider);
     ref.watch(purchaseListenerProvider); // receive store purchases for the whole session
+    ref.watch(notificationSyncProvider); // keep local reminders in step with settings/plan
+    ref.watch(pushSyncProvider); // push registration when signed in
 
     return MaterialApp.router(
       title: 'SignoVoice',

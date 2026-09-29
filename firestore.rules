@@ -1,0 +1,67 @@
+rules_version = '2';
+
+// SignoVoice Firestore security rules.
+// Principle: least privilege. A signed-in person can only touch their own documents; the
+// subscription entitlement is written exclusively by the backend (Admin SDK bypasses rules),
+// so a client can never grant itself Premium.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function validProfile(d) {
+      return d.keys().hasOnly(['displayName', 'photoUrl', 'preferredLanguage', 'preferredMode', 'accessibilityNeeds'])
+        && d.displayName is string && d.displayName.size() <= 80
+        && (!('photoUrl' in d) || d.photoUrl == null || (d.photoUrl is string && d.photoUrl.size() <= 2048))
+        && d.preferredLanguage in ['en', 'hi', 'kn']
+        && d.preferredMode in ['signToText', 'voiceToSign', 'signToVoice', 'interpreter']
+        && d.accessibilityNeeds is list && d.accessibilityNeeds.size() <= 8;
+    }
+
+    // Profile: owner read/write; never deletable from the client (erasure goes through deletionRequests).
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create, update: if isOwner(uid) && validProfile(request.resource.data);
+      allow delete: if false;
+
+      // Push tokens for this person's devices.
+      match /devices/{token} {
+        allow read: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['platform', 'updatedAt'])
+          && request.resource.data.platform in ['android', 'ios'];
+        allow delete: if isOwner(uid);
+      }
+    }
+
+    // Verified subscription entitlement: READ-ONLY for the client. Written by the backend after
+    // verifying the Google Play purchase token (see docs/BACKEND_CONTRACT.md).
+    match /entitlements/{uid} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    // Erasure requests: the client may create exactly one pending request for itself.
+    match /deletionRequests/{uid} {
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['uid', 'deleteAccount', 'requestedAt', 'status'])
+        && request.resource.data.uid == uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.deleteAccount is bool
+        && request.resource.data.requestedAt == request.time;
+      allow read: if isOwner(uid);
+      allow update, delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

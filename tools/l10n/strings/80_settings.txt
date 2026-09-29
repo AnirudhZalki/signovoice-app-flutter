@@ -1,0 +1,104 @@
+# ---- profile & settings ----
+guestName | Guest | अतिथि | ಅತಿಥಿ
+editProfile | Edit profile | प्रोफ़ाइल संपादित करें | ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ
+usageTitle | Usage | उपयोग | ಬಳಕೆ
+usageSigns | Signs recognised today: {count} | आज पहचाने गए साइन: {count} | ಇಂದು ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು: {count}
+usageSignsOfLimit | Signs recognised today: {count} of {limit} | आज पहचाने गए साइन: {limit} में से {count} | ಇಂದು ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು: {limit} ರಲ್ಲಿ {count}
+usageHistory | Saved translations: {count} | सहेजे गए अनुवाद: {count} | ಉಳಿಸಿದ ಅನುವಾದಗಳು: {count}
+usageLearned | Signs learned: {count} | सीखे गए साइन: {count} | ಕಲಿತ ಸಂಜ್ಞೆಗಳು: {count}
+sectionAccount | Account | खाता | ಖಾತೆ
+sectionPreferences | Preferences | प्राथमिकताएं | ಆದ್ಯತೆಗಳು
+sectionSupport | Support | सहायता | ಬೆಂಬಲ
+settingsTitle | Settings | सेटिंग्स | ಸೆಟ್ಟಿಂಗ್‌ಗಳು
+settingsLanguage | Language | भाषा | ಭಾಷೆ
+settingsTheme | Theme | थीम | ಥೀಮ್
+themeSystem | Match device | डिवाइस के अनुसार | ಸಾಧನಕ್ಕೆ ಹೊಂದಿಸಿ
+themeLight | Light | हल्की | ಹಗುರ
+themeDark | Dark | गहरी | ಗಾಢ
+settingsAccessibility | Accessibility | पहुँच-योग्यता | ಪ್ರವೇಶಸಾಧ್ಯತೆ
+settingsVoice | Voice | आवाज़ | ಧ್ವನಿ
+settingsTranslation | Translation | अनुवाद | ಅನುವಾದ
+settingsPrivacy | Privacy & data | गोपनीयता और डेटा | ಗೌಪ್ಯತೆ ಮತ್ತು ಡೇಟಾ
+settingsSubscription | Subscription | सदस्यता | ಚಂದಾದಾರಿಕೆ
+settingsAbout | About SignoVoice | साइनोवॉइस के बारे में | ಸೈನೋವಾಯ್ಸ್ ಬಗ್ಗೆ
+settingsHelp | Help & support | सहायता और समर्थन | ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ
+settingsSecurity | Security | सुरक्षा | ಭದ್ರತೆ
+accTextSize | Text size | टेक्स्ट का आकार | ಪಠ್ಯದ ಗಾತ್ರ
+accTextSizePreview | Hello! This is how text will look. | नमस्ते! टेक्स्ट ऐसा दिखेगा। | ನಮಸ್ಕಾರ! ಪಠ್ಯ ಹೀಗೆ ಕಾಣಿಸುತ್ತದೆ.
+accHighContrast | High contrast | उच्च कंट्रास्ट | ಹೆಚ್ಚಿನ ಕಾಂಟ್ರಾಸ್ಟ್
+accHighContrastDesc | Stronger borders and text colours. | अधिक स्पष्ट किनारे और टेक्स्ट रंग। | ಬಲವಾದ ಅಂಚುಗಳು ಮತ್ತು ಪಠ್ಯ ಬಣ್ಣಗಳು.
+accReduceMotion | Reduce motion | गति कम करें | ಚಲನೆ ಕಡಿಮೆ ಮಾಡಿ
+accReduceMotionDesc | Turns off scanning sweeps, pulses and page transitions. | स्कैनिंग स्वीप, पल्स और पेज ट्रांज़िशन बंद करता है। | ಸ್ಕ್ಯಾನಿಂಗ್ ಸ್ವೀಪ್‌ಗಳು, ಪಲ್ಸ್‌ಗಳು ಮತ್ತು ಪುಟ ಪರಿವರ್ತನೆಗಳನ್ನು ಆಫ್ ಮಾಡುತ್ತದೆ.
+accHaptics | Haptic feedback | हैप्टिक फ़ीडबैक | ಹ್ಯಾಪ್ಟಿಕ್ ಪ್ರತಿಕ್ರಿಯೆ
+accHapticsDesc | Short vibrations when a sign is recognised. | साइन पहचाने जाने पर छोटा कंपन। | ಸಂಜ್ಞೆ ಗುರುತಿಸಿದಾಗ ಸಣ್ಣ ಕಂಪನ.
+accVoiceFeedback | Spoken feedback | बोला गया फ़ीडबैक | ಮಾತಿನ ಪ್ರತಿಕ್ರಿಯೆ
+accVoiceFeedbackDesc | Speak practice results aloud. | अभ्यास के परिणाम बोलकर बताएं। | ಅಭ್ಯಾಸದ ಫಲಿತಾಂಶಗಳನ್ನು ಗಟ್ಟಿಯಾಗಿ ಹೇಳಿ.
+transMode | Recognition mode | पहचान मोड | ಗುರುತಿಸುವ ಮೋಡ್
+transOnDevice | On this device | इसी डिवाइस पर | ಈ ಸಾಧನದಲ್ಲಿ
+transOnDeviceDesc | Private and works offline. | निजी और ऑफ़लाइन काम करता है। | ಖಾಸಗಿ ಮತ್ತು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.
+transOnline | Online (server) | ऑनलाइन (सर्वर) | ಆನ್‌ಲೈನ್ (ಸರ್ವರ್)
+transOnlineDesc | Sends hand-landmark numbers, never video. Needs internet and a configured server. | हाथ के लैंडमार्क अंक भेजता है, वीडियो कभी नहीं। इंटरनेट और कॉन्फ़िगर किया सर्वर चाहिए। | ಕೈ ಲ್ಯಾಂಡ್‌ಮಾರ್ಕ್ ಸಂಖ್ಯೆಗಳನ್ನು ಕಳುಹಿಸುತ್ತದೆ, ವೀಡಿಯೊ ಎಂದಿಗೂ ಅಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಮತ್ತು ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಸರ್ವರ್ ಬೇಕು.
+transOnlineUnavailable | Online recognition isn't set up in this build. | इस बिल्ड में ऑनलाइन पहचान सेट अप नहीं है। | ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ ಸಿದ್ಧವಾಗಿಲ್ಲ.
+transConfidence | Confidence threshold | विश्वसनीयता सीमा | ವಿಶ್ವಾಸಾರ್ಹತೆಯ ಮಿತಿ
+transConfidenceDesc | Higher means fewer but more reliable signs. | अधिक का मतलब कम लेकिन अधिक भरोसेमंद साइन। | ಹೆಚ್ಚು ಎಂದರೆ ಕಡಿಮೆ ಆದರೆ ಹೆಚ್ಚು ವಿಶ್ವಾಸಾರ್ಹ ಸಂಜ್ಞೆಗಳು.
+transAutoSpeak | Speak signs automatically | साइन अपने आप बोलें | ಸಂಜ್ಞೆಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಹೇಳಿ
+transMirror | Mirror hand input | हाथ का इनपुट मिरर करें | ಕೈ ಇನ್‌ಪುಟ್ ಮಿರರ್ ಮಾಡಿ
+transMirrorDesc | Matches the training data. Turn off only if left and right seem swapped. | प्रशिक्षण डेटा से मेल खाता है। केवल तब बंद करें जब बायाँ-दायाँ उलटा लगे। | ತರಬೇತಿ ಡೇಟಾಗೆ ಹೊಂದುತ್ತದೆ. ಎಡ-ಬಲ ಅದಲುಬದಲಾದಂತೆ ತೋರಿದರೆ ಮಾತ್ರ ಆಫ್ ಮಾಡಿ.
+transModelNote | The on-device model currently recognises {count} signs and can make mistakes. | ऑन-डिवाइस मॉडल अभी {count} साइन पहचानता है और गलतियाँ कर सकता है। | ಸಾಧನದ ಮಾದರಿ ಪ್ರಸ್ತುತ {count} ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸುತ್ತದೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಮಾಡಬಹುದು.
+privacyAnalytics | Share anonymous usage and crash data | अनाम उपयोग और क्रैश डेटा साझा करें | ಅನಾಮಧೇಯ ಬಳಕೆ ಮತ್ತು ಕ್ರ್ಯಾಶ್ ಡೇಟಾ ಹಂಚಿಕೊಳ್ಳಿ
+privacyAnalyticsDesc | Helps us fix problems. Never includes video, signs or translations. | समस्याएं ठीक करने में मदद करता है। इसमें वीडियो, साइन या अनुवाद कभी शामिल नहीं होते। | ಸಮಸ್ಯೆಗಳನ್ನು ಸರಿಪಡಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ವೀಡಿಯೊ, ಸಂಜ್ಞೆಗಳು ಅಥವಾ ಅನುವಾದಗಳು ಎಂದಿಗೂ ಇರುವುದಿಲ್ಲ.
+privacySaveHistory | Save translation history on this device | इस डिवाइस पर अनुवाद इतिहास सहेजें | ಈ ಸಾಧನದಲ್ಲಿ ಅನುವಾದ ಇತಿಹಾಸ ಉಳಿಸಿ
+privacyClearHistory | Clear translation history | अनुवाद इतिहास साफ़ करें | ಅನುವಾದ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ
+privacyClearProgress | Reset learning progress | सीखने की प्रगति रीसेट करें | ಕಲಿಕೆಯ ಪ್ರಗತಿ ಮರುಹೊಂದಿಸಿ
+privacyClearProgressBody | This removes learned signs, saved signs, XP, streak and badges from this device. | यह इस डिवाइस से सीखे गए साइन, सहेजे गए साइन, XP, लगातार गतिविधि और बैज हटा देगा। | ಇದು ಈ ಸಾಧನದಿಂದ ಕಲಿತ ಸಂಜ್ಞೆಗಳು, ಉಳಿಸಿದ ಸಂಜ್ಞೆಗಳು, XP, ಸರಣಿ ಮತ್ತು ಬ್ಯಾಡ್ಜ್‌ಗಳನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ.
+privacyProgressCleared | Learning progress reset | सीखने की प्रगति रीसेट हुई | ಕಲಿಕೆಯ ಪ್ರಗತಿ ಮರುಹೊಂದಿಸಲಾಗಿದೆ
+privacyDataTitle | What data is processed | कौन सा डेटा संसाधित होता है | ಯಾವ ಡೇಟಾವನ್ನು ಸಂಸ್ಕರಿಸಲಾಗುತ್ತದೆ
+privacyDataCamera | Camera: analysed on your device to find hand positions. Video is never recorded or uploaded. In online mode only hand-landmark numbers are sent. | कैमरा: हाथ की स्थिति खोजने के लिए आपके डिवाइस पर विश्लेषित। वीडियो कभी रिकॉर्ड या अपलोड नहीं होता। ऑनलाइन मोड में केवल हाथ के लैंडमार्क अंक भेजे जाते हैं। | ಕ್ಯಾಮೆರಾ: ಕೈ ಸ್ಥಾನಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ. ವೀಡಿಯೊವನ್ನು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಆನ್‌ಲೈನ್ ಮೋಡ್‌ನಲ್ಲಿ ಕೈ ಲ್ಯಾಂಡ್‌ಮಾರ್ಕ್ ಸಂಖ್ಯೆಗಳನ್ನು ಮಾತ್ರ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.
+privacyDataMic | Microphone: used only when you tap the mic or join an interpreter call. Speech-to-text uses your device's speech service. | माइक्रोफ़ोन: केवल तब जब आप माइक दबाएं या दुभाषिया कॉल में जुड़ें। बोली-से-टेक्स्ट आपके डिवाइस की स्पीच सेवा उपयोग करता है। | ಮೈಕ್ರೊಫೋನ್: ನೀವು ಮೈಕ್ ಒತ್ತಿದಾಗ ಅಥವಾ ದುಭಾಷಿ ಕರೆಗೆ ಸೇರಿದಾಗ ಮಾತ್ರ ಬಳಕೆ. ಮಾತು-ಪಠ್ಯ ನಿಮ್ಮ ಸಾಧನದ ಸ್ಪೀಚ್ ಸೇವೆಯನ್ನು ಬಳಸುತ್ತದೆ.
+privacyDataAccount | Account: your name, email or phone, and profile photo are stored with our authentication and database provider (Firebase). | खाता: आपका नाम, ईमेल या फ़ोन, और प्रोफ़ाइल फ़ोटो हमारे प्रमाणीकरण और डेटाबेस प्रदाता (Firebase) के पास रखे जाते हैं। | ಖಾತೆ: ನಿಮ್ಮ ಹೆಸರು, ಇಮೇಲ್ ಅಥವಾ ಫೋನ್, ಮತ್ತು ಪ್ರೊಫೈಲ್ ಫೋಟೋವನ್ನು ನಮ್ಮ ಪ್ರಮಾಣೀಕರಣ ಮತ್ತು ಡೇಟಾಬೇಸ್ ಪೂರೈಕೆದಾರರ (Firebase) ಬಳಿ ಇಡಲಾಗುತ್ತದೆ.
+privacyDataHistory | History and learning progress: stored only on this device. | इतिहास और सीखने की प्रगति: केवल इसी डिवाइस पर संग्रहीत। | ಇತಿಹಾಸ ಮತ್ತು ಕಲಿಕೆಯ ಪ್ರಗತಿ: ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ.
+privacyDataPurchases | Subscriptions: payments are handled by Google Play. We receive a purchase token to verify your plan, not your card details. | सदस्यताएं: भुगतान Google Play संभालता है। हमें आपका प्लान सत्यापित करने के लिए खरीद टोकन मिलता है, कार्ड विवरण नहीं। | ಚಂದಾದಾರಿಕೆಗಳು: ಪಾವತಿಗಳನ್ನು Google Play ನಿರ್ವಹಿಸುತ್ತದೆ. ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಪರಿಶೀಲಿಸಲು ನಮಗೆ ಖರೀದಿ ಟೋಕನ್ ಸಿಗುತ್ತದೆ, ಕಾರ್ಡ್ ವಿವರಗಳಲ್ಲ.
+privacyDataCalls | Interpreter calls: audio and video are streamed to your interpreter through our call provider. We store call time, duration and your rating. | दुभाषिया कॉल: ऑडियो और वीडियो हमारे कॉल प्रदाता के माध्यम से आपके दुभाषिये तक स्ट्रीम होते हैं। हम कॉल का समय, अवधि और आपकी रेटिंग रखते हैं। | ದುಭಾಷಿ ಕರೆಗಳು: ಆಡಿಯೊ ಮತ್ತು ವೀಡಿಯೊವನ್ನು ನಮ್ಮ ಕರೆ ಪೂರೈಕೆದಾರರ ಮೂಲಕ ನಿಮ್ಮ ದುಭಾಷಿಗೆ ಸ್ಟ್ರೀಮ್ ಮಾಡಲಾಗುತ್ತದೆ. ನಾವು ಕರೆ ಸಮಯ, ಅವಧಿ ಮತ್ತು ನಿಮ್ಮ ರೇಟಿಂಗ್ ಇಡುತ್ತೇವೆ.
+privacyDataAnalytics | Usage and crash data: anonymous events (like "practice started") and crash reports, only if you allow it above. | उपयोग और क्रैश डेटा: अनाम इवेंट (जैसे "अभ्यास शुरू") और क्रैश रिपोर्ट, केवल यदि आप ऊपर अनुमति दें। | ಬಳಕೆ ಮತ್ತು ಕ್ರ್ಯಾಶ್ ಡೇಟಾ: ಅನಾಮಧೇಯ ಈವೆಂಟ್‌ಗಳು ("ಅಭ್ಯಾಸ ಪ್ರಾರಂಭ" ನಂತಹ) ಮತ್ತು ಕ್ರ್ಯಾಶ್ ವರದಿಗಳು, ನೀವು ಮೇಲೆ ಅನುಮತಿಸಿದರೆ ಮಾತ್ರ.
+privacyRequestDeletion | Request deletion of my server data | मेरे सर्वर डेटा को हटाने का अनुरोध करें | ನನ್ನ ಸರ್ವರ್ ಡೇಟಾ ಅಳಿಸಲು ವಿನಂತಿಸಿ
+privacyDeletionRequested | Deletion requested. Your server-side data will be erased. | हटाने का अनुरोध किया गया। आपका सर्वर-साइड डेटा मिटाया जाएगा। | ಅಳಿಸಲು ವಿನಂತಿಸಲಾಗಿದೆ. ನಿಮ್ಮ ಸರ್ವರ್-ಬದಿಯ ಡೇಟಾ ಅಳಿಸಲಾಗುತ್ತದೆ.
+privacyDeleteAccount | Delete account | खाता हटाएं | ಖಾತೆ ಅಳಿಸಿ
+securitySignedInAs | Signed in as {who} | {who} के रूप में साइन इन | {who} ಆಗಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ
+securityChangePassword | Change password | पासवर्ड बदलें | ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ
+securityPasswordSent | We sent a password reset link to your email. | हमने आपके ईमेल पर पासवर्ड रीसेट लिंक भेजा है। | ನಿಮ್ಮ ಇಮೇಲ್‌ಗೆ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಕೆ ಲಿಂಕ್ ಕಳುಹಿಸಿದ್ದೇವೆ.
+securityGuest | Guest mode keeps data on this device only. Create an account to secure and sync your plan. | अतिथि मोड डेटा केवल इसी डिवाइस पर रखता है। अपना प्लान सुरक्षित और सिंक करने के लिए खाता बनाएं। | ಅತಿಥಿ ಮೋಡ್ ಡೇಟಾವನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಇಡುತ್ತದೆ. ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ಸಿಂಕ್ ಮಾಡಲು ಖಾತೆ ರಚಿಸಿ.
+createAccountAction | Create an account | खाता बनाएं | ಖಾತೆ ರಚಿಸಿ
+logoutTitle | Sign out? | साइन आउट करें? | ಸೈನ್ ಔಟ್ ಮಾಡುವುದೇ?
+logoutBody | You can sign back in any time. | आप कभी भी फिर से साइन इन कर सकते हैं। | ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು.
+logoutClearData | Also clear history and progress on this device | इस डिवाइस पर इतिहास और प्रगति भी साफ़ करें | ಈ ಸಾಧನದಲ್ಲಿ ಇತಿಹಾಸ ಮತ್ತು ಪ್ರಗತಿಯನ್ನೂ ತೆರವುಗೊಳಿಸಿ
+deleteTitle | Delete your account | अपना खाता हटाएं | ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಿ
+deleteBody | This permanently deletes your account and the data we hold about you, and clears data on this device. This cannot be undone. Deleting your account does not cancel a Google Play subscription; cancel it in Google Play first. | यह आपका खाता और हमारे पास आपका डेटा स्थायी रूप से हटा देगा, और इस डिवाइस का डेटा साफ़ करेगा। इसे पूर्ववत नहीं किया जा सकता। खाता हटाने से Google Play सदस्यता रद्द नहीं होती; पहले उसे Google Play में रद्द करें। | ಇದು ನಿಮ್ಮ ಖಾತೆ ಮತ್ತು ನಮ್ಮ ಬಳಿ ಇರುವ ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ ಮತ್ತು ಈ ಸಾಧನದ ಡೇಟಾವನ್ನು ತೆರವುಗೊಳಿಸುತ್ತದೆ. ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ. ಖಾತೆ ಅಳಿಸುವುದು Google Play ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸುವುದಿಲ್ಲ; ಮೊದಲು ಅದನ್ನು Google Play ನಲ್ಲಿ ರದ್ದುಮಾಡಿ.
+deleteGuestBody | This clears everything SignoVoice stored on this device. | यह इस डिवाइस पर साइनोवॉइस द्वारा संग्रहीत सब कुछ साफ़ कर देगा। | ಇದು ಈ ಸಾಧನದಲ್ಲಿ ಸೈನೋವಾಯ್ಸ್ ಸಂಗ್ರಹಿಸಿದ ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸುತ್ತದೆ.
+deleteConfirmCheck | I understand this is permanent | मैं समझता/समझती हूँ कि यह स्थायी है | ಇದು ಶಾಶ್ವತ ಎಂದು ನನಗೆ ಅರ್ಥವಾಗಿದೆ
+deleteAction | Delete permanently | स्थायी रूप से हटाएं | ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ
+deleteRecentLogin | For your security, sign in again, then delete your account. | आपकी सुरक्षा के लिए, फिर से साइन इन करें, फिर अपना खाता हटाएं। | ನಿಮ್ಮ ಸುರಕ್ಷತೆಗಾಗಿ, ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ, ನಂತರ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಿ.
+deleteAndSignOut | Sign out and sign in again | साइन आउट करें और फिर साइन इन करें | ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ
+helpTitle | Help & support | सहायता और समर्थन | ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ
+faq1q | Why isn't my sign recognised? | मेरा साइन क्यों नहीं पहचाना गया? | ನನ್ನ ಸಂಜ್ಞೆ ಏಕೆ ಗುರುತಿಸಲಾಗಲಿಲ್ಲ?
+faq1a | Use good light, keep your whole hand in view and sign at a steady pace. The on-device model currently recognises {count} signs. | अच्छी रोशनी में रहें, पूरा हाथ कैमरे में रखें और स्थिर गति से साइन करें। ऑन-डिवाइस मॉडल अभी {count} साइन पहचानता है। | ಒಳ್ಳೆಯ ಬೆಳಕಿನಲ್ಲಿರಿ, ಪೂರ್ಣ ಕೈಯನ್ನು ಕ್ಯಾಮೆರಾದಲ್ಲಿ ಇರಿಸಿ ಮತ್ತು ಸ್ಥಿರ ವೇಗದಲ್ಲಿ ಸಂಜ್ಞೆ ಮಾಡಿ. ಸಾಧನದ ಮಾದರಿ ಪ್ರಸ್ತುತ {count} ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸುತ್ತದೆ.
+faq2q | Does SignoVoice record my video? | क्या साइनोवॉइस मेरा वीडियो रिकॉर्ड करता है? | ಸೈನೋವಾಯ್ಸ್ ನನ್ನ ವೀಡಿಯೊವನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡುತ್ತದೆಯೇ?
+faq2a | No. Video is analysed on your device to find hand positions and is never recorded or uploaded. | नहीं। वीडियो हाथ की स्थिति खोजने के लिए आपके डिवाइस पर विश्लेषित होता है और कभी रिकॉर्ड या अपलोड नहीं होता। | ಇಲ್ಲ. ವೀಡಿಯೊವನ್ನು ಕೈ ಸ್ಥಾನಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.
+faq3q | How does the free trial work? | निःशुल्क ट्रायल कैसे काम करता है? | ಉಚಿತ ಟ್ರಯಲ್ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?
+faq3a | New accounts can start a one-month free trial. It renews automatically at the price shown unless you cancel in Google Play before it ends. | नए खाते एक महीने का निःशुल्क ट्रायल शुरू कर सकते हैं। जब तक आप समाप्त होने से पहले Google Play में रद्द न करें, यह दिखाई गई कीमत पर अपने आप नवीनीकृत होता है। | ಹೊಸ ಖಾತೆಗಳು ಒಂದು ತಿಂಗಳ ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಬಹುದು. ಅದು ಮುಗಿಯುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ರದ್ದುಗೊಳಿಸದಿದ್ದರೆ ತೋರಿಸಿದ ಬೆಲೆಯಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ.
+faq4q | How do I cancel my subscription? | मैं अपनी सदस्यता कैसे रद्द करूँ? | ನನ್ನ ಚಂದಾದಾರಿಕೆಯನ್ನು ಹೇಗೆ ರದ್ದುಗೊಳಿಸಲಿ?
+faq4a | Open Google Play › Payments & subscriptions › Subscriptions › SignoVoice › Cancel subscription. | Google Play खोलें › भुगतान और सदस्यताएं › सदस्यताएं › SignoVoice › सदस्यता रद्द करें। | Google Play ತೆರೆಯಿರಿ › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು › SignoVoice › ಚಂದಾದಾರಿಕೆ ರದ್ದುಮಾಡಿ.
+faq5q | Can I use SignoVoice offline? | क्या मैं साइनोवॉइस ऑफ़लाइन उपयोग कर सकता/सकती हूँ? | ನಾನು ಸೈನೋವಾಯ್ಸ್ ಅನ್ನು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಬಳಸಬಹುದೇ?
+faq5a | Yes for on-device sign recognition, the dictionary and lessons. Live interpreters, online recognition and AI translation need internet. | हाँ, ऑन-डिवाइस साइन पहचान, शब्दकोश और पाठों के लिए। लाइव दुभाषिये, ऑनलाइन पहचान और एआई अनुवाद के लिए इंटरनेट चाहिए। | ಹೌದು, ಸಾಧನದ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ, ನಿಘಂಟು ಮತ್ತು ಪಾಠಗಳಿಗೆ. ಲೈವ್ ದುಭಾಷಿಗಳು, ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ ಮತ್ತು ಎಐ ಅನುವಾದಕ್ಕೆ ಇಂಟರ್ನೆಟ್ ಬೇಕು.
+faq6q | Why do some signs have no video? | कुछ साइन के वीडियो क्यों नहीं हैं? | ಕೆಲವು ಸಂಜ್ಞೆಗಳಿಗೆ ವೀಡಿಯೊ ಏಕೆ ಇಲ್ಲ?
+faq6a | The dictionary lists more signs than we have videos for. Videos are added over time. | शब्दकोश में उन साइन से अधिक हैं जिनके वीडियो हमारे पास हैं। वीडियो समय के साथ जोड़े जाते हैं। | ನಮ್ಮ ಬಳಿ ವೀಡಿಯೊ ಇರುವುದಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಂಜ್ಞೆಗಳನ್ನು ನಿಘಂಟು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ. ವೀಡಿಯೊಗಳನ್ನು ಕಾಲಕ್ರಮೇಣ ಸೇರಿಸಲಾಗುತ್ತದೆ.
+helpContact | Contact support | सहायता से संपर्क करें | ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ
+helpEmailSubject | SignoVoice support | साइनोवॉइस सहायता | ಸೈನೋವಾಯ್ಸ್ ಬೆಂಬಲ
+aboutVersion | Version {version} ({build}) | संस्करण {version} ({build}) | ಆವೃತ್ತಿ {version} ({build})
+aboutMission | Breaking communication barriers with AI-powered sign-language technology. | एआई-संचालित साइन-भाषा तकनीक से संवाद की बाधाएं तोड़ना। | ಎಐ-ಚಾಲಿತ ಸಂಜ್ಞಾ ಭಾಷಾ ತಂತ್ರಜ್ಞಾನದಿಂದ ಸಂವಹನದ ಅಡೆತಡೆಗಳನ್ನು ಮುರಿಯುವುದು.
+aboutModelNote | Sign recognition is an aid, not a certified interpreter. It currently knows {count} signs and can make mistakes. For important conversations, use a human interpreter. | साइन पहचान एक सहायक है, प्रमाणित दुभाषिया नहीं। यह अभी {count} साइन जानता है और गलतियाँ कर सकता है। महत्वपूर्ण बातचीत के लिए मानव दुभाषिये का उपयोग करें। | ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ ಒಂದು ಸಹಾಯಕ, ಪ್ರಮಾಣೀಕೃತ ದುಭಾಷಿಯಲ್ಲ. ಇದು ಪ್ರಸ್ತುತ {count} ಸಂಜ್ಞೆಗಳನ್ನು ತಿಳಿದಿದೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಮಾಡಬಹುದು. ಮುಖ್ಯ ಸಂಭಾಷಣೆಗಳಿಗೆ ಮಾನವ ದುಭಾಷಿಯನ್ನು ಬಳಸಿ.
+aboutLicenses | Open-source licenses | ओपन-सोर्स लाइसेंस | ಓಪನ್-ಸೋರ್ಸ್ ಪರವಾನಗಿಗಳು
+legalTitlePrivacy | Privacy Policy | गोपनीयता नीति | ಗೌಪ್ಯತಾ ನೀತಿ
+legalTitleTerms | Terms of Service | सेवा की शर्तें | ಸೇವಾ ನಿಯಮಗಳು
+legalEnglishOnly | The legal text is provided in English. | कानूनी पाठ अंग्रेज़ी में उपलब्ध है। | ಕಾನೂನು ಪಠ್ಯ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ.
+openInBrowser | Open online version | ऑनलाइन संस्करण खोलें | ಆನ್‌ಲೈನ್ ಆವೃತ್ತಿ ತೆರೆಯಿರಿ
+settingsNotifications | Notifications | सूचनाएं | ಅಧಿಸೂಚನೆಗಳು

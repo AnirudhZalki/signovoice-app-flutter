@@ -26,19 +26,29 @@ class AppCard extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final radius = BorderRadius.circular(AppSpacing.radiusMd);
     final content = Padding(padding: padding, child: child);
+    final tappable = onTap != null;
+    // With an explicit label the labelled node itself carries the tap action (the InkWell's own
+    // unlabeled semantics node is excluded). Nested controls (e.g. a bookmark button) stay separate.
+    final labelled = semanticLabel != null;
+    final card = Card(
+      color: color,
+      shape: RoundedRectangleBorder(
+        borderRadius: radius,
+        side: BorderSide(color: borderColor ?? scheme.outlineVariant),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: tappable ? InkWell(onTap: onTap, excludeFromSemantics: labelled, child: content) : content,
+    );
+    if (tappable && !labelled) {
+      // No explicit label: read the card's own text as one tappable item.
+      return MergeSemantics(child: card);
+    }
     return Semantics(
       container: true,
-      button: onTap != null,
+      button: tappable,
       label: semanticLabel,
-      child: Card(
-        color: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: radius,
-          side: BorderSide(color: borderColor ?? scheme.outlineVariant),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: onTap == null ? content : InkWell(onTap: onTap, child: content),
-      ),
+      onTap: onTap,
+      child: card,
     );
   }
 }

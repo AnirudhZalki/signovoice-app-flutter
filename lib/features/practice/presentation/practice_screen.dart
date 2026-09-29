@@ -178,11 +178,13 @@ class _PracticeViewState extends ConsumerState<_PracticeView> with WidgetsBindin
         );
       case CameraStatus.error:
         return Center(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Text(l.cameraInitError, textAlign: TextAlign.center),
-          const SizedBox(height: 12),
-          PrimaryButton(label: l.retry, expanded: false, onPressed: _camera.start),
-        ]));
+            child: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  Text(l.cameraInitError, textAlign: TextAlign.center),
+                  const SizedBox(height: 12),
+                  PrimaryButton(label: l.retry, expanded: false, onPressed: _camera.start),
+                ])));
       default:
         return const LoadingState();
     }

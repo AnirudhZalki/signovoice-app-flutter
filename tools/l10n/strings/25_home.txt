@@ -1,0 +1,9 @@
+# ---- home extras ----
+recentActivity | Recent activity | हाल की गतिविधि | ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆ
+seeAll | See all | सभी देखें | ಎಲ್ಲವನ್ನೂ ನೋಡಿ
+noRecentActivity | Your saved translations will appear here. | आपके सहेजे गए अनुवाद यहाँ दिखेंगे। | ನಿಮ್ಮ ಉಳಿಸಿದ ಅನುವಾದಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.
+todayUsage | Today | आज | ಇಂದು
+aiShortcutTitle | Advanced AI translation | उन्नत एआई अनुवाद | ಸುಧಾರಿತ ಎಐ ಅನುವಾದ
+aiShortcutBody | Smoother sentences from an online AI service. | ऑनलाइन एआई सेवा से अधिक सहज वाक्य। | ಆನ್‌ಲೈನ್ ಎಐ ಸೇವೆಯಿಂದ ಸುಗಮ ವಾಕ್ಯಗಳು.
+aiShortcutIncluded | Included with your plan | आपकी योजना में शामिल | ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಸೇರಿದೆ
+aiShortcutPremium | Premium feature | प्रीमियम सुविधा | ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ
