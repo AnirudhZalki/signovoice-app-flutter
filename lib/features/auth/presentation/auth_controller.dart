@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/providers.dart';
-import '../../../core/services/analytics_service.dart';
 import '../data/firebase_auth_repository.dart';
 import '../data/unconfigured_auth_repository.dart';
 import '../domain/app_user.dart';
@@ -86,7 +85,6 @@ class AuthController extends Notifier<AuthState> {
     state = const AuthState(AuthStatus.unauthenticated);
   }
 
-  void logAppOpen() => ref.read(analyticsServiceProvider).log(AnalyticsEvents.appOpen);
 }
 
 final authControllerProvider = NotifierProvider<AuthController, AuthState>(AuthController.new);

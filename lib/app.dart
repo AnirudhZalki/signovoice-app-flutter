@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/providers.dart';
 import 'core/routing/app_router.dart';
+import 'core/services/analytics_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/notifications/presentation/notification_providers.dart';
 import 'features/profile/domain/user_preferences.dart';
@@ -11,11 +13,27 @@ import 'features/profile/presentation/preferences_controller.dart';
 import 'l10n/app_localizations.dart';
 import 'shared/widgets/state_widgets.dart';
 
-class SignoVoiceApp extends ConsumerWidget {
+class SignoVoiceApp extends ConsumerStatefulWidget {
   const SignoVoiceApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SignoVoiceApp> createState() => _SignoVoiceAppState();
+}
+
+class _SignoVoiceAppState extends ConsumerState<SignoVoiceApp> {
+  @override
+  void initState() {
+    super.initState();
+    // Honour the privacy choice (analytics + crash reports) before logging anything.
+    Future(() async {
+      final analytics = ref.read(analyticsServiceProvider);
+      await analytics.setEnabled(ref.read(preferencesProvider).analyticsEnabled);
+      await analytics.log(AnalyticsEvents.appOpen);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final prefs = ref.watch(preferencesProvider);
     final router = ref.watch(routerProvider);
     ref.watch(purchaseListenerProvider); // receive store purchases for the whole session
@@ -23,7 +41,7 @@ class SignoVoiceApp extends ConsumerWidget {
     ref.watch(pushSyncProvider); // push registration when signed in
 
     return MaterialApp.router(
-      title: 'SignoVoice',
+      onGenerateTitle: (context) => AppLocalizations.of(context).appName,
       debugShowCheckedModeBanner: false,
       routerConfig: router,
       theme: AppTheme.light(highContrast: prefs.highContrast, reduceMotion: prefs.reduceMotion),

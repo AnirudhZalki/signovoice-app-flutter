@@ -1,4 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
 /// Event names. Parameters must never carry personal data (no names, emails,
@@ -42,6 +43,10 @@ class FirebaseAnalyticsService implements AnalyticsService {
     _enabled = enabled;
     try {
       await _a.setAnalyticsCollectionEnabled(enabled);
+    } catch (_) {}
+    try {
+      // Crash reports follow the same privacy switch.
+      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(enabled);
     } catch (_) {}
   }
 }

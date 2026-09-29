@@ -34,6 +34,18 @@ CameraImage → HandLandmarkExtractor (MediaPipe Hands, 21×3) → 30-frame wind
 ## 3. External configuration required (cannot be faked)
 Firebase project + `google-services.json`; Google Play app + subscription products (`signovoice_premium_monthly/yearly` with a 1-month free-trial offer); backend URL for purchase verification (Google Play Developer API) and AI translation; LiveKit server + token endpoint; sign video/illustration assets beyond the 5 existing clips; release keystore.
 
-## 4. Phases → commits
-1 inspect ✔ · 2 architecture/scaffold · 3 design system · 4 auth · 5 home/nav · 6–7 sign→text/voice · 8 voice→sign · 9 interpreter · 10 learn · 11 practice · 12 dictionary · 13 history · 14 subscription · 15 profile/settings · 16 security/privacy · 17 tests · 18 performance · 19 Android release config · 20 QA.
-Each phase: `flutter analyze` → tests → commit.
+## 4. Phases → status
+| # | Phase | Status |
+|---|---|---|
+| 1 | Inspect legacy project | done (this document) |
+| 2–3 | Architecture + design system | done |
+| 4–5 | Auth, home/navigation | done (guest ✔; Firebase auth needs project config) |
+| 6–7 | Sign → Text / Sign → Voice | done (real ONNX + MediaPipe path; needs on-device validation) |
+| 8 | Voice → Sign | done |
+| 9 | Live interpreter | done (needs backend + LiveKit) |
+| 10–13 | Learn, Practice, Dictionary, History | done |
+| 14 | Subscription + 1-month trial + verified entitlement | done (needs Play products + backend) |
+| 15–16 | Profile/Settings, security/privacy | done |
+| 17–18 | Tests, performance | 138 tests; profiling on device outstanding |
+| 19 | Android release configuration | written, **not built here** (no Android SDK in the sandbox) |
+| 20 | Final QA | see QA_CHECKLIST.md |
