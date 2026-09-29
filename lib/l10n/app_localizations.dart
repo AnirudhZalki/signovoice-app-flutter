@@ -2307,6 +2307,486 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Audio call in progress'**
   String get audioCallActive;
+
+  /// No description provided for @premiumHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock the full SignoVoice experience'**
+  String get premiumHeader;
+
+  /// No description provided for @premiumSubheader.
+  ///
+  /// In en, this message translates to:
+  /// **'Free stays genuinely useful. Premium removes limits and adds deeper tools.'**
+  String get premiumSubheader;
+
+  /// No description provided for @freePlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get freePlan;
+
+  /// No description provided for @premiumPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get premiumPlan;
+
+  /// No description provided for @featRecognition.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign recognition'**
+  String get featRecognition;
+
+  /// No description provided for @featRecognitionFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Up to {count} signs a day'**
+  String featRecognitionFree(String count);
+
+  /// No description provided for @featUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited'**
+  String get featUnlimited;
+
+  /// No description provided for @featHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Translation history'**
+  String get featHistory;
+
+  /// No description provided for @featHistoryFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest {count} entries'**
+  String featHistoryFree(String count);
+
+  /// No description provided for @featFullHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Full history'**
+  String get featFullHistory;
+
+  /// No description provided for @featAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced AI translation'**
+  String get featAi;
+
+  /// No description provided for @featNotIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Not included'**
+  String get featNotIncluded;
+
+  /// No description provided for @featIncludedOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Included (needs internet)'**
+  String get featIncludedOnline;
+
+  /// No description provided for @featAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning analytics'**
+  String get featAnalytics;
+
+  /// No description provided for @featBasicProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic progress'**
+  String get featBasicProgress;
+
+  /// No description provided for @featFullAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed analytics'**
+  String get featFullAnalytics;
+
+  /// No description provided for @featCore.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessons, dictionary, practice, voice → sign'**
+  String get featCore;
+
+  /// No description provided for @featIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included'**
+  String get featIncluded;
+
+  /// No description provided for @trialOneMonthFree.
+  ///
+  /// In en, this message translates to:
+  /// **'1 month free'**
+  String get trialOneMonthFree;
+
+  /// No description provided for @trialThenPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Then {price} per {period}'**
+  String trialThenPrice(String period, String price);
+
+  /// No description provided for @periodMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'month'**
+  String get periodMonth;
+
+  /// No description provided for @periodYear.
+  ///
+  /// In en, this message translates to:
+  /// **'year'**
+  String get periodYear;
+
+  /// No description provided for @periodWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'week'**
+  String get periodWeek;
+
+  /// No description provided for @periodDay.
+  ///
+  /// In en, this message translates to:
+  /// **'day'**
+  String get periodDay;
+
+  /// No description provided for @renewsAutomatically.
+  ///
+  /// In en, this message translates to:
+  /// **'Renews automatically'**
+  String get renewsAutomatically;
+
+  /// No description provided for @cancelAnytime.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel anytime in your store subscription settings'**
+  String get cancelAnytime;
+
+  /// No description provided for @trialTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first month is free. When it ends, your subscription renews automatically at {price} per {period} unless you cancel before the trial ends. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will always see the final price and confirm in Google Play before you are charged.'**
+  String trialTerms(String period, String price);
+
+  /// No description provided for @subscribeTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription renews automatically at {price} per {period} until you cancel. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will confirm the final price in Google Play before you are charged.'**
+  String subscribeTerms(String period, String price);
+
+  /// No description provided for @priceShownAtCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'The price is shown by Google Play before you confirm.'**
+  String get priceShownAtCheckout;
+
+  /// No description provided for @startFreeTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'Start free trial'**
+  String get startFreeTrial;
+
+  /// No description provided for @subscribeNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get subscribeNow;
+
+  /// No description provided for @notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get notNow;
+
+  /// No description provided for @restorePurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get restorePurchases;
+
+  /// No description provided for @planMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get planMonthly;
+
+  /// No description provided for @planYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get planYearly;
+
+  /// No description provided for @planPerPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / {period}'**
+  String planPerPeriod(String period, String price);
+
+  /// No description provided for @planFirstFree.
+  ///
+  /// In en, this message translates to:
+  /// **'First month free'**
+  String get planFirstFree;
+
+  /// No description provided for @trialOfferTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first month is free'**
+  String get trialOfferTitle;
+
+  /// No description provided for @trialOfferBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Try every Premium feature for a month.'**
+  String get trialOfferBody;
+
+  /// No description provided for @trialOfferPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} per {period} after your trial'**
+  String trialOfferPrice(String period, String price);
+
+  /// No description provided for @trialNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'A free trial isn\'t available for this account. You can still subscribe from the Premium page.'**
+  String get trialNotAvailable;
+
+  /// No description provided for @signInToSubscribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to start your free trial'**
+  String get signInToSubscribe;
+
+  /// No description provided for @purchasePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your payment is pending. Premium unlocks once it completes.'**
+  String get purchasePending;
+
+  /// No description provided for @purchaseVerifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying your purchase…'**
+  String get purchaseVerifying;
+
+  /// No description provided for @purchaseSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium is active. Thank you!'**
+  String get purchaseSuccess;
+
+  /// No description provided for @purchaseCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase cancelled. You haven\'t been charged.'**
+  String get purchaseCancelled;
+
+  /// No description provided for @purchaseNeedsVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase went through, but we couldn\'t verify it yet. Nothing is lost — tap retry.'**
+  String get purchaseNeedsVerification;
+
+  /// No description provided for @billingUnavailableMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Play purchases aren\'t available on this device right now.'**
+  String get billingUnavailableMsg;
+
+  /// No description provided for @productsUnavailableMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription plans couldn\'t be loaded. Please try again later.'**
+  String get productsUnavailableMsg;
+
+  /// No description provided for @restoreNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No active subscription was found for this account.'**
+  String get restoreNone;
+
+  /// No description provided for @restoreOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription has been restored.'**
+  String get restoreOk;
+
+  /// No description provided for @statusFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free plan'**
+  String get statusFree;
+
+  /// No description provided for @statusTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'Free trial'**
+  String get statusTrial;
+
+  /// No description provided for @statusPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get statusPremium;
+
+  /// No description provided for @statusExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get statusExpired;
+
+  /// No description provided for @statusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get statusCancelled;
+
+  /// No description provided for @trialDaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days left in your trial'**
+  String trialDaysLeft(String days);
+
+  /// No description provided for @trialEnds.
+  ///
+  /// In en, this message translates to:
+  /// **'Trial ends {date}'**
+  String trialEnds(String date);
+
+  /// No description provided for @renewsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Renews on {date}'**
+  String renewsOn(String date);
+
+  /// No description provided for @accessEndsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Access ends {date}'**
+  String accessEndsOn(String date);
+
+  /// No description provided for @expiredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Premium access has ended. Resubscribe any time.'**
+  String get expiredBody;
+
+  /// No description provided for @freeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You are on the Free plan.'**
+  String get freeBody;
+
+  /// No description provided for @autoRenewOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-renew is on'**
+  String get autoRenewOn;
+
+  /// No description provided for @autoRenewOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-renew is off'**
+  String get autoRenewOff;
+
+  /// No description provided for @manageSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage subscription'**
+  String get manageSubscription;
+
+  /// No description provided for @manageInStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage in Google Play'**
+  String get manageInStore;
+
+  /// No description provided for @refreshStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh status'**
+  String get refreshStatus;
+
+  /// No description provided for @statusRefreshed.
+  ///
+  /// In en, this message translates to:
+  /// **'Status updated'**
+  String get statusRefreshed;
+
+  /// No description provided for @lastVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Last verified {date}'**
+  String lastVerified(String date);
+
+  /// No description provided for @notVerifiedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not verified with the server yet'**
+  String get notVerifiedYet;
+
+  /// No description provided for @planName.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan: {name}'**
+  String planName(String name);
+
+  /// No description provided for @premiumBenefitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium benefits'**
+  String get premiumBenefitsTitle;
+
+  /// No description provided for @benefitUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited sign recognition'**
+  String get benefitUnlimited;
+
+  /// No description provided for @benefitUnlimitedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognise as many signs as you like. Free accounts can recognise up to {count} signs a day.'**
+  String benefitUnlimitedBody(String count);
+
+  /// No description provided for @benefitHistoryBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your full translation history on this device. Free keeps the latest {count} entries.'**
+  String benefitHistoryBody(String count);
+
+  /// No description provided for @benefitAiBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Smoother sentences from an online AI translation service. Needs an internet connection; on-device translation is used otherwise.'**
+  String get benefitAiBody;
+
+  /// No description provided for @benefitAnalyticsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'See accuracy, completion by topic and your activity over the last week.'**
+  String get benefitAnalyticsBody;
+
+  /// No description provided for @alwaysFreeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Always free'**
+  String get alwaysFreeTitle;
+
+  /// No description provided for @alwaysFreeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice.'**
+  String get alwaysFreeBody;
+
+  /// No description provided for @seeAllBenefits.
+  ///
+  /// In en, this message translates to:
+  /// **'See all benefits'**
+  String get seeAllBenefits;
 }
 
 class _AppLocalizationsDelegate

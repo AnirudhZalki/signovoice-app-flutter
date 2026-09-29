@@ -31,3 +31,6 @@ class PrefKeys {
   static const guestMode = 'guest_mode';
   static const usagePrefix = 'usage_';
 }
+
+/// Android application id (also used for Play Store deep links).
+const String kApplicationId = 'com.anirudhzalki.signovoice';

@@ -1224,4 +1224,287 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get audioCallActive => 'ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ';
+
+  @override
+  String get premiumHeader => 'ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ';
+
+  @override
+  String get premiumSubheader =>
+      'ಉಚಿತ ಯೋಜನೆ ನಿಜವಾಗಿಯೂ ಉಪಯುಕ್ತವಾಗಿರುತ್ತದೆ. ಪ್ರೀಮಿಯಂ ಮಿತಿಗಳನ್ನು ತೆಗೆದು ಆಳವಾದ ಸಾಧನಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ.';
+
+  @override
+  String get freePlan => 'ಉಚಿತ';
+
+  @override
+  String get premiumPlan => 'ಪ್ರೀಮಿಯಂ';
+
+  @override
+  String get featRecognition => 'ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ';
+
+  @override
+  String featRecognitionFree(String count) {
+    return 'ದಿನಕ್ಕೆ $count ಸಂಜ್ಞೆಗಳವರೆಗೆ';
+  }
+
+  @override
+  String get featUnlimited => 'ಅಪರಿಮಿತ';
+
+  @override
+  String get featHistory => 'ಅನುವಾದ ಇತಿಹಾಸ';
+
+  @override
+  String featHistoryFree(String count) {
+    return 'ಇತ್ತೀಚಿನ $count ನಮೂದುಗಳು';
+  }
+
+  @override
+  String get featFullHistory => 'ಸಂಪೂರ್ಣ ಇತಿಹಾಸ';
+
+  @override
+  String get featAi => 'ಸುಧಾರಿತ ಎಐ ಅನುವಾದ';
+
+  @override
+  String get featNotIncluded => 'ಸೇರಿಲ್ಲ';
+
+  @override
+  String get featIncludedOnline => 'ಸೇರಿದೆ (ಇಂಟರ್ನೆಟ್ ಬೇಕು)';
+
+  @override
+  String get featAnalytics => 'ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ';
+
+  @override
+  String get featBasicProgress => 'ಮೂಲ ಪ್ರಗತಿ';
+
+  @override
+  String get featFullAnalytics => 'ವಿವರವಾದ ವಿಶ್ಲೇಷಣೆ';
+
+  @override
+  String get featCore => 'ಪಾಠಗಳು, ನಿಘಂಟು, ಅಭ್ಯಾಸ, ಧ್ವನಿ → ಸೈನ್';
+
+  @override
+  String get featIncluded => 'ಸೇರಿದೆ';
+
+  @override
+  String get trialOneMonthFree => '1 ತಿಂಗಳು ಉಚಿತ';
+
+  @override
+  String trialThenPrice(String period, String price) {
+    return 'ನಂತರ $price ಪ್ರತಿ $period';
+  }
+
+  @override
+  String get periodMonth => 'ತಿಂಗಳು';
+
+  @override
+  String get periodYear => 'ವರ್ಷ';
+
+  @override
+  String get periodWeek => 'ವಾರ';
+
+  @override
+  String get periodDay => 'ದಿನ';
+
+  @override
+  String get renewsAutomatically => 'ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ';
+
+  @override
+  String get cancelAnytime =>
+      'ಸ್ಟೋರ್ ಚಂದಾದಾರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ';
+
+  @override
+  String trialTerms(String period, String price) {
+    return 'ನಿಮ್ಮ ಮೊದಲ ತಿಂಗಳು ಉಚಿತ. ಅದು ಮುಗಿದಾಗ, ಟ್ರಯಲ್ ಮುಗಿಯುವ ಮೊದಲು ನೀವು ರದ್ದುಗೊಳಿಸದಿದ್ದರೆ, ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆ ಪ್ರತಿ $periodಗೆ $price ದರದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ. Google Play ನಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ: ಮೆನು › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು. ಶುಲ್ಕ ವಿಧಿಸುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ನೋಡಿ ದೃಢೀಕರಿಸುತ್ತೀರಿ.';
+  }
+
+  @override
+  String subscribeTerms(String period, String price) {
+    return 'ನೀವು ರದ್ದುಗೊಳಿಸುವವರೆಗೆ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆ ಪ್ರತಿ $periodಗೆ $price ದರದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ. Google Play ನಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ: ಮೆನು › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು. ಶುಲ್ಕ ವಿಧಿಸುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ದೃಢೀಕರಿಸುತ್ತೀರಿ.';
+  }
+
+  @override
+  String get priceShownAtCheckout =>
+      'ನೀವು ದೃಢೀಕರಿಸುವ ಮೊದಲು Google Play ಬೆಲೆಯನ್ನು ತೋರಿಸುತ್ತದೆ.';
+
+  @override
+  String get startFreeTrial => 'ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಿ';
+
+  @override
+  String get subscribeNow => 'ಚಂದಾದಾರರಾಗಿ';
+
+  @override
+  String get notNow => 'ಈಗ ಬೇಡ';
+
+  @override
+  String get restorePurchases => 'ಖರೀದಿಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ';
+
+  @override
+  String get planMonthly => 'ಮಾಸಿಕ';
+
+  @override
+  String get planYearly => 'ವಾರ್ಷಿಕ';
+
+  @override
+  String planPerPeriod(String period, String price) {
+    return '$price / $period';
+  }
+
+  @override
+  String get planFirstFree => 'ಮೊದಲ ತಿಂಗಳು ಉಚಿತ';
+
+  @override
+  String get trialOfferTitle => 'ನಿಮ್ಮ ಮೊದಲ ತಿಂಗಳು ಉಚಿತ';
+
+  @override
+  String get trialOfferBody =>
+      'ಒಂದು ತಿಂಗಳು ಪ್ರತಿ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String trialOfferPrice(String period, String price) {
+    return 'ಟ್ರಯಲ್ ನಂತರ ಪ್ರತಿ $periodಗೆ $price';
+  }
+
+  @override
+  String get trialNotAvailable =>
+      'ಈ ಖಾತೆಗೆ ಉಚಿತ ಟ್ರಯಲ್ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಪ್ರೀಮಿಯಂ ಪುಟದಿಂದ ಚಂದಾದಾರರಾಗಬಹುದು.';
+
+  @override
+  String get signInToSubscribe => 'ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಲು ಸೈನ್ ಇನ್ ಮಾಡಿ';
+
+  @override
+  String get purchasePending =>
+      'ನಿಮ್ಮ ಪಾವತಿ ಬಾಕಿ ಇದೆ. ಅದು ಪೂರ್ಣಗೊಂಡಾಗ ಪ್ರೀಮಿಯಂ ಅನ್‌ಲಾಕ್ ಆಗುತ್ತದೆ.';
+
+  @override
+  String get purchaseVerifying => 'ನಿಮ್ಮ ಖರೀದಿಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…';
+
+  @override
+  String get purchaseSuccess => 'ಪ್ರೀಮಿಯಂ ಸಕ್ರಿಯವಾಗಿದೆ. ಧನ್ಯವಾದ!';
+
+  @override
+  String get purchaseCancelled => 'ಖರೀದಿ ರದ್ದಾಗಿದೆ. ನಿಮಗೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿಲ್ಲ.';
+
+  @override
+  String get purchaseNeedsVerification =>
+      'ನಿಮ್ಮ ಖರೀದಿ ಆಯಿತು, ಆದರೆ ನಾವು ಇನ್ನೂ ಪರಿಶೀಲಿಸಲು ಆಗಲಿಲ್ಲ. ಏನೂ ಕಳೆದುಹೋಗಿಲ್ಲ — ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಒತ್ತಿ.';
+
+  @override
+  String get billingUnavailableMsg =>
+      'ಈ ಸಾಧನದಲ್ಲಿ Google Play ಖರೀದಿಗಳು ಈಗ ಲಭ್ಯವಿಲ್ಲ.';
+
+  @override
+  String get productsUnavailableMsg =>
+      'ಚಂದಾದಾರಿಕೆ ಯೋಜನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get restoreNone => 'ಈ ಖಾತೆಗೆ ಯಾವುದೇ ಸಕ್ರಿಯ ಚಂದಾದಾರಿಕೆ ಸಿಗಲಿಲ್ಲ.';
+
+  @override
+  String get restoreOk => 'ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ.';
+
+  @override
+  String get statusFree => 'ಉಚಿತ ಯೋಜನೆ';
+
+  @override
+  String get statusTrial => 'ಉಚಿತ ಟ್ರಯಲ್';
+
+  @override
+  String get statusPremium => 'ಪ್ರೀಮಿಯಂ';
+
+  @override
+  String get statusExpired => 'ಅವಧಿ ಮುಗಿದಿದೆ';
+
+  @override
+  String get statusCancelled => 'ರದ್ದಾಗಿದೆ';
+
+  @override
+  String trialDaysLeft(String days) {
+    return 'ನಿಮ್ಮ ಟ್ರಯಲ್‌ನಲ್ಲಿ $days ದಿನಗಳು ಉಳಿದಿವೆ';
+  }
+
+  @override
+  String trialEnds(String date) {
+    return 'ಟ್ರಯಲ್ $date ರಂದು ಮುಗಿಯುತ್ತದೆ';
+  }
+
+  @override
+  String renewsOn(String date) {
+    return '$date ರಂದು ನವೀಕರಣವಾಗುತ್ತದೆ';
+  }
+
+  @override
+  String accessEndsOn(String date) {
+    return 'ಪ್ರವೇಶ $date ರಂದು ಮುಗಿಯುತ್ತದೆ';
+  }
+
+  @override
+  String get expiredBody =>
+      'ನಿಮ್ಮ ಪ್ರೀಮಿಯಂ ಪ್ರವೇಶ ಮುಗಿದಿದೆ. ಯಾವಾಗ ಬೇಕಾದರೂ ಮತ್ತೆ ಚಂದಾದಾರರಾಗಿ.';
+
+  @override
+  String get freeBody => 'ನೀವು ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿದ್ದೀರಿ.';
+
+  @override
+  String get autoRenewOn => 'ಸ್ವಯಂ-ನವೀಕರಣ ಆನ್ ಆಗಿದೆ';
+
+  @override
+  String get autoRenewOff => 'ಸ್ವಯಂ-ನವೀಕರಣ ಆಫ್ ಆಗಿದೆ';
+
+  @override
+  String get manageSubscription => 'ಚಂದಾದಾರಿಕೆ ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get manageInStore => 'Google Play ನಲ್ಲಿ ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get refreshStatus => 'ಸ್ಥಿತಿಯನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ';
+
+  @override
+  String get statusRefreshed => 'ಸ್ಥಿತಿ ನವೀಕರಿಸಲಾಗಿದೆ';
+
+  @override
+  String lastVerified(String date) {
+    return 'ಕೊನೆಯ ಪರಿಶೀಲನೆ $date';
+  }
+
+  @override
+  String get notVerifiedYet => 'ಸರ್ವರ್‌ನೊಂದಿಗೆ ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ';
+
+  @override
+  String planName(String name) {
+    return 'ಯೋಜನೆ: $name';
+  }
+
+  @override
+  String get premiumBenefitsTitle => 'ಪ್ರೀಮಿಯಂ ಪ್ರಯೋಜನಗಳು';
+
+  @override
+  String get benefitUnlimited => 'ಅಪರಿಮಿತ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ';
+
+  @override
+  String benefitUnlimitedBody(String count) {
+    return 'ನಿಮಗೆ ಬೇಕಾದಷ್ಟು ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸಿ. ಉಚಿತ ಖಾತೆಗಳು ದಿನಕ್ಕೆ $count ಸಂಜ್ಞೆಗಳವರೆಗೆ ಗುರುತಿಸಬಹುದು.';
+  }
+
+  @override
+  String benefitHistoryBody(String count) {
+    return 'ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಅನುವಾದ ಇತಿಹಾಸವನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಇರಿಸಿ. ಉಚಿತ ಯೋಜನೆ ಇತ್ತೀಚಿನ $count ನಮೂದುಗಳನ್ನು ತೋರಿಸುತ್ತದೆ.';
+  }
+
+  @override
+  String get benefitAiBody =>
+      'ಆನ್‌ಲೈನ್ ಎಐ ಅನುವಾದ ಸೇವೆಯಿಂದ ಸುಗಮ ವಾಕ್ಯಗಳು. ಇಂಟರ್ನೆಟ್ ಬೇಕು; ಇಲ್ಲದಿದ್ದರೆ ಸಾಧನದ ಅನುವಾದ ಬಳಕೆಯಾಗುತ್ತದೆ.';
+
+  @override
+  String get benefitAnalyticsBody =>
+      'ನಿಖರತೆ, ವಿಷಯವಾರು ಪೂರ್ಣತೆ ಮತ್ತು ಕಳೆದ ವಾರದ ಚಟುವಟಿಕೆಯನ್ನು ನೋಡಿ.';
+
+  @override
+  String get alwaysFreeTitle => 'ಯಾವಾಗಲೂ ಉಚಿತ';
+
+  @override
+  String get alwaysFreeBody =>
+      'ಸಾಧನದಲ್ಲೇ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ (ದೈನಂದಿನ ಮಿತಿಯೊಂದಿಗೆ), ಧ್ವನಿ → ಸೈನ್, ಸಂಜ್ಞಾ ನಿಘಂಟು, ಎಲ್ಲಾ ಪಾಠಗಳು ಮತ್ತು ಅಭ್ಯಾಸ.';
+
+  @override
+  String get seeAllBenefits => 'ಎಲ್ಲಾ ಪ್ರಯೋಜನಗಳನ್ನು ನೋಡಿ';
 }

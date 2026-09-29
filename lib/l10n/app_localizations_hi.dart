@@ -1221,4 +1221,287 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get audioCallActive => 'ऑडियो कॉल चल रही है';
+
+  @override
+  String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
+
+  @override
+  String get premiumSubheader =>
+      'निःशुल्क योजना सचमुच उपयोगी रहती है। प्रीमियम सीमाएं हटाता है और गहरे टूल जोड़ता है।';
+
+  @override
+  String get freePlan => 'निःशुल्क';
+
+  @override
+  String get premiumPlan => 'प्रीमियम';
+
+  @override
+  String get featRecognition => 'साइन पहचान';
+
+  @override
+  String featRecognitionFree(String count) {
+    return 'प्रतिदिन $count साइन तक';
+  }
+
+  @override
+  String get featUnlimited => 'असीमित';
+
+  @override
+  String get featHistory => 'अनुवाद इतिहास';
+
+  @override
+  String featHistoryFree(String count) {
+    return 'नवीनतम $count प्रविष्टियाँ';
+  }
+
+  @override
+  String get featFullHistory => 'पूरा इतिहास';
+
+  @override
+  String get featAi => 'उन्नत एआई अनुवाद';
+
+  @override
+  String get featNotIncluded => 'शामिल नहीं';
+
+  @override
+  String get featIncludedOnline => 'शामिल (इंटरनेट आवश्यक)';
+
+  @override
+  String get featAnalytics => 'सीखने का विश्लेषण';
+
+  @override
+  String get featBasicProgress => 'बुनियादी प्रगति';
+
+  @override
+  String get featFullAnalytics => 'विस्तृत विश्लेषण';
+
+  @override
+  String get featCore => 'पाठ, शब्दकोश, अभ्यास, आवाज़ → साइन';
+
+  @override
+  String get featIncluded => 'शामिल';
+
+  @override
+  String get trialOneMonthFree => '1 महीना निःशुल्क';
+
+  @override
+  String trialThenPrice(String period, String price) {
+    return 'फिर $price प्रति $period';
+  }
+
+  @override
+  String get periodMonth => 'माह';
+
+  @override
+  String get periodYear => 'वर्ष';
+
+  @override
+  String get periodWeek => 'सप्ताह';
+
+  @override
+  String get periodDay => 'दिन';
+
+  @override
+  String get renewsAutomatically => 'अपने आप नवीनीकृत होता है';
+
+  @override
+  String get cancelAnytime => 'स्टोर की सदस्यता सेटिंग्स में कभी भी रद्द करें';
+
+  @override
+  String trialTerms(String period, String price) {
+    return 'आपका पहला महीना निःशुल्क है। समाप्त होने पर, जब तक आप ट्रायल खत्म होने से पहले रद्द न करें, आपकी सदस्यता $price प्रति $period पर अपने आप नवीनीकृत होगी। Google Play में कभी भी रद्द करें: मेनू › भुगतान और सदस्यताएं › सदस्यताएं। शुल्क लगने से पहले आप Google Play में अंतिम कीमत देखेंगे और पुष्टि करेंगे।';
+  }
+
+  @override
+  String subscribeTerms(String period, String price) {
+    return 'आपकी सदस्यता रद्द करने तक $price प्रति $period पर अपने आप नवीनीकृत होती है। Google Play में कभी भी रद्द करें: मेनू › भुगतान और सदस्यताएं › सदस्यताएं। शुल्क लगने से पहले आप Google Play में अंतिम कीमत की पुष्टि करेंगे।';
+  }
+
+  @override
+  String get priceShownAtCheckout =>
+      'कीमत आपके पुष्टि करने से पहले Google Play दिखाएगा।';
+
+  @override
+  String get startFreeTrial => 'निःशुल्क ट्रायल शुरू करें';
+
+  @override
+  String get subscribeNow => 'सदस्यता लें';
+
+  @override
+  String get notNow => 'अभी नहीं';
+
+  @override
+  String get restorePurchases => 'खरीदारी पुनर्स्थापित करें';
+
+  @override
+  String get planMonthly => 'मासिक';
+
+  @override
+  String get planYearly => 'वार्षिक';
+
+  @override
+  String planPerPeriod(String period, String price) {
+    return '$price / $period';
+  }
+
+  @override
+  String get planFirstFree => 'पहला महीना निःशुल्क';
+
+  @override
+  String get trialOfferTitle => 'आपका पहला महीना निःशुल्क है';
+
+  @override
+  String get trialOfferBody => 'एक महीने तक हर प्रीमियम सुविधा आज़माएं।';
+
+  @override
+  String trialOfferPrice(String period, String price) {
+    return 'ट्रायल के बाद $price प्रति $period';
+  }
+
+  @override
+  String get trialNotAvailable =>
+      'इस खाते के लिए निःशुल्क ट्रायल उपलब्ध नहीं है। आप प्रीमियम पृष्ठ से सदस्यता ले सकते हैं।';
+
+  @override
+  String get signInToSubscribe =>
+      'निःशुल्क ट्रायल शुरू करने के लिए साइन इन करें';
+
+  @override
+  String get purchasePending =>
+      'आपका भुगतान लंबित है। पूरा होने पर प्रीमियम अनलॉक होगा।';
+
+  @override
+  String get purchaseVerifying => 'आपकी खरीदारी सत्यापित की जा रही है…';
+
+  @override
+  String get purchaseSuccess => 'प्रीमियम सक्रिय है। धन्यवाद!';
+
+  @override
+  String get purchaseCancelled =>
+      'खरीदारी रद्द की गई। आपसे कोई शुल्क नहीं लिया गया।';
+
+  @override
+  String get purchaseNeedsVerification =>
+      'आपकी खरीदारी हो गई, लेकिन हम अभी उसे सत्यापित नहीं कर सके। कुछ भी नहीं खोया है — पुनः प्रयास दबाएं।';
+
+  @override
+  String get billingUnavailableMsg =>
+      'इस डिवाइस पर Google Play खरीदारी अभी उपलब्ध नहीं है।';
+
+  @override
+  String get productsUnavailableMsg =>
+      'सदस्यता योजनाएं लोड नहीं हो सकीं। कृपया बाद में पुनः प्रयास करें।';
+
+  @override
+  String get restoreNone => 'इस खाते के लिए कोई सक्रिय सदस्यता नहीं मिली।';
+
+  @override
+  String get restoreOk => 'आपकी सदस्यता पुनर्स्थापित हो गई है।';
+
+  @override
+  String get statusFree => 'निःशुल्क योजना';
+
+  @override
+  String get statusTrial => 'निःशुल्क ट्रायल';
+
+  @override
+  String get statusPremium => 'प्रीमियम';
+
+  @override
+  String get statusExpired => 'समाप्त';
+
+  @override
+  String get statusCancelled => 'रद्द';
+
+  @override
+  String trialDaysLeft(String days) {
+    return 'आपके ट्रायल में $days दिन शेष';
+  }
+
+  @override
+  String trialEnds(String date) {
+    return 'ट्रायल $date को समाप्त होता है';
+  }
+
+  @override
+  String renewsOn(String date) {
+    return '$date को नवीनीकृत होगा';
+  }
+
+  @override
+  String accessEndsOn(String date) {
+    return 'पहुँच $date को समाप्त होती है';
+  }
+
+  @override
+  String get expiredBody =>
+      'आपकी प्रीमियम पहुँच समाप्त हो गई है। कभी भी फिर से सदस्यता लें।';
+
+  @override
+  String get freeBody => 'आप निःशुल्क योजना पर हैं।';
+
+  @override
+  String get autoRenewOn => 'ऑटो-रिन्यू चालू है';
+
+  @override
+  String get autoRenewOff => 'ऑटो-रिन्यू बंद है';
+
+  @override
+  String get manageSubscription => 'सदस्यता प्रबंधित करें';
+
+  @override
+  String get manageInStore => 'Google Play में प्रबंधित करें';
+
+  @override
+  String get refreshStatus => 'स्थिति ताज़ा करें';
+
+  @override
+  String get statusRefreshed => 'स्थिति अपडेट हुई';
+
+  @override
+  String lastVerified(String date) {
+    return 'अंतिम सत्यापन $date';
+  }
+
+  @override
+  String get notVerifiedYet => 'सर्वर से अभी सत्यापित नहीं';
+
+  @override
+  String planName(String name) {
+    return 'योजना: $name';
+  }
+
+  @override
+  String get premiumBenefitsTitle => 'प्रीमियम लाभ';
+
+  @override
+  String get benefitUnlimited => 'असीमित साइन पहचान';
+
+  @override
+  String benefitUnlimitedBody(String count) {
+    return 'जितने चाहें उतने साइन पहचानें। निःशुल्क खाते प्रतिदिन $count साइन तक पहचान सकते हैं।';
+  }
+
+  @override
+  String benefitHistoryBody(String count) {
+    return 'अपना पूरा अनुवाद इतिहास इस डिवाइस पर रखें। निःशुल्क योजना नवीनतम $count प्रविष्टियाँ दिखाती है।';
+  }
+
+  @override
+  String get benefitAiBody =>
+      'ऑनलाइन एआई अनुवाद सेवा से अधिक सहज वाक्य। इंटरनेट आवश्यक है; अन्यथा ऑन-डिवाइस अनुवाद उपयोग होता है।';
+
+  @override
+  String get benefitAnalyticsBody =>
+      'सटीकता, विषय अनुसार पूर्णता और पिछले सप्ताह की गतिविधि देखें।';
+
+  @override
+  String get alwaysFreeTitle => 'हमेशा निःशुल्क';
+
+  @override
+  String get alwaysFreeBody =>
+      'ऑन-डिवाइस साइन पहचान (दैनिक सीमा के साथ), आवाज़ → साइन, साइन शब्दकोश, सभी पाठ और अभ्यास।';
+
+  @override
+  String get seeAllBenefits => 'सभी लाभ देखें';
 }

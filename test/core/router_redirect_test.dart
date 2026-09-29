@@ -25,6 +25,9 @@ void main() {
     expect(redirectFor(SessionStage.needsProfile, Routes.home), Routes.profileSetup);
     expect(redirectFor(SessionStage.trialOffer, Routes.home), Routes.trialOffer);
     expect(redirectFor(SessionStage.trialOffer, Routes.trialOffer), isNull);
+    // The offer links to benefits and legal pages; those must stay reachable.
+    expect(redirectFor(SessionStage.trialOffer, Routes.premiumBenefits), isNull);
+    expect(redirectFor(SessionStage.trialOffer, Routes.legalTerms), isNull);
   });
 
   test('ready users are moved off entry screens but keep deep links', () {

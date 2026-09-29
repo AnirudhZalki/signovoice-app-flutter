@@ -598,5 +598,205 @@
     }
   },
   "waitingForVideo": "Waiting for the interpreter's video…",
-  "audioCallActive": "Audio call in progress"
+  "audioCallActive": "Audio call in progress",
+  "premiumHeader": "Unlock the full SignoVoice experience",
+  "premiumSubheader": "Free stays genuinely useful. Premium removes limits and adds deeper tools.",
+  "freePlan": "Free",
+  "premiumPlan": "Premium",
+  "featRecognition": "Sign recognition",
+  "featRecognitionFree": "Up to {count} signs a day",
+  "@featRecognitionFree": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "featUnlimited": "Unlimited",
+  "featHistory": "Translation history",
+  "featHistoryFree": "Latest {count} entries",
+  "@featHistoryFree": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "featFullHistory": "Full history",
+  "featAi": "Advanced AI translation",
+  "featNotIncluded": "Not included",
+  "featIncludedOnline": "Included (needs internet)",
+  "featAnalytics": "Learning analytics",
+  "featBasicProgress": "Basic progress",
+  "featFullAnalytics": "Detailed analytics",
+  "featCore": "Lessons, dictionary, practice, voice → sign",
+  "featIncluded": "Included",
+  "trialOneMonthFree": "1 month free",
+  "trialThenPrice": "Then {price} per {period}",
+  "@trialThenPrice": {
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "periodMonth": "month",
+  "periodYear": "year",
+  "periodWeek": "week",
+  "periodDay": "day",
+  "renewsAutomatically": "Renews automatically",
+  "cancelAnytime": "Cancel anytime in your store subscription settings",
+  "trialTerms": "Your first month is free. When it ends, your subscription renews automatically at {price} per {period} unless you cancel before the trial ends. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will always see the final price and confirm in Google Play before you are charged.",
+  "@trialTerms": {
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "subscribeTerms": "Your subscription renews automatically at {price} per {period} until you cancel. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will confirm the final price in Google Play before you are charged.",
+  "@subscribeTerms": {
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "priceShownAtCheckout": "The price is shown by Google Play before you confirm.",
+  "startFreeTrial": "Start free trial",
+  "subscribeNow": "Subscribe",
+  "notNow": "Not now",
+  "restorePurchases": "Restore purchases",
+  "planMonthly": "Monthly",
+  "planYearly": "Yearly",
+  "planPerPeriod": "{price} / {period}",
+  "@planPerPeriod": {
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "planFirstFree": "First month free",
+  "trialOfferTitle": "Your first month is free",
+  "trialOfferBody": "Try every Premium feature for a month.",
+  "trialOfferPrice": "{price} per {period} after your trial",
+  "@trialOfferPrice": {
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "trialNotAvailable": "A free trial isn't available for this account. You can still subscribe from the Premium page.",
+  "signInToSubscribe": "Sign in to start your free trial",
+  "purchasePending": "Your payment is pending. Premium unlocks once it completes.",
+  "purchaseVerifying": "Verifying your purchase…",
+  "purchaseSuccess": "Premium is active. Thank you!",
+  "purchaseCancelled": "Purchase cancelled. You haven't been charged.",
+  "purchaseNeedsVerification": "Your purchase went through, but we couldn't verify it yet. Nothing is lost — tap retry.",
+  "billingUnavailableMsg": "Google Play purchases aren't available on this device right now.",
+  "productsUnavailableMsg": "Subscription plans couldn't be loaded. Please try again later.",
+  "restoreNone": "No active subscription was found for this account.",
+  "restoreOk": "Your subscription has been restored.",
+  "statusFree": "Free plan",
+  "statusTrial": "Free trial",
+  "statusPremium": "Premium",
+  "statusExpired": "Expired",
+  "statusCancelled": "Cancelled",
+  "trialDaysLeft": "{days} days left in your trial",
+  "@trialDaysLeft": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "trialEnds": "Trial ends {date}",
+  "@trialEnds": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "renewsOn": "Renews on {date}",
+  "@renewsOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "accessEndsOn": "Access ends {date}",
+  "@accessEndsOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "expiredBody": "Your Premium access has ended. Resubscribe any time.",
+  "freeBody": "You are on the Free plan.",
+  "autoRenewOn": "Auto-renew is on",
+  "autoRenewOff": "Auto-renew is off",
+  "manageSubscription": "Manage subscription",
+  "manageInStore": "Manage in Google Play",
+  "refreshStatus": "Refresh status",
+  "statusRefreshed": "Status updated",
+  "lastVerified": "Last verified {date}",
+  "@lastVerified": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notVerifiedYet": "Not verified with the server yet",
+  "planName": "Plan: {name}",
+  "@planName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumBenefitsTitle": "Premium benefits",
+  "benefitUnlimited": "Unlimited sign recognition",
+  "benefitUnlimitedBody": "Recognise as many signs as you like. Free accounts can recognise up to {count} signs a day.",
+  "@benefitUnlimitedBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "benefitHistoryBody": "Keep your full translation history on this device. Free keeps the latest {count} entries.",
+  "@benefitHistoryBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "benefitAiBody": "Smoother sentences from an online AI translation service. Needs an internet connection; on-device translation is used otherwise.",
+  "benefitAnalyticsBody": "See accuracy, completion by topic and your activity over the last week.",
+  "alwaysFreeTitle": "Always free",
+  "alwaysFreeBody": "On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice.",
+  "seeAllBenefits": "See all benefits"
 }

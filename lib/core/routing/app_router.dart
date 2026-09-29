@@ -19,6 +19,12 @@ import '../../features/learning/presentation/lesson_screen.dart';
 import '../../features/learning/presentation/progress_screen.dart';
 import '../../features/practice/presentation/practice_hub_screen.dart';
 import '../../features/practice/presentation/practice_screen.dart';
+import '../../features/subscription/domain/entitlement.dart';
+import '../../features/subscription/presentation/manage_subscription_screen.dart';
+import '../../features/subscription/presentation/premium_benefits_screen.dart';
+import '../../features/subscription/presentation/subscription_providers.dart';
+import '../../features/subscription/presentation/subscription_screen.dart';
+import '../../features/subscription/presentation/trial_offer_screen.dart';
 import '../../features/voice_translation/presentation/voice_to_sign_screen.dart';
 import '../../features/history/presentation/history_screen.dart';
 import '../../features/home/presentation/app_shell.dart';
@@ -54,7 +60,7 @@ String? redirectFor(SessionStage stage, String location) {
     case SessionStage.needsProfile:
       return location == Routes.profileSetup || _isLegal(location) ? null : Routes.profileSetup;
     case SessionStage.trialOffer:
-      return location == Routes.trialOffer || _isLegal(location) ? null : Routes.trialOffer;
+      return location == Routes.trialOffer || location == Routes.premiumBenefits || _isLegal(location) ? null : Routes.trialOffer;
     case SessionStage.ready:
       const gated = {
         Routes.splash,
@@ -74,6 +80,7 @@ String? redirectFor(SessionStage stage, String location) {
 final routerProvider = Provider<GoRouter>((ref) {
   final refresh = ValueNotifier<int>(0);
   ref.listen(sessionStageProvider, (_, _) => refresh.value++);
+  ref.listen(isPremiumProvider, (_, _) => refresh.value++); // re-run premium route guards
   ref.onDispose(refresh.dispose);
 
   final router = GoRouter(
@@ -110,7 +117,16 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/learn/lesson/:id', builder: (_, state) => LessonScreen(lessonId: state.pathParameters['id']!)),
       GoRoute(path: Routes.practiceHub, builder: (_, _) => const PracticeHubScreen()),
       GoRoute(path: Routes.practicePattern, builder: (_, state) => PracticeScreen(signId: state.pathParameters['id']!)),
-      GoRoute(path: Routes.progress, builder: (_, _) => const ProgressScreen()),
+      // Premium-only route: non-entitled users are sent to the upgrade page.
+      GoRoute(
+        path: Routes.progress,
+        redirect: (_, _) => ref.read(entitlementProvider).allows(PremiumFeature.learningAnalytics) ? null : Routes.premium,
+        builder: (_, _) => const ProgressScreen(),
+      ),
+      GoRoute(path: Routes.trialOffer, builder: (_, _) => const TrialOfferScreen()),
+      GoRoute(path: Routes.premium, builder: (_, _) => const SubscriptionScreen()),
+      GoRoute(path: Routes.premiumBenefits, builder: (_, _) => const PremiumBenefitsScreen()),
+      GoRoute(path: Routes.manageSubscription, builder: (_, _) => const ManageSubscriptionScreen()),
       GoRoute(path: Routes.interpreterCall, builder: (_, _) => const CallScreen()),
       GoRoute(
         path: Routes.interpreterFeedback,

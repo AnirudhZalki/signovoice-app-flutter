@@ -1220,4 +1220,288 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get audioCallActive => 'Audio call in progress';
+
+  @override
+  String get premiumHeader => 'Unlock the full SignoVoice experience';
+
+  @override
+  String get premiumSubheader =>
+      'Free stays genuinely useful. Premium removes limits and adds deeper tools.';
+
+  @override
+  String get freePlan => 'Free';
+
+  @override
+  String get premiumPlan => 'Premium';
+
+  @override
+  String get featRecognition => 'Sign recognition';
+
+  @override
+  String featRecognitionFree(String count) {
+    return 'Up to $count signs a day';
+  }
+
+  @override
+  String get featUnlimited => 'Unlimited';
+
+  @override
+  String get featHistory => 'Translation history';
+
+  @override
+  String featHistoryFree(String count) {
+    return 'Latest $count entries';
+  }
+
+  @override
+  String get featFullHistory => 'Full history';
+
+  @override
+  String get featAi => 'Advanced AI translation';
+
+  @override
+  String get featNotIncluded => 'Not included';
+
+  @override
+  String get featIncludedOnline => 'Included (needs internet)';
+
+  @override
+  String get featAnalytics => 'Learning analytics';
+
+  @override
+  String get featBasicProgress => 'Basic progress';
+
+  @override
+  String get featFullAnalytics => 'Detailed analytics';
+
+  @override
+  String get featCore => 'Lessons, dictionary, practice, voice → sign';
+
+  @override
+  String get featIncluded => 'Included';
+
+  @override
+  String get trialOneMonthFree => '1 month free';
+
+  @override
+  String trialThenPrice(String period, String price) {
+    return 'Then $price per $period';
+  }
+
+  @override
+  String get periodMonth => 'month';
+
+  @override
+  String get periodYear => 'year';
+
+  @override
+  String get periodWeek => 'week';
+
+  @override
+  String get periodDay => 'day';
+
+  @override
+  String get renewsAutomatically => 'Renews automatically';
+
+  @override
+  String get cancelAnytime =>
+      'Cancel anytime in your store subscription settings';
+
+  @override
+  String trialTerms(String period, String price) {
+    return 'Your first month is free. When it ends, your subscription renews automatically at $price per $period unless you cancel before the trial ends. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will always see the final price and confirm in Google Play before you are charged.';
+  }
+
+  @override
+  String subscribeTerms(String period, String price) {
+    return 'Your subscription renews automatically at $price per $period until you cancel. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will confirm the final price in Google Play before you are charged.';
+  }
+
+  @override
+  String get priceShownAtCheckout =>
+      'The price is shown by Google Play before you confirm.';
+
+  @override
+  String get startFreeTrial => 'Start free trial';
+
+  @override
+  String get subscribeNow => 'Subscribe';
+
+  @override
+  String get notNow => 'Not now';
+
+  @override
+  String get restorePurchases => 'Restore purchases';
+
+  @override
+  String get planMonthly => 'Monthly';
+
+  @override
+  String get planYearly => 'Yearly';
+
+  @override
+  String planPerPeriod(String period, String price) {
+    return '$price / $period';
+  }
+
+  @override
+  String get planFirstFree => 'First month free';
+
+  @override
+  String get trialOfferTitle => 'Your first month is free';
+
+  @override
+  String get trialOfferBody => 'Try every Premium feature for a month.';
+
+  @override
+  String trialOfferPrice(String period, String price) {
+    return '$price per $period after your trial';
+  }
+
+  @override
+  String get trialNotAvailable =>
+      'A free trial isn\'t available for this account. You can still subscribe from the Premium page.';
+
+  @override
+  String get signInToSubscribe => 'Sign in to start your free trial';
+
+  @override
+  String get purchasePending =>
+      'Your payment is pending. Premium unlocks once it completes.';
+
+  @override
+  String get purchaseVerifying => 'Verifying your purchase…';
+
+  @override
+  String get purchaseSuccess => 'Premium is active. Thank you!';
+
+  @override
+  String get purchaseCancelled =>
+      'Purchase cancelled. You haven\'t been charged.';
+
+  @override
+  String get purchaseNeedsVerification =>
+      'Your purchase went through, but we couldn\'t verify it yet. Nothing is lost — tap retry.';
+
+  @override
+  String get billingUnavailableMsg =>
+      'Google Play purchases aren\'t available on this device right now.';
+
+  @override
+  String get productsUnavailableMsg =>
+      'Subscription plans couldn\'t be loaded. Please try again later.';
+
+  @override
+  String get restoreNone =>
+      'No active subscription was found for this account.';
+
+  @override
+  String get restoreOk => 'Your subscription has been restored.';
+
+  @override
+  String get statusFree => 'Free plan';
+
+  @override
+  String get statusTrial => 'Free trial';
+
+  @override
+  String get statusPremium => 'Premium';
+
+  @override
+  String get statusExpired => 'Expired';
+
+  @override
+  String get statusCancelled => 'Cancelled';
+
+  @override
+  String trialDaysLeft(String days) {
+    return '$days days left in your trial';
+  }
+
+  @override
+  String trialEnds(String date) {
+    return 'Trial ends $date';
+  }
+
+  @override
+  String renewsOn(String date) {
+    return 'Renews on $date';
+  }
+
+  @override
+  String accessEndsOn(String date) {
+    return 'Access ends $date';
+  }
+
+  @override
+  String get expiredBody =>
+      'Your Premium access has ended. Resubscribe any time.';
+
+  @override
+  String get freeBody => 'You are on the Free plan.';
+
+  @override
+  String get autoRenewOn => 'Auto-renew is on';
+
+  @override
+  String get autoRenewOff => 'Auto-renew is off';
+
+  @override
+  String get manageSubscription => 'Manage subscription';
+
+  @override
+  String get manageInStore => 'Manage in Google Play';
+
+  @override
+  String get refreshStatus => 'Refresh status';
+
+  @override
+  String get statusRefreshed => 'Status updated';
+
+  @override
+  String lastVerified(String date) {
+    return 'Last verified $date';
+  }
+
+  @override
+  String get notVerifiedYet => 'Not verified with the server yet';
+
+  @override
+  String planName(String name) {
+    return 'Plan: $name';
+  }
+
+  @override
+  String get premiumBenefitsTitle => 'Premium benefits';
+
+  @override
+  String get benefitUnlimited => 'Unlimited sign recognition';
+
+  @override
+  String benefitUnlimitedBody(String count) {
+    return 'Recognise as many signs as you like. Free accounts can recognise up to $count signs a day.';
+  }
+
+  @override
+  String benefitHistoryBody(String count) {
+    return 'Keep your full translation history on this device. Free keeps the latest $count entries.';
+  }
+
+  @override
+  String get benefitAiBody =>
+      'Smoother sentences from an online AI translation service. Needs an internet connection; on-device translation is used otherwise.';
+
+  @override
+  String get benefitAnalyticsBody =>
+      'See accuracy, completion by topic and your activity over the last week.';
+
+  @override
+  String get alwaysFreeTitle => 'Always free';
+
+  @override
+  String get alwaysFreeBody =>
+      'On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice.';
+
+  @override
+  String get seeAllBenefits => 'See all benefits';
 }

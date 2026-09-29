@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/routing/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'features/profile/domain/user_preferences.dart';
+import 'features/subscription/presentation/purchase_flow_controller.dart';
 import 'features/profile/presentation/preferences_controller.dart';
 import 'l10n/app_localizations.dart';
 import 'shared/widgets/state_widgets.dart';
@@ -16,6 +17,7 @@ class SignoVoiceApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final prefs = ref.watch(preferencesProvider);
     final router = ref.watch(routerProvider);
+    ref.watch(purchaseListenerProvider); // receive store purchases for the whole session
 
     return MaterialApp.router(
       title: 'SignoVoice',

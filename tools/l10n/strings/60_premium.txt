@@ -1,0 +1,82 @@
+# ---- premium / subscription ----
+premiumHeader | Unlock the full SignoVoice experience | पूरा साइनोवॉइस अनुभव अनलॉक करें | ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ
+premiumSubheader | Free stays genuinely useful. Premium removes limits and adds deeper tools. | निःशुल्क योजना सचमुच उपयोगी रहती है। प्रीमियम सीमाएं हटाता है और गहरे टूल जोड़ता है। | ಉಚಿತ ಯೋಜನೆ ನಿಜವಾಗಿಯೂ ಉಪಯುಕ್ತವಾಗಿರುತ್ತದೆ. ಪ್ರೀಮಿಯಂ ಮಿತಿಗಳನ್ನು ತೆಗೆದು ಆಳವಾದ ಸಾಧನಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ.
+freePlan | Free | निःशुल्क | ಉಚಿತ
+premiumPlan | Premium | प्रीमियम | ಪ್ರೀಮಿಯಂ
+featRecognition | Sign recognition | साइन पहचान | ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ
+featRecognitionFree | Up to {count} signs a day | प्रतिदिन {count} साइन तक | ದಿನಕ್ಕೆ {count} ಸಂಜ್ಞೆಗಳವರೆಗೆ
+featUnlimited | Unlimited | असीमित | ಅಪರಿಮಿತ
+featHistory | Translation history | अनुवाद इतिहास | ಅನುವಾದ ಇತಿಹಾಸ
+featHistoryFree | Latest {count} entries | नवीनतम {count} प्रविष्टियाँ | ಇತ್ತೀಚಿನ {count} ನಮೂದುಗಳು
+featFullHistory | Full history | पूरा इतिहास | ಸಂಪೂರ್ಣ ಇತಿಹಾಸ
+featAi | Advanced AI translation | उन्नत एआई अनुवाद | ಸುಧಾರಿತ ಎಐ ಅನುವಾದ
+featNotIncluded | Not included | शामिल नहीं | ಸೇರಿಲ್ಲ
+featIncludedOnline | Included (needs internet) | शामिल (इंटरनेट आवश्यक) | ಸೇರಿದೆ (ಇಂಟರ್ನೆಟ್ ಬೇಕು)
+featAnalytics | Learning analytics | सीखने का विश्लेषण | ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ
+featBasicProgress | Basic progress | बुनियादी प्रगति | ಮೂಲ ಪ್ರಗತಿ
+featFullAnalytics | Detailed analytics | विस्तृत विश्लेषण | ವಿವರವಾದ ವಿಶ್ಲೇಷಣೆ
+featCore | Lessons, dictionary, practice, voice → sign | पाठ, शब्दकोश, अभ्यास, आवाज़ → साइन | ಪಾಠಗಳು, ನಿಘಂಟು, ಅಭ್ಯಾಸ, ಧ್ವನಿ → ಸೈನ್
+featIncluded | Included | शामिल | ಸೇರಿದೆ
+trialOneMonthFree | 1 month free | 1 महीना निःशुल्क | 1 ತಿಂಗಳು ಉಚಿತ
+trialThenPrice | Then {price} per {period} | फिर {price} प्रति {period} | ನಂತರ {price} ಪ್ರತಿ {period}
+periodMonth | month | माह | ತಿಂಗಳು
+periodYear | year | वर्ष | ವರ್ಷ
+periodWeek | week | सप्ताह | ವಾರ
+periodDay | day | दिन | ದಿನ
+renewsAutomatically | Renews automatically | अपने आप नवीनीकृत होता है | ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ
+cancelAnytime | Cancel anytime in your store subscription settings | स्टोर की सदस्यता सेटिंग्स में कभी भी रद्द करें | ಸ್ಟೋರ್ ಚಂದಾದಾರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ
+trialTerms | Your first month is free. When it ends, your subscription renews automatically at {price} per {period} unless you cancel before the trial ends. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will always see the final price and confirm in Google Play before you are charged. | आपका पहला महीना निःशुल्क है। समाप्त होने पर, जब तक आप ट्रायल खत्म होने से पहले रद्द न करें, आपकी सदस्यता {price} प्रति {period} पर अपने आप नवीनीकृत होगी। Google Play में कभी भी रद्द करें: मेनू › भुगतान और सदस्यताएं › सदस्यताएं। शुल्क लगने से पहले आप Google Play में अंतिम कीमत देखेंगे और पुष्टि करेंगे। | ನಿಮ್ಮ ಮೊದಲ ತಿಂಗಳು ಉಚಿತ. ಅದು ಮುಗಿದಾಗ, ಟ್ರಯಲ್ ಮುಗಿಯುವ ಮೊದಲು ನೀವು ರದ್ದುಗೊಳಿಸದಿದ್ದರೆ, ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆ ಪ್ರತಿ {period}ಗೆ {price} ದರದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ. Google Play ನಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ: ಮೆನು › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು. ಶುಲ್ಕ ವಿಧಿಸುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ನೋಡಿ ದೃಢೀಕರಿಸುತ್ತೀರಿ.
+subscribeTerms | Your subscription renews automatically at {price} per {period} until you cancel. Cancel any time in Google Play: Menu › Payments & subscriptions › Subscriptions. You will confirm the final price in Google Play before you are charged. | आपकी सदस्यता रद्द करने तक {price} प्रति {period} पर अपने आप नवीनीकृत होती है। Google Play में कभी भी रद्द करें: मेनू › भुगतान और सदस्यताएं › सदस्यताएं। शुल्क लगने से पहले आप Google Play में अंतिम कीमत की पुष्टि करेंगे। | ನೀವು ರದ್ದುಗೊಳಿಸುವವರೆಗೆ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆ ಪ್ರತಿ {period}ಗೆ {price} ದರದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ. Google Play ನಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ: ಮೆನು › ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು. ಶುಲ್ಕ ವಿಧಿಸುವ ಮೊದಲು ನೀವು Google Play ನಲ್ಲಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ದೃಢೀಕರಿಸುತ್ತೀರಿ.
+priceShownAtCheckout | The price is shown by Google Play before you confirm. | कीमत आपके पुष्टि करने से पहले Google Play दिखाएगा। | ನೀವು ದೃಢೀಕರಿಸುವ ಮೊದಲು Google Play ಬೆಲೆಯನ್ನು ತೋರಿಸುತ್ತದೆ.
+startFreeTrial | Start free trial | निःशुल्क ट्रायल शुरू करें | ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಿ
+subscribeNow | Subscribe | सदस्यता लें | ಚಂದಾದಾರರಾಗಿ
+notNow | Not now | अभी नहीं | ಈಗ ಬೇಡ
+restorePurchases | Restore purchases | खरीदारी पुनर्स्थापित करें | ಖರೀದಿಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ
+planMonthly | Monthly | मासिक | ಮಾಸಿಕ
+planYearly | Yearly | वार्षिक | ವಾರ್ಷಿಕ
+planPerPeriod | {price} / {period} | {price} / {period} | {price} / {period}
+planFirstFree | First month free | पहला महीना निःशुल्क | ಮೊದಲ ತಿಂಗಳು ಉಚಿತ
+trialOfferTitle | Your first month is free | आपका पहला महीना निःशुल्क है | ನಿಮ್ಮ ಮೊದಲ ತಿಂಗಳು ಉಚಿತ
+trialOfferBody | Try every Premium feature for a month. | एक महीने तक हर प्रीमियम सुविधा आज़माएं। | ಒಂದು ತಿಂಗಳು ಪ್ರತಿ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಪ್ರಯತ್ನಿಸಿ.
+trialOfferPrice | {price} per {period} after your trial | ट्रायल के बाद {price} प्रति {period} | ಟ್ರಯಲ್ ನಂತರ ಪ್ರತಿ {period}ಗೆ {price}
+trialNotAvailable | A free trial isn't available for this account. You can still subscribe from the Premium page. | इस खाते के लिए निःशुल्क ट्रायल उपलब्ध नहीं है। आप प्रीमियम पृष्ठ से सदस्यता ले सकते हैं। | ಈ ಖಾತೆಗೆ ಉಚಿತ ಟ್ರಯಲ್ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಪ್ರೀಮಿಯಂ ಪುಟದಿಂದ ಚಂದಾದಾರರಾಗಬಹುದು.
+signInToSubscribe | Sign in to start your free trial | निःशुल्क ट्रायल शुरू करने के लिए साइन इन करें | ಉಚಿತ ಟ್ರಯಲ್ ಪ್ರಾರಂಭಿಸಲು ಸೈನ್ ಇನ್ ಮಾಡಿ
+purchasePending | Your payment is pending. Premium unlocks once it completes. | आपका भुगतान लंबित है। पूरा होने पर प्रीमियम अनलॉक होगा। | ನಿಮ್ಮ ಪಾವತಿ ಬಾಕಿ ಇದೆ. ಅದು ಪೂರ್ಣಗೊಂಡಾಗ ಪ್ರೀಮಿಯಂ ಅನ್‌ಲಾಕ್ ಆಗುತ್ತದೆ.
+purchaseVerifying | Verifying your purchase… | आपकी खरीदारी सत्यापित की जा रही है… | ನಿಮ್ಮ ಖರೀದಿಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…
+purchaseSuccess | Premium is active. Thank you! | प्रीमियम सक्रिय है। धन्यवाद! | ಪ್ರೀಮಿಯಂ ಸಕ್ರಿಯವಾಗಿದೆ. ಧನ್ಯವಾದ!
+purchaseCancelled | Purchase cancelled. You haven't been charged. | खरीदारी रद्द की गई। आपसे कोई शुल्क नहीं लिया गया। | ಖರೀದಿ ರದ್ದಾಗಿದೆ. ನಿಮಗೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿಲ್ಲ.
+purchaseNeedsVerification | Your purchase went through, but we couldn't verify it yet. Nothing is lost — tap retry. | आपकी खरीदारी हो गई, लेकिन हम अभी उसे सत्यापित नहीं कर सके। कुछ भी नहीं खोया है — पुनः प्रयास दबाएं। | ನಿಮ್ಮ ಖರೀದಿ ಆಯಿತು, ಆದರೆ ನಾವು ಇನ್ನೂ ಪರಿಶೀಲಿಸಲು ಆಗಲಿಲ್ಲ. ಏನೂ ಕಳೆದುಹೋಗಿಲ್ಲ — ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಒತ್ತಿ.
+billingUnavailableMsg | Google Play purchases aren't available on this device right now. | इस डिवाइस पर Google Play खरीदारी अभी उपलब्ध नहीं है। | ಈ ಸಾಧನದಲ್ಲಿ Google Play ಖರೀದಿಗಳು ಈಗ ಲಭ್ಯವಿಲ್ಲ.
+productsUnavailableMsg | Subscription plans couldn't be loaded. Please try again later. | सदस्यता योजनाएं लोड नहीं हो सकीं। कृपया बाद में पुनः प्रयास करें। | ಚಂದಾದಾರಿಕೆ ಯೋಜನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ.
+restoreNone | No active subscription was found for this account. | इस खाते के लिए कोई सक्रिय सदस्यता नहीं मिली। | ಈ ಖಾತೆಗೆ ಯಾವುದೇ ಸಕ್ರಿಯ ಚಂದಾದಾರಿಕೆ ಸಿಗಲಿಲ್ಲ.
+restoreOk | Your subscription has been restored. | आपकी सदस्यता पुनर्स्थापित हो गई है। | ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ.
+# status card / manage
+statusFree | Free plan | निःशुल्क योजना | ಉಚಿತ ಯೋಜನೆ
+statusTrial | Free trial | निःशुल्क ट्रायल | ಉಚಿತ ಟ್ರಯಲ್
+statusPremium | Premium | प्रीमियम | ಪ್ರೀಮಿಯಂ
+statusExpired | Expired | समाप्त | ಅವಧಿ ಮುಗಿದಿದೆ
+statusCancelled | Cancelled | रद्द | ರದ್ದಾಗಿದೆ
+trialDaysLeft | {days} days left in your trial | आपके ट्रायल में {days} दिन शेष | ನಿಮ್ಮ ಟ್ರಯಲ್‌ನಲ್ಲಿ {days} ದಿನಗಳು ಉಳಿದಿವೆ
+trialEnds | Trial ends {date} | ट्रायल {date} को समाप्त होता है | ಟ್ರಯಲ್ {date} ರಂದು ಮುಗಿಯುತ್ತದೆ
+renewsOn | Renews on {date} | {date} को नवीनीकृत होगा | {date} ರಂದು ನವೀಕರಣವಾಗುತ್ತದೆ
+accessEndsOn | Access ends {date} | पहुँच {date} को समाप्त होती है | ಪ್ರವೇಶ {date} ರಂದು ಮುಗಿಯುತ್ತದೆ
+expiredBody | Your Premium access has ended. Resubscribe any time. | आपकी प्रीमियम पहुँच समाप्त हो गई है। कभी भी फिर से सदस्यता लें। | ನಿಮ್ಮ ಪ್ರೀಮಿಯಂ ಪ್ರವೇಶ ಮುಗಿದಿದೆ. ಯಾವಾಗ ಬೇಕಾದರೂ ಮತ್ತೆ ಚಂದಾದಾರರಾಗಿ.
+freeBody | You are on the Free plan. | आप निःशुल्क योजना पर हैं। | ನೀವು ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿದ್ದೀರಿ.
+autoRenewOn | Auto-renew is on | ऑटो-रिन्यू चालू है | ಸ್ವಯಂ-ನವೀಕರಣ ಆನ್ ಆಗಿದೆ
+autoRenewOff | Auto-renew is off | ऑटो-रिन्यू बंद है | ಸ್ವಯಂ-ನವೀಕರಣ ಆಫ್ ಆಗಿದೆ
+manageSubscription | Manage subscription | सदस्यता प्रबंधित करें | ಚಂದಾದಾರಿಕೆ ನಿರ್ವಹಿಸಿ
+manageInStore | Manage in Google Play | Google Play में प्रबंधित करें | Google Play ನಲ್ಲಿ ನಿರ್ವಹಿಸಿ
+refreshStatus | Refresh status | स्थिति ताज़ा करें | ಸ್ಥಿತಿಯನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ
+statusRefreshed | Status updated | स्थिति अपडेट हुई | ಸ್ಥಿತಿ ನವೀಕರಿಸಲಾಗಿದೆ
+lastVerified | Last verified {date} | अंतिम सत्यापन {date} | ಕೊನೆಯ ಪರಿಶೀಲನೆ {date}
+notVerifiedYet | Not verified with the server yet | सर्वर से अभी सत्यापित नहीं | ಸರ್ವರ್‌ನೊಂದಿಗೆ ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ
+planName | Plan: {name} | योजना: {name} | ಯೋಜನೆ: {name}
+premiumBenefitsTitle | Premium benefits | प्रीमियम लाभ | ಪ್ರೀಮಿಯಂ ಪ್ರಯೋಜನಗಳು
+benefitUnlimited | Unlimited sign recognition | असीमित साइन पहचान | ಅಪರಿಮಿತ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ
+benefitUnlimitedBody | Recognise as many signs as you like. Free accounts can recognise up to {count} signs a day. | जितने चाहें उतने साइन पहचानें। निःशुल्क खाते प्रतिदिन {count} साइन तक पहचान सकते हैं। | ನಿಮಗೆ ಬೇಕಾದಷ್ಟು ಸಂಜ್ಞೆಗಳನ್ನು ಗುರುತಿಸಿ. ಉಚಿತ ಖಾತೆಗಳು ದಿನಕ್ಕೆ {count} ಸಂಜ್ಞೆಗಳವರೆಗೆ ಗುರುತಿಸಬಹುದು.
+benefitHistoryBody | Keep your full translation history on this device. Free keeps the latest {count} entries. | अपना पूरा अनुवाद इतिहास इस डिवाइस पर रखें। निःशुल्क योजना नवीनतम {count} प्रविष्टियाँ दिखाती है। | ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಅನುವಾದ ಇತಿಹಾಸವನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಇರಿಸಿ. ಉಚಿತ ಯೋಜನೆ ಇತ್ತೀಚಿನ {count} ನಮೂದುಗಳನ್ನು ತೋರಿಸುತ್ತದೆ.
+benefitAiBody | Smoother sentences from an online AI translation service. Needs an internet connection; on-device translation is used otherwise. | ऑनलाइन एआई अनुवाद सेवा से अधिक सहज वाक्य। इंटरनेट आवश्यक है; अन्यथा ऑन-डिवाइस अनुवाद उपयोग होता है। | ಆನ್‌ಲೈನ್ ಎಐ ಅನುವಾದ ಸೇವೆಯಿಂದ ಸುಗಮ ವಾಕ್ಯಗಳು. ಇಂಟರ್ನೆಟ್ ಬೇಕು; ಇಲ್ಲದಿದ್ದರೆ ಸಾಧನದ ಅನುವಾದ ಬಳಕೆಯಾಗುತ್ತದೆ.
+benefitAnalyticsBody | See accuracy, completion by topic and your activity over the last week. | सटीकता, विषय अनुसार पूर्णता और पिछले सप्ताह की गतिविधि देखें। | ನಿಖರತೆ, ವಿಷಯವಾರು ಪೂರ್ಣತೆ ಮತ್ತು ಕಳೆದ ವಾರದ ಚಟುವಟಿಕೆಯನ್ನು ನೋಡಿ.
+alwaysFreeTitle | Always free | हमेशा निःशुल्क | ಯಾವಾಗಲೂ ಉಚಿತ
+alwaysFreeBody | On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice. | ऑन-डिवाइस साइन पहचान (दैनिक सीमा के साथ), आवाज़ → साइन, साइन शब्दकोश, सभी पाठ और अभ्यास। | ಸಾಧನದಲ್ಲೇ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ (ದೈನಂದಿನ ಮಿತಿಯೊಂದಿಗೆ), ಧ್ವನಿ → ಸೈನ್, ಸಂಜ್ಞಾ ನಿಘಂಟು, ಎಲ್ಲಾ ಪಾಠಗಳು ಮತ್ತು ಅಭ್ಯಾಸ.
+seeAllBenefits | See all benefits | सभी लाभ देखें | ಎಲ್ಲಾ ಪ್ರಯೋಜನಗಳನ್ನು ನೋಡಿ

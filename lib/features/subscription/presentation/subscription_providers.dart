@@ -5,11 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/errors/failure.dart';
 import '../../../core/errors/failure_mapper.dart';
 import '../../../core/providers.dart';
+import '../../../core/services/analytics_service.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../data/subscription_repository_impl.dart';
 import '../domain/entitlement.dart';
 import '../domain/subscription.dart';
 import '../domain/subscription_repository.dart';
+import '../domain/trial_policy.dart';
 
 final subscriptionRepositoryProvider = Provider<SubscriptionRepository>((ref) => SubscriptionRepositoryImpl(
       api: ref.watch(apiClientProvider),
@@ -47,6 +49,7 @@ class SubscriptionController extends AsyncNotifier<Subscription> {
     try {
       final s = await repo.fetch(auth.uid);
       await repo.writeCache(auth.uid, s);
+      _emitTransitions(state.value, s);
       state = AsyncData(s);
       return s;
     } catch (e) {
@@ -59,7 +62,29 @@ class SubscriptionController extends AsyncNotifier<Subscription> {
     final auth = ref.read(authControllerProvider);
     if (!auth.isSignedIn) return;
     await ref.read(subscriptionRepositoryProvider).writeCache(auth.uid, s);
+    _emitTransitions(state.value, s);
     state = AsyncData(s);
+  }
+
+  /// Logs analytics for status changes (no personal or purchase data).
+  void _emitTransitions(Subscription? before, Subscription after) {
+    final now = ref.read(clockProvider)();
+    final was = before == null ? SubscriptionStatus.free : TrialPolicy.effectiveStatus(before, now);
+    final is_ = TrialPolicy.effectiveStatus(after, now);
+    if (was == is_) return;
+    final a = ref.read(analyticsServiceProvider);
+    switch (is_) {
+      case SubscriptionStatus.trial:
+        a.log(AnalyticsEvents.trialStarted);
+      case SubscriptionStatus.premium:
+        a.log(AnalyticsEvents.subscriptionStarted);
+      case SubscriptionStatus.cancelled:
+        a.log(AnalyticsEvents.subscriptionCancelled);
+      case SubscriptionStatus.expired:
+        a.log(AnalyticsEvents.subscriptionExpired);
+      case SubscriptionStatus.free:
+        break;
+    }
   }
 
   Future<void> clearLocal() async {
