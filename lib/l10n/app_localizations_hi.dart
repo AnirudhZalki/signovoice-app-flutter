@@ -1045,4 +1045,180 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get heardLabel => 'हमने क्या सुना';
+
+  @override
+  String get liveTitle => 'लाइव दुभाषिया';
+
+  @override
+  String get liveIntro =>
+      'वीडियो, ऑडियो या चैट से किसी मानव साइन-भाषा दुभाषिये से जुड़ें।';
+
+  @override
+  String get findInterpreter => 'उपलब्ध दुभाषिये';
+
+  @override
+  String get statusAvailable => 'उपलब्ध';
+
+  @override
+  String get statusBusy => 'व्यस्त';
+
+  @override
+  String get statusOffline => 'ऑफ़लाइन';
+
+  @override
+  String ratingValue(String count, String rating) {
+    return '$rating ($count रेटिंग)';
+  }
+
+  @override
+  String get noRatingsYet => 'अभी कोई रेटिंग नहीं';
+
+  @override
+  String get requestInterpreter => 'दुभाषिये का अनुरोध करें';
+
+  @override
+  String get requestVideoCall => 'वीडियो कॉल';
+
+  @override
+  String get requestAudioCall => 'ऑडियो कॉल';
+
+  @override
+  String get noteOptional => 'दुभाषिये के लिए नोट (वैकल्पिक)';
+
+  @override
+  String get noInterpretersNow =>
+      'अभी कोई दुभाषिया उपलब्ध नहीं है। कुछ मिनट बाद फिर कोशिश करें।';
+
+  @override
+  String get interpreterNotConfigured =>
+      'इस बिल्ड में लाइव दुभाषिया सेवा अभी सेट अप नहीं है।';
+
+  @override
+  String get signInForInterpreter =>
+      'दुभाषिये का अनुरोध करने के लिए साइन इन करें';
+
+  @override
+  String get signInForInterpreterBody =>
+      'दुभाषिया सत्रों के लिए खाता चाहिए ताकि कॉल जोड़े और रेट किए जा सकें।';
+
+  @override
+  String get callRequesting => 'आपका अनुरोध भेजा जा रहा है…';
+
+  @override
+  String get callWaiting => 'दुभाषिये की प्रतीक्षा…';
+
+  @override
+  String callQueue(String n) {
+    return 'आप कतार में $n नंबर पर हैं';
+  }
+
+  @override
+  String get callConnecting => 'जुड़ रहा है…';
+
+  @override
+  String get callConnected => 'जुड़ा हुआ';
+
+  @override
+  String get callReconnecting => 'फिर से जुड़ रहा है…';
+
+  @override
+  String get callEnded => 'कॉल समाप्त';
+
+  @override
+  String get callFailedTitle => 'कॉल पूरी नहीं हो सकी';
+
+  @override
+  String get callDeclined =>
+      'कोई दुभाषिया आपका अनुरोध नहीं ले सका। कृपया फिर कोशिश करें।';
+
+  @override
+  String get callExpired =>
+      'समय पर किसी दुभाषिये ने स्वीकार नहीं किया। कृपया फिर कोशिश करें।';
+
+  @override
+  String get cancelRequest => 'अनुरोध रद्द करें';
+
+  @override
+  String get muteMic => 'माइक्रोफ़ोन म्यूट करें';
+
+  @override
+  String get unmuteMic => 'माइक्रोफ़ोन अनम्यूट करें';
+
+  @override
+  String get cameraOffAction => 'कैमरा बंद करें';
+
+  @override
+  String get cameraOnAction => 'कैमरा चालू करें';
+
+  @override
+  String get endCall => 'कॉल समाप्त करें';
+
+  @override
+  String get chatTitle => 'चैट';
+
+  @override
+  String get chatHint => 'संदेश लिखें';
+
+  @override
+  String get sendMessage => 'भेजें';
+
+  @override
+  String get reportIssue => 'समस्या रिपोर्ट करें';
+
+  @override
+  String get issueAudio => 'ऑडियो समस्या';
+
+  @override
+  String get issueVideo => 'वीडियो समस्या';
+
+  @override
+  String get issueInterpreter => 'दुभाषिये का व्यवहार';
+
+  @override
+  String get issueConnection => 'कनेक्शन समस्या';
+
+  @override
+  String get issueOther => 'कुछ और';
+
+  @override
+  String get issueDescribe => 'हमें और बताएं (वैकल्पिक)';
+
+  @override
+  String get issueSent => 'धन्यवाद। हम इसे देखेंगे।';
+
+  @override
+  String get feedbackTitle => 'आपकी कॉल कैसी रही?';
+
+  @override
+  String feedbackStars(String n) {
+    return '5 में से $n सितारे';
+  }
+
+  @override
+  String get feedbackComment => 'टिप्पणियाँ (वैकल्पिक)';
+
+  @override
+  String get submitFeedback => 'प्रतिक्रिया भेजें';
+
+  @override
+  String get feedbackThanks => 'आपकी प्रतिक्रिया के लिए धन्यवाद।';
+
+  @override
+  String get skipFeedback => 'छोड़ें';
+
+  @override
+  String callDuration(String time) {
+    return 'अवधि $time';
+  }
+
+  @override
+  String interpreterConnectedTo(String name) {
+    return '$name के साथ कॉल में';
+  }
+
+  @override
+  String get waitingForVideo => 'दुभाषिये के वीडियो की प्रतीक्षा…';
+
+  @override
+  String get audioCallActive => 'ऑडियो कॉल चल रही है';
 }

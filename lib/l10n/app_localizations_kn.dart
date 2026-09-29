@@ -1049,4 +1049,179 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get heardLabel => 'ನಮಗೆ ಏನು ಕೇಳಿಸಿತು';
+
+  @override
+  String get liveTitle => 'ಲೈವ್ ದುಭಾಷಿ';
+
+  @override
+  String get liveIntro =>
+      'ವೀಡಿಯೊ, ಆಡಿಯೊ ಅಥವಾ ಚಾಟ್ ಮೂಲಕ ಮಾನವ ಸಂಜ್ಞಾ ಭಾಷಾ ದುಭಾಷಿಯೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ.';
+
+  @override
+  String get findInterpreter => 'ಲಭ್ಯವಿರುವ ದುಭಾಷಿಗಳು';
+
+  @override
+  String get statusAvailable => 'ಲಭ್ಯ';
+
+  @override
+  String get statusBusy => 'ಬ್ಯುಸಿ';
+
+  @override
+  String get statusOffline => 'ಆಫ್‌ಲೈನ್';
+
+  @override
+  String ratingValue(String count, String rating) {
+    return '$rating ($count ರೇಟಿಂಗ್‌ಗಳು)';
+  }
+
+  @override
+  String get noRatingsYet => 'ಇನ್ನೂ ರೇಟಿಂಗ್‌ಗಳಿಲ್ಲ';
+
+  @override
+  String get requestInterpreter => 'ದುಭಾಷಿಯನ್ನು ವಿನಂತಿಸಿ';
+
+  @override
+  String get requestVideoCall => 'ವೀಡಿಯೊ ಕರೆ';
+
+  @override
+  String get requestAudioCall => 'ಆಡಿಯೊ ಕರೆ';
+
+  @override
+  String get noteOptional => 'ದುಭಾಷಿಗೆ ಟಿಪ್ಪಣಿ (ಐಚ್ಛಿಕ)';
+
+  @override
+  String get noInterpretersNow =>
+      'ಈಗ ಯಾವುದೇ ದುಭಾಷಿ ಲಭ್ಯವಿಲ್ಲ. ಕೆಲವು ನಿಮಿಷಗಳ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get interpreterNotConfigured =>
+      'ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಲೈವ್ ದುಭಾಷಿ ಸೇವೆ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ.';
+
+  @override
+  String get signInForInterpreter => 'ದುಭಾಷಿಯನ್ನು ವಿನಂತಿಸಲು ಸೈನ್ ಇನ್ ಮಾಡಿ';
+
+  @override
+  String get signInForInterpreterBody =>
+      'ಕರೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಮತ್ತು ರೇಟ್ ಮಾಡಲು ದುಭಾಷಿ ಅವಧಿಗಳಿಗೆ ಖಾತೆ ಬೇಕು.';
+
+  @override
+  String get callRequesting => 'ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ…';
+
+  @override
+  String get callWaiting => 'ದುಭಾಷಿಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ…';
+
+  @override
+  String callQueue(String n) {
+    return 'ನೀವು ಸರದಿಯಲ್ಲಿ $nನೇ ಸ್ಥಾನದಲ್ಲಿದ್ದೀರಿ';
+  }
+
+  @override
+  String get callConnecting => 'ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…';
+
+  @override
+  String get callConnected => 'ಸಂಪರ್ಕಗೊಂಡಿದೆ';
+
+  @override
+  String get callReconnecting => 'ಮತ್ತೆ ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…';
+
+  @override
+  String get callEnded => 'ಕರೆ ಮುಗಿದಿದೆ';
+
+  @override
+  String get callFailedTitle => 'ಕರೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ';
+
+  @override
+  String get callDeclined =>
+      'ಯಾವುದೇ ದುಭಾಷಿ ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get callExpired =>
+      'ಸಮಯಕ್ಕೆ ಯಾವುದೇ ದುಭಾಷಿ ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get cancelRequest => 'ವಿನಂತಿ ರದ್ದುಮಾಡಿ';
+
+  @override
+  String get muteMic => 'ಮೈಕ್ರೊಫೋನ್ ಮ್ಯೂಟ್ ಮಾಡಿ';
+
+  @override
+  String get unmuteMic => 'ಮೈಕ್ರೊಫೋನ್ ಅನ್‌ಮ್ಯೂಟ್ ಮಾಡಿ';
+
+  @override
+  String get cameraOffAction => 'ಕ್ಯಾಮೆರಾ ಆಫ್ ಮಾಡಿ';
+
+  @override
+  String get cameraOnAction => 'ಕ್ಯಾಮೆರಾ ಆನ್ ಮಾಡಿ';
+
+  @override
+  String get endCall => 'ಕರೆ ಮುಗಿಸಿ';
+
+  @override
+  String get chatTitle => 'ಚಾಟ್';
+
+  @override
+  String get chatHint => 'ಸಂದೇಶ ಟೈಪ್ ಮಾಡಿ';
+
+  @override
+  String get sendMessage => 'ಕಳುಹಿಸಿ';
+
+  @override
+  String get reportIssue => 'ಸಮಸ್ಯೆ ವರದಿ ಮಾಡಿ';
+
+  @override
+  String get issueAudio => 'ಆಡಿಯೊ ಸಮಸ್ಯೆ';
+
+  @override
+  String get issueVideo => 'ವೀಡಿಯೊ ಸಮಸ್ಯೆ';
+
+  @override
+  String get issueInterpreter => 'ದುಭಾಷಿಯ ವರ್ತನೆ';
+
+  @override
+  String get issueConnection => 'ಸಂಪರ್ಕ ಸಮಸ್ಯೆ';
+
+  @override
+  String get issueOther => 'ಬೇರೆ ಏನೋ';
+
+  @override
+  String get issueDescribe => 'ನಮಗೆ ಇನ್ನಷ್ಟು ಹೇಳಿ (ಐಚ್ಛಿಕ)';
+
+  @override
+  String get issueSent => 'ಧನ್ಯವಾದ. ನಾವು ಇದನ್ನು ಪರಿಶೀಲಿಸುತ್ತೇವೆ.';
+
+  @override
+  String get feedbackTitle => 'ನಿಮ್ಮ ಕರೆ ಹೇಗಿತ್ತು?';
+
+  @override
+  String feedbackStars(String n) {
+    return '5 ರಲ್ಲಿ $n ನಕ್ಷತ್ರಗಳು';
+  }
+
+  @override
+  String get feedbackComment => 'ಕಾಮೆಂಟ್‌ಗಳು (ಐಚ್ಛಿಕ)';
+
+  @override
+  String get submitFeedback => 'ಪ್ರತಿಕ್ರಿಯೆ ಸಲ್ಲಿಸಿ';
+
+  @override
+  String get feedbackThanks => 'ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದ.';
+
+  @override
+  String get skipFeedback => 'ಬಿಟ್ಟುಬಿಡಿ';
+
+  @override
+  String callDuration(String time) {
+    return 'ಅವಧಿ $time';
+  }
+
+  @override
+  String interpreterConnectedTo(String name) {
+    return '$name ಜೊತೆ ಕರೆಯಲ್ಲಿ';
+  }
+
+  @override
+  String get waitingForVideo => 'ದುಭಾಷಿಯ ವೀಡಿಯೊಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ…';
+
+  @override
+  String get audioCallActive => 'ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ';
 }

@@ -1989,6 +1989,324 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What we heard'**
   String get heardLabel;
+
+  /// No description provided for @liveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Live interpreter'**
+  String get liveTitle;
+
+  /// No description provided for @liveIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect with a human sign-language interpreter by video, audio or chat.'**
+  String get liveIntro;
+
+  /// No description provided for @findInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'Available interpreters'**
+  String get findInterpreter;
+
+  /// No description provided for @statusAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get statusAvailable;
+
+  /// No description provided for @statusBusy.
+  ///
+  /// In en, this message translates to:
+  /// **'Busy'**
+  String get statusBusy;
+
+  /// No description provided for @statusOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get statusOffline;
+
+  /// No description provided for @ratingValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{rating} ({count} ratings)'**
+  String ratingValue(String count, String rating);
+
+  /// No description provided for @noRatingsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No ratings yet'**
+  String get noRatingsYet;
+
+  /// No description provided for @requestInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'Request an interpreter'**
+  String get requestInterpreter;
+
+  /// No description provided for @requestVideoCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Video call'**
+  String get requestVideoCall;
+
+  /// No description provided for @requestAudioCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio call'**
+  String get requestAudioCall;
+
+  /// No description provided for @noteOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Note for the interpreter (optional)'**
+  String get noteOptional;
+
+  /// No description provided for @noInterpretersNow.
+  ///
+  /// In en, this message translates to:
+  /// **'No interpreters are available right now. Try again in a few minutes.'**
+  String get noInterpretersNow;
+
+  /// No description provided for @interpreterNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'The live interpreter service isn\'t set up in this build yet.'**
+  String get interpreterNotConfigured;
+
+  /// No description provided for @signInForInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to request an interpreter'**
+  String get signInForInterpreter;
+
+  /// No description provided for @signInForInterpreterBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter sessions need an account so calls can be connected and rated.'**
+  String get signInForInterpreterBody;
+
+  /// No description provided for @callRequesting.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending your request…'**
+  String get callRequesting;
+
+  /// No description provided for @callWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for an interpreter…'**
+  String get callWaiting;
+
+  /// No description provided for @callQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'You are number {n} in the queue'**
+  String callQueue(String n);
+
+  /// No description provided for @callConnecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting…'**
+  String get callConnecting;
+
+  /// No description provided for @callConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected'**
+  String get callConnected;
+
+  /// No description provided for @callReconnecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Reconnecting…'**
+  String get callReconnecting;
+
+  /// No description provided for @callEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Call ended'**
+  String get callEnded;
+
+  /// No description provided for @callFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The call couldn\'t be completed'**
+  String get callFailedTitle;
+
+  /// No description provided for @callDeclined.
+  ///
+  /// In en, this message translates to:
+  /// **'No interpreter could take your request. Please try again.'**
+  String get callDeclined;
+
+  /// No description provided for @callExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'No interpreter accepted in time. Please try again.'**
+  String get callExpired;
+
+  /// No description provided for @cancelRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel request'**
+  String get cancelRequest;
+
+  /// No description provided for @muteMic.
+  ///
+  /// In en, this message translates to:
+  /// **'Mute microphone'**
+  String get muteMic;
+
+  /// No description provided for @unmuteMic.
+  ///
+  /// In en, this message translates to:
+  /// **'Unmute microphone'**
+  String get unmuteMic;
+
+  /// No description provided for @cameraOffAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn camera off'**
+  String get cameraOffAction;
+
+  /// No description provided for @cameraOnAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn camera on'**
+  String get cameraOnAction;
+
+  /// No description provided for @endCall.
+  ///
+  /// In en, this message translates to:
+  /// **'End call'**
+  String get endCall;
+
+  /// No description provided for @chatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get chatTitle;
+
+  /// No description provided for @chatHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message'**
+  String get chatHint;
+
+  /// No description provided for @sendMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get sendMessage;
+
+  /// No description provided for @reportIssue.
+  ///
+  /// In en, this message translates to:
+  /// **'Report an issue'**
+  String get reportIssue;
+
+  /// No description provided for @issueAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio problem'**
+  String get issueAudio;
+
+  /// No description provided for @issueVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Video problem'**
+  String get issueVideo;
+
+  /// No description provided for @issueInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter conduct'**
+  String get issueInterpreter;
+
+  /// No description provided for @issueConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection problem'**
+  String get issueConnection;
+
+  /// No description provided for @issueOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Something else'**
+  String get issueOther;
+
+  /// No description provided for @issueDescribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us more (optional)'**
+  String get issueDescribe;
+
+  /// No description provided for @issueSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks. We\'ll look into it.'**
+  String get issueSent;
+
+  /// No description provided for @feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How was your call?'**
+  String get feedbackTitle;
+
+  /// No description provided for @feedbackStars.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} of 5 stars'**
+  String feedbackStars(String n);
+
+  /// No description provided for @feedbackComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Comments (optional)'**
+  String get feedbackComment;
+
+  /// No description provided for @submitFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit feedback'**
+  String get submitFeedback;
+
+  /// No description provided for @feedbackThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for your feedback.'**
+  String get feedbackThanks;
+
+  /// No description provided for @skipFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skipFeedback;
+
+  /// No description provided for @callDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration {time}'**
+  String callDuration(String time);
+
+  /// No description provided for @interpreterConnectedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'In a call with {name}'**
+  String interpreterConnectedTo(String name);
+
+  /// No description provided for @waitingForVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for the interpreter\'s video…'**
+  String get waitingForVideo;
+
+  /// No description provided for @audioCallActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio call in progress'**
+  String get audioCallActive;
 }
 
 class _AppLocalizationsDelegate

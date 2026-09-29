@@ -10,6 +10,9 @@ import '../../features/auth/presentation/screens/register_screen.dart';
 import '../../features/auth/presentation/screens/profile_setup_screen.dart';
 import '../../features/dictionary/presentation/dictionary_entry_screen.dart';
 import '../../features/dictionary/presentation/dictionary_screen.dart';
+import '../../features/interpreter/presentation/call_screen.dart';
+import '../../features/interpreter/presentation/feedback_screen.dart';
+import '../../features/interpreter/presentation/live_screen.dart';
 import '../../features/learning/presentation/category_screen.dart';
 import '../../features/learning/presentation/learn_screen.dart';
 import '../../features/learning/presentation/lesson_screen.dart';
@@ -108,12 +111,19 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.practiceHub, builder: (_, _) => const PracticeHubScreen()),
       GoRoute(path: Routes.practicePattern, builder: (_, state) => PracticeScreen(signId: state.pathParameters['id']!)),
       GoRoute(path: Routes.progress, builder: (_, _) => const ProgressScreen()),
+      GoRoute(path: Routes.interpreterCall, builder: (_, _) => const CallScreen()),
+      GoRoute(
+        path: Routes.interpreterFeedback,
+        redirect: (_, state) => state.extra is String ? null : Routes.live,
+        builder: (_, state) => FeedbackScreen(callId: state.extra! as String),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [
           StatefulShellBranch(routes: [GoRoute(path: Routes.home, builder: (_, _) => const HomeScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.translate, builder: (_, _) => const TranslateHubScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.learn, builder: (_, _) => const LearnScreen())]),
+          StatefulShellBranch(routes: [GoRoute(path: Routes.live, builder: (_, _) => const LiveScreen())]),
         ],
       ),
     ],

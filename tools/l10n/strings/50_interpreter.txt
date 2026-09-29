@@ -1,0 +1,54 @@
+# ---- interpreter ----
+liveTitle | Live interpreter | लाइव दुभाषिया | ಲೈವ್ ದುಭಾಷಿ
+liveIntro | Connect with a human sign-language interpreter by video, audio or chat. | वीडियो, ऑडियो या चैट से किसी मानव साइन-भाषा दुभाषिये से जुड़ें। | ವೀಡಿಯೊ, ಆಡಿಯೊ ಅಥವಾ ಚಾಟ್ ಮೂಲಕ ಮಾನವ ಸಂಜ್ಞಾ ಭಾಷಾ ದುಭಾಷಿಯೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿ.
+findInterpreter | Available interpreters | उपलब्ध दुभाषिये | ಲಭ್ಯವಿರುವ ದುಭಾಷಿಗಳು
+statusAvailable | Available | उपलब्ध | ಲಭ್ಯ
+statusBusy | Busy | व्यस्त | ಬ್ಯುಸಿ
+statusOffline | Offline | ऑफ़लाइन | ಆಫ್‌ಲೈನ್
+ratingValue | {rating} ({count} ratings) | {rating} ({count} रेटिंग) | {rating} ({count} ರೇಟಿಂಗ್‌ಗಳು)
+noRatingsYet | No ratings yet | अभी कोई रेटिंग नहीं | ಇನ್ನೂ ರೇಟಿಂಗ್‌ಗಳಿಲ್ಲ
+requestInterpreter | Request an interpreter | दुभाषिये का अनुरोध करें | ದುಭಾಷಿಯನ್ನು ವಿನಂತಿಸಿ
+requestVideoCall | Video call | वीडियो कॉल | ವೀಡಿಯೊ ಕರೆ
+requestAudioCall | Audio call | ऑडियो कॉल | ಆಡಿಯೊ ಕರೆ
+noteOptional | Note for the interpreter (optional) | दुभाषिये के लिए नोट (वैकल्पिक) | ದುಭಾಷಿಗೆ ಟಿಪ್ಪಣಿ (ಐಚ್ಛಿಕ)
+noInterpretersNow | No interpreters are available right now. Try again in a few minutes. | अभी कोई दुभाषिया उपलब्ध नहीं है। कुछ मिनट बाद फिर कोशिश करें। | ಈಗ ಯಾವುದೇ ದುಭಾಷಿ ಲಭ್ಯವಿಲ್ಲ. ಕೆಲವು ನಿಮಿಷಗಳ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+interpreterNotConfigured | The live interpreter service isn't set up in this build yet. | इस बिल्ड में लाइव दुभाषिया सेवा अभी सेट अप नहीं है। | ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಲೈವ್ ದುಭಾಷಿ ಸೇವೆ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ.
+signInForInterpreter | Sign in to request an interpreter | दुभाषिये का अनुरोध करने के लिए साइन इन करें | ದುಭಾಷಿಯನ್ನು ವಿನಂತಿಸಲು ಸೈನ್ ಇನ್ ಮಾಡಿ
+signInForInterpreterBody | Interpreter sessions need an account so calls can be connected and rated. | दुभाषिया सत्रों के लिए खाता चाहिए ताकि कॉल जोड़े और रेट किए जा सकें। | ಕರೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಮತ್ತು ರೇಟ್ ಮಾಡಲು ದುಭಾಷಿ ಅವಧಿಗಳಿಗೆ ಖಾತೆ ಬೇಕು.
+callRequesting | Sending your request… | आपका अनुरोध भेजा जा रहा है… | ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ…
+callWaiting | Waiting for an interpreter… | दुभाषिये की प्रतीक्षा… | ದುಭಾಷಿಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ…
+callQueue | You are number {n} in the queue | आप कतार में {n} नंबर पर हैं | ನೀವು ಸರದಿಯಲ್ಲಿ {n}ನೇ ಸ್ಥಾನದಲ್ಲಿದ್ದೀರಿ
+callConnecting | Connecting… | जुड़ रहा है… | ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…
+callConnected | Connected | जुड़ा हुआ | ಸಂಪರ್ಕಗೊಂಡಿದೆ
+callReconnecting | Reconnecting… | फिर से जुड़ रहा है… | ಮತ್ತೆ ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…
+callEnded | Call ended | कॉल समाप्त | ಕರೆ ಮುಗಿದಿದೆ
+callFailedTitle | The call couldn't be completed | कॉल पूरी नहीं हो सकी | ಕರೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ
+callDeclined | No interpreter could take your request. Please try again. | कोई दुभाषिया आपका अनुरोध नहीं ले सका। कृपया फिर कोशिश करें। | ಯಾವುದೇ ದುಭಾಷಿ ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+callExpired | No interpreter accepted in time. Please try again. | समय पर किसी दुभाषिये ने स्वीकार नहीं किया। कृपया फिर कोशिश करें। | ಸಮಯಕ್ಕೆ ಯಾವುದೇ ದುಭಾಷಿ ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+cancelRequest | Cancel request | अनुरोध रद्द करें | ವಿನಂತಿ ರದ್ದುಮಾಡಿ
+muteMic | Mute microphone | माइक्रोफ़ोन म्यूट करें | ಮೈಕ್ರೊಫೋನ್ ಮ್ಯೂಟ್ ಮಾಡಿ
+unmuteMic | Unmute microphone | माइक्रोफ़ोन अनम्यूट करें | ಮೈಕ್ರೊಫೋನ್ ಅನ್‌ಮ್ಯೂಟ್ ಮಾಡಿ
+cameraOffAction | Turn camera off | कैमरा बंद करें | ಕ್ಯಾಮೆರಾ ಆಫ್ ಮಾಡಿ
+cameraOnAction | Turn camera on | कैमरा चालू करें | ಕ್ಯಾಮೆರಾ ಆನ್ ಮಾಡಿ
+endCall | End call | कॉल समाप्त करें | ಕರೆ ಮುಗಿಸಿ
+chatTitle | Chat | चैट | ಚಾಟ್
+chatHint | Type a message | संदेश लिखें | ಸಂದೇಶ ಟೈಪ್ ಮಾಡಿ
+sendMessage | Send | भेजें | ಕಳುಹಿಸಿ
+reportIssue | Report an issue | समस्या रिपोर्ट करें | ಸಮಸ್ಯೆ ವರದಿ ಮಾಡಿ
+issueAudio | Audio problem | ऑडियो समस्या | ಆಡಿಯೊ ಸಮಸ್ಯೆ
+issueVideo | Video problem | वीडियो समस्या | ವೀಡಿಯೊ ಸಮಸ್ಯೆ
+issueInterpreter | Interpreter conduct | दुभाषिये का व्यवहार | ದುಭಾಷಿಯ ವರ್ತನೆ
+issueConnection | Connection problem | कनेक्शन समस्या | ಸಂಪರ್ಕ ಸಮಸ್ಯೆ
+issueOther | Something else | कुछ और | ಬೇರೆ ಏನೋ
+issueDescribe | Tell us more (optional) | हमें और बताएं (वैकल्पिक) | ನಮಗೆ ಇನ್ನಷ್ಟು ಹೇಳಿ (ಐಚ್ಛಿಕ)
+issueSent | Thanks. We'll look into it. | धन्यवाद। हम इसे देखेंगे। | ಧನ್ಯವಾದ. ನಾವು ಇದನ್ನು ಪರಿಶೀಲಿಸುತ್ತೇವೆ.
+feedbackTitle | How was your call? | आपकी कॉल कैसी रही? | ನಿಮ್ಮ ಕರೆ ಹೇಗಿತ್ತು?
+feedbackStars | {n} of 5 stars | 5 में से {n} सितारे | 5 ರಲ್ಲಿ {n} ನಕ್ಷತ್ರಗಳು
+feedbackComment | Comments (optional) | टिप्पणियाँ (वैकल्पिक) | ಕಾಮೆಂಟ್‌ಗಳು (ಐಚ್ಛಿಕ)
+submitFeedback | Submit feedback | प्रतिक्रिया भेजें | ಪ್ರತಿಕ್ರಿಯೆ ಸಲ್ಲಿಸಿ
+feedbackThanks | Thank you for your feedback. | आपकी प्रतिक्रिया के लिए धन्यवाद। | ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದ.
+skipFeedback | Skip | छोड़ें | ಬಿಟ್ಟುಬಿಡಿ
+callDuration | Duration {time} | अवधि {time} | ಅವಧಿ {time}
+interpreterConnectedTo | In a call with {name} | {name} के साथ कॉल में | {name} ಜೊತೆ ಕರೆಯಲ್ಲಿ
+waitingForVideo | Waiting for the interpreter's video… | दुभाषिये के वीडियो की प्रतीक्षा… | ದುಭಾಷಿಯ ವೀಡಿಯೊಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ…
+audioCallActive | Audio call in progress | ऑडियो कॉल चल रही है | ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ

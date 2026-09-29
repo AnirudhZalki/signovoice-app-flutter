@@ -1045,4 +1045,179 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get heardLabel => 'What we heard';
+
+  @override
+  String get liveTitle => 'Live interpreter';
+
+  @override
+  String get liveIntro =>
+      'Connect with a human sign-language interpreter by video, audio or chat.';
+
+  @override
+  String get findInterpreter => 'Available interpreters';
+
+  @override
+  String get statusAvailable => 'Available';
+
+  @override
+  String get statusBusy => 'Busy';
+
+  @override
+  String get statusOffline => 'Offline';
+
+  @override
+  String ratingValue(String count, String rating) {
+    return '$rating ($count ratings)';
+  }
+
+  @override
+  String get noRatingsYet => 'No ratings yet';
+
+  @override
+  String get requestInterpreter => 'Request an interpreter';
+
+  @override
+  String get requestVideoCall => 'Video call';
+
+  @override
+  String get requestAudioCall => 'Audio call';
+
+  @override
+  String get noteOptional => 'Note for the interpreter (optional)';
+
+  @override
+  String get noInterpretersNow =>
+      'No interpreters are available right now. Try again in a few minutes.';
+
+  @override
+  String get interpreterNotConfigured =>
+      'The live interpreter service isn\'t set up in this build yet.';
+
+  @override
+  String get signInForInterpreter => 'Sign in to request an interpreter';
+
+  @override
+  String get signInForInterpreterBody =>
+      'Interpreter sessions need an account so calls can be connected and rated.';
+
+  @override
+  String get callRequesting => 'Sending your request…';
+
+  @override
+  String get callWaiting => 'Waiting for an interpreter…';
+
+  @override
+  String callQueue(String n) {
+    return 'You are number $n in the queue';
+  }
+
+  @override
+  String get callConnecting => 'Connecting…';
+
+  @override
+  String get callConnected => 'Connected';
+
+  @override
+  String get callReconnecting => 'Reconnecting…';
+
+  @override
+  String get callEnded => 'Call ended';
+
+  @override
+  String get callFailedTitle => 'The call couldn\'t be completed';
+
+  @override
+  String get callDeclined =>
+      'No interpreter could take your request. Please try again.';
+
+  @override
+  String get callExpired =>
+      'No interpreter accepted in time. Please try again.';
+
+  @override
+  String get cancelRequest => 'Cancel request';
+
+  @override
+  String get muteMic => 'Mute microphone';
+
+  @override
+  String get unmuteMic => 'Unmute microphone';
+
+  @override
+  String get cameraOffAction => 'Turn camera off';
+
+  @override
+  String get cameraOnAction => 'Turn camera on';
+
+  @override
+  String get endCall => 'End call';
+
+  @override
+  String get chatTitle => 'Chat';
+
+  @override
+  String get chatHint => 'Type a message';
+
+  @override
+  String get sendMessage => 'Send';
+
+  @override
+  String get reportIssue => 'Report an issue';
+
+  @override
+  String get issueAudio => 'Audio problem';
+
+  @override
+  String get issueVideo => 'Video problem';
+
+  @override
+  String get issueInterpreter => 'Interpreter conduct';
+
+  @override
+  String get issueConnection => 'Connection problem';
+
+  @override
+  String get issueOther => 'Something else';
+
+  @override
+  String get issueDescribe => 'Tell us more (optional)';
+
+  @override
+  String get issueSent => 'Thanks. We\'ll look into it.';
+
+  @override
+  String get feedbackTitle => 'How was your call?';
+
+  @override
+  String feedbackStars(String n) {
+    return '$n of 5 stars';
+  }
+
+  @override
+  String get feedbackComment => 'Comments (optional)';
+
+  @override
+  String get submitFeedback => 'Submit feedback';
+
+  @override
+  String get feedbackThanks => 'Thank you for your feedback.';
+
+  @override
+  String get skipFeedback => 'Skip';
+
+  @override
+  String callDuration(String time) {
+    return 'Duration $time';
+  }
+
+  @override
+  String interpreterConnectedTo(String name) {
+    return 'In a call with $name';
+  }
+
+  @override
+  String get waitingForVideo => 'Waiting for the interpreter\'s video…';
+
+  @override
+  String get audioCallActive => 'Audio call in progress';
 }

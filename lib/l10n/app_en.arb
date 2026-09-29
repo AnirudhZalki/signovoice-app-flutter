@@ -507,5 +507,96 @@
       }
     }
   },
-  "heardLabel": "What we heard"
+  "heardLabel": "What we heard",
+  "liveTitle": "Live interpreter",
+  "liveIntro": "Connect with a human sign-language interpreter by video, audio or chat.",
+  "findInterpreter": "Available interpreters",
+  "statusAvailable": "Available",
+  "statusBusy": "Busy",
+  "statusOffline": "Offline",
+  "ratingValue": "{rating} ({count} ratings)",
+  "@ratingValue": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "noRatingsYet": "No ratings yet",
+  "requestInterpreter": "Request an interpreter",
+  "requestVideoCall": "Video call",
+  "requestAudioCall": "Audio call",
+  "noteOptional": "Note for the interpreter (optional)",
+  "noInterpretersNow": "No interpreters are available right now. Try again in a few minutes.",
+  "interpreterNotConfigured": "The live interpreter service isn't set up in this build yet.",
+  "signInForInterpreter": "Sign in to request an interpreter",
+  "signInForInterpreterBody": "Interpreter sessions need an account so calls can be connected and rated.",
+  "callRequesting": "Sending your request…",
+  "callWaiting": "Waiting for an interpreter…",
+  "callQueue": "You are number {n} in the queue",
+  "@callQueue": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "callConnecting": "Connecting…",
+  "callConnected": "Connected",
+  "callReconnecting": "Reconnecting…",
+  "callEnded": "Call ended",
+  "callFailedTitle": "The call couldn't be completed",
+  "callDeclined": "No interpreter could take your request. Please try again.",
+  "callExpired": "No interpreter accepted in time. Please try again.",
+  "cancelRequest": "Cancel request",
+  "muteMic": "Mute microphone",
+  "unmuteMic": "Unmute microphone",
+  "cameraOffAction": "Turn camera off",
+  "cameraOnAction": "Turn camera on",
+  "endCall": "End call",
+  "chatTitle": "Chat",
+  "chatHint": "Type a message",
+  "sendMessage": "Send",
+  "reportIssue": "Report an issue",
+  "issueAudio": "Audio problem",
+  "issueVideo": "Video problem",
+  "issueInterpreter": "Interpreter conduct",
+  "issueConnection": "Connection problem",
+  "issueOther": "Something else",
+  "issueDescribe": "Tell us more (optional)",
+  "issueSent": "Thanks. We'll look into it.",
+  "feedbackTitle": "How was your call?",
+  "feedbackStars": "{n} of 5 stars",
+  "@feedbackStars": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackComment": "Comments (optional)",
+  "submitFeedback": "Submit feedback",
+  "feedbackThanks": "Thank you for your feedback.",
+  "skipFeedback": "Skip",
+  "callDuration": "Duration {time}",
+  "@callDuration": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "interpreterConnectedTo": "In a call with {name}",
+  "@interpreterConnectedTo": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "waitingForVideo": "Waiting for the interpreter's video…",
+  "audioCallActive": "Audio call in progress"
 }
