@@ -526,4 +526,208 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get practiceTitle => 'अभ्यास';
+
+  @override
+  String get signStatusReady => 'ऑन-डिवाइस मॉडल तैयार';
+
+  @override
+  String get signStatusOnline => 'ऑनलाइन पहचान';
+
+  @override
+  String get signStatusLoading => 'मॉडल लोड हो रहा है…';
+
+  @override
+  String get signStatusUnavailable => 'मॉडल उपलब्ध नहीं';
+
+  @override
+  String get showHandHint => 'कैमरे को अपना हाथ दिखाएं';
+
+  @override
+  String get handDetected => 'हाथ मिला';
+
+  @override
+  String get currentSign => 'वर्तमान साइन';
+
+  @override
+  String get translationLabel => 'अनुवाद';
+
+  @override
+  String get translationPlaceholder =>
+      'पहचाने गए साइन यहाँ टेक्स्ट के रूप में दिखेंगे।';
+
+  @override
+  String get recognisedSigns => 'पहचाने गए साइन';
+
+  @override
+  String get pause => 'रोकें';
+
+  @override
+  String get resume => 'फिर शुरू करें';
+
+  @override
+  String get speak => 'बोलें';
+
+  @override
+  String get stopSpeaking => 'बोलना रोकें';
+
+  @override
+  String get replay => 'दोबारा चलाएं';
+
+  @override
+  String get play => 'चलाएं';
+
+  @override
+  String get flipCamera => 'कैमरा पलटें';
+
+  @override
+  String get flashOn => 'फ़्लैश चालू करें';
+
+  @override
+  String get flashOff => 'फ़्लैश बंद करें';
+
+  @override
+  String get historyTitle => 'इतिहास';
+
+  @override
+  String get cameraPermTitle => 'कैमरा एक्सेस आवश्यक है';
+
+  @override
+  String get cameraPermBody =>
+      'साइनोवॉइस कैमरे का उपयोग केवल इस स्क्रीन पर हाथ देखने के लिए करता है। हाथ की स्थिति आपके डिवाइस पर विश्लेषित होती है। वीडियो कभी रिकॉर्ड या अपलोड नहीं किया जाता।';
+
+  @override
+  String get micPermTitle => 'माइक्रोफ़ोन एक्सेस आवश्यक है';
+
+  @override
+  String get micPermBody =>
+      'साइनोवॉइस केवल तब सुनता है जब आप माइक्रोफ़ोन बटन दबाते हैं, ताकि आपकी बोली को टेक्स्ट में बदला जा सके। बोली पहचान आपके डिवाइस की स्पीच सेवा द्वारा दी जाती है और इसके लिए इंटरनेट आवश्यक हो सकता है।';
+
+  @override
+  String get cameraInitError =>
+      'कैमरा शुरू नहीं हो सका। कैमरा उपयोग करने वाले अन्य ऐप बंद करें और पुनः प्रयास करें।';
+
+  @override
+  String get handTrackingUnsupported =>
+      'इस डिवाइस पर हैंड ट्रैकिंग अभी समर्थित नहीं है।';
+
+  @override
+  String signsLeftToday(String count) {
+    return 'आज $count साइन शेष';
+  }
+
+  @override
+  String get limitReachedTitle => 'दैनिक निःशुल्क सीमा पूरी हुई';
+
+  @override
+  String get limitReachedBody =>
+      'असीमित साइन पहचान के लिए अपग्रेड करें, या कल फिर आएं।';
+
+  @override
+  String get seePremium => 'प्रीमियम देखें';
+
+  @override
+  String get saveToHistory => 'इतिहास में सहेजें';
+
+  @override
+  String get savedToHistory => 'इतिहास में सहेजा गया';
+
+  @override
+  String get historyOffHint => 'गोपनीयता सेटिंग्स में इतिहास बंद है।';
+
+  @override
+  String get outputLanguage => 'आउटपुट भाषा';
+
+  @override
+  String get voiceSettings => 'आवाज़ सेटिंग्स';
+
+  @override
+  String get voiceSpeed => 'बोलने की गति';
+
+  @override
+  String get voiceLanguage => 'आवाज़ की भाषा';
+
+  @override
+  String get voiceSelect => 'आवाज़';
+
+  @override
+  String get voiceDefault => 'डिफ़ॉल्ट आवाज़';
+
+  @override
+  String get voiceNoneForLanguage =>
+      'इस भाषा की कोई आवाज़ आपके डिवाइस पर इंस्टॉल नहीं है। अपने डिवाइस की टेक्स्ट-टू-स्पीच सेटिंग्स में इंस्टॉल करें।';
+
+  @override
+  String get pausedLabel => 'रुका हुआ';
+
+  @override
+  String get listeningLabel => 'सुन रहा है…';
+
+  @override
+  String get recognitionPaused => 'पहचान रुकी हुई है';
+
+  @override
+  String get scanningHand => 'हाथ खोज रहा है';
+
+  @override
+  String get noSignYet => 'अभी कोई साइन नहीं';
+
+  @override
+  String liveTranslation(String text) {
+    return 'लाइव अनुवाद: $text';
+  }
+
+  @override
+  String get clearedAnnouncement => 'साफ़ किया गया';
+
+  @override
+  String recognisedAnnouncement(String sign) {
+    return 'पहचाना गया $sign';
+  }
+
+  @override
+  String get historySearchHint => 'इतिहास खोजें';
+
+  @override
+  String get historyEmptyTitle => 'अभी कोई इतिहास नहीं';
+
+  @override
+  String get historyEmptyBody =>
+      'आपके सहेजे गए अनुवाद यहाँ दिखेंगे, केवल इसी डिवाइस पर।';
+
+  @override
+  String get historyNoResults => 'आपकी खोज से कोई मेल नहीं';
+
+  @override
+  String get historyClearAll => 'पूरा इतिहास साफ़ करें';
+
+  @override
+  String get historyClearTitle => 'पूरा इतिहास साफ़ करें?';
+
+  @override
+  String get historyClearBody =>
+      'यह इस डिवाइस से सभी सहेजे गए अनुवाद स्थायी रूप से हटा देगा।';
+
+  @override
+  String get historyDeleted => 'प्रविष्टि हटाई गई';
+
+  @override
+  String get historyCleared => 'इतिहास साफ़ किया गया';
+
+  @override
+  String historyHidden(String count) {
+    return 'निःशुल्क योजना में $count पुरानी प्रविष्टियाँ छिपी हैं';
+  }
+
+  @override
+  String get historyHiddenTitle => 'पूरा इतिहास प्रीमियम सुविधा है';
+
+  @override
+  String durationSeconds(String seconds) {
+    return '$seconds सेकंड';
+  }
+
+  @override
+  String inputTypeLabel(String type) {
+    return 'इनपुट: $type';
+  }
 }

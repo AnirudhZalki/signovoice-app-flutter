@@ -90,3 +90,6 @@ class AuthController extends Notifier<AuthState> {
 }
 
 final authControllerProvider = NotifierProvider<AuthController, AuthState>(AuthController.new);
+
+/// Convenience for non-widget code: is a real (non-guest) account active?
+final authControllerStateIsSignedIn = Provider<bool>((ref) => ref.watch(authControllerProvider).isSignedIn);

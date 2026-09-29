@@ -528,4 +528,208 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get practiceTitle => 'ಅಭ್ಯಾಸ';
+
+  @override
+  String get signStatusReady => 'ಸಾಧನದ ಮಾದರಿ ಸಿದ್ಧ';
+
+  @override
+  String get signStatusOnline => 'ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ';
+
+  @override
+  String get signStatusLoading => 'ಮಾದರಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ…';
+
+  @override
+  String get signStatusUnavailable => 'ಮಾದರಿ ಲಭ್ಯವಿಲ್ಲ';
+
+  @override
+  String get showHandHint => 'ಕ್ಯಾಮೆರಾಗೆ ನಿಮ್ಮ ಕೈಯನ್ನು ತೋರಿಸಿ';
+
+  @override
+  String get handDetected => 'ಕೈ ಪತ್ತೆಯಾಗಿದೆ';
+
+  @override
+  String get currentSign => 'ಪ್ರಸ್ತುತ ಸೈನ್';
+
+  @override
+  String get translationLabel => 'ಅನುವಾದ';
+
+  @override
+  String get translationPlaceholder =>
+      'ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು ಇಲ್ಲಿ ಪಠ್ಯವಾಗಿ ಕಾಣಿಸುತ್ತವೆ.';
+
+  @override
+  String get recognisedSigns => 'ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು';
+
+  @override
+  String get pause => 'ವಿರಾಮ';
+
+  @override
+  String get resume => 'ಮುಂದುವರಿಸಿ';
+
+  @override
+  String get speak => 'ಮಾತನಾಡಿ';
+
+  @override
+  String get stopSpeaking => 'ಮಾತು ನಿಲ್ಲಿಸಿ';
+
+  @override
+  String get replay => 'ಮತ್ತೆ ಪ್ಲೇ ಮಾಡಿ';
+
+  @override
+  String get play => 'ಪ್ಲೇ';
+
+  @override
+  String get flipCamera => 'ಕ್ಯಾಮೆರಾ ತಿರುಗಿಸಿ';
+
+  @override
+  String get flashOn => 'ಫ್ಲ್ಯಾಶ್ ಆನ್ ಮಾಡಿ';
+
+  @override
+  String get flashOff => 'ಫ್ಲ್ಯಾಶ್ ಆಫ್ ಮಾಡಿ';
+
+  @override
+  String get historyTitle => 'ಇತಿಹಾಸ';
+
+  @override
+  String get cameraPermTitle => 'ಕ್ಯಾಮೆರಾ ಪ್ರವೇಶ ಅಗತ್ಯ';
+
+  @override
+  String get cameraPermBody =>
+      'ಸೈನೋವಾಯ್ಸ್ ಈ ಪರದೆಯಲ್ಲಿ ಮಾತ್ರ ಕೈಗಳನ್ನು ನೋಡಲು ಕ್ಯಾಮೆರಾ ಬಳಸುತ್ತದೆ. ಕೈ ಸ್ಥಾನಗಳನ್ನು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ. ವೀಡಿಯೊವನ್ನು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.';
+
+  @override
+  String get micPermTitle => 'ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶ ಅಗತ್ಯ';
+
+  @override
+  String get micPermBody =>
+      'ನೀವು ಮೈಕ್ರೊಫೋನ್ ಬಟನ್ ಒತ್ತಿದಾಗ ಮಾತ್ರ ಸೈನೋವಾಯ್ಸ್ ಆಲಿಸುತ್ತದೆ, ನಿಮ್ಮ ಮಾತನ್ನು ಪಠ್ಯವಾಗಿ ಬದಲಿಸಲು. ಮಾತು ಗುರುತಿಸುವಿಕೆಯನ್ನು ನಿಮ್ಮ ಸಾಧನದ ಸ್ಪೀಚ್ ಸೇವೆ ಒದಗಿಸುತ್ತದೆ ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಬೇಕಾಗಬಹುದು.';
+
+  @override
+  String get cameraInitError =>
+      'ಕ್ಯಾಮೆರಾ ಪ್ರಾರಂಭವಾಗಲಿಲ್ಲ. ಕ್ಯಾಮೆರಾ ಬಳಸುವ ಇತರ ಆ್ಯಪ್‌ಗಳನ್ನು ಮುಚ್ಚಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get handTrackingUnsupported =>
+      'ಈ ಸಾಧನದಲ್ಲಿ ಕೈ ಟ್ರ್ಯಾಕಿಂಗ್ ಇನ್ನೂ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ.';
+
+  @override
+  String signsLeftToday(String count) {
+    return 'ಇಂದು $count ಸಂಜ್ಞೆಗಳು ಉಳಿದಿವೆ';
+  }
+
+  @override
+  String get limitReachedTitle => 'ದೈನಂದಿನ ಉಚಿತ ಮಿತಿ ತಲುಪಿದೆ';
+
+  @override
+  String get limitReachedBody =>
+      'ಅಪರಿಮಿತ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ, ಅಥವಾ ನಾಳೆ ಮತ್ತೆ ಬನ್ನಿ.';
+
+  @override
+  String get seePremium => 'ಪ್ರೀಮಿಯಂ ನೋಡಿ';
+
+  @override
+  String get saveToHistory => 'ಇತಿಹಾಸಕ್ಕೆ ಉಳಿಸಿ';
+
+  @override
+  String get savedToHistory => 'ಇತಿಹಾಸಕ್ಕೆ ಉಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String get historyOffHint => 'ಗೌಪ್ಯತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಇತಿಹಾಸ ಆಫ್ ಆಗಿದೆ.';
+
+  @override
+  String get outputLanguage => 'ಔಟ್‌ಪುಟ್ ಭಾಷೆ';
+
+  @override
+  String get voiceSettings => 'ಧ್ವನಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು';
+
+  @override
+  String get voiceSpeed => 'ಮಾತಿನ ವೇಗ';
+
+  @override
+  String get voiceLanguage => 'ಧ್ವನಿ ಭಾಷೆ';
+
+  @override
+  String get voiceSelect => 'ಧ್ವನಿ';
+
+  @override
+  String get voiceDefault => 'ಡೀಫಾಲ್ಟ್ ಧ್ವನಿ';
+
+  @override
+  String get voiceNoneForLanguage =>
+      'ಈ ಭಾಷೆಯ ಯಾವುದೇ ಧ್ವನಿ ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಇಲ್ಲ. ನಿಮ್ಮ ಸಾಧನದ ಟೆಕ್ಸ್ಟ್-ಟು-ಸ್ಪೀಚ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಸ್ಥಾಪಿಸಿ.';
+
+  @override
+  String get pausedLabel => 'ವಿರಾಮದಲ್ಲಿದೆ';
+
+  @override
+  String get listeningLabel => 'ಆಲಿಸುತ್ತಿದೆ…';
+
+  @override
+  String get recognitionPaused => 'ಗುರುತಿಸುವಿಕೆ ವಿರಾಮದಲ್ಲಿದೆ';
+
+  @override
+  String get scanningHand => 'ಕೈಗಾಗಿ ಹುಡುಕುತ್ತಿದೆ';
+
+  @override
+  String get noSignYet => 'ಇನ್ನೂ ಸಂಜ್ಞೆ ಇಲ್ಲ';
+
+  @override
+  String liveTranslation(String text) {
+    return 'ಲೈವ್ ಅನುವಾದ: $text';
+  }
+
+  @override
+  String get clearedAnnouncement => 'ತೆರವುಗೊಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String recognisedAnnouncement(String sign) {
+    return 'ಗುರುತಿಸಲಾಗಿದೆ $sign';
+  }
+
+  @override
+  String get historySearchHint => 'ಇತಿಹಾಸ ಹುಡುಕಿ';
+
+  @override
+  String get historyEmptyTitle => 'ಇನ್ನೂ ಇತಿಹಾಸ ಇಲ್ಲ';
+
+  @override
+  String get historyEmptyBody =>
+      'ನೀವು ಉಳಿಸುವ ಅನುವಾದಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ, ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ.';
+
+  @override
+  String get historyNoResults => 'ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದಾಣಿಕೆ ಇಲ್ಲ';
+
+  @override
+  String get historyClearAll => 'ಎಲ್ಲಾ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get historyClearTitle => 'ಎಲ್ಲಾ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸುವುದೇ?';
+
+  @override
+  String get historyClearBody =>
+      'ಇದು ಈ ಸಾಧನದಿಂದ ಉಳಿಸಿದ ಎಲ್ಲಾ ಅನುವಾದಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ.';
+
+  @override
+  String get historyDeleted => 'ನಮೂದನ್ನು ಅಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String get historyCleared => 'ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String historyHidden(String count) {
+    return 'ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿ $count ಹಳೆಯ ನಮೂದುಗಳನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ';
+  }
+
+  @override
+  String get historyHiddenTitle => 'ಸಂಪೂರ್ಣ ಇತಿಹಾಸ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ';
+
+  @override
+  String durationSeconds(String seconds) {
+    return '$seconds ಸೆ';
+  }
+
+  @override
+  String inputTypeLabel(String type) {
+    return 'ಇನ್‌ಪುಟ್: $type';
+  }
 }

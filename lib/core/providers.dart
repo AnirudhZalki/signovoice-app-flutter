@@ -8,6 +8,7 @@ import 'services/haptics_service.dart';
 import 'services/permission_service.dart';
 import 'services/storage.dart';
 import 'services/tts_service.dart';
+import 'services/usage_service.dart';
 
 /// Injected at start-up (see bootstrap.dart). Tests override these.
 final keyValueStoreProvider = Provider<KeyValueStore>(
@@ -62,3 +63,7 @@ final authTokenProvider = Provider<TokenProvider>((ref) {
 
 final apiClientProvider =
     Provider<ApiClient>((ref) => ApiClient(tokenProvider: ref.watch(authTokenProvider)));
+
+final usageServiceProvider = Provider<UsageService>(
+  (ref) => UsageService(ref.watch(keyValueStoreProvider), ref.watch(clockProvider)),
+);

@@ -525,4 +525,208 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceTitle => 'Practice';
+
+  @override
+  String get signStatusReady => 'On-device model ready';
+
+  @override
+  String get signStatusOnline => 'Online recognition';
+
+  @override
+  String get signStatusLoading => 'Loading model…';
+
+  @override
+  String get signStatusUnavailable => 'Model unavailable';
+
+  @override
+  String get showHandHint => 'Show your hand to the camera';
+
+  @override
+  String get handDetected => 'Hand detected';
+
+  @override
+  String get currentSign => 'Current sign';
+
+  @override
+  String get translationLabel => 'Translation';
+
+  @override
+  String get translationPlaceholder =>
+      'Recognised signs will appear here as text.';
+
+  @override
+  String get recognisedSigns => 'Recognised signs';
+
+  @override
+  String get pause => 'Pause';
+
+  @override
+  String get resume => 'Resume';
+
+  @override
+  String get speak => 'Speak';
+
+  @override
+  String get stopSpeaking => 'Stop speaking';
+
+  @override
+  String get replay => 'Replay';
+
+  @override
+  String get play => 'Play';
+
+  @override
+  String get flipCamera => 'Flip camera';
+
+  @override
+  String get flashOn => 'Turn flash on';
+
+  @override
+  String get flashOff => 'Turn flash off';
+
+  @override
+  String get historyTitle => 'History';
+
+  @override
+  String get cameraPermTitle => 'Camera access needed';
+
+  @override
+  String get cameraPermBody =>
+      'SignoVoice uses your camera only on this screen to see hands. Hand positions are analysed on your device. Video is never recorded or uploaded.';
+
+  @override
+  String get micPermTitle => 'Microphone access needed';
+
+  @override
+  String get micPermBody =>
+      'SignoVoice listens only while you tap the microphone button, to turn your speech into text. Speech recognition is provided by your device\'s speech service and may need an internet connection.';
+
+  @override
+  String get cameraInitError =>
+      'The camera couldn\'t start. Close other apps that use the camera and try again.';
+
+  @override
+  String get handTrackingUnsupported =>
+      'Hand tracking isn\'t supported on this device yet.';
+
+  @override
+  String signsLeftToday(String count) {
+    return '$count signs left today';
+  }
+
+  @override
+  String get limitReachedTitle => 'Daily free limit reached';
+
+  @override
+  String get limitReachedBody =>
+      'Upgrade for unlimited sign recognition, or come back tomorrow.';
+
+  @override
+  String get seePremium => 'See Premium';
+
+  @override
+  String get saveToHistory => 'Save to history';
+
+  @override
+  String get savedToHistory => 'Saved to history';
+
+  @override
+  String get historyOffHint => 'History is turned off in Privacy settings.';
+
+  @override
+  String get outputLanguage => 'Output language';
+
+  @override
+  String get voiceSettings => 'Voice settings';
+
+  @override
+  String get voiceSpeed => 'Speaking speed';
+
+  @override
+  String get voiceLanguage => 'Voice language';
+
+  @override
+  String get voiceSelect => 'Voice';
+
+  @override
+  String get voiceDefault => 'Default voice';
+
+  @override
+  String get voiceNoneForLanguage =>
+      'No voice for this language is installed on your device. Install one in your device\'s text-to-speech settings.';
+
+  @override
+  String get pausedLabel => 'Paused';
+
+  @override
+  String get listeningLabel => 'Listening…';
+
+  @override
+  String get recognitionPaused => 'Recognition paused';
+
+  @override
+  String get scanningHand => 'Looking for a hand';
+
+  @override
+  String get noSignYet => 'No sign yet';
+
+  @override
+  String liveTranslation(String text) {
+    return 'Live translation: $text';
+  }
+
+  @override
+  String get clearedAnnouncement => 'Cleared';
+
+  @override
+  String recognisedAnnouncement(String sign) {
+    return 'Recognised $sign';
+  }
+
+  @override
+  String get historySearchHint => 'Search history';
+
+  @override
+  String get historyEmptyTitle => 'No history yet';
+
+  @override
+  String get historyEmptyBody =>
+      'Translations you save will appear here, only on this device.';
+
+  @override
+  String get historyNoResults => 'No matches for your search';
+
+  @override
+  String get historyClearAll => 'Clear all history';
+
+  @override
+  String get historyClearTitle => 'Clear all history?';
+
+  @override
+  String get historyClearBody =>
+      'This permanently deletes every saved translation from this device.';
+
+  @override
+  String get historyDeleted => 'Entry deleted';
+
+  @override
+  String get historyCleared => 'History cleared';
+
+  @override
+  String historyHidden(String count) {
+    return '$count older entries are hidden on the free plan';
+  }
+
+  @override
+  String get historyHiddenTitle => 'Full history is a Premium feature';
+
+  @override
+  String durationSeconds(String seconds) {
+    return '${seconds}s';
+  }
+
+  @override
+  String inputTypeLabel(String type) {
+    return 'Input: $type';
+  }
 }

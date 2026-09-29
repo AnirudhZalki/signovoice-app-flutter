@@ -8,10 +8,13 @@ import '../../features/auth/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/screens/phone_auth_screens.dart';
 import '../../features/auth/presentation/screens/register_screen.dart';
 import '../../features/auth/presentation/screens/profile_setup_screen.dart';
+import '../../features/history/presentation/history_screen.dart';
 import '../../features/home/presentation/app_shell.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/home/presentation/splash_screen.dart';
 import '../../features/home/presentation/translate_hub_screen.dart';
+import '../../features/sign_translation/presentation/sign_translation_controller.dart';
+import '../../features/sign_translation/presentation/sign_translation_screen.dart';
 import 'routes.dart';
 import 'session.dart';
 
@@ -79,6 +82,9 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, state) => OtpScreen(args: state.extra! as OtpArgs),
       ),
       GoRoute(path: Routes.profileSetup, builder: (_, _) => const ProfileSetupScreen()),
+      GoRoute(path: Routes.signToText, builder: (_, _) => const SignTranslationScreen(mode: SignMode.signToText)),
+      GoRoute(path: Routes.signToVoice, builder: (_, _) => const SignTranslationScreen(mode: SignMode.signToVoice)),
+      GoRoute(path: Routes.history, builder: (_, _) => const HistoryScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [

@@ -1,0 +1,14 @@
+# ---- history ----
+historySearchHint | Search history | इतिहास खोजें | ಇತಿಹಾಸ ಹುಡುಕಿ
+historyEmptyTitle | No history yet | अभी कोई इतिहास नहीं | ಇನ್ನೂ ಇತಿಹಾಸ ಇಲ್ಲ
+historyEmptyBody | Translations you save will appear here, only on this device. | आपके सहेजे गए अनुवाद यहाँ दिखेंगे, केवल इसी डिवाइस पर। | ನೀವು ಉಳಿಸುವ ಅನುವಾದಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ, ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ.
+historyNoResults | No matches for your search | आपकी खोज से कोई मेल नहीं | ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದಾಣಿಕೆ ಇಲ್ಲ
+historyClearAll | Clear all history | पूरा इतिहास साफ़ करें | ಎಲ್ಲಾ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ
+historyClearTitle | Clear all history? | पूरा इतिहास साफ़ करें? | ಎಲ್ಲಾ ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸುವುದೇ?
+historyClearBody | This permanently deletes every saved translation from this device. | यह इस डिवाइस से सभी सहेजे गए अनुवाद स्थायी रूप से हटा देगा। | ಇದು ಈ ಸಾಧನದಿಂದ ಉಳಿಸಿದ ಎಲ್ಲಾ ಅನುವಾದಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸುತ್ತದೆ.
+historyDeleted | Entry deleted | प्रविष्टि हटाई गई | ನಮೂದನ್ನು ಅಳಿಸಲಾಗಿದೆ
+historyCleared | History cleared | इतिहास साफ़ किया गया | ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ
+historyHidden | {count} older entries are hidden on the free plan | निःशुल्क योजना में {count} पुरानी प्रविष्टियाँ छिपी हैं | ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿ {count} ಹಳೆಯ ನಮೂದುಗಳನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ
+historyHiddenTitle | Full history is a Premium feature | पूरा इतिहास प्रीमियम सुविधा है | ಸಂಪೂರ್ಣ ಇತಿಹಾಸ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ
+durationSeconds | {seconds}s | {seconds} सेकंड | {seconds} ಸೆ
+inputTypeLabel | Input: {type} | इनपुट: {type} | ಇನ್‌ಪುಟ್: {type}

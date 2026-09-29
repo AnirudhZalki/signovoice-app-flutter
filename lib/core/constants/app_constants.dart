@@ -13,8 +13,8 @@ class AppConstants {
   static const double defaultConfidenceThreshold = 0.70;
   static const double minHandPresence = 0.6;
 
-  // Free plan limits (premium = unlimited).
-  static const int freeDailyTranslations = 30;
+  // Free plan limits (premium = unlimited). freeDailyTranslations counts recognised signs per day.
+  static const int freeDailyTranslations = 100;
   static const int freeHistoryEntries = 30;
 
   static const Duration trialLength = Duration(days: 30);

@@ -1059,6 +1059,372 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Practice'**
   String get practiceTitle;
+
+  /// No description provided for @signStatusReady.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device model ready'**
+  String get signStatusReady;
+
+  /// No description provided for @signStatusOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Online recognition'**
+  String get signStatusOnline;
+
+  /// No description provided for @signStatusLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading model…'**
+  String get signStatusLoading;
+
+  /// No description provided for @signStatusUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Model unavailable'**
+  String get signStatusUnavailable;
+
+  /// No description provided for @showHandHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Show your hand to the camera'**
+  String get showHandHint;
+
+  /// No description provided for @handDetected.
+  ///
+  /// In en, this message translates to:
+  /// **'Hand detected'**
+  String get handDetected;
+
+  /// No description provided for @currentSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Current sign'**
+  String get currentSign;
+
+  /// No description provided for @translationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Translation'**
+  String get translationLabel;
+
+  /// No description provided for @translationPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognised signs will appear here as text.'**
+  String get translationPlaceholder;
+
+  /// No description provided for @recognisedSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognised signs'**
+  String get recognisedSigns;
+
+  /// No description provided for @pause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get pause;
+
+  /// No description provided for @resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get resume;
+
+  /// No description provided for @speak.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak'**
+  String get speak;
+
+  /// No description provided for @stopSpeaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop speaking'**
+  String get stopSpeaking;
+
+  /// No description provided for @replay.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay'**
+  String get replay;
+
+  /// No description provided for @play.
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get play;
+
+  /// No description provided for @flipCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Flip camera'**
+  String get flipCamera;
+
+  /// No description provided for @flashOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn flash on'**
+  String get flashOn;
+
+  /// No description provided for @flashOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn flash off'**
+  String get flashOff;
+
+  /// No description provided for @historyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get historyTitle;
+
+  /// No description provided for @cameraPermTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera access needed'**
+  String get cameraPermTitle;
+
+  /// No description provided for @cameraPermBody.
+  ///
+  /// In en, this message translates to:
+  /// **'SignoVoice uses your camera only on this screen to see hands. Hand positions are analysed on your device. Video is never recorded or uploaded.'**
+  String get cameraPermBody;
+
+  /// No description provided for @micPermTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone access needed'**
+  String get micPermTitle;
+
+  /// No description provided for @micPermBody.
+  ///
+  /// In en, this message translates to:
+  /// **'SignoVoice listens only while you tap the microphone button, to turn your speech into text. Speech recognition is provided by your device\'s speech service and may need an internet connection.'**
+  String get micPermBody;
+
+  /// No description provided for @cameraInitError.
+  ///
+  /// In en, this message translates to:
+  /// **'The camera couldn\'t start. Close other apps that use the camera and try again.'**
+  String get cameraInitError;
+
+  /// No description provided for @handTrackingUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Hand tracking isn\'t supported on this device yet.'**
+  String get handTrackingUnsupported;
+
+  /// No description provided for @signsLeftToday.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} signs left today'**
+  String signsLeftToday(String count);
+
+  /// No description provided for @limitReachedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily free limit reached'**
+  String get limitReachedTitle;
+
+  /// No description provided for @limitReachedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade for unlimited sign recognition, or come back tomorrow.'**
+  String get limitReachedBody;
+
+  /// No description provided for @seePremium.
+  ///
+  /// In en, this message translates to:
+  /// **'See Premium'**
+  String get seePremium;
+
+  /// No description provided for @saveToHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to history'**
+  String get saveToHistory;
+
+  /// No description provided for @savedToHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to history'**
+  String get savedToHistory;
+
+  /// No description provided for @historyOffHint.
+  ///
+  /// In en, this message translates to:
+  /// **'History is turned off in Privacy settings.'**
+  String get historyOffHint;
+
+  /// No description provided for @outputLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Output language'**
+  String get outputLanguage;
+
+  /// No description provided for @voiceSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice settings'**
+  String get voiceSettings;
+
+  /// No description provided for @voiceSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking speed'**
+  String get voiceSpeed;
+
+  /// No description provided for @voiceLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice language'**
+  String get voiceLanguage;
+
+  /// No description provided for @voiceSelect.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice'**
+  String get voiceSelect;
+
+  /// No description provided for @voiceDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Default voice'**
+  String get voiceDefault;
+
+  /// No description provided for @voiceNoneForLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'No voice for this language is installed on your device. Install one in your device\'s text-to-speech settings.'**
+  String get voiceNoneForLanguage;
+
+  /// No description provided for @pausedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Paused'**
+  String get pausedLabel;
+
+  /// No description provided for @listeningLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening…'**
+  String get listeningLabel;
+
+  /// No description provided for @recognitionPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognition paused'**
+  String get recognitionPaused;
+
+  /// No description provided for @scanningHand.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking for a hand'**
+  String get scanningHand;
+
+  /// No description provided for @noSignYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No sign yet'**
+  String get noSignYet;
+
+  /// No description provided for @liveTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Live translation: {text}'**
+  String liveTranslation(String text);
+
+  /// No description provided for @clearedAnnouncement.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleared'**
+  String get clearedAnnouncement;
+
+  /// No description provided for @recognisedAnnouncement.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognised {sign}'**
+  String recognisedAnnouncement(String sign);
+
+  /// No description provided for @historySearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search history'**
+  String get historySearchHint;
+
+  /// No description provided for @historyEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No history yet'**
+  String get historyEmptyTitle;
+
+  /// No description provided for @historyEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Translations you save will appear here, only on this device.'**
+  String get historyEmptyBody;
+
+  /// No description provided for @historyNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No matches for your search'**
+  String get historyNoResults;
+
+  /// No description provided for @historyClearAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all history'**
+  String get historyClearAll;
+
+  /// No description provided for @historyClearTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all history?'**
+  String get historyClearTitle;
+
+  /// No description provided for @historyClearBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes every saved translation from this device.'**
+  String get historyClearBody;
+
+  /// No description provided for @historyDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Entry deleted'**
+  String get historyDeleted;
+
+  /// No description provided for @historyCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'History cleared'**
+  String get historyCleared;
+
+  /// No description provided for @historyHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} older entries are hidden on the free plan'**
+  String historyHidden(String count);
+
+  /// No description provided for @historyHiddenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Full history is a Premium feature'**
+  String get historyHiddenTitle;
+
+  /// No description provided for @durationSeconds.
+  ///
+  /// In en, this message translates to:
+  /// **'{seconds}s'**
+  String durationSeconds(String seconds);
+
+  /// No description provided for @inputTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Input: {type}'**
+  String inputTypeLabel(String type);
 }
 
 class _AppLocalizationsDelegate

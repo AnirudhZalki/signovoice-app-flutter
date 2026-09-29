@@ -1,0 +1,49 @@
+# ---- sign translation ----
+signStatusReady | On-device model ready | ऑन-डिवाइस मॉडल तैयार | ಸಾಧನದ ಮಾದರಿ ಸಿದ್ಧ
+signStatusOnline | Online recognition | ऑनलाइन पहचान | ಆನ್‌ಲೈನ್ ಗುರುತಿಸುವಿಕೆ
+signStatusLoading | Loading model… | मॉडल लोड हो रहा है… | ಮಾದರಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ…
+signStatusUnavailable | Model unavailable | मॉडल उपलब्ध नहीं | ಮಾದರಿ ಲಭ್ಯವಿಲ್ಲ
+showHandHint | Show your hand to the camera | कैमरे को अपना हाथ दिखाएं | ಕ್ಯಾಮೆರಾಗೆ ನಿಮ್ಮ ಕೈಯನ್ನು ತೋರಿಸಿ
+handDetected | Hand detected | हाथ मिला | ಕೈ ಪತ್ತೆಯಾಗಿದೆ
+currentSign | Current sign | वर्तमान साइन | ಪ್ರಸ್ತುತ ಸೈನ್
+translationLabel | Translation | अनुवाद | ಅನುವಾದ
+translationPlaceholder | Recognised signs will appear here as text. | पहचाने गए साइन यहाँ टेक्स्ट के रूप में दिखेंगे। | ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು ಇಲ್ಲಿ ಪಠ್ಯವಾಗಿ ಕಾಣಿಸುತ್ತವೆ.
+recognisedSigns | Recognised signs | पहचाने गए साइन | ಗುರುತಿಸಿದ ಸಂಜ್ಞೆಗಳು
+pause | Pause | रोकें | ವಿರಾಮ
+resume | Resume | फिर शुरू करें | ಮುಂದುವರಿಸಿ
+speak | Speak | बोलें | ಮಾತನಾಡಿ
+stopSpeaking | Stop speaking | बोलना रोकें | ಮಾತು ನಿಲ್ಲಿಸಿ
+replay | Replay | दोबारा चलाएं | ಮತ್ತೆ ಪ್ಲೇ ಮಾಡಿ
+play | Play | चलाएं | ಪ್ಲೇ
+flipCamera | Flip camera | कैमरा पलटें | ಕ್ಯಾಮೆರಾ ತಿರುಗಿಸಿ
+flashOn | Turn flash on | फ़्लैश चालू करें | ಫ್ಲ್ಯಾಶ್ ಆನ್ ಮಾಡಿ
+flashOff | Turn flash off | फ़्लैश बंद करें | ಫ್ಲ್ಯಾಶ್ ಆಫ್ ಮಾಡಿ
+historyTitle | History | इतिहास | ಇತಿಹಾಸ
+cameraPermTitle | Camera access needed | कैमरा एक्सेस आवश्यक है | ಕ್ಯಾಮೆರಾ ಪ್ರವೇಶ ಅಗತ್ಯ
+cameraPermBody | SignoVoice uses your camera only on this screen to see hands. Hand positions are analysed on your device. Video is never recorded or uploaded. | साइनोवॉइस कैमरे का उपयोग केवल इस स्क्रीन पर हाथ देखने के लिए करता है। हाथ की स्थिति आपके डिवाइस पर विश्लेषित होती है। वीडियो कभी रिकॉर्ड या अपलोड नहीं किया जाता। | ಸೈನೋವಾಯ್ಸ್ ಈ ಪರದೆಯಲ್ಲಿ ಮಾತ್ರ ಕೈಗಳನ್ನು ನೋಡಲು ಕ್ಯಾಮೆರಾ ಬಳಸುತ್ತದೆ. ಕೈ ಸ್ಥಾನಗಳನ್ನು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತದೆ. ವೀಡಿಯೊವನ್ನು ಎಂದಿಗೂ ರೆಕಾರ್ಡ್ ಅಥವಾ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.
+micPermTitle | Microphone access needed | माइक्रोफ़ोन एक्सेस आवश्यक है | ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶ ಅಗತ್ಯ
+micPermBody | SignoVoice listens only while you tap the microphone button, to turn your speech into text. Speech recognition is provided by your device's speech service and may need an internet connection. | साइनोवॉइस केवल तब सुनता है जब आप माइक्रोफ़ोन बटन दबाते हैं, ताकि आपकी बोली को टेक्स्ट में बदला जा सके। बोली पहचान आपके डिवाइस की स्पीच सेवा द्वारा दी जाती है और इसके लिए इंटरनेट आवश्यक हो सकता है। | ನೀವು ಮೈಕ್ರೊಫೋನ್ ಬಟನ್ ಒತ್ತಿದಾಗ ಮಾತ್ರ ಸೈನೋವಾಯ್ಸ್ ಆಲಿಸುತ್ತದೆ, ನಿಮ್ಮ ಮಾತನ್ನು ಪಠ್ಯವಾಗಿ ಬದಲಿಸಲು. ಮಾತು ಗುರುತಿಸುವಿಕೆಯನ್ನು ನಿಮ್ಮ ಸಾಧನದ ಸ್ಪೀಚ್ ಸೇವೆ ಒದಗಿಸುತ್ತದೆ ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಬೇಕಾಗಬಹುದು.
+cameraInitError | The camera couldn't start. Close other apps that use the camera and try again. | कैमरा शुरू नहीं हो सका। कैमरा उपयोग करने वाले अन्य ऐप बंद करें और पुनः प्रयास करें। | ಕ್ಯಾಮೆರಾ ಪ್ರಾರಂಭವಾಗಲಿಲ್ಲ. ಕ್ಯಾಮೆರಾ ಬಳಸುವ ಇತರ ಆ್ಯಪ್‌ಗಳನ್ನು ಮುಚ್ಚಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+handTrackingUnsupported | Hand tracking isn't supported on this device yet. | इस डिवाइस पर हैंड ट्रैकिंग अभी समर्थित नहीं है। | ಈ ಸಾಧನದಲ್ಲಿ ಕೈ ಟ್ರ್ಯಾಕಿಂಗ್ ಇನ್ನೂ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ.
+signsLeftToday | {count} signs left today | आज {count} साइन शेष | ಇಂದು {count} ಸಂಜ್ಞೆಗಳು ಉಳಿದಿವೆ
+limitReachedTitle | Daily free limit reached | दैनिक निःशुल्क सीमा पूरी हुई | ದೈನಂದಿನ ಉಚಿತ ಮಿತಿ ತಲುಪಿದೆ
+limitReachedBody | Upgrade for unlimited sign recognition, or come back tomorrow. | असीमित साइन पहचान के लिए अपग्रेड करें, या कल फिर आएं। | ಅಪರಿಮಿತ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ, ಅಥವಾ ನಾಳೆ ಮತ್ತೆ ಬನ್ನಿ.
+seePremium | See Premium | प्रीमियम देखें | ಪ್ರೀಮಿಯಂ ನೋಡಿ
+saveToHistory | Save to history | इतिहास में सहेजें | ಇತಿಹಾಸಕ್ಕೆ ಉಳಿಸಿ
+savedToHistory | Saved to history | इतिहास में सहेजा गया | ಇತಿಹಾಸಕ್ಕೆ ಉಳಿಸಲಾಗಿದೆ
+historyOffHint | History is turned off in Privacy settings. | गोपनीयता सेटिंग्स में इतिहास बंद है। | ಗೌಪ್ಯತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಇತಿಹಾಸ ಆಫ್ ಆಗಿದೆ.
+outputLanguage | Output language | आउटपुट भाषा | ಔಟ್‌ಪುಟ್ ಭಾಷೆ
+voiceSettings | Voice settings | आवाज़ सेटिंग्स | ಧ್ವನಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು
+voiceSpeed | Speaking speed | बोलने की गति | ಮಾತಿನ ವೇಗ
+voiceLanguage | Voice language | आवाज़ की भाषा | ಧ್ವನಿ ಭಾಷೆ
+voiceSelect | Voice | आवाज़ | ಧ್ವನಿ
+voiceDefault | Default voice | डिफ़ॉल्ट आवाज़ | ಡೀಫಾಲ್ಟ್ ಧ್ವನಿ
+voiceNoneForLanguage | No voice for this language is installed on your device. Install one in your device's text-to-speech settings. | इस भाषा की कोई आवाज़ आपके डिवाइस पर इंस्टॉल नहीं है। अपने डिवाइस की टेक्स्ट-टू-स्पीच सेटिंग्स में इंस्टॉल करें। | ಈ ಭಾಷೆಯ ಯಾವುದೇ ಧ್ವನಿ ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಇಲ್ಲ. ನಿಮ್ಮ ಸಾಧನದ ಟೆಕ್ಸ್ಟ್-ಟು-ಸ್ಪೀಚ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಸ್ಥಾಪಿಸಿ.
+pausedLabel | Paused | रुका हुआ | ವಿರಾಮದಲ್ಲಿದೆ
+listeningLabel | Listening… | सुन रहा है… | ಆಲಿಸುತ್ತಿದೆ…
+recognitionPaused | Recognition paused | पहचान रुकी हुई है | ಗುರುತಿಸುವಿಕೆ ವಿರಾಮದಲ್ಲಿದೆ
+scanningHand | Looking for a hand | हाथ खोज रहा है | ಕೈಗಾಗಿ ಹುಡುಕುತ್ತಿದೆ
+noSignYet | No sign yet | अभी कोई साइन नहीं | ಇನ್ನೂ ಸಂಜ್ಞೆ ಇಲ್ಲ
+liveTranslation | Live translation: {text} | लाइव अनुवाद: {text} | ಲೈವ್ ಅನುವಾದ: {text}
+clearedAnnouncement | Cleared | साफ़ किया गया | ತೆರವುಗೊಳಿಸಲಾಗಿದೆ
+recognisedAnnouncement | Recognised {sign} | पहचाना गया {sign} | ಗುರುತಿಸಲಾಗಿದೆ {sign}
