@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "model": "sign_language_model.onnx",
+  "inputName": "lstm_input",
+  "sequenceLength": 30,
+  "featureCount": 63,
+  "labels": ["A", "B", "C", "Hello", "I love you", "No", "Please", "Thanks", "Yes"],
+  "note": "Order verified against the shipped model (alphabetical, as produced by train.py). The legacy onnx_server.py list was wrong."
+}
