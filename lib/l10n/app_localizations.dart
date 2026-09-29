@@ -1425,6 +1425,570 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Input: {type}'**
   String inputTypeLabel(String type);
+
+  /// No description provided for @catAlphabet.
+  ///
+  /// In en, this message translates to:
+  /// **'Alphabet'**
+  String get catAlphabet;
+
+  /// No description provided for @catNumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'Numbers'**
+  String get catNumbers;
+
+  /// No description provided for @catGreetings.
+  ///
+  /// In en, this message translates to:
+  /// **'Greetings'**
+  String get catGreetings;
+
+  /// No description provided for @catDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Conversation'**
+  String get catDaily;
+
+  /// No description provided for @catFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Family'**
+  String get catFamily;
+
+  /// No description provided for @catFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get catFood;
+
+  /// No description provided for @catEducation.
+  ///
+  /// In en, this message translates to:
+  /// **'Education'**
+  String get catEducation;
+
+  /// No description provided for @catHealthcare.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthcare'**
+  String get catHealthcare;
+
+  /// No description provided for @catTravel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel'**
+  String get catTravel;
+
+  /// No description provided for @catEmergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency'**
+  String get catEmergency;
+
+  /// No description provided for @catWorkplace.
+  ///
+  /// In en, this message translates to:
+  /// **'Workplace'**
+  String get catWorkplace;
+
+  /// No description provided for @catPhrases.
+  ///
+  /// In en, this message translates to:
+  /// **'Common Phrases'**
+  String get catPhrases;
+
+  /// No description provided for @learnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Indian Sign Language'**
+  String get learnTitle;
+
+  /// No description provided for @learnSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short lessons, one topic at a time.'**
+  String get learnSubtitle;
+
+  /// No description provided for @yourProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress'**
+  String get yourProgress;
+
+  /// No description provided for @xpValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{xp} XP'**
+  String xpValue(String xp);
+
+  /// No description provided for @levelValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String levelValue(String level);
+
+  /// No description provided for @streakValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day streak'**
+  String streakValue(String days);
+
+  /// No description provided for @learnedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{learned} of {total} signs learned'**
+  String learnedOf(String learned, String total);
+
+  /// No description provided for @topics.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics'**
+  String get topics;
+
+  /// No description provided for @lessonN.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson {n}'**
+  String lessonN(String n);
+
+  /// No description provided for @lessonProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} learned'**
+  String lessonProgress(String done, String total);
+
+  /// No description provided for @lessonComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson complete'**
+  String get lessonComplete;
+
+  /// No description provided for @lessonCompleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice work. You have learned {count} signs in this lesson.'**
+  String lessonCompleteBody(String count);
+
+  /// No description provided for @markLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'I know this sign'**
+  String get markLearned;
+
+  /// No description provided for @signLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Learned'**
+  String get signLearned;
+
+  /// No description provided for @savedSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved signs'**
+  String get savedSigns;
+
+  /// No description provided for @bookmarkAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Save this sign'**
+  String get bookmarkAdd;
+
+  /// No description provided for @bookmarkRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from saved'**
+  String get bookmarkRemove;
+
+  /// No description provided for @noSavedSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t saved any signs yet.'**
+  String get noSavedSigns;
+
+  /// No description provided for @previous.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get previous;
+
+  /// No description provided for @finishLesson.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish lesson'**
+  String get finishLesson;
+
+  /// No description provided for @signOfTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign {current} of {total}'**
+  String signOfTotal(String current, String total);
+
+  /// No description provided for @learningAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning analytics'**
+  String get learningAnalytics;
+
+  /// No description provided for @analyticsLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed learning analytics is a Premium feature.'**
+  String get analyticsLocked;
+
+  /// No description provided for @analyticsLockedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'See accuracy, completion by topic and your activity over the last week.'**
+  String get analyticsLockedBody;
+
+  /// No description provided for @accuracyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice accuracy'**
+  String get accuracyLabel;
+
+  /// No description provided for @attemptsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempts'**
+  String get attemptsLabel;
+
+  /// No description provided for @completionByTopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion by topic'**
+  String get completionByTopic;
+
+  /// No description provided for @lastSevenDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 7 days'**
+  String get lastSevenDays;
+
+  /// No description provided for @activityDay.
+  ///
+  /// In en, this message translates to:
+  /// **'{day}: {count} actions'**
+  String activityDay(String count, String day);
+
+  /// No description provided for @badgesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Badges'**
+  String get badgesTitle;
+
+  /// No description provided for @badgeLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Not earned yet'**
+  String get badgeLocked;
+
+  /// No description provided for @badgeFirstSign.
+  ///
+  /// In en, this message translates to:
+  /// **'First sign learned'**
+  String get badgeFirstSign;
+
+  /// No description provided for @badgeTenSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'10 signs learned'**
+  String get badgeTenSigns;
+
+  /// No description provided for @badgeFirstCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'First correct practice'**
+  String get badgeFirstCorrect;
+
+  /// No description provided for @badgeTenCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'10 correct practices'**
+  String get badgeTenCorrect;
+
+  /// No description provided for @badgeStreak3.
+  ///
+  /// In en, this message translates to:
+  /// **'3-day streak'**
+  String get badgeStreak3;
+
+  /// No description provided for @badgeStreak7.
+  ///
+  /// In en, this message translates to:
+  /// **'7-day streak'**
+  String get badgeStreak7;
+
+  /// No description provided for @dictionaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign dictionary'**
+  String get dictionaryTitle;
+
+  /// No description provided for @dictionarySearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search signs, e.g. Hello or Water'**
+  String get dictionarySearchHint;
+
+  /// No description provided for @allCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allCategories;
+
+  /// No description provided for @dictionaryNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No signs match your search.'**
+  String get dictionaryNoResults;
+
+  /// No description provided for @signVideoUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign video not available yet'**
+  String get signVideoUnavailable;
+
+  /// No description provided for @signVideoUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This sign is listed, but its video hasn\'t been added yet.'**
+  String get signVideoUnavailableBody;
+
+  /// No description provided for @hasVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Video available'**
+  String get hasVideo;
+
+  /// No description provided for @listenPronunciation.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get listenPronunciation;
+
+  /// No description provided for @practiceThisSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise this sign'**
+  String get practiceThisSign;
+
+  /// No description provided for @practiceNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera practice isn\'t available for this sign yet. The recogniser currently knows {count} signs.'**
+  String practiceNotAvailable(String count);
+
+  /// No description provided for @meaningLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Meaning'**
+  String get meaningLabel;
+
+  /// No description provided for @categoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic'**
+  String get categoryLabel;
+
+  /// No description provided for @playVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Play video'**
+  String get playVideo;
+
+  /// No description provided for @pauseVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause video'**
+  String get pauseVideo;
+
+  /// No description provided for @videoError.
+  ///
+  /// In en, this message translates to:
+  /// **'The video couldn\'t be played.'**
+  String get videoError;
+
+  /// No description provided for @entryNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'That sign couldn\'t be found.'**
+  String get entryNotFound;
+
+  /// No description provided for @practiceHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get practiceHubTitle;
+
+  /// No description provided for @practiceIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Show a sign to your camera. Your device checks it and gives instant feedback.'**
+  String get practiceIntro;
+
+  /// No description provided for @practiceAvailableSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs you can practise now'**
+  String get practiceAvailableSigns;
+
+  /// No description provided for @practicePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the sign for {sign}'**
+  String practicePrompt(String sign);
+
+  /// No description provided for @startPractice.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get startPractice;
+
+  /// No description provided for @getReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Get ready…'**
+  String get getReady;
+
+  /// No description provided for @signNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign now'**
+  String get signNow;
+
+  /// No description provided for @checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get checking;
+
+  /// No description provided for @recognisedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognised'**
+  String get recognisedLabel;
+
+  /// No description provided for @resultCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get resultCorrect;
+
+  /// No description provided for @resultTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get resultTryAgain;
+
+  /// No description provided for @resultNoHand.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t see your hand clearly. Try again with better light.'**
+  String get resultNoHand;
+
+  /// No description provided for @nextSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Next sign'**
+  String get nextSign;
+
+  /// No description provided for @xpEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+{xp} XP'**
+  String xpEarned(String xp);
+
+  /// No description provided for @watchReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch the sign'**
+  String get watchReference;
+
+  /// No description provided for @countdownNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'{n}'**
+  String countdownNumber(String n);
+
+  /// No description provided for @vsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice → Sign'**
+  String get vsTitle;
+
+  /// No description provided for @vsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the microphone and speak, or type below.'**
+  String get vsHint;
+
+  /// No description provided for @typeHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Type or paste text'**
+  String get typeHere;
+
+  /// No description provided for @showSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Show signs'**
+  String get showSigns;
+
+  /// No description provided for @tapToSpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to speak'**
+  String get tapToSpeak;
+
+  /// No description provided for @tapToStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to stop'**
+  String get tapToStop;
+
+  /// No description provided for @speechUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech recognition isn\'t available on this device. You can type instead.'**
+  String get speechUnavailable;
+
+  /// No description provided for @speechNothingHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'We didn\'t hear anything. Try again.'**
+  String get speechNothingHeard;
+
+  /// No description provided for @speechLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech language'**
+  String get speechLanguage;
+
+  /// No description provided for @signsForText.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs'**
+  String get signsForText;
+
+  /// No description provided for @noSignYetForWord.
+  ///
+  /// In en, this message translates to:
+  /// **'No sign available yet'**
+  String get noSignYetForWord;
+
+  /// No description provided for @missingSignsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} word(s) don\'t have a sign in the dictionary yet.'**
+  String missingSignsNote(String count);
+
+  /// No description provided for @heardLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'What we heard'**
+  String get heardLabel;
 }
 
 class _AppLocalizationsDelegate

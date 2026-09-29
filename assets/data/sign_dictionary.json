@@ -1,0 +1,1221 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "alphabet",
+   "icon": "abc"
+  },
+  {
+   "id": "numbers",
+   "icon": "pin"
+  },
+  {
+   "id": "greetings",
+   "icon": "waving_hand"
+  },
+  {
+   "id": "daily",
+   "icon": "chat"
+  },
+  {
+   "id": "family",
+   "icon": "family"
+  },
+  {
+   "id": "food",
+   "icon": "restaurant"
+  },
+  {
+   "id": "education",
+   "icon": "school"
+  },
+  {
+   "id": "healthcare",
+   "icon": "local_hospital"
+  },
+  {
+   "id": "travel",
+   "icon": "directions_bus"
+  },
+  {
+   "id": "emergency",
+   "icon": "emergency"
+  },
+  {
+   "id": "workplace",
+   "icon": "work"
+  },
+  {
+   "id": "phrases",
+   "icon": "forum"
+  }
+ ],
+ "entries": [
+  {
+   "id": "a",
+   "word": "A",
+   "meaning": "The letter A, fingerspelled.",
+   "category": "alphabet",
+   "media": {
+    "video": "assets/videos/a.mp4"
+   },
+   "practiceLabel": "A"
+  },
+  {
+   "id": "b",
+   "word": "B",
+   "meaning": "The letter B, fingerspelled.",
+   "category": "alphabet",
+   "media": {
+    "video": "assets/videos/b.mp4"
+   },
+   "practiceLabel": "B"
+  },
+  {
+   "id": "c",
+   "word": "C",
+   "meaning": "The letter C, fingerspelled.",
+   "category": "alphabet",
+   "media": {
+    "video": "assets/videos/c.mp4"
+   },
+   "practiceLabel": "C"
+  },
+  {
+   "id": "d",
+   "word": "D",
+   "meaning": "The letter D, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "e",
+   "word": "E",
+   "meaning": "The letter E, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "f",
+   "word": "F",
+   "meaning": "The letter F, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "g",
+   "word": "G",
+   "meaning": "The letter G, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "h",
+   "word": "H",
+   "meaning": "The letter H, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "i",
+   "word": "I",
+   "meaning": "The letter I, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "j",
+   "word": "J",
+   "meaning": "The letter J, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "k",
+   "word": "K",
+   "meaning": "The letter K, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "l",
+   "word": "L",
+   "meaning": "The letter L, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "m",
+   "word": "M",
+   "meaning": "The letter M, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "n",
+   "word": "N",
+   "meaning": "The letter N, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "o",
+   "word": "O",
+   "meaning": "The letter O, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "p",
+   "word": "P",
+   "meaning": "The letter P, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "q",
+   "word": "Q",
+   "meaning": "The letter Q, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "r",
+   "word": "R",
+   "meaning": "The letter R, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "s",
+   "word": "S",
+   "meaning": "The letter S, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "t",
+   "word": "T",
+   "meaning": "The letter T, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "u",
+   "word": "U",
+   "meaning": "The letter U, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "v",
+   "word": "V",
+   "meaning": "The letter V, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "w",
+   "word": "W",
+   "meaning": "The letter W, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "x",
+   "word": "X",
+   "meaning": "The letter X, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "y",
+   "word": "Y",
+   "meaning": "The letter Y, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "z",
+   "word": "Z",
+   "meaning": "The letter Z, fingerspelled.",
+   "category": "alphabet"
+  },
+  {
+   "id": "zero",
+   "word": "Zero",
+   "meaning": "The number 0.",
+   "category": "numbers"
+  },
+  {
+   "id": "one",
+   "word": "One",
+   "meaning": "The number 1.",
+   "category": "numbers"
+  },
+  {
+   "id": "two",
+   "word": "Two",
+   "meaning": "The number 2.",
+   "category": "numbers"
+  },
+  {
+   "id": "three",
+   "word": "Three",
+   "meaning": "The number 3.",
+   "category": "numbers"
+  },
+  {
+   "id": "four",
+   "word": "Four",
+   "meaning": "The number 4.",
+   "category": "numbers"
+  },
+  {
+   "id": "five",
+   "word": "Five",
+   "meaning": "The number 5.",
+   "category": "numbers"
+  },
+  {
+   "id": "six",
+   "word": "Six",
+   "meaning": "The number 6.",
+   "category": "numbers"
+  },
+  {
+   "id": "seven",
+   "word": "Seven",
+   "meaning": "The number 7.",
+   "category": "numbers"
+  },
+  {
+   "id": "eight",
+   "word": "Eight",
+   "meaning": "The number 8.",
+   "category": "numbers"
+  },
+  {
+   "id": "nine",
+   "word": "Nine",
+   "meaning": "The number 9.",
+   "category": "numbers"
+  },
+  {
+   "id": "ten",
+   "word": "Ten",
+   "meaning": "The number 10.",
+   "category": "numbers"
+  },
+  {
+   "id": "hello",
+   "word": "Hello",
+   "meaning": "A greeting used when meeting someone.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "नमस्ते"
+    ],
+    "kn": [
+     "ನಮಸ್ಕಾರ"
+    ]
+   },
+   "media": {
+    "video": "assets/videos/hello.mp4"
+   },
+   "practiceLabel": "Hello"
+  },
+  {
+   "id": "good_morning",
+   "word": "Good morning",
+   "meaning": "A greeting used in the morning.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "सुप्रभात"
+    ],
+    "kn": [
+     "ಶುಭೋದಯ"
+    ]
+   }
+  },
+  {
+   "id": "good_afternoon",
+   "word": "Good afternoon",
+   "meaning": "A greeting used in the afternoon.",
+   "category": "greetings"
+  },
+  {
+   "id": "good_evening",
+   "word": "Good evening",
+   "meaning": "A greeting used in the evening.",
+   "category": "greetings"
+  },
+  {
+   "id": "good_night",
+   "word": "Good night",
+   "meaning": "Said when parting at night or before sleep.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "शुभ रात्रि"
+    ],
+    "kn": [
+     "ಶುಭ ರಾತ್ರಿ"
+    ]
+   }
+  },
+  {
+   "id": "goodbye",
+   "word": "Goodbye",
+   "meaning": "Said when leaving.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "अलविदा"
+    ],
+    "kn": [
+     "ವಿದಾಯ"
+    ]
+   }
+  },
+  {
+   "id": "welcome",
+   "word": "Welcome",
+   "meaning": "Said to greet someone arriving.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "स्वागत है"
+    ],
+    "kn": [
+     "ಸ್ವಾಗತ"
+    ]
+   }
+  },
+  {
+   "id": "how_are_you",
+   "word": "How are you",
+   "meaning": "Asking about someone's wellbeing.",
+   "category": "greetings"
+  },
+  {
+   "id": "nice_to_meet_you",
+   "word": "Nice to meet you",
+   "meaning": "Said when meeting someone for the first time.",
+   "category": "greetings"
+  },
+  {
+   "id": "thank_you",
+   "word": "Thank you",
+   "meaning": "Expressing gratitude.",
+   "category": "greetings",
+   "aliases": {
+    "hi": [
+     "धन्यवाद",
+     "शुक्रिया"
+    ],
+    "kn": [
+     "ಧನ್ಯವಾದ",
+     "ಧನ್ಯವಾದಗಳು"
+    ]
+   },
+   "media": {
+    "video": "assets/videos/thank_you.mp4"
+   },
+   "practiceLabel": "Thanks"
+  },
+  {
+   "id": "yes",
+   "word": "Yes",
+   "meaning": "An affirmative answer.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "हाँ"
+    ],
+    "kn": [
+     "ಹೌದು"
+    ]
+   },
+   "practiceLabel": "Yes"
+  },
+  {
+   "id": "no",
+   "word": "No",
+   "meaning": "A negative answer.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "नहीं"
+    ],
+    "kn": [
+     "ಇಲ್ಲ"
+    ]
+   },
+   "practiceLabel": "No"
+  },
+  {
+   "id": "please",
+   "word": "Please",
+   "meaning": "A polite request word.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "कृपया"
+    ],
+    "kn": [
+     "ದಯವಿಟ್ಟು"
+    ]
+   },
+   "practiceLabel": "Please"
+  },
+  {
+   "id": "sorry",
+   "word": "Sorry",
+   "meaning": "Expressing apology.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "माफ़ कीजिए",
+     "क्षमा"
+    ],
+    "kn": [
+     "ಕ್ಷಮಿಸಿ"
+    ]
+   }
+  },
+  {
+   "id": "excuse_me",
+   "word": "Excuse me",
+   "meaning": "Used to get attention politely or to pass by.",
+   "category": "daily"
+  },
+  {
+   "id": "help",
+   "word": "Help",
+   "meaning": "Asking for or offering assistance.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "मदद"
+    ],
+    "kn": [
+     "ಸಹಾಯ"
+    ]
+   }
+  },
+  {
+   "id": "wait",
+   "word": "Wait",
+   "meaning": "Asking someone to pause for a moment.",
+   "category": "daily"
+  },
+  {
+   "id": "stop",
+   "word": "Stop",
+   "meaning": "Asking someone to halt.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "रुको"
+    ],
+    "kn": [
+     "ನಿಲ್ಲಿ"
+    ]
+   }
+  },
+  {
+   "id": "come",
+   "word": "Come",
+   "meaning": "Inviting someone to move toward you.",
+   "category": "daily",
+   "aliases": {
+    "hi": [
+     "आओ"
+    ],
+    "kn": [
+     "ಬನ್ನಿ"
+    ]
+   }
+  },
+  {
+   "id": "go",
+   "word": "Go",
+   "meaning": "Moving away from the current place.",
+   "category": "daily"
+  },
+  {
+   "id": "sit",
+   "word": "Sit",
+   "meaning": "Taking a seat.",
+   "category": "daily"
+  },
+  {
+   "id": "understand",
+   "word": "Understand",
+   "meaning": "To grasp the meaning of something.",
+   "category": "daily"
+  },
+  {
+   "id": "mother",
+   "word": "Mother",
+   "meaning": "Female parent.",
+   "category": "family",
+   "aliases": {
+    "hi": [
+     "माँ",
+     "माता"
+    ],
+    "kn": [
+     "ಅಮ್ಮ",
+     "ತಾಯಿ"
+    ]
+   }
+  },
+  {
+   "id": "father",
+   "word": "Father",
+   "meaning": "Male parent.",
+   "category": "family",
+   "aliases": {
+    "hi": [
+     "पिता",
+     "पापा"
+    ],
+    "kn": [
+     "ಅಪ್ಪ",
+     "ತಂದೆ"
+    ]
+   }
+  },
+  {
+   "id": "sister",
+   "word": "Sister",
+   "meaning": "A female sibling.",
+   "category": "family",
+   "aliases": {
+    "hi": [
+     "बहन"
+    ],
+    "kn": [
+     "ಸಹೋದರಿ"
+    ]
+   }
+  },
+  {
+   "id": "brother",
+   "word": "Brother",
+   "meaning": "A male sibling.",
+   "category": "family",
+   "aliases": {
+    "hi": [
+     "भाई"
+    ],
+    "kn": [
+     "ಸಹೋದರ"
+    ]
+   }
+  },
+  {
+   "id": "grandmother",
+   "word": "Grandmother",
+   "meaning": "The mother of a parent.",
+   "category": "family"
+  },
+  {
+   "id": "grandfather",
+   "word": "Grandfather",
+   "meaning": "The father of a parent.",
+   "category": "family"
+  },
+  {
+   "id": "son",
+   "word": "Son",
+   "meaning": "A male child.",
+   "category": "family"
+  },
+  {
+   "id": "daughter",
+   "word": "Daughter",
+   "meaning": "A female child.",
+   "category": "family"
+  },
+  {
+   "id": "husband",
+   "word": "Husband",
+   "meaning": "A married man.",
+   "category": "family"
+  },
+  {
+   "id": "wife",
+   "word": "Wife",
+   "meaning": "A married woman.",
+   "category": "family"
+  },
+  {
+   "id": "water",
+   "word": "Water",
+   "meaning": "Clear drinking liquid.",
+   "category": "food",
+   "aliases": {
+    "hi": [
+     "पानी"
+    ],
+    "kn": [
+     "ನೀರು"
+    ]
+   }
+  },
+  {
+   "id": "food",
+   "word": "Food",
+   "meaning": "What people eat.",
+   "category": "food",
+   "aliases": {
+    "hi": [
+     "खाना"
+    ],
+    "kn": [
+     "ಆಹಾರ"
+    ]
+   }
+  },
+  {
+   "id": "rice",
+   "word": "Rice",
+   "meaning": "A staple grain.",
+   "category": "food",
+   "aliases": {
+    "hi": [
+     "चावल"
+    ],
+    "kn": [
+     "ಅನ್ನ",
+     "ಅಕ್ಕಿ"
+    ]
+   }
+  },
+  {
+   "id": "bread",
+   "word": "Bread",
+   "meaning": "Baked food made from flour.",
+   "category": "food"
+  },
+  {
+   "id": "milk",
+   "word": "Milk",
+   "meaning": "A white drink from animals.",
+   "category": "food",
+   "aliases": {
+    "hi": [
+     "दूध"
+    ],
+    "kn": [
+     "ಹಾಲು"
+    ]
+   }
+  },
+  {
+   "id": "tea",
+   "word": "Tea",
+   "meaning": "A hot drink made from tea leaves.",
+   "category": "food",
+   "aliases": {
+    "hi": [
+     "चाय"
+    ],
+    "kn": [
+     "ಚಹಾ"
+    ]
+   }
+  },
+  {
+   "id": "fruit",
+   "word": "Fruit",
+   "meaning": "Sweet food that grows on plants.",
+   "category": "food"
+  },
+  {
+   "id": "vegetable",
+   "word": "Vegetable",
+   "meaning": "Edible plant parts eaten as food.",
+   "category": "food"
+  },
+  {
+   "id": "hungry",
+   "word": "Hungry",
+   "meaning": "Needing food.",
+   "category": "food"
+  },
+  {
+   "id": "thirsty",
+   "word": "Thirsty",
+   "meaning": "Needing water.",
+   "category": "food"
+  },
+  {
+   "id": "school",
+   "word": "School",
+   "meaning": "A place where children learn.",
+   "category": "education",
+   "aliases": {
+    "hi": [
+     "स्कूल"
+    ],
+    "kn": [
+     "ಶಾಲೆ"
+    ]
+   }
+  },
+  {
+   "id": "teacher",
+   "word": "Teacher",
+   "meaning": "A person who teaches.",
+   "category": "education",
+   "aliases": {
+    "hi": [
+     "शिक्षक"
+    ],
+    "kn": [
+     "ಶಿಕ್ಷಕ"
+    ]
+   }
+  },
+  {
+   "id": "student",
+   "word": "Student",
+   "meaning": "A person who studies.",
+   "category": "education"
+  },
+  {
+   "id": "book",
+   "word": "Book",
+   "meaning": "Pages of writing bound together.",
+   "category": "education",
+   "aliases": {
+    "hi": [
+     "किताब"
+    ],
+    "kn": [
+     "ಪುಸ್ತಕ"
+    ]
+   }
+  },
+  {
+   "id": "pen",
+   "word": "Pen",
+   "meaning": "A tool for writing with ink.",
+   "category": "education"
+  },
+  {
+   "id": "learn",
+   "word": "Learn",
+   "meaning": "To gain knowledge or skill.",
+   "category": "education"
+  },
+  {
+   "id": "read",
+   "word": "Read",
+   "meaning": "To look at and understand written words.",
+   "category": "education"
+  },
+  {
+   "id": "write",
+   "word": "Write",
+   "meaning": "To form letters or words on a surface.",
+   "category": "education"
+  },
+  {
+   "id": "exam",
+   "word": "Exam",
+   "meaning": "A test of knowledge.",
+   "category": "education"
+  },
+  {
+   "id": "hospital",
+   "word": "Hospital",
+   "meaning": "A place where sick or injured people receive medical care.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "अस्पताल"
+    ],
+    "kn": [
+     "ಆಸ್ಪತ್ರೆ"
+    ]
+   }
+  },
+  {
+   "id": "doctor",
+   "word": "Doctor",
+   "meaning": "A person trained to treat illness.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "डॉक्टर"
+    ],
+    "kn": [
+     "ವೈದ್ಯ",
+     "ಡಾಕ್ಟರ್"
+    ]
+   }
+  },
+  {
+   "id": "medicine",
+   "word": "Medicine",
+   "meaning": "A substance used to treat illness.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "दवा",
+     "दवाई"
+    ],
+    "kn": [
+     "ಔಷಧ"
+    ]
+   }
+  },
+  {
+   "id": "pain",
+   "word": "Pain",
+   "meaning": "Physical hurt or discomfort.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "दर्द"
+    ],
+    "kn": [
+     "ನೋವು"
+    ]
+   }
+  },
+  {
+   "id": "fever",
+   "word": "Fever",
+   "meaning": "Higher than normal body temperature.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "बुखार"
+    ],
+    "kn": [
+     "ಜ್ವರ"
+    ]
+   }
+  },
+  {
+   "id": "ambulance",
+   "word": "Ambulance",
+   "meaning": "A vehicle that carries patients to hospital.",
+   "category": "healthcare",
+   "aliases": {
+    "hi": [
+     "एम्बुलेंस"
+    ],
+    "kn": [
+     "ಆಂಬ್ಯುಲೆನ್ಸ್"
+    ]
+   }
+  },
+  {
+   "id": "nurse",
+   "word": "Nurse",
+   "meaning": "A person who cares for patients.",
+   "category": "healthcare"
+  },
+  {
+   "id": "sick",
+   "word": "Sick",
+   "meaning": "Not in good health.",
+   "category": "healthcare"
+  },
+  {
+   "id": "injection",
+   "word": "Injection",
+   "meaning": "Medicine given with a needle.",
+   "category": "healthcare"
+  },
+  {
+   "id": "pharmacy",
+   "word": "Pharmacy",
+   "meaning": "A shop that sells medicines.",
+   "category": "healthcare"
+  },
+  {
+   "id": "bus",
+   "word": "Bus",
+   "meaning": "A large road vehicle for many passengers.",
+   "category": "travel",
+   "aliases": {
+    "hi": [
+     "बस"
+    ],
+    "kn": [
+     "ಬಸ್"
+    ]
+   }
+  },
+  {
+   "id": "train",
+   "word": "Train",
+   "meaning": "A vehicle that runs on rails.",
+   "category": "travel",
+   "aliases": {
+    "hi": [
+     "ट्रेन",
+     "रेल"
+    ],
+    "kn": [
+     "ರೈಲು"
+    ]
+   }
+  },
+  {
+   "id": "airport",
+   "word": "Airport",
+   "meaning": "A place where aircraft take off and land.",
+   "category": "travel"
+  },
+  {
+   "id": "ticket",
+   "word": "Ticket",
+   "meaning": "A pass that allows you to travel.",
+   "category": "travel"
+  },
+  {
+   "id": "road",
+   "word": "Road",
+   "meaning": "A path for vehicles.",
+   "category": "travel"
+  },
+  {
+   "id": "where",
+   "word": "Where",
+   "meaning": "Used to ask about a place.",
+   "category": "travel",
+   "aliases": {
+    "hi": [
+     "कहाँ"
+    ],
+    "kn": [
+     "ಎಲ್ಲಿ"
+    ]
+   }
+  },
+  {
+   "id": "station",
+   "word": "Station",
+   "meaning": "A stop where trains or buses arrive.",
+   "category": "travel"
+  },
+  {
+   "id": "taxi",
+   "word": "Taxi",
+   "meaning": "A car that carries passengers for a fare.",
+   "category": "travel"
+  },
+  {
+   "id": "money",
+   "word": "Money",
+   "meaning": "What people use to pay for things.",
+   "category": "travel",
+   "aliases": {
+    "hi": [
+     "पैसा",
+     "पैसे"
+    ],
+    "kn": [
+     "ಹಣ"
+    ]
+   }
+  },
+  {
+   "id": "emergency",
+   "word": "Emergency",
+   "meaning": "A sudden situation needing urgent action.",
+   "category": "emergency",
+   "aliases": {
+    "hi": [
+     "आपातकाल"
+    ],
+    "kn": [
+     "ತುರ್ತು"
+    ]
+   }
+  },
+  {
+   "id": "fire",
+   "word": "Fire",
+   "meaning": "Burning that may cause danger.",
+   "category": "emergency",
+   "aliases": {
+    "hi": [
+     "आग"
+    ],
+    "kn": [
+     "ಬೆಂಕಿ"
+    ]
+   }
+  },
+  {
+   "id": "police",
+   "word": "Police",
+   "meaning": "Officers who keep law and order.",
+   "category": "emergency",
+   "aliases": {
+    "hi": [
+     "पुलिस"
+    ],
+    "kn": [
+     "ಪೊಲೀಸ್"
+    ]
+   }
+  },
+  {
+   "id": "danger",
+   "word": "Danger",
+   "meaning": "A situation that may cause harm.",
+   "category": "emergency",
+   "aliases": {
+    "hi": [
+     "खतरा"
+    ],
+    "kn": [
+     "ಅಪಾಯ"
+    ]
+   }
+  },
+  {
+   "id": "call_for_help",
+   "word": "Call for help",
+   "meaning": "Asking others to get assistance.",
+   "category": "emergency"
+  },
+  {
+   "id": "accident",
+   "word": "Accident",
+   "meaning": "An unexpected event causing harm.",
+   "category": "emergency"
+  },
+  {
+   "id": "help_me",
+   "word": "Help me",
+   "meaning": "A direct request for assistance.",
+   "category": "emergency"
+  },
+  {
+   "id": "lost",
+   "word": "Lost",
+   "meaning": "Not knowing where you are.",
+   "category": "emergency"
+  },
+  {
+   "id": "work",
+   "word": "Work",
+   "meaning": "Activity done as a job.",
+   "category": "workplace"
+  },
+  {
+   "id": "office",
+   "word": "Office",
+   "meaning": "A place where people work at desks.",
+   "category": "workplace"
+  },
+  {
+   "id": "meeting",
+   "word": "Meeting",
+   "meaning": "A gathering to discuss something.",
+   "category": "workplace"
+  },
+  {
+   "id": "manager",
+   "word": "Manager",
+   "meaning": "A person who supervises others.",
+   "category": "workplace"
+  },
+  {
+   "id": "salary",
+   "word": "Salary",
+   "meaning": "Regular payment for work.",
+   "category": "workplace"
+  },
+  {
+   "id": "time",
+   "word": "Time",
+   "meaning": "What clocks measure.",
+   "category": "workplace",
+   "aliases": {
+    "hi": [
+     "समय"
+    ],
+    "kn": [
+     "ಸಮಯ"
+    ]
+   }
+  },
+  {
+   "id": "job",
+   "word": "Job",
+   "meaning": "A paid position of employment.",
+   "category": "workplace"
+  },
+  {
+   "id": "interview",
+   "word": "Interview",
+   "meaning": "A formal conversation for a job.",
+   "category": "workplace"
+  },
+  {
+   "id": "i_love_you",
+   "word": "I love you",
+   "meaning": "Expressing love and care.",
+   "category": "phrases",
+   "practiceLabel": "I love you"
+  },
+  {
+   "id": "i_dont_understand",
+   "word": "I don't understand",
+   "meaning": "Saying you did not understand.",
+   "category": "phrases"
+  },
+  {
+   "id": "please_repeat",
+   "word": "Please repeat",
+   "meaning": "Asking someone to say or sign again.",
+   "category": "phrases"
+  },
+  {
+   "id": "what_is_your_name",
+   "word": "What is your name",
+   "meaning": "Asking someone's name.",
+   "category": "phrases"
+  },
+  {
+   "id": "my_name_is",
+   "word": "My name is",
+   "meaning": "Introducing yourself.",
+   "category": "phrases"
+  },
+  {
+   "id": "where_is_the_toilet",
+   "word": "Where is the toilet",
+   "meaning": "Asking for the restroom.",
+   "category": "phrases"
+  },
+  {
+   "id": "how_much",
+   "word": "How much",
+   "meaning": "Asking about price or quantity.",
+   "category": "phrases"
+  },
+  {
+   "id": "i_need_help",
+   "word": "I need help",
+   "meaning": "Saying you need assistance.",
+   "category": "phrases"
+  },
+  {
+   "id": "i_am_deaf",
+   "word": "I am deaf",
+   "meaning": "Telling someone you are Deaf.",
+   "category": "phrases"
+  },
+  {
+   "id": "can_you_write_it_down",
+   "word": "Can you write it down",
+   "meaning": "Asking someone to write instead.",
+   "category": "phrases"
+  },
+  {
+   "id": "slowly_please",
+   "word": "Slowly please",
+   "meaning": "Asking someone to slow down.",
+   "category": "phrases"
+  },
+  {
+   "id": "thank_you_very_much",
+   "word": "Thank you very much",
+   "meaning": "Expressing strong gratitude.",
+   "category": "phrases"
+  }
+ ]
+}

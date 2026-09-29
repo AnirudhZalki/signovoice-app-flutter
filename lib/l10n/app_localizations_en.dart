@@ -729,4 +729,320 @@ class AppLocalizationsEn extends AppLocalizations {
   String inputTypeLabel(String type) {
     return 'Input: $type';
   }
+
+  @override
+  String get catAlphabet => 'Alphabet';
+
+  @override
+  String get catNumbers => 'Numbers';
+
+  @override
+  String get catGreetings => 'Greetings';
+
+  @override
+  String get catDaily => 'Daily Conversation';
+
+  @override
+  String get catFamily => 'Family';
+
+  @override
+  String get catFood => 'Food';
+
+  @override
+  String get catEducation => 'Education';
+
+  @override
+  String get catHealthcare => 'Healthcare';
+
+  @override
+  String get catTravel => 'Travel';
+
+  @override
+  String get catEmergency => 'Emergency';
+
+  @override
+  String get catWorkplace => 'Workplace';
+
+  @override
+  String get catPhrases => 'Common Phrases';
+
+  @override
+  String get learnTitle => 'Learn Indian Sign Language';
+
+  @override
+  String get learnSubtitle => 'Short lessons, one topic at a time.';
+
+  @override
+  String get yourProgress => 'Your progress';
+
+  @override
+  String xpValue(String xp) {
+    return '$xp XP';
+  }
+
+  @override
+  String levelValue(String level) {
+    return 'Level $level';
+  }
+
+  @override
+  String streakValue(String days) {
+    return '$days-day streak';
+  }
+
+  @override
+  String learnedOf(String learned, String total) {
+    return '$learned of $total signs learned';
+  }
+
+  @override
+  String get topics => 'Topics';
+
+  @override
+  String lessonN(String n) {
+    return 'Lesson $n';
+  }
+
+  @override
+  String lessonProgress(String done, String total) {
+    return '$done of $total learned';
+  }
+
+  @override
+  String get lessonComplete => 'Lesson complete';
+
+  @override
+  String lessonCompleteBody(String count) {
+    return 'Nice work. You have learned $count signs in this lesson.';
+  }
+
+  @override
+  String get markLearned => 'I know this sign';
+
+  @override
+  String get signLearned => 'Learned';
+
+  @override
+  String get savedSigns => 'Saved signs';
+
+  @override
+  String get bookmarkAdd => 'Save this sign';
+
+  @override
+  String get bookmarkRemove => 'Remove from saved';
+
+  @override
+  String get noSavedSigns => 'You haven\'t saved any signs yet.';
+
+  @override
+  String get previous => 'Previous';
+
+  @override
+  String get finishLesson => 'Finish lesson';
+
+  @override
+  String signOfTotal(String current, String total) {
+    return 'Sign $current of $total';
+  }
+
+  @override
+  String get learningAnalytics => 'Learning analytics';
+
+  @override
+  String get analyticsLocked =>
+      'Detailed learning analytics is a Premium feature.';
+
+  @override
+  String get analyticsLockedBody =>
+      'See accuracy, completion by topic and your activity over the last week.';
+
+  @override
+  String get accuracyLabel => 'Practice accuracy';
+
+  @override
+  String get attemptsLabel => 'Attempts';
+
+  @override
+  String get completionByTopic => 'Completion by topic';
+
+  @override
+  String get lastSevenDays => 'Last 7 days';
+
+  @override
+  String activityDay(String count, String day) {
+    return '$day: $count actions';
+  }
+
+  @override
+  String get badgesTitle => 'Badges';
+
+  @override
+  String get badgeLocked => 'Not earned yet';
+
+  @override
+  String get badgeFirstSign => 'First sign learned';
+
+  @override
+  String get badgeTenSigns => '10 signs learned';
+
+  @override
+  String get badgeFirstCorrect => 'First correct practice';
+
+  @override
+  String get badgeTenCorrect => '10 correct practices';
+
+  @override
+  String get badgeStreak3 => '3-day streak';
+
+  @override
+  String get badgeStreak7 => '7-day streak';
+
+  @override
+  String get dictionaryTitle => 'Sign dictionary';
+
+  @override
+  String get dictionarySearchHint => 'Search signs, e.g. Hello or Water';
+
+  @override
+  String get allCategories => 'All';
+
+  @override
+  String get dictionaryNoResults => 'No signs match your search.';
+
+  @override
+  String get signVideoUnavailable => 'Sign video not available yet';
+
+  @override
+  String get signVideoUnavailableBody =>
+      'This sign is listed, but its video hasn\'t been added yet.';
+
+  @override
+  String get hasVideo => 'Video available';
+
+  @override
+  String get listenPronunciation => 'Listen';
+
+  @override
+  String get practiceThisSign => 'Practise this sign';
+
+  @override
+  String practiceNotAvailable(String count) {
+    return 'Camera practice isn\'t available for this sign yet. The recogniser currently knows $count signs.';
+  }
+
+  @override
+  String get meaningLabel => 'Meaning';
+
+  @override
+  String get categoryLabel => 'Topic';
+
+  @override
+  String get playVideo => 'Play video';
+
+  @override
+  String get pauseVideo => 'Pause video';
+
+  @override
+  String get videoError => 'The video couldn\'t be played.';
+
+  @override
+  String get entryNotFound => 'That sign couldn\'t be found.';
+
+  @override
+  String get practiceHubTitle => 'Practice';
+
+  @override
+  String get practiceIntro =>
+      'Show a sign to your camera. Your device checks it and gives instant feedback.';
+
+  @override
+  String get practiceAvailableSigns => 'Signs you can practise now';
+
+  @override
+  String practicePrompt(String sign) {
+    return 'Show the sign for $sign';
+  }
+
+  @override
+  String get startPractice => 'Start';
+
+  @override
+  String get getReady => 'Get ready…';
+
+  @override
+  String get signNow => 'Sign now';
+
+  @override
+  String get checking => 'Checking…';
+
+  @override
+  String get recognisedLabel => 'Recognised';
+
+  @override
+  String get resultCorrect => 'Correct';
+
+  @override
+  String get resultTryAgain => 'Try again';
+
+  @override
+  String get resultNoHand =>
+      'We couldn\'t see your hand clearly. Try again with better light.';
+
+  @override
+  String get nextSign => 'Next sign';
+
+  @override
+  String xpEarned(String xp) {
+    return '+$xp XP';
+  }
+
+  @override
+  String get watchReference => 'Watch the sign';
+
+  @override
+  String countdownNumber(String n) {
+    return '$n';
+  }
+
+  @override
+  String get vsTitle => 'Voice → Sign';
+
+  @override
+  String get vsHint => 'Tap the microphone and speak, or type below.';
+
+  @override
+  String get typeHere => 'Type or paste text';
+
+  @override
+  String get showSigns => 'Show signs';
+
+  @override
+  String get tapToSpeak => 'Tap to speak';
+
+  @override
+  String get tapToStop => 'Tap to stop';
+
+  @override
+  String get speechUnavailable =>
+      'Speech recognition isn\'t available on this device. You can type instead.';
+
+  @override
+  String get speechNothingHeard => 'We didn\'t hear anything. Try again.';
+
+  @override
+  String get speechLanguage => 'Speech language';
+
+  @override
+  String get signsForText => 'Signs';
+
+  @override
+  String get noSignYetForWord => 'No sign available yet';
+
+  @override
+  String missingSignsNote(String count) {
+    return '$count word(s) don\'t have a sign in the dictionary yet.';
+  }
+
+  @override
+  String get heardLabel => 'What we heard';
 }

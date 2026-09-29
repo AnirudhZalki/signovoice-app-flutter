@@ -8,6 +8,15 @@ import '../../features/auth/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/screens/phone_auth_screens.dart';
 import '../../features/auth/presentation/screens/register_screen.dart';
 import '../../features/auth/presentation/screens/profile_setup_screen.dart';
+import '../../features/dictionary/presentation/dictionary_entry_screen.dart';
+import '../../features/dictionary/presentation/dictionary_screen.dart';
+import '../../features/learning/presentation/category_screen.dart';
+import '../../features/learning/presentation/learn_screen.dart';
+import '../../features/learning/presentation/lesson_screen.dart';
+import '../../features/learning/presentation/progress_screen.dart';
+import '../../features/practice/presentation/practice_hub_screen.dart';
+import '../../features/practice/presentation/practice_screen.dart';
+import '../../features/voice_translation/presentation/voice_to_sign_screen.dart';
 import '../../features/history/presentation/history_screen.dart';
 import '../../features/home/presentation/app_shell.dart';
 import '../../features/home/presentation/home_screen.dart';
@@ -84,12 +93,27 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.profileSetup, builder: (_, _) => const ProfileSetupScreen()),
       GoRoute(path: Routes.signToText, builder: (_, _) => const SignTranslationScreen(mode: SignMode.signToText)),
       GoRoute(path: Routes.signToVoice, builder: (_, _) => const SignTranslationScreen(mode: SignMode.signToVoice)),
+      GoRoute(path: Routes.voiceToSign, builder: (_, _) => const VoiceToSignScreen()),
       GoRoute(path: Routes.history, builder: (_, _) => const HistoryScreen()),
+      GoRoute(
+        path: Routes.dictionary,
+        builder: (_, state) => DictionaryScreen(
+          initialCategory: state.uri.queryParameters['category'],
+          bookmarksOnly: state.uri.queryParameters['saved'] == '1',
+        ),
+      ),
+      GoRoute(path: Routes.dictionaryEntryPattern, builder: (_, state) => DictionaryEntryScreen(id: state.pathParameters['id']!)),
+      GoRoute(path: Routes.learnCategoryPattern, builder: (_, state) => CategoryScreen(categoryId: state.pathParameters['id']!)),
+      GoRoute(path: '/learn/lesson/:id', builder: (_, state) => LessonScreen(lessonId: state.pathParameters['id']!)),
+      GoRoute(path: Routes.practiceHub, builder: (_, _) => const PracticeHubScreen()),
+      GoRoute(path: Routes.practicePattern, builder: (_, state) => PracticeScreen(signId: state.pathParameters['id']!)),
+      GoRoute(path: Routes.progress, builder: (_, _) => const ProgressScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [
           StatefulShellBranch(routes: [GoRoute(path: Routes.home, builder: (_, _) => const HomeScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.translate, builder: (_, _) => const TranslateHubScreen())]),
+          StatefulShellBranch(routes: [GoRoute(path: Routes.learn, builder: (_, _) => const LearnScreen())]),
         ],
       ),
     ],

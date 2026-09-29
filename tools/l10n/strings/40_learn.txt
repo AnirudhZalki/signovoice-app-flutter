@@ -1,0 +1,99 @@
+# ---- categories ----
+catAlphabet | Alphabet | वर्णमाला | ವರ್ಣಮಾಲೆ
+catNumbers | Numbers | संख्याएँ | ಸಂಖ್ಯೆಗಳು
+catGreetings | Greetings | अभिवादन | ಶುಭಾಶಯಗಳು
+catDaily | Daily Conversation | दैनिक बातचीत | ದೈನಂದಿನ ಸಂಭಾಷಣೆ
+catFamily | Family | परिवार | ಕುಟುಂಬ
+catFood | Food | भोजन | ಆಹಾರ
+catEducation | Education | शिक्षा | ಶಿಕ್ಷಣ
+catHealthcare | Healthcare | स्वास्थ्य सेवा | ಆರೋಗ್ಯ ಸೇವೆ
+catTravel | Travel | यात्रा | ಪ್ರಯಾಣ
+catEmergency | Emergency | आपातकाल | ತುರ್ತು ಪರಿಸ್ಥಿತಿ
+catWorkplace | Workplace | कार्यस्थल | ಕೆಲಸದ ಸ್ಥಳ
+catPhrases | Common Phrases | आम वाक्यांश | ಸಾಮಾನ್ಯ ನುಡಿಗಟ್ಟುಗಳು
+# ---- learn ----
+learnTitle | Learn Indian Sign Language | भारतीय साइन भाषा सीखें | ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆ ಕಲಿಯಿರಿ
+learnSubtitle | Short lessons, one topic at a time. | छोटे पाठ, एक बार में एक विषय। | ಸಣ್ಣ ಪಾಠಗಳು, ಒಂದೊಂದು ವಿಷಯ.
+yourProgress | Your progress | आपकी प्रगति | ನಿಮ್ಮ ಪ್ರಗತಿ
+xpValue | {xp} XP | {xp} XP | {xp} XP
+levelValue | Level {level} | स्तर {level} | ಹಂತ {level}
+streakValue | {days}-day streak | {days} दिन की लगातार गतिविधि | {days} ದಿನಗಳ ಸರಣಿ
+learnedOf | {learned} of {total} signs learned | {total} में से {learned} साइन सीखे | {total} ರಲ್ಲಿ {learned} ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ
+topics | Topics | विषय | ವಿಷಯಗಳು
+lessonN | Lesson {n} | पाठ {n} | ಪಾಠ {n}
+lessonProgress | {done} of {total} learned | {total} में से {done} सीखे | {total} ರಲ್ಲಿ {done} ಕಲಿತಿದ್ದೀರಿ
+lessonComplete | Lesson complete | पाठ पूर्ण | ಪಾಠ ಪೂರ್ಣಗೊಂಡಿದೆ
+lessonCompleteBody | Nice work. You have learned {count} signs in this lesson. | बहुत बढ़िया। आपने इस पाठ में {count} साइन सीखे। | ಚೆನ್ನಾಗಿದೆ. ಈ ಪಾಠದಲ್ಲಿ ನೀವು {count} ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ.
+markLearned | I know this sign | मुझे यह साइन आता है | ನನಗೆ ಈ ಸಂಜ್ಞೆ ಗೊತ್ತು
+signLearned | Learned | सीख लिया | ಕಲಿತಿದ್ದೀರಿ
+savedSigns | Saved signs | सहेजे गए साइन | ಉಳಿಸಿದ ಸಂಜ್ಞೆಗಳು
+bookmarkAdd | Save this sign | यह साइन सहेजें | ಈ ಸಂಜ್ಞೆಯನ್ನು ಉಳಿಸಿ
+bookmarkRemove | Remove from saved | सहेजे गए से हटाएं | ಉಳಿಸಿದವುಗಳಿಂದ ತೆಗೆಯಿರಿ
+noSavedSigns | You haven't saved any signs yet. | आपने अभी कोई साइन सहेजा नहीं है। | ನೀವು ಇನ್ನೂ ಯಾವುದೇ ಸಂಜ್ಞೆಯನ್ನು ಉಳಿಸಿಲ್ಲ.
+previous | Previous | पिछला | ಹಿಂದಿನ
+finishLesson | Finish lesson | पाठ समाप्त करें | ಪಾಠ ಮುಗಿಸಿ
+signOfTotal | Sign {current} of {total} | साइन {current} / {total} | ಸಂಜ್ಞೆ {current} / {total}
+learningAnalytics | Learning analytics | सीखने का विश्लेषण | ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ
+analyticsLocked | Detailed learning analytics is a Premium feature. | विस्तृत सीखने का विश्लेषण प्रीमियम सुविधा है। | ವಿವರವಾದ ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ.
+analyticsLockedBody | See accuracy, completion by topic and your activity over the last week. | सटीकता, विषय अनुसार प्रगति और पिछले सप्ताह की गतिविधि देखें। | ನಿಖರತೆ, ವಿಷಯವಾರು ಪೂರ್ಣತೆ ಮತ್ತು ಕಳೆದ ವಾರದ ಚಟುವಟಿಕೆಯನ್ನು ನೋಡಿ.
+accuracyLabel | Practice accuracy | अभ्यास की सटीकता | ಅಭ್ಯಾಸದ ನಿಖರತೆ
+attemptsLabel | Attempts | प्रयास | ಪ್ರಯತ್ನಗಳು
+completionByTopic | Completion by topic | विषय अनुसार पूर्णता | ವಿಷಯವಾರು ಪೂರ್ಣತೆ
+lastSevenDays | Last 7 days | पिछले 7 दिन | ಕಳೆದ 7 ದಿನಗಳು
+activityDay | {day}: {count} actions | {day}: {count} गतिविधियाँ | {day}: {count} ಚಟುವಟಿಕೆಗಳು
+badgesTitle | Badges | बैज | ಬ್ಯಾಡ್ಜ್‌ಗಳು
+badgeLocked | Not earned yet | अभी अर्जित नहीं | ಇನ್ನೂ ಗಳಿಸಿಲ್ಲ
+badgeFirstSign | First sign learned | पहला साइन सीखा | ಮೊದಲ ಸಂಜ್ಞೆ ಕಲಿತಿದ್ದೀರಿ
+badgeTenSigns | 10 signs learned | 10 साइन सीखे | 10 ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ
+badgeFirstCorrect | First correct practice | पहला सही अभ्यास | ಮೊದಲ ಸರಿಯಾದ ಅಭ್ಯಾಸ
+badgeTenCorrect | 10 correct practices | 10 सही अभ्यास | 10 ಸರಿಯಾದ ಅಭ್ಯಾಸಗಳು
+badgeStreak3 | 3-day streak | 3 दिन की लगातार गतिविधि | 3 ದಿನಗಳ ಸರಣಿ
+badgeStreak7 | 7-day streak | 7 दिन की लगातार गतिविधि | 7 ದಿನಗಳ ಸರಣಿ
+# ---- dictionary ----
+dictionaryTitle | Sign dictionary | साइन शब्दकोश | ಸಂಜ್ಞಾ ನಿಘಂಟು
+dictionarySearchHint | Search signs, e.g. Hello or Water | साइन खोजें, जैसे Hello या Water | ಸಂಜ್ಞೆಗಳನ್ನು ಹುಡುಕಿ, ಉದಾ. Hello ಅಥವಾ Water
+allCategories | All | सभी | ಎಲ್ಲಾ
+dictionaryNoResults | No signs match your search. | आपकी खोज से कोई साइन मेल नहीं खाता। | ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಯಾವುದೇ ಸಂಜ್ಞೆ ಹೊಂದುವುದಿಲ್ಲ.
+signVideoUnavailable | Sign video not available yet | साइन वीडियो अभी उपलब्ध नहीं | ಸಂಜ್ಞೆ ವೀಡಿಯೊ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ
+signVideoUnavailableBody | This sign is listed, but its video hasn't been added yet. | यह साइन सूचीबद्ध है, लेकिन इसका वीडियो अभी जोड़ा नहीं गया है। | ಈ ಸಂಜ್ಞೆ ಪಟ್ಟಿಯಲ್ಲಿದೆ, ಆದರೆ ಅದರ ವೀಡಿಯೊವನ್ನು ಇನ್ನೂ ಸೇರಿಸಿಲ್ಲ.
+hasVideo | Video available | वीडियो उपलब्ध | ವೀಡಿಯೊ ಲಭ್ಯ
+listenPronunciation | Listen | सुनें | ಆಲಿಸಿ
+practiceThisSign | Practise this sign | इस साइन का अभ्यास करें | ಈ ಸಂಜ್ಞೆಯನ್ನು ಅಭ್ಯಾಸ ಮಾಡಿ
+practiceNotAvailable | Camera practice isn't available for this sign yet. The recogniser currently knows {count} signs. | इस साइन के लिए कैमरा अभ्यास अभी उपलब्ध नहीं है। पहचानकर्ता अभी {count} साइन जानता है। | ಈ ಸಂಜ್ಞೆಗೆ ಕ್ಯಾಮೆರಾ ಅಭ್ಯಾಸ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಗುರುತಿಸುವಿಕೆ ಪ್ರಸ್ತುತ {count} ಸಂಜ್ಞೆಗಳನ್ನು ತಿಳಿದಿದೆ.
+meaningLabel | Meaning | अर्थ | ಅರ್ಥ
+categoryLabel | Topic | विषय | ವಿಷಯ
+playVideo | Play video | वीडियो चलाएं | ವೀಡಿಯೊ ಪ್ಲೇ ಮಾಡಿ
+pauseVideo | Pause video | वीडियो रोकें | ವೀಡಿಯೊ ವಿರಾಮಗೊಳಿಸಿ
+videoError | The video couldn't be played. | वीडियो नहीं चलाया जा सका। | ವೀಡಿಯೊ ಪ್ಲೇ ಆಗಲಿಲ್ಲ.
+entryNotFound | That sign couldn't be found. | वह साइन नहीं मिला। | ಆ ಸಂಜ್ಞೆ ಸಿಗಲಿಲ್ಲ.
+# ---- practice ----
+practiceHubTitle | Practice | अभ्यास | ಅಭ್ಯಾಸ
+practiceIntro | Show a sign to your camera. Your device checks it and gives instant feedback. | अपने कैमरे को साइन दिखाएं। आपका डिवाइस उसे जाँचता है और तुरंत प्रतिक्रिया देता है। | ನಿಮ್ಮ ಕ್ಯಾಮೆರಾಗೆ ಸಂಜ್ಞೆಯನ್ನು ತೋರಿಸಿ. ನಿಮ್ಮ ಸಾಧನ ಅದನ್ನು ಪರಿಶೀಲಿಸಿ ತಕ್ಷಣ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುತ್ತದೆ.
+practiceAvailableSigns | Signs you can practise now | जिनका अभ्यास आप अभी कर सकते हैं | ನೀವು ಈಗ ಅಭ್ಯಾಸ ಮಾಡಬಹುದಾದ ಸಂಜ್ಞೆಗಳು
+practicePrompt | Show the sign for {sign} | {sign} का साइन दिखाएं | {sign} ಸಂಜ್ಞೆಯನ್ನು ತೋರಿಸಿ
+startPractice | Start | शुरू करें | ಪ್ರಾರಂಭಿಸಿ
+getReady | Get ready… | तैयार हो जाएं… | ಸಿದ್ಧರಾಗಿ…
+signNow | Sign now | अब साइन करें | ಈಗ ಸಂಜ್ಞೆ ಮಾಡಿ
+checking | Checking… | जाँच रहा है… | ಪರಿಶೀಲಿಸುತ್ತಿದೆ…
+recognisedLabel | Recognised | पहचाना गया | ಗುರುತಿಸಲಾಗಿದೆ
+resultCorrect | Correct | सही | ಸರಿ
+resultTryAgain | Try again | फिर कोशिश करें | ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ
+resultNoHand | We couldn't see your hand clearly. Try again with better light. | हम आपका हाथ स्पष्ट नहीं देख सके। बेहतर रोशनी में फिर कोशिश करें। | ನಿಮ್ಮ ಕೈ ಸ್ಪಷ್ಟವಾಗಿ ಕಾಣಿಸಲಿಲ್ಲ. ಉತ್ತಮ ಬೆಳಕಿನಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+nextSign | Next sign | अगला साइन | ಮುಂದಿನ ಸಂಜ್ಞೆ
+xpEarned | +{xp} XP | +{xp} XP | +{xp} XP
+watchReference | Watch the sign | साइन देखें | ಸಂಜ್ಞೆ ನೋಡಿ
+countdownNumber | {n} | {n} | {n}
+# ---- voice to sign ----
+vsTitle | Voice → Sign | आवाज़ → साइन | ಧ್ವನಿ → ಸೈನ್
+vsHint | Tap the microphone and speak, or type below. | माइक्रोफ़ोन दबाकर बोलें, या नीचे टाइप करें। | ಮೈಕ್ರೊಫೋನ್ ಒತ್ತಿ ಮಾತನಾಡಿ, ಅಥವಾ ಕೆಳಗೆ ಟೈಪ್ ಮಾಡಿ.
+typeHere | Type or paste text | टेक्स्ट टाइप या पेस्ट करें | ಪಠ್ಯ ಟೈಪ್ ಮಾಡಿ ಅಥವಾ ಅಂಟಿಸಿ
+showSigns | Show signs | साइन दिखाएं | ಸಂಜ್ಞೆಗಳನ್ನು ತೋರಿಸಿ
+tapToSpeak | Tap to speak | बोलने के लिए दबाएं | ಮಾತನಾಡಲು ಒತ್ತಿ
+tapToStop | Tap to stop | रोकने के लिए दबाएं | ನಿಲ್ಲಿಸಲು ಒತ್ತಿ
+speechUnavailable | Speech recognition isn't available on this device. You can type instead. | इस डिवाइस पर बोली पहचान उपलब्ध नहीं है। आप टाइप कर सकते हैं। | ಈ ಸಾಧನದಲ್ಲಿ ಮಾತು ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಟೈಪ್ ಮಾಡಬಹುದು.
+speechNothingHeard | We didn't hear anything. Try again. | हमने कुछ नहीं सुना। फिर कोशिश करें। | ನಮಗೆ ಏನೂ ಕೇಳಿಸಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+speechLanguage | Speech language | बोली की भाषा | ಮಾತಿನ ಭಾಷೆ
+signsForText | Signs | साइन | ಸಂಜ್ಞೆಗಳು
+noSignYetForWord | No sign available yet | अभी कोई साइन उपलब्ध नहीं | ಇನ್ನೂ ಸಂಜ್ಞೆ ಲಭ್ಯವಿಲ್ಲ
+missingSignsNote | {count} word(s) don't have a sign in the dictionary yet. | {count} शब्दों के लिए शब्दकोश में अभी साइन नहीं है। | {count} ಪದಗಳಿಗೆ ನಿಘಂಟಿನಲ್ಲಿ ಇನ್ನೂ ಸಂಜ್ಞೆ ಇಲ್ಲ.
+heardLabel | What we heard | हमने क्या सुना | ನಮಗೆ ಏನು ಕೇಳಿಸಿತು

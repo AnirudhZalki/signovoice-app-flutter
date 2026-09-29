@@ -732,4 +732,321 @@ class AppLocalizationsKn extends AppLocalizations {
   String inputTypeLabel(String type) {
     return 'ಇನ್‌ಪುಟ್: $type';
   }
+
+  @override
+  String get catAlphabet => 'ವರ್ಣಮಾಲೆ';
+
+  @override
+  String get catNumbers => 'ಸಂಖ್ಯೆಗಳು';
+
+  @override
+  String get catGreetings => 'ಶುಭಾಶಯಗಳು';
+
+  @override
+  String get catDaily => 'ದೈನಂದಿನ ಸಂಭಾಷಣೆ';
+
+  @override
+  String get catFamily => 'ಕುಟುಂಬ';
+
+  @override
+  String get catFood => 'ಆಹಾರ';
+
+  @override
+  String get catEducation => 'ಶಿಕ್ಷಣ';
+
+  @override
+  String get catHealthcare => 'ಆರೋಗ್ಯ ಸೇವೆ';
+
+  @override
+  String get catTravel => 'ಪ್ರಯಾಣ';
+
+  @override
+  String get catEmergency => 'ತುರ್ತು ಪರಿಸ್ಥಿತಿ';
+
+  @override
+  String get catWorkplace => 'ಕೆಲಸದ ಸ್ಥಳ';
+
+  @override
+  String get catPhrases => 'ಸಾಮಾನ್ಯ ನುಡಿಗಟ್ಟುಗಳು';
+
+  @override
+  String get learnTitle => 'ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆ ಕಲಿಯಿರಿ';
+
+  @override
+  String get learnSubtitle => 'ಸಣ್ಣ ಪಾಠಗಳು, ಒಂದೊಂದು ವಿಷಯ.';
+
+  @override
+  String get yourProgress => 'ನಿಮ್ಮ ಪ್ರಗತಿ';
+
+  @override
+  String xpValue(String xp) {
+    return '$xp XP';
+  }
+
+  @override
+  String levelValue(String level) {
+    return 'ಹಂತ $level';
+  }
+
+  @override
+  String streakValue(String days) {
+    return '$days ದಿನಗಳ ಸರಣಿ';
+  }
+
+  @override
+  String learnedOf(String learned, String total) {
+    return '$total ರಲ್ಲಿ $learned ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ';
+  }
+
+  @override
+  String get topics => 'ವಿಷಯಗಳು';
+
+  @override
+  String lessonN(String n) {
+    return 'ಪಾಠ $n';
+  }
+
+  @override
+  String lessonProgress(String done, String total) {
+    return '$total ರಲ್ಲಿ $done ಕಲಿತಿದ್ದೀರಿ';
+  }
+
+  @override
+  String get lessonComplete => 'ಪಾಠ ಪೂರ್ಣಗೊಂಡಿದೆ';
+
+  @override
+  String lessonCompleteBody(String count) {
+    return 'ಚೆನ್ನಾಗಿದೆ. ಈ ಪಾಠದಲ್ಲಿ ನೀವು $count ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ.';
+  }
+
+  @override
+  String get markLearned => 'ನನಗೆ ಈ ಸಂಜ್ಞೆ ಗೊತ್ತು';
+
+  @override
+  String get signLearned => 'ಕಲಿತಿದ್ದೀರಿ';
+
+  @override
+  String get savedSigns => 'ಉಳಿಸಿದ ಸಂಜ್ಞೆಗಳು';
+
+  @override
+  String get bookmarkAdd => 'ಈ ಸಂಜ್ಞೆಯನ್ನು ಉಳಿಸಿ';
+
+  @override
+  String get bookmarkRemove => 'ಉಳಿಸಿದವುಗಳಿಂದ ತೆಗೆಯಿರಿ';
+
+  @override
+  String get noSavedSigns => 'ನೀವು ಇನ್ನೂ ಯಾವುದೇ ಸಂಜ್ಞೆಯನ್ನು ಉಳಿಸಿಲ್ಲ.';
+
+  @override
+  String get previous => 'ಹಿಂದಿನ';
+
+  @override
+  String get finishLesson => 'ಪಾಠ ಮುಗಿಸಿ';
+
+  @override
+  String signOfTotal(String current, String total) {
+    return 'ಸಂಜ್ಞೆ $current / $total';
+  }
+
+  @override
+  String get learningAnalytics => 'ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ';
+
+  @override
+  String get analyticsLocked => 'ವಿವರವಾದ ಕಲಿಕೆಯ ವಿಶ್ಲೇಷಣೆ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ.';
+
+  @override
+  String get analyticsLockedBody =>
+      'ನಿಖರತೆ, ವಿಷಯವಾರು ಪೂರ್ಣತೆ ಮತ್ತು ಕಳೆದ ವಾರದ ಚಟುವಟಿಕೆಯನ್ನು ನೋಡಿ.';
+
+  @override
+  String get accuracyLabel => 'ಅಭ್ಯಾಸದ ನಿಖರತೆ';
+
+  @override
+  String get attemptsLabel => 'ಪ್ರಯತ್ನಗಳು';
+
+  @override
+  String get completionByTopic => 'ವಿಷಯವಾರು ಪೂರ್ಣತೆ';
+
+  @override
+  String get lastSevenDays => 'ಕಳೆದ 7 ದಿನಗಳು';
+
+  @override
+  String activityDay(String count, String day) {
+    return '$day: $count ಚಟುವಟಿಕೆಗಳು';
+  }
+
+  @override
+  String get badgesTitle => 'ಬ್ಯಾಡ್ಜ್‌ಗಳು';
+
+  @override
+  String get badgeLocked => 'ಇನ್ನೂ ಗಳಿಸಿಲ್ಲ';
+
+  @override
+  String get badgeFirstSign => 'ಮೊದಲ ಸಂಜ್ಞೆ ಕಲಿತಿದ್ದೀರಿ';
+
+  @override
+  String get badgeTenSigns => '10 ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿತಿದ್ದೀರಿ';
+
+  @override
+  String get badgeFirstCorrect => 'ಮೊದಲ ಸರಿಯಾದ ಅಭ್ಯಾಸ';
+
+  @override
+  String get badgeTenCorrect => '10 ಸರಿಯಾದ ಅಭ್ಯಾಸಗಳು';
+
+  @override
+  String get badgeStreak3 => '3 ದಿನಗಳ ಸರಣಿ';
+
+  @override
+  String get badgeStreak7 => '7 ದಿನಗಳ ಸರಣಿ';
+
+  @override
+  String get dictionaryTitle => 'ಸಂಜ್ಞಾ ನಿಘಂಟು';
+
+  @override
+  String get dictionarySearchHint =>
+      'ಸಂಜ್ಞೆಗಳನ್ನು ಹುಡುಕಿ, ಉದಾ. Hello ಅಥವಾ Water';
+
+  @override
+  String get allCategories => 'ಎಲ್ಲಾ';
+
+  @override
+  String get dictionaryNoResults =>
+      'ನಿಮ್ಮ ಹುಡುಕಾಟಕ್ಕೆ ಯಾವುದೇ ಸಂಜ್ಞೆ ಹೊಂದುವುದಿಲ್ಲ.';
+
+  @override
+  String get signVideoUnavailable => 'ಸಂಜ್ಞೆ ವೀಡಿಯೊ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ';
+
+  @override
+  String get signVideoUnavailableBody =>
+      'ಈ ಸಂಜ್ಞೆ ಪಟ್ಟಿಯಲ್ಲಿದೆ, ಆದರೆ ಅದರ ವೀಡಿಯೊವನ್ನು ಇನ್ನೂ ಸೇರಿಸಿಲ್ಲ.';
+
+  @override
+  String get hasVideo => 'ವೀಡಿಯೊ ಲಭ್ಯ';
+
+  @override
+  String get listenPronunciation => 'ಆಲಿಸಿ';
+
+  @override
+  String get practiceThisSign => 'ಈ ಸಂಜ್ಞೆಯನ್ನು ಅಭ್ಯಾಸ ಮಾಡಿ';
+
+  @override
+  String practiceNotAvailable(String count) {
+    return 'ಈ ಸಂಜ್ಞೆಗೆ ಕ್ಯಾಮೆರಾ ಅಭ್ಯಾಸ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಗುರುತಿಸುವಿಕೆ ಪ್ರಸ್ತುತ $count ಸಂಜ್ಞೆಗಳನ್ನು ತಿಳಿದಿದೆ.';
+  }
+
+  @override
+  String get meaningLabel => 'ಅರ್ಥ';
+
+  @override
+  String get categoryLabel => 'ವಿಷಯ';
+
+  @override
+  String get playVideo => 'ವೀಡಿಯೊ ಪ್ಲೇ ಮಾಡಿ';
+
+  @override
+  String get pauseVideo => 'ವೀಡಿಯೊ ವಿರಾಮಗೊಳಿಸಿ';
+
+  @override
+  String get videoError => 'ವೀಡಿಯೊ ಪ್ಲೇ ಆಗಲಿಲ್ಲ.';
+
+  @override
+  String get entryNotFound => 'ಆ ಸಂಜ್ಞೆ ಸಿಗಲಿಲ್ಲ.';
+
+  @override
+  String get practiceHubTitle => 'ಅಭ್ಯಾಸ';
+
+  @override
+  String get practiceIntro =>
+      'ನಿಮ್ಮ ಕ್ಯಾಮೆರಾಗೆ ಸಂಜ್ಞೆಯನ್ನು ತೋರಿಸಿ. ನಿಮ್ಮ ಸಾಧನ ಅದನ್ನು ಪರಿಶೀಲಿಸಿ ತಕ್ಷಣ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುತ್ತದೆ.';
+
+  @override
+  String get practiceAvailableSigns => 'ನೀವು ಈಗ ಅಭ್ಯಾಸ ಮಾಡಬಹುದಾದ ಸಂಜ್ಞೆಗಳು';
+
+  @override
+  String practicePrompt(String sign) {
+    return '$sign ಸಂಜ್ಞೆಯನ್ನು ತೋರಿಸಿ';
+  }
+
+  @override
+  String get startPractice => 'ಪ್ರಾರಂಭಿಸಿ';
+
+  @override
+  String get getReady => 'ಸಿದ್ಧರಾಗಿ…';
+
+  @override
+  String get signNow => 'ಈಗ ಸಂಜ್ಞೆ ಮಾಡಿ';
+
+  @override
+  String get checking => 'ಪರಿಶೀಲಿಸುತ್ತಿದೆ…';
+
+  @override
+  String get recognisedLabel => 'ಗುರುತಿಸಲಾಗಿದೆ';
+
+  @override
+  String get resultCorrect => 'ಸರಿ';
+
+  @override
+  String get resultTryAgain => 'ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ';
+
+  @override
+  String get resultNoHand =>
+      'ನಿಮ್ಮ ಕೈ ಸ್ಪಷ್ಟವಾಗಿ ಕಾಣಿಸಲಿಲ್ಲ. ಉತ್ತಮ ಬೆಳಕಿನಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get nextSign => 'ಮುಂದಿನ ಸಂಜ್ಞೆ';
+
+  @override
+  String xpEarned(String xp) {
+    return '+$xp XP';
+  }
+
+  @override
+  String get watchReference => 'ಸಂಜ್ಞೆ ನೋಡಿ';
+
+  @override
+  String countdownNumber(String n) {
+    return '$n';
+  }
+
+  @override
+  String get vsTitle => 'ಧ್ವನಿ → ಸೈನ್';
+
+  @override
+  String get vsHint => 'ಮೈಕ್ರೊಫೋನ್ ಒತ್ತಿ ಮಾತನಾಡಿ, ಅಥವಾ ಕೆಳಗೆ ಟೈಪ್ ಮಾಡಿ.';
+
+  @override
+  String get typeHere => 'ಪಠ್ಯ ಟೈಪ್ ಮಾಡಿ ಅಥವಾ ಅಂಟಿಸಿ';
+
+  @override
+  String get showSigns => 'ಸಂಜ್ಞೆಗಳನ್ನು ತೋರಿಸಿ';
+
+  @override
+  String get tapToSpeak => 'ಮಾತನಾಡಲು ಒತ್ತಿ';
+
+  @override
+  String get tapToStop => 'ನಿಲ್ಲಿಸಲು ಒತ್ತಿ';
+
+  @override
+  String get speechUnavailable =>
+      'ಈ ಸಾಧನದಲ್ಲಿ ಮಾತು ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಟೈಪ್ ಮಾಡಬಹುದು.';
+
+  @override
+  String get speechNothingHeard => 'ನಮಗೆ ಏನೂ ಕೇಳಿಸಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get speechLanguage => 'ಮಾತಿನ ಭಾಷೆ';
+
+  @override
+  String get signsForText => 'ಸಂಜ್ಞೆಗಳು';
+
+  @override
+  String get noSignYetForWord => 'ಇನ್ನೂ ಸಂಜ್ಞೆ ಲಭ್ಯವಿಲ್ಲ';
+
+  @override
+  String missingSignsNote(String count) {
+    return '$count ಪದಗಳಿಗೆ ನಿಘಂಟಿನಲ್ಲಿ ಇನ್ನೂ ಸಂಜ್ಞೆ ಇಲ್ಲ.';
+  }
+
+  @override
+  String get heardLabel => 'ನಮಗೆ ಏನು ಕೇಳಿಸಿತು';
 }

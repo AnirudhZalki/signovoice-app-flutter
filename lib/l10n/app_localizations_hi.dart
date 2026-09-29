@@ -730,4 +730,319 @@ class AppLocalizationsHi extends AppLocalizations {
   String inputTypeLabel(String type) {
     return 'इनपुट: $type';
   }
+
+  @override
+  String get catAlphabet => 'वर्णमाला';
+
+  @override
+  String get catNumbers => 'संख्याएँ';
+
+  @override
+  String get catGreetings => 'अभिवादन';
+
+  @override
+  String get catDaily => 'दैनिक बातचीत';
+
+  @override
+  String get catFamily => 'परिवार';
+
+  @override
+  String get catFood => 'भोजन';
+
+  @override
+  String get catEducation => 'शिक्षा';
+
+  @override
+  String get catHealthcare => 'स्वास्थ्य सेवा';
+
+  @override
+  String get catTravel => 'यात्रा';
+
+  @override
+  String get catEmergency => 'आपातकाल';
+
+  @override
+  String get catWorkplace => 'कार्यस्थल';
+
+  @override
+  String get catPhrases => 'आम वाक्यांश';
+
+  @override
+  String get learnTitle => 'भारतीय साइन भाषा सीखें';
+
+  @override
+  String get learnSubtitle => 'छोटे पाठ, एक बार में एक विषय।';
+
+  @override
+  String get yourProgress => 'आपकी प्रगति';
+
+  @override
+  String xpValue(String xp) {
+    return '$xp XP';
+  }
+
+  @override
+  String levelValue(String level) {
+    return 'स्तर $level';
+  }
+
+  @override
+  String streakValue(String days) {
+    return '$days दिन की लगातार गतिविधि';
+  }
+
+  @override
+  String learnedOf(String learned, String total) {
+    return '$total में से $learned साइन सीखे';
+  }
+
+  @override
+  String get topics => 'विषय';
+
+  @override
+  String lessonN(String n) {
+    return 'पाठ $n';
+  }
+
+  @override
+  String lessonProgress(String done, String total) {
+    return '$total में से $done सीखे';
+  }
+
+  @override
+  String get lessonComplete => 'पाठ पूर्ण';
+
+  @override
+  String lessonCompleteBody(String count) {
+    return 'बहुत बढ़िया। आपने इस पाठ में $count साइन सीखे।';
+  }
+
+  @override
+  String get markLearned => 'मुझे यह साइन आता है';
+
+  @override
+  String get signLearned => 'सीख लिया';
+
+  @override
+  String get savedSigns => 'सहेजे गए साइन';
+
+  @override
+  String get bookmarkAdd => 'यह साइन सहेजें';
+
+  @override
+  String get bookmarkRemove => 'सहेजे गए से हटाएं';
+
+  @override
+  String get noSavedSigns => 'आपने अभी कोई साइन सहेजा नहीं है।';
+
+  @override
+  String get previous => 'पिछला';
+
+  @override
+  String get finishLesson => 'पाठ समाप्त करें';
+
+  @override
+  String signOfTotal(String current, String total) {
+    return 'साइन $current / $total';
+  }
+
+  @override
+  String get learningAnalytics => 'सीखने का विश्लेषण';
+
+  @override
+  String get analyticsLocked => 'विस्तृत सीखने का विश्लेषण प्रीमियम सुविधा है।';
+
+  @override
+  String get analyticsLockedBody =>
+      'सटीकता, विषय अनुसार प्रगति और पिछले सप्ताह की गतिविधि देखें।';
+
+  @override
+  String get accuracyLabel => 'अभ्यास की सटीकता';
+
+  @override
+  String get attemptsLabel => 'प्रयास';
+
+  @override
+  String get completionByTopic => 'विषय अनुसार पूर्णता';
+
+  @override
+  String get lastSevenDays => 'पिछले 7 दिन';
+
+  @override
+  String activityDay(String count, String day) {
+    return '$day: $count गतिविधियाँ';
+  }
+
+  @override
+  String get badgesTitle => 'बैज';
+
+  @override
+  String get badgeLocked => 'अभी अर्जित नहीं';
+
+  @override
+  String get badgeFirstSign => 'पहला साइन सीखा';
+
+  @override
+  String get badgeTenSigns => '10 साइन सीखे';
+
+  @override
+  String get badgeFirstCorrect => 'पहला सही अभ्यास';
+
+  @override
+  String get badgeTenCorrect => '10 सही अभ्यास';
+
+  @override
+  String get badgeStreak3 => '3 दिन की लगातार गतिविधि';
+
+  @override
+  String get badgeStreak7 => '7 दिन की लगातार गतिविधि';
+
+  @override
+  String get dictionaryTitle => 'साइन शब्दकोश';
+
+  @override
+  String get dictionarySearchHint => 'साइन खोजें, जैसे Hello या Water';
+
+  @override
+  String get allCategories => 'सभी';
+
+  @override
+  String get dictionaryNoResults => 'आपकी खोज से कोई साइन मेल नहीं खाता।';
+
+  @override
+  String get signVideoUnavailable => 'साइन वीडियो अभी उपलब्ध नहीं';
+
+  @override
+  String get signVideoUnavailableBody =>
+      'यह साइन सूचीबद्ध है, लेकिन इसका वीडियो अभी जोड़ा नहीं गया है।';
+
+  @override
+  String get hasVideo => 'वीडियो उपलब्ध';
+
+  @override
+  String get listenPronunciation => 'सुनें';
+
+  @override
+  String get practiceThisSign => 'इस साइन का अभ्यास करें';
+
+  @override
+  String practiceNotAvailable(String count) {
+    return 'इस साइन के लिए कैमरा अभ्यास अभी उपलब्ध नहीं है। पहचानकर्ता अभी $count साइन जानता है।';
+  }
+
+  @override
+  String get meaningLabel => 'अर्थ';
+
+  @override
+  String get categoryLabel => 'विषय';
+
+  @override
+  String get playVideo => 'वीडियो चलाएं';
+
+  @override
+  String get pauseVideo => 'वीडियो रोकें';
+
+  @override
+  String get videoError => 'वीडियो नहीं चलाया जा सका।';
+
+  @override
+  String get entryNotFound => 'वह साइन नहीं मिला।';
+
+  @override
+  String get practiceHubTitle => 'अभ्यास';
+
+  @override
+  String get practiceIntro =>
+      'अपने कैमरे को साइन दिखाएं। आपका डिवाइस उसे जाँचता है और तुरंत प्रतिक्रिया देता है।';
+
+  @override
+  String get practiceAvailableSigns => 'जिनका अभ्यास आप अभी कर सकते हैं';
+
+  @override
+  String practicePrompt(String sign) {
+    return '$sign का साइन दिखाएं';
+  }
+
+  @override
+  String get startPractice => 'शुरू करें';
+
+  @override
+  String get getReady => 'तैयार हो जाएं…';
+
+  @override
+  String get signNow => 'अब साइन करें';
+
+  @override
+  String get checking => 'जाँच रहा है…';
+
+  @override
+  String get recognisedLabel => 'पहचाना गया';
+
+  @override
+  String get resultCorrect => 'सही';
+
+  @override
+  String get resultTryAgain => 'फिर कोशिश करें';
+
+  @override
+  String get resultNoHand =>
+      'हम आपका हाथ स्पष्ट नहीं देख सके। बेहतर रोशनी में फिर कोशिश करें।';
+
+  @override
+  String get nextSign => 'अगला साइन';
+
+  @override
+  String xpEarned(String xp) {
+    return '+$xp XP';
+  }
+
+  @override
+  String get watchReference => 'साइन देखें';
+
+  @override
+  String countdownNumber(String n) {
+    return '$n';
+  }
+
+  @override
+  String get vsTitle => 'आवाज़ → साइन';
+
+  @override
+  String get vsHint => 'माइक्रोफ़ोन दबाकर बोलें, या नीचे टाइप करें।';
+
+  @override
+  String get typeHere => 'टेक्स्ट टाइप या पेस्ट करें';
+
+  @override
+  String get showSigns => 'साइन दिखाएं';
+
+  @override
+  String get tapToSpeak => 'बोलने के लिए दबाएं';
+
+  @override
+  String get tapToStop => 'रोकने के लिए दबाएं';
+
+  @override
+  String get speechUnavailable =>
+      'इस डिवाइस पर बोली पहचान उपलब्ध नहीं है। आप टाइप कर सकते हैं।';
+
+  @override
+  String get speechNothingHeard => 'हमने कुछ नहीं सुना। फिर कोशिश करें।';
+
+  @override
+  String get speechLanguage => 'बोली की भाषा';
+
+  @override
+  String get signsForText => 'साइन';
+
+  @override
+  String get noSignYetForWord => 'अभी कोई साइन उपलब्ध नहीं';
+
+  @override
+  String missingSignsNote(String count) {
+    return '$count शब्दों के लिए शब्दकोश में अभी साइन नहीं है।';
+  }
+
+  @override
+  String get heardLabel => 'हमने क्या सुना';
 }

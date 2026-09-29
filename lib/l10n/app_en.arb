@@ -303,5 +303,209 @@
         "type": "String"
       }
     }
-  }
+  },
+  "catAlphabet": "Alphabet",
+  "catNumbers": "Numbers",
+  "catGreetings": "Greetings",
+  "catDaily": "Daily Conversation",
+  "catFamily": "Family",
+  "catFood": "Food",
+  "catEducation": "Education",
+  "catHealthcare": "Healthcare",
+  "catTravel": "Travel",
+  "catEmergency": "Emergency",
+  "catWorkplace": "Workplace",
+  "catPhrases": "Common Phrases",
+  "learnTitle": "Learn Indian Sign Language",
+  "learnSubtitle": "Short lessons, one topic at a time.",
+  "yourProgress": "Your progress",
+  "xpValue": "{xp} XP",
+  "@xpValue": {
+    "placeholders": {
+      "xp": {
+        "type": "String"
+      }
+    }
+  },
+  "levelValue": "Level {level}",
+  "@levelValue": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "streakValue": "{days}-day streak",
+  "@streakValue": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "learnedOf": "{learned} of {total} signs learned",
+  "@learnedOf": {
+    "placeholders": {
+      "learned": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "topics": "Topics",
+  "lessonN": "Lesson {n}",
+  "@lessonN": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonProgress": "{done} of {total} learned",
+  "@lessonProgress": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonComplete": "Lesson complete",
+  "lessonCompleteBody": "Nice work. You have learned {count} signs in this lesson.",
+  "@lessonCompleteBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "markLearned": "I know this sign",
+  "signLearned": "Learned",
+  "savedSigns": "Saved signs",
+  "bookmarkAdd": "Save this sign",
+  "bookmarkRemove": "Remove from saved",
+  "noSavedSigns": "You haven't saved any signs yet.",
+  "previous": "Previous",
+  "finishLesson": "Finish lesson",
+  "signOfTotal": "Sign {current} of {total}",
+  "@signOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "learningAnalytics": "Learning analytics",
+  "analyticsLocked": "Detailed learning analytics is a Premium feature.",
+  "analyticsLockedBody": "See accuracy, completion by topic and your activity over the last week.",
+  "accuracyLabel": "Practice accuracy",
+  "attemptsLabel": "Attempts",
+  "completionByTopic": "Completion by topic",
+  "lastSevenDays": "Last 7 days",
+  "activityDay": "{day}: {count} actions",
+  "@activityDay": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "badgesTitle": "Badges",
+  "badgeLocked": "Not earned yet",
+  "badgeFirstSign": "First sign learned",
+  "badgeTenSigns": "10 signs learned",
+  "badgeFirstCorrect": "First correct practice",
+  "badgeTenCorrect": "10 correct practices",
+  "badgeStreak3": "3-day streak",
+  "badgeStreak7": "7-day streak",
+  "dictionaryTitle": "Sign dictionary",
+  "dictionarySearchHint": "Search signs, e.g. Hello or Water",
+  "allCategories": "All",
+  "dictionaryNoResults": "No signs match your search.",
+  "signVideoUnavailable": "Sign video not available yet",
+  "signVideoUnavailableBody": "This sign is listed, but its video hasn't been added yet.",
+  "hasVideo": "Video available",
+  "listenPronunciation": "Listen",
+  "practiceThisSign": "Practise this sign",
+  "practiceNotAvailable": "Camera practice isn't available for this sign yet. The recogniser currently knows {count} signs.",
+  "@practiceNotAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "meaningLabel": "Meaning",
+  "categoryLabel": "Topic",
+  "playVideo": "Play video",
+  "pauseVideo": "Pause video",
+  "videoError": "The video couldn't be played.",
+  "entryNotFound": "That sign couldn't be found.",
+  "practiceHubTitle": "Practice",
+  "practiceIntro": "Show a sign to your camera. Your device checks it and gives instant feedback.",
+  "practiceAvailableSigns": "Signs you can practise now",
+  "practicePrompt": "Show the sign for {sign}",
+  "@practicePrompt": {
+    "placeholders": {
+      "sign": {
+        "type": "String"
+      }
+    }
+  },
+  "startPractice": "Start",
+  "getReady": "Get ready…",
+  "signNow": "Sign now",
+  "checking": "Checking…",
+  "recognisedLabel": "Recognised",
+  "resultCorrect": "Correct",
+  "resultTryAgain": "Try again",
+  "resultNoHand": "We couldn't see your hand clearly. Try again with better light.",
+  "nextSign": "Next sign",
+  "xpEarned": "+{xp} XP",
+  "@xpEarned": {
+    "placeholders": {
+      "xp": {
+        "type": "String"
+      }
+    }
+  },
+  "watchReference": "Watch the sign",
+  "countdownNumber": "{n}",
+  "@countdownNumber": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "vsTitle": "Voice → Sign",
+  "vsHint": "Tap the microphone and speak, or type below.",
+  "typeHere": "Type or paste text",
+  "showSigns": "Show signs",
+  "tapToSpeak": "Tap to speak",
+  "tapToStop": "Tap to stop",
+  "speechUnavailable": "Speech recognition isn't available on this device. You can type instead.",
+  "speechNothingHeard": "We didn't hear anything. Try again.",
+  "speechLanguage": "Speech language",
+  "signsForText": "Signs",
+  "noSignYetForWord": "No sign available yet",
+  "missingSignsNote": "{count} word(s) don't have a sign in the dictionary yet.",
+  "@missingSignsNote": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "heardLabel": "What we heard"
 }
