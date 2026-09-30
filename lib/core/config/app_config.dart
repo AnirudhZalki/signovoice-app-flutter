@@ -34,6 +34,15 @@ class AppConfig {
     defaultValue: 'signovoice_premium_yearly',
   );
 
+  /// Enables the Razorpay (UPI AutoPay / cards) payment method next to Google Play Billing.
+  /// IMPORTANT: for apps distributed through Google Play, digital subscriptions must use Play Billing
+  /// (unless you are enrolled in an alternative-billing programme). Enable this for direct-APK /
+  /// website distribution builds. See docs/PAYMENTS_SETUP.md.
+  static const bool enableRazorpay = bool.fromEnvironment('ENABLE_RAZORPAY');
+
+  /// Default method when Razorpay is enabled: `googlePlay` or `razorpay`.
+  static const String defaultPaymentMethod = String.fromEnvironment('PAYMENT_METHOD', defaultValue: 'googlePlay');
+
   static const String supportEmail = String.fromEnvironment('SUPPORT_EMAIL');
   static const String privacyPolicyUrl =
       String.fromEnvironment('PRIVACY_POLICY_URL');

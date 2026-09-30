@@ -24,4 +24,8 @@ abstract class SubscriptionRepository {
   /// Restores entitlement (e.g. after reinstall) by asking the backend to
   /// re-check the store for this account.
   Future<Subscription> restore({required StorePlatform platform});
+
+  /// Razorpay only: stop auto-renewal at the end of the paid period (`POST /v1/razorpay/cancel`).
+  /// Play subscriptions are cancelled in Google Play.
+  Future<Subscription> cancelAutoRenew();
 }

@@ -8,12 +8,30 @@ import '../../../core/errors/failure_mapper.dart';
 import '../../../core/providers.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../data/in_app_billing_service.dart';
+import '../data/razorpay_billing_service.dart';
+import '../domain/payment_method.dart';
 import '../domain/billing_service.dart';
 import '../domain/trial_policy.dart';
 import 'subscription_providers.dart';
 
+/// The person's chosen payment method. Razorpay is offered only when [AppConfig.enableRazorpay].
+class PaymentMethodController extends Notifier<PaymentMethod> {
+  @override
+  PaymentMethod build() =>
+      AppConfig.enableRazorpay && AppConfig.defaultPaymentMethod == 'razorpay' ? PaymentMethod.razorpay : PaymentMethod.googlePlay;
+
+  void select(PaymentMethod m) {
+    if (m == PaymentMethod.razorpay && !AppConfig.enableRazorpay) return;
+    state = m;
+  }
+}
+
+final paymentMethodProvider = NotifierProvider<PaymentMethodController, PaymentMethod>(PaymentMethodController.new);
+
 final billingServiceProvider = Provider<BillingService>((ref) {
-  final s = InAppBillingService();
+  final BillingService s = ref.watch(paymentMethodProvider) == PaymentMethod.razorpay
+      ? RazorpayBillingService(api: ref.watch(apiClientProvider))
+      : InAppBillingService();
   ref.onDispose(s.dispose);
   return s;
 });
@@ -85,10 +103,13 @@ class PurchaseFlowController extends Notifier<PurchaseFlowState> {
   final Set<String> _verifying = {};
 
   BillingService get _billing => ref.read(billingServiceProvider);
+  BillingService? _watched;
 
   @override
   PurchaseFlowState build() {
-    _sub = _billing.purchases.listen(_onPurchase);
+    // Re-subscribes when the payment method changes.
+    _watched = ref.watch(billingServiceProvider);
+    _sub = _watched!.purchases.listen(_onPurchase);
     ref.onDispose(() => _sub?.cancel());
     return const PurchaseFlowState();
   }

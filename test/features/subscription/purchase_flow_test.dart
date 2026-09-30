@@ -72,6 +72,8 @@ class _Repo implements SubscriptionRepository {
   }
 
   @override
+  Future<Subscription> cancelAutoRenew() async => Subscription.free;
+  @override
   Future<Subscription> restore({required StorePlatform platform}) async {
     if (restoreError != null) throw restoreError!;
     return restoreResult;

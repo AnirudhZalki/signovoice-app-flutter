@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 enum SubscriptionStatus { free, trial, premium, expired, cancelled }
 
-enum StorePlatform { android, ios, unknown }
+enum StorePlatform { android, ios, razorpay, unknown }
 
 /// What the backend has verified about a person's subscription. This is data,
 /// not a flag: access is *derived* from it by [TrialPolicy] at a given time.

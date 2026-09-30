@@ -59,6 +59,9 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
       }));
 
   @override
+  Future<Subscription> cancelAutoRenew() async => _parse(await api.post('/v1/razorpay/cancel'));
+
+  @override
   Future<Subscription> restore({required StorePlatform platform}) async =>
       _parse(await api.post('/v1/subscriptions/restore', body: {'platform': platform.name}));
 }
