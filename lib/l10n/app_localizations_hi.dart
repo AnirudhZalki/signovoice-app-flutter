@@ -552,6 +552,18 @@ class AppLocalizationsHi extends AppLocalizations {
   String get aiShortcutPremium => 'प्रीमियम सुविधा';
 
   @override
+  String get introSignToText => 'साइन → टेक्स्ट';
+
+  @override
+  String get introVoiceToSign => 'आवाज़ → साइन';
+
+  @override
+  String get introLive => 'लाइव दुभाषिया';
+
+  @override
+  String get introLearn => 'साइन सीखें';
+
+  @override
   String get signStatusReady => 'ऑन-डिवाइस मॉडल तैयार';
 
   @override
@@ -1535,6 +1547,50 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'सभी लाभ देखें';
+
+  @override
+  String get payWith => 'इससे भुगतान करें';
+
+  @override
+  String get payGooglePlay => 'Google Play';
+
+  @override
+  String get payRazorpay => 'UPI, कार्ड और वॉलेट';
+
+  @override
+  String get payRazorpayNote =>
+      'Razorpay द्वारा सुरक्षित चेकआउट। Google Pay, PhonePe, Paytm और अन्य UPI ऐप ऑटो-पे का समर्थन करते हैं; आप अपने UPI ऐप में मैंडेट स्वीकृत करते हैं।';
+
+  @override
+  String get priceAtCheckout => 'कीमत चेकआउट पर दिखाई जाएगी';
+
+  @override
+  String get razorpayTerms =>
+      'ऑटो-पे रद्द करने तक आपकी सदस्यता नवीनीकृत करता है। आप Razorpay चेकआउट में भुगतान स्वीकृत करते हैं और अंतिम कीमत देखते हैं। सदस्यता प्रबंधित करें से कभी भी रद्द करें।';
+
+  @override
+  String get cancelAutoRenew => 'ऑटो-रिन्यू रद्द करें';
+
+  @override
+  String get cancelAutoRenewBody =>
+      'आपने जिस अवधि का भुगतान किया है उसके अंत तक प्रीमियम रहेगा। आगे कोई भुगतान नहीं लिया जाएगा।';
+
+  @override
+  String get cancelAutoRenewConfirm => 'ऑटो-रिन्यू रद्द करें';
+
+  @override
+  String get keepSubscription => 'सदस्यता रखें';
+
+  @override
+  String get autoRenewCancelled =>
+      'ऑटो-रिन्यू रद्द हुआ। भुगतान की अवधि के अंत तक प्रीमियम रहेगा।';
+
+  @override
+  String get premiumHeroTitle => 'सीमाओं के बिना साइन करें';
+
+  @override
+  String get premiumHeroBody =>
+      'असीमित पहचान, पूरा इतिहास, विस्तृत प्रगति और बेहतर वाक्य।';
 
   @override
   String get notifLearnTitle => 'अभ्यास का समय';

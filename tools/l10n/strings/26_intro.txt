@@ -1,0 +1,5 @@
+# ---- animated intro ----
+introSignToText | Sign → Text | साइन → टेक्स्ट | ಸೈನ್ → ಪಠ್ಯ
+introVoiceToSign | Voice → Sign | आवाज़ → साइन | ಧ್ವನಿ → ಸೈನ್
+introLive | Live interpreter | लाइव दुभाषिया | ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್
+introLearn | Learn signs | साइन सीखें | ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿಯಿರಿ

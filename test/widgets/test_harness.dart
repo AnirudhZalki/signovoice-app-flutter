@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:signovoice/app.dart';
 import 'package:signovoice/core/constants/app_constants.dart';
 import 'package:signovoice/core/providers.dart';
+import 'package:signovoice/core/routing/session.dart';
 import 'package:signovoice/core/services/analytics_service.dart';
 import 'package:signovoice/core/services/permission_service.dart';
 import 'package:signovoice/core/services/storage.dart';
@@ -85,8 +86,14 @@ class FakeNotificationService implements NotificationService {
   Future<void> showNow({required int id, required NotificationKind kind, required String title, required String body}) async {}
 }
 
+/// Skips the animated intro so screen tests start on the real first screen.
+class _IntroAlreadyDone extends IntroController {
+  @override
+  bool build() => true;
+}
+
 class Harness {
-  Harness({bool onboarded = true, bool guest = true, bool profileDone = true, UserPreferences? prefs}) {
+  Harness({this.skipIntro = true, bool onboarded = true, bool guest = true, bool profileDone = true, UserPreferences? prefs}) {
     kv = InMemoryKeyValueStore();
     if (onboarded) kv.setBool(PrefKeys.onboardingDone, true);
     if (guest) kv.setBool(PrefKeys.guestMode, true);
@@ -95,11 +102,13 @@ class Harness {
       secure.write('profile_guest', jsonEncode({'uid': 'guest', 'displayName': 'Asha', 'preferredLanguage': 'en', 'preferredMode': 'signToText', 'accessibilityNeeds': <String>[]}));
     }
   }
+  final bool skipIntro;
   late final InMemoryKeyValueStore kv;
   final secure = InMemorySecureStore();
   final collections = InMemoryCollectionStore();
 
   List<Override> get overrides => [
+        if (skipIntro) introDoneProvider.overrideWith(_IntroAlreadyDone.new),
         keyValueStoreProvider.overrideWithValue(kv),
         secureStoreProvider.overrideWithValue(secure),
         collectionStoreProvider.overrideWithValue(collections),

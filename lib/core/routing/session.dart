@@ -19,6 +19,17 @@ class OnboardingController extends Notifier<bool> {
 
 final onboardingDoneProvider = NotifierProvider<OnboardingController, bool>(OnboardingController.new);
 
+/// The animated intro is shown once per launch. The splash screen calls [finish] when its
+/// animation has played (immediately with reduced motion); until then the session is "booting".
+class IntroController extends Notifier<bool> {
+  @override
+  bool build() => false;
+
+  void finish() => state = true;
+}
+
+final introDoneProvider = NotifierProvider<IntroController, bool>(IntroController.new);
+
 /// Per-account flag: the free-trial offer is shown at most once automatically.
 class TrialOfferSeenController extends Notifier<bool> {
   String get _key => '${PrefKeys.trialOfferSeen}_${ref.read(authControllerProvider).uid}';
@@ -40,7 +51,8 @@ final trialOfferSeenProvider = NotifierProvider<TrialOfferSeenController, bool>(
 /// Single source of truth for where the person should be in the app.
 final sessionStageProvider = Provider<SessionStage>((ref) {
   final auth = ref.watch(authControllerProvider);
-  if (auth.status == AuthStatus.unknown) return SessionStage.booting;
+  final introDone = ref.watch(introDoneProvider);
+  if (!introDone || auth.status == AuthStatus.unknown) return SessionStage.booting;
   if (!ref.watch(onboardingDoneProvider)) return SessionStage.onboarding;
   if (auth.status == AuthStatus.unauthenticated) return SessionStage.needsAuth;
 

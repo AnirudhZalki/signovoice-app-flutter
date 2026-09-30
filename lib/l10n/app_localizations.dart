@@ -1108,6 +1108,30 @@ abstract class AppLocalizations {
   /// **'Premium feature'**
   String get aiShortcutPremium;
 
+  /// No description provided for @introSignToText.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign → Text'**
+  String get introSignToText;
+
+  /// No description provided for @introVoiceToSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice → Sign'**
+  String get introVoiceToSign;
+
+  /// No description provided for @introLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Live interpreter'**
+  String get introLive;
+
+  /// No description provided for @introLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn signs'**
+  String get introLearn;
+
   /// No description provided for @signStatusReady.
   ///
   /// In en, this message translates to:
@@ -2847,6 +2871,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See all benefits'**
   String get seeAllBenefits;
+
+  /// No description provided for @payWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay with'**
+  String get payWith;
+
+  /// No description provided for @payGooglePlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Play'**
+  String get payGooglePlay;
+
+  /// No description provided for @payRazorpay.
+  ///
+  /// In en, this message translates to:
+  /// **'UPI, cards & wallets'**
+  String get payRazorpay;
+
+  /// No description provided for @payRazorpayNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure checkout by Razorpay. Google Pay, PhonePe, Paytm and other UPI apps support auto-pay; you approve the mandate in your UPI app.'**
+  String get payRazorpayNote;
+
+  /// No description provided for @priceAtCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'Price shown at checkout'**
+  String get priceAtCheckout;
+
+  /// No description provided for @razorpayTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-pay renews your subscription until you cancel. You approve the payment and see the final price in the Razorpay checkout. Cancel any time from Manage subscription.'**
+  String get razorpayTerms;
+
+  /// No description provided for @cancelAutoRenew.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel auto-renew'**
+  String get cancelAutoRenew;
+
+  /// No description provided for @cancelAutoRenewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You keep Premium until the end of the period you already paid for. No further payments will be taken.'**
+  String get cancelAutoRenewBody;
+
+  /// No description provided for @cancelAutoRenewConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel auto-renew'**
+  String get cancelAutoRenewConfirm;
+
+  /// No description provided for @keepSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep subscription'**
+  String get keepSubscription;
+
+  /// No description provided for @autoRenewCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-renew cancelled. Premium stays until the end of the paid period.'**
+  String get autoRenewCancelled;
+
+  /// No description provided for @premiumHeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign without limits'**
+  String get premiumHeroTitle;
+
+  /// No description provided for @premiumHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited recognition, full history, detailed progress and smarter sentences.'**
+  String get premiumHeroBody;
 
   /// No description provided for @notifLearnTitle.
   ///

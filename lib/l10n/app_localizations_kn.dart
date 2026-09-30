@@ -554,6 +554,18 @@ class AppLocalizationsKn extends AppLocalizations {
   String get aiShortcutPremium => 'ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ';
 
   @override
+  String get introSignToText => 'ಸೈನ್ → ಪಠ್ಯ';
+
+  @override
+  String get introVoiceToSign => 'ಧ್ವನಿ → ಸೈನ್';
+
+  @override
+  String get introLive => 'ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್';
+
+  @override
+  String get introLearn => 'ಸಂಜ್ಞೆಗಳನ್ನು ಕಲಿಯಿರಿ';
+
+  @override
   String get signStatusReady => 'ಸಾಧನದ ಮಾದರಿ ಸಿದ್ಧ';
 
   @override
@@ -1538,6 +1550,50 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'ಎಲ್ಲಾ ಪ್ರಯೋಜನಗಳನ್ನು ನೋಡಿ';
+
+  @override
+  String get payWith => 'ಇದರಿಂದ ಪಾವತಿಸಿ';
+
+  @override
+  String get payGooglePlay => 'Google Play';
+
+  @override
+  String get payRazorpay => 'UPI, ಕಾರ್ಡ್‌ಗಳು ಮತ್ತು ವ್ಯಾಲೆಟ್‌ಗಳು';
+
+  @override
+  String get payRazorpayNote =>
+      'Razorpay ಮೂಲಕ ಸುರಕ್ಷಿತ ಚೆಕ್‌ಔಟ್. Google Pay, PhonePe, Paytm ಮತ್ತು ಇತರ UPI ಆ್ಯಪ್‌ಗಳು ಆಟೋ-ಪೇ ಬೆಂಬಲಿಸುತ್ತವೆ; ನಿಮ್ಮ UPI ಆ್ಯಪ್‌ನಲ್ಲಿ ಮ್ಯಾಂಡೇಟ್ ಅನುಮೋದಿಸಿ.';
+
+  @override
+  String get priceAtCheckout => 'ಬೆಲೆಯನ್ನು ಚೆಕ್‌ಔಟ್‌ನಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ';
+
+  @override
+  String get razorpayTerms =>
+      'ಆಟೋ-ಪೇ ನೀವು ರದ್ದುಗೊಳಿಸುವವರೆಗೆ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ನವೀಕರಿಸುತ್ತದೆ. ನೀವು Razorpay ಚೆಕ್‌ಔಟ್‌ನಲ್ಲಿ ಪಾವತಿಯನ್ನು ಅನುಮೋದಿಸಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ನೋಡುತ್ತೀರಿ. ಚಂದಾದಾರಿಕೆ ನಿರ್ವಹಿಸಿ ಯಿಂದ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ.';
+
+  @override
+  String get cancelAutoRenew => 'ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದುಮಾಡಿ';
+
+  @override
+  String get cancelAutoRenewBody =>
+      'ನೀವು ಈಗಾಗಲೇ ಪಾವತಿಸಿದ ಅವಧಿಯ ಅಂತ್ಯದವರೆಗೆ ಪ್ರೀಮಿಯಂ ಇರುತ್ತದೆ. ಮುಂದೆ ಯಾವುದೇ ಪಾವತಿ ಪಡೆಯಲಾಗುವುದಿಲ್ಲ.';
+
+  @override
+  String get cancelAutoRenewConfirm => 'ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದುಮಾಡಿ';
+
+  @override
+  String get keepSubscription => 'ಚಂದಾದಾರಿಕೆ ಇರಿಸಿ';
+
+  @override
+  String get autoRenewCancelled =>
+      'ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದಾಗಿದೆ. ಪಾವತಿಸಿದ ಅವಧಿ ಮುಗಿಯುವವರೆಗೆ ಪ್ರೀಮಿಯಂ ಇರುತ್ತದೆ.';
+
+  @override
+  String get premiumHeroTitle => 'ಮಿತಿಯಿಲ್ಲದೆ ಸೈನ್ ಮಾಡಿ';
+
+  @override
+  String get premiumHeroBody =>
+      'ಅಪರಿಮಿತ ಗುರುತಿಸುವಿಕೆ, ಸಂಪೂರ್ಣ ಇತಿಹಾಸ, ವಿವರವಾದ ಪ್ರಗತಿ ಮತ್ತು ಚುರುಕಾದ ವಾಕ್ಯಗಳು.';
 
   @override
   String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';

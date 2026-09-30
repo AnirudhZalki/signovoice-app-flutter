@@ -551,6 +551,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiShortcutPremium => 'Premium feature';
 
   @override
+  String get introSignToText => 'Sign → Text';
+
+  @override
+  String get introVoiceToSign => 'Voice → Sign';
+
+  @override
+  String get introLive => 'Live interpreter';
+
+  @override
+  String get introLearn => 'Learn signs';
+
+  @override
   String get signStatusReady => 'On-device model ready';
 
   @override
@@ -1535,6 +1547,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seeAllBenefits => 'See all benefits';
+
+  @override
+  String get payWith => 'Pay with';
+
+  @override
+  String get payGooglePlay => 'Google Play';
+
+  @override
+  String get payRazorpay => 'UPI, cards & wallets';
+
+  @override
+  String get payRazorpayNote =>
+      'Secure checkout by Razorpay. Google Pay, PhonePe, Paytm and other UPI apps support auto-pay; you approve the mandate in your UPI app.';
+
+  @override
+  String get priceAtCheckout => 'Price shown at checkout';
+
+  @override
+  String get razorpayTerms =>
+      'Auto-pay renews your subscription until you cancel. You approve the payment and see the final price in the Razorpay checkout. Cancel any time from Manage subscription.';
+
+  @override
+  String get cancelAutoRenew => 'Cancel auto-renew';
+
+  @override
+  String get cancelAutoRenewBody =>
+      'You keep Premium until the end of the period you already paid for. No further payments will be taken.';
+
+  @override
+  String get cancelAutoRenewConfirm => 'Cancel auto-renew';
+
+  @override
+  String get keepSubscription => 'Keep subscription';
+
+  @override
+  String get autoRenewCancelled =>
+      'Auto-renew cancelled. Premium stays until the end of the paid period.';
+
+  @override
+  String get premiumHeroTitle => 'Sign without limits';
+
+  @override
+  String get premiumHeroBody =>
+      'Unlimited recognition, full history, detailed progress and smarter sentences.';
 
   @override
   String get notifLearnTitle => 'Time to practise';

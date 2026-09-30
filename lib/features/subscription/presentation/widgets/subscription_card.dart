@@ -27,7 +27,8 @@ class SubscriptionCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: selected ? scheme.primaryContainer : scheme.surfaceContainer,

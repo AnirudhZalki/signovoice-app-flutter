@@ -9,6 +9,7 @@ import '../../../core/utils/l10n_ext.dart';
 import '../../../shared/widgets/buttons.dart';
 import '../../../shared/widgets/cards.dart';
 import '../../../shared/widgets/failure_message.dart';
+import '../domain/subscription.dart';
 import 'purchase_flow_controller.dart';
 import 'subscription_labels.dart';
 import 'subscription_providers.dart';
@@ -48,6 +49,35 @@ class _ManageSubscriptionScreenState extends ConsumerState<ManageSubscriptionScr
     await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 
+  Future<void> _cancelAutoRenew() async {
+    final l = context.l10n;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(l.cancelAutoRenew),
+        content: Text(l.cancelAutoRenewBody),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(l.keepSubscription)),
+          FilledButton(onPressed: () => Navigator.pop(c, true), child: Text(l.cancelAutoRenewConfirm)),
+        ],
+      ),
+    );
+    if (ok != true || !mounted) return;
+    setState(() {
+      _refreshing = true;
+      _message = null;
+    });
+    try {
+      final sub = await ref.read(subscriptionRepositoryProvider).cancelAutoRenew();
+      await ref.read(subscriptionProvider.notifier).applyVerified(sub);
+      if (mounted) setState(() => _message = context.l10n.autoRenewCancelled);
+    } catch (e) {
+      if (mounted) setState(() => _message = failureMessage(context.l10n, toFailure(e)));
+    } finally {
+      if (mounted) setState(() => _refreshing = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l = context.l10n;
@@ -74,7 +104,14 @@ class _ManageSubscriptionScreenState extends ConsumerState<ManageSubscriptionScr
         if (_message != null) Padding(padding: const EdgeInsets.only(top: 8), child: Semantics(liveRegion: true, child: Text(_message!))),
         PurchaseStatusBanner(state: flow),
         const SizedBox(height: 12),
-        PrimaryButton(label: l.manageInStore, icon: Icons.open_in_new_rounded, onPressed: () => _openStore(sub.productId)),
+        if (sub.platform == StorePlatform.razorpay)
+          PrimaryButton(
+            label: l.cancelAutoRenew,
+            icon: Icons.event_busy_rounded,
+            onPressed: (_refreshing || !sub.autoRenewing) ? null : _cancelAutoRenew,
+          )
+        else
+          PrimaryButton(label: l.manageInStore, icon: Icons.open_in_new_rounded, onPressed: () => _openStore(sub.productId)),
         const SizedBox(height: 10),
         SecondaryButton(label: l.refreshStatus, icon: Icons.refresh_rounded, onPressed: _refreshing ? null : _refresh),
         const SizedBox(height: 10),

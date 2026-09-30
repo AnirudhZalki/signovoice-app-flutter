@@ -80,3 +80,17 @@ benefitAnalyticsBody | See accuracy, completion by topic and your activity over 
 alwaysFreeTitle | Always free | हमेशा निःशुल्क | ಯಾವಾಗಲೂ ಉಚಿತ
 alwaysFreeBody | On-device sign recognition (with a daily limit), voice → sign, the sign dictionary, all lessons and practice. | ऑन-डिवाइस साइन पहचान (दैनिक सीमा के साथ), आवाज़ → साइन, साइन शब्दकोश, सभी पाठ और अभ्यास। | ಸಾಧನದಲ್ಲೇ ಸಂಜ್ಞೆ ಗುರುತಿಸುವಿಕೆ (ದೈನಂದಿನ ಮಿತಿಯೊಂದಿಗೆ), ಧ್ವನಿ → ಸೈನ್, ಸಂಜ್ಞಾ ನಿಘಂಟು, ಎಲ್ಲಾ ಪಾಠಗಳು ಮತ್ತು ಅಭ್ಯಾಸ.
 seeAllBenefits | See all benefits | सभी लाभ देखें | ಎಲ್ಲಾ ಪ್ರಯೋಜನಗಳನ್ನು ನೋಡಿ
+# ---- payment method / auto-pay ----
+payWith | Pay with | इससे भुगतान करें | ಇದರಿಂದ ಪಾವತಿಸಿ
+payGooglePlay | Google Play | Google Play | Google Play
+payRazorpay | UPI, cards & wallets | UPI, कार्ड और वॉलेट | UPI, ಕಾರ್ಡ್‌ಗಳು ಮತ್ತು ವ್ಯಾಲೆಟ್‌ಗಳು
+payRazorpayNote | Secure checkout by Razorpay. Google Pay, PhonePe, Paytm and other UPI apps support auto-pay; you approve the mandate in your UPI app. | Razorpay द्वारा सुरक्षित चेकआउट। Google Pay, PhonePe, Paytm और अन्य UPI ऐप ऑटो-पे का समर्थन करते हैं; आप अपने UPI ऐप में मैंडेट स्वीकृत करते हैं। | Razorpay ಮೂಲಕ ಸುರಕ್ಷಿತ ಚೆಕ್‌ಔಟ್. Google Pay, PhonePe, Paytm ಮತ್ತು ಇತರ UPI ಆ್ಯಪ್‌ಗಳು ಆಟೋ-ಪೇ ಬೆಂಬಲಿಸುತ್ತವೆ; ನಿಮ್ಮ UPI ಆ್ಯಪ್‌ನಲ್ಲಿ ಮ್ಯಾಂಡೇಟ್ ಅನುಮೋದಿಸಿ.
+priceAtCheckout | Price shown at checkout | कीमत चेकआउट पर दिखाई जाएगी | ಬೆಲೆಯನ್ನು ಚೆಕ್‌ಔಟ್‌ನಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ
+razorpayTerms | Auto-pay renews your subscription until you cancel. You approve the payment and see the final price in the Razorpay checkout. Cancel any time from Manage subscription. | ऑटो-पे रद्द करने तक आपकी सदस्यता नवीनीकृत करता है। आप Razorpay चेकआउट में भुगतान स्वीकृत करते हैं और अंतिम कीमत देखते हैं। सदस्यता प्रबंधित करें से कभी भी रद्द करें। | ಆಟೋ-ಪೇ ನೀವು ರದ್ದುಗೊಳಿಸುವವರೆಗೆ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ನವೀಕರಿಸುತ್ತದೆ. ನೀವು Razorpay ಚೆಕ್‌ಔಟ್‌ನಲ್ಲಿ ಪಾವತಿಯನ್ನು ಅನುಮೋದಿಸಿ ಅಂತಿಮ ಬೆಲೆಯನ್ನು ನೋಡುತ್ತೀರಿ. ಚಂದಾದಾರಿಕೆ ನಿರ್ವಹಿಸಿ ಯಿಂದ ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ.
+cancelAutoRenew | Cancel auto-renew | ऑटो-रिन्यू रद्द करें | ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದುಮಾಡಿ
+cancelAutoRenewBody | You keep Premium until the end of the period you already paid for. No further payments will be taken. | आपने जिस अवधि का भुगतान किया है उसके अंत तक प्रीमियम रहेगा। आगे कोई भुगतान नहीं लिया जाएगा। | ನೀವು ಈಗಾಗಲೇ ಪಾವತಿಸಿದ ಅವಧಿಯ ಅಂತ್ಯದವರೆಗೆ ಪ್ರೀಮಿಯಂ ಇರುತ್ತದೆ. ಮುಂದೆ ಯಾವುದೇ ಪಾವತಿ ಪಡೆಯಲಾಗುವುದಿಲ್ಲ.
+cancelAutoRenewConfirm | Cancel auto-renew | ऑटो-रिन्यू रद्द करें | ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದುಮಾಡಿ
+keepSubscription | Keep subscription | सदस्यता रखें | ಚಂದಾದಾರಿಕೆ ಇರಿಸಿ
+autoRenewCancelled | Auto-renew cancelled. Premium stays until the end of the paid period. | ऑटो-रिन्यू रद्द हुआ। भुगतान की अवधि के अंत तक प्रीमियम रहेगा। | ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದಾಗಿದೆ. ಪಾವತಿಸಿದ ಅವಧಿ ಮುಗಿಯುವವರೆಗೆ ಪ್ರೀಮಿಯಂ ಇರುತ್ತದೆ.
+premiumHeroTitle | Sign without limits | सीमाओं के बिना साइन करें | ಮಿತಿಯಿಲ್ಲದೆ ಸೈನ್ ಮಾಡಿ
+premiumHeroBody | Unlimited recognition, full history, detailed progress and smarter sentences. | असीमित पहचान, पूरा इतिहास, विस्तृत प्रगति और बेहतर वाक्य। | ಅಪರಿಮಿತ ಗುರುತಿಸುವಿಕೆ, ಸಂಪೂರ್ಣ ಇತಿಹಾಸ, ವಿವರವಾದ ಪ್ರಗತಿ ಮತ್ತು ಚುರುಕಾದ ವಾಕ್ಯಗಳು.

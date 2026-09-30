@@ -4,13 +4,15 @@ import 'package:go_router/go_router.dart';
 import '../../../core/routing/routes.dart';
 import '../../../core/utils/l10n_ext.dart';
 import '../domain/billing_service.dart';
+import '../domain/payment_method.dart';
 import 'subscription_labels.dart';
 
 /// The clear renewal terms shown before any purchase: trial length, price
 /// after trial, billing period, auto-renewal and how to cancel.
 class TermsBlock extends StatelessWidget {
-  const TermsBlock({super.key, required this.product});
+  const TermsBlock({super.key, required this.product, this.method = PaymentMethod.googlePlay});
   final StoreProduct? product;
+  final PaymentMethod method;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,9 @@ class TermsBlock extends StatelessWidget {
         (Icons.autorenew_rounded, l.renewsAutomatically),
         (Icons.event_available_outlined, l.cancelAnytime),
       ];
-      paragraph = p.hasFreeTrial ? l.trialTerms(price, period) : l.subscribeTerms(price, period);
+      paragraph = method == PaymentMethod.razorpay
+          ? l.razorpayTerms
+          : (p.hasFreeTrial ? l.trialTerms(price, period) : l.subscribeTerms(price, period));
     }
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

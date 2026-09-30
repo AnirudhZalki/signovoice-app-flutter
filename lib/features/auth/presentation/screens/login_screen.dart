@@ -14,6 +14,27 @@ import '../../../../shared/widgets/cards.dart';
 import '../auth_controller.dart';
 import '../auth_helpers.dart';
 
+/// Fade + rise-in for the hero; skipped when the system asks for reduced motion.
+class _Entrance extends StatelessWidget {
+  const _Entrance({required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    if (MediaQuery.disableAnimationsOf(context)) return child;
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0, end: 1),
+      duration: const Duration(milliseconds: 700),
+      curve: Curves.easeOutBack,
+      builder: (_, t, c) => Opacity(
+        opacity: t.clamp(0.0, 1.0),
+        child: Transform.translate(offset: Offset(0, (1 - t) * 24), child: Transform.scale(scale: 0.8 + 0.2 * t, child: c)),
+      ),
+      child: child,
+    );
+  }
+}
+
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
@@ -68,7 +89,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Center(child: BrandMark()),
+                  const Center(child: _Entrance(child: BrandMark())),
                   const SizedBox(height: 16),
                   Semantics(
                     header: true,
@@ -90,7 +111,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ]),
                       ),
                     ),
-                  if (supportsAccounts) ...[
+                  ...[
                     Form(
                       key: _form,
                       child: Column(
