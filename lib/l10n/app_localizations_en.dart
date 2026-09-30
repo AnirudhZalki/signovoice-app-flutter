@@ -1593,6 +1593,18 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unlimited recognition, full history, detailed progress and smarter sentences.';
 
   @override
+  String get testPaymentButton => 'Test payment ₹1 (Razorpay)';
+
+  @override
+  String get testPaymentOk => 'Test payment verified.';
+
+  @override
+  String get testPaymentCancelled => 'Payment cancelled.';
+
+  @override
+  String get testPaymentFailed => 'Payment failed or could not be verified.';
+
+  @override
   String get notifLearnTitle => 'Time to practise';
 
   @override

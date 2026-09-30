@@ -94,3 +94,7 @@ keepSubscription | Keep subscription | सदस्यता रखें | ಚ�
 autoRenewCancelled | Auto-renew cancelled. Premium stays until the end of the paid period. | ऑटो-रिन्यू रद्द हुआ। भुगतान की अवधि के अंत तक प्रीमियम रहेगा। | ಸ್ವಯಂ-ನವೀಕರಣ ರದ್ದಾಗಿದೆ. ಪಾವತಿಸಿದ ಅವಧಿ ಮುಗಿಯುವವರೆಗೆ ಪ್ರೀಮಿಯಂ ಇರುತ್ತದೆ.
 premiumHeroTitle | Sign without limits | सीमाओं के बिना साइन करें | ಮಿತಿಯಿಲ್ಲದೆ ಸೈನ್ ಮಾಡಿ
 premiumHeroBody | Unlimited recognition, full history, detailed progress and smarter sentences. | असीमित पहचान, पूरा इतिहास, विस्तृत प्रगति और बेहतर वाक्य। | ಅಪರಿಮಿತ ಗುರುತಿಸುವಿಕೆ, ಸಂಪೂರ್ಣ ಇತಿಹಾಸ, ವಿವರವಾದ ಪ್ರಗತಿ ಮತ್ತು ಚುರುಕಾದ ವಾಕ್ಯಗಳು.
+testPaymentButton | Test payment ₹1 (Razorpay) | टेस्ट भुगतान ₹1 (Razorpay) | ಪರೀಕ್ಷಾ ಪಾವತಿ ₹1 (Razorpay)
+testPaymentOk | Test payment verified. | टेस्ट भुगतान सत्यापित हुआ। | ಪರೀಕ್ಷಾ ಪಾವತಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ.
+testPaymentCancelled | Payment cancelled. | भुगतान रद्द किया गया। | ಪಾವತಿ ರದ್ದಾಗಿದೆ.
+testPaymentFailed | Payment failed or could not be verified. | भुगतान विफल रहा या सत्यापित नहीं हो सका। | ಪಾವತಿ ವಿಫಲವಾಗಿದೆ ಅಥವಾ ಪರಿಶೀಲಿಸಲಾಗಲಿಲ್ಲ.

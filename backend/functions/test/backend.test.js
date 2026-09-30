@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { fromRazorpay, fromPlay } = require('../lib/entitlement');
-const { verifyCheckoutSignature, verifyWebhookSignature, hmac } = require('../lib/razorpay');
+const { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature, hmac } = require('../lib/razorpay');
 
 const NOW = Date.parse('2026-06-10T00:00:00Z');
 const sec = (iso) => Math.floor(Date.parse(iso) / 1000);
@@ -62,4 +62,13 @@ test('play: renewal order id means premium; canceled keeps access to expiry', ()
   const canceled = fromPlay({ subscriptionState: 'SUBSCRIPTION_STATE_CANCELED', startTime: '2026-05-01T00:00:00Z', latestOrderId: 'GPA.1..0', lineItems: [li] }, NOW);
   assert.equal(canceled.status, 'cancelled');
   assert.equal(fromPlay({ subscriptionState: 'SUBSCRIPTION_STATE_EXPIRED', lineItems: [li] }, NOW).status, 'expired');
+});
+
+test('razorpay order signature: order_id|payment_id', () => {
+  const secret = 'shh';
+  const sig = hmac(secret, 'order_1|pay_1');
+  assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1', signature: sig }, secret), true);
+  assert.equal(verifyOrderSignature({ orderId: 'order_2', paymentId: 'pay_1', signature: sig }, secret), false);
+  assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1', signature: 'x' }, secret), false);
+  assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1' }, secret), false);
 });

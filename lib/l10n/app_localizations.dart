@@ -2950,6 +2950,30 @@ abstract class AppLocalizations {
   /// **'Unlimited recognition, full history, detailed progress and smarter sentences.'**
   String get premiumHeroBody;
 
+  /// No description provided for @testPaymentButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Test payment ₹1 (Razorpay)'**
+  String get testPaymentButton;
+
+  /// No description provided for @testPaymentOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Test payment verified.'**
+  String get testPaymentOk;
+
+  /// No description provided for @testPaymentCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment cancelled.'**
+  String get testPaymentCancelled;
+
+  /// No description provided for @testPaymentFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment failed or could not be verified.'**
+  String get testPaymentFailed;
+
   /// No description provided for @notifLearnTitle.
   ///
   /// In en, this message translates to:

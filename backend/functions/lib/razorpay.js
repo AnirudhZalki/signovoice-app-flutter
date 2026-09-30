@@ -13,10 +13,16 @@ function verifyCheckoutSignature({ paymentId, subscriptionId, signature }, keySe
   return safeEqual(hmac(keySecret, `${paymentId}|${subscriptionId}`), signature);
 }
 
+/** Checkout signature for one-time orders: HMAC_SHA256(orderId + "|" + paymentId, keySecret). */
+function verifyOrderSignature({ orderId, paymentId, signature }, keySecret) {
+  if (!orderId || !paymentId || !signature) return false;
+  return safeEqual(hmac(keySecret, `${orderId}|${paymentId}`), signature);
+}
+
 /** Webhook signature: HMAC_SHA256(rawBody, webhookSecret) in header X-Razorpay-Signature. */
 function verifyWebhookSignature(rawBody, signature, webhookSecret) {
   if (!rawBody || !signature) return false;
   return safeEqual(hmac(webhookSecret, rawBody), signature);
 }
 
-module.exports = { verifyCheckoutSignature, verifyWebhookSignature, hmac };
+module.exports = { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature, hmac };

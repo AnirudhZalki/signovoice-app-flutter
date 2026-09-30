@@ -1593,6 +1593,18 @@ class AppLocalizationsHi extends AppLocalizations {
       'असीमित पहचान, पूरा इतिहास, विस्तृत प्रगति और बेहतर वाक्य।';
 
   @override
+  String get testPaymentButton => 'टेस्ट भुगतान ₹1 (Razorpay)';
+
+  @override
+  String get testPaymentOk => 'टेस्ट भुगतान सत्यापित हुआ।';
+
+  @override
+  String get testPaymentCancelled => 'भुगतान रद्द किया गया।';
+
+  @override
+  String get testPaymentFailed => 'भुगतान विफल रहा या सत्यापित नहीं हो सका।';
+
+  @override
   String get notifLearnTitle => 'अभ्यास का समय';
 
   @override

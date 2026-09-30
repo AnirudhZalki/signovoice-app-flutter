@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,10 @@ import '../../../core/utils/l10n_ext.dart';
 import '../../../shared/widgets/buttons.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../../../core/config/app_config.dart';
+import '../../../core/errors/failure_mapper.dart';
+import '../../../core/providers.dart';
+import '../../../shared/widgets/failure_message.dart';
+import '../data/razorpay_order_checkout.dart';
 import '../../../core/theme/app_colors.dart';
 import '../domain/subscription.dart';
 import '../domain/trial_policy.dart';
@@ -27,6 +32,33 @@ class SubscriptionScreen extends ConsumerStatefulWidget {
 }
 
 class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
+  bool _testBusy = false;
+  String? _testMessage;
+
+  /// Debug-only end-to-end check of Razorpay Standard Checkout (order → checkout → signature verify).
+  Future<void> _testPayment() async {
+    final checkout = RazorpayOrderCheckout(api: ref.read(apiClientProvider));
+    setState(() {
+      _testBusy = true;
+      _testMessage = null;
+    });
+    try {
+      final r = await checkout.pay(amountPaise: 100, description: 'Test payment');
+      if (!mounted) return;
+      final l = context.l10n;
+      setState(() => _testMessage = switch (r.outcome) {
+            OrderPaymentOutcome.success => l.testPaymentOk,
+            OrderPaymentOutcome.cancelled => l.testPaymentCancelled,
+            OrderPaymentOutcome.failed => l.testPaymentFailed,
+          });
+    } catch (e) {
+      if (mounted) setState(() => _testMessage = failureMessage(context.l10n, toFailure(e)));
+    } finally {
+      checkout.dispose();
+      if (mounted) setState(() => _testBusy = false);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -92,6 +124,11 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
               loading: flow.busy,
               onPressed: selected == null ? null : ctrl.startPurchase,
             ),
+        ],
+        if (kDebugMode && AppConfig.enableRazorpay && auth.isSignedIn) ...[
+          const SizedBox(height: 8),
+          SecondaryButton(label: l.testPaymentButton, icon: Icons.bolt_rounded, onPressed: _testBusy ? null : _testPayment),
+          if (_testMessage != null) Padding(padding: const EdgeInsets.only(top: 8), child: Semantics(liveRegion: true, child: Text(_testMessage!))),
         ],
         const SizedBox(height: 8),
         if (auth.isSignedIn)

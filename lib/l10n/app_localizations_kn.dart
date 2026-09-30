@@ -1596,6 +1596,18 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಅಪರಿಮಿತ ಗುರುತಿಸುವಿಕೆ, ಸಂಪೂರ್ಣ ಇತಿಹಾಸ, ವಿವರವಾದ ಪ್ರಗತಿ ಮತ್ತು ಚುರುಕಾದ ವಾಕ್ಯಗಳು.';
 
   @override
+  String get testPaymentButton => 'ಪರೀಕ್ಷಾ ಪಾವತಿ ₹1 (Razorpay)';
+
+  @override
+  String get testPaymentOk => 'ಪರೀಕ್ಷಾ ಪಾವತಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ.';
+
+  @override
+  String get testPaymentCancelled => 'ಪಾವತಿ ರದ್ದಾಗಿದೆ.';
+
+  @override
+  String get testPaymentFailed => 'ಪಾವತಿ ವಿಫಲವಾಗಿದೆ ಅಥವಾ ಪರಿಶೀಲಿಸಲಾಗಲಿಲ್ಲ.';
+
+  @override
   String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';
 
   @override

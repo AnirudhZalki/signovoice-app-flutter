@@ -13,7 +13,7 @@ const { onRequest } = require('firebase-functions/v2/https');
 const { onMessagePublished } = require('firebase-functions/v2/pubsub');
 const { defineSecret } = require('firebase-functions/params');
 const { fromRazorpay, fromPlay } = require('./lib/entitlement');
-const { verifyCheckoutSignature, verifyWebhookSignature } = require('./lib/razorpay');
+const { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature } = require('./lib/razorpay');
 const { requireUser, rateLimit } = require('./lib/auth');
 
 admin.initializeApp();
@@ -38,6 +38,42 @@ const send = (res, code, body) => res.status(code).json(body);
 async function saveEntitlement(uid, ent) {
   await entRef(uid).set(ent);
   return ent;
+}
+
+// ---------- Razorpay Standard Checkout (one-time orders) ----------
+const MIN_PAISE = 100;
+
+/** Create an order. Amount is in paise (integer >= 100). The order is bound to the signed-in user via notes. */
+async function orderCreate(uid, body) {
+  const amount = Number(body && body.amount);
+  const currency = String((body && body.currency) || 'INR').toUpperCase();
+  if (!Number.isInteger(amount) || amount < MIN_PAISE) throw Object.assign(new Error(`amount must be an integer >= ${MIN_PAISE} paise`), { status: 400 });
+  if (!/^[A-Z]{3}$/.test(currency)) throw Object.assign(new Error('invalid currency'), { status: 400 });
+  const receipt = String((body && body.receipt) || `sv_${uid.slice(0, 8)}_${Date.now()}`).slice(0, 40);
+  let order;
+  try {
+    order = await razorpay().orders.create({ amount, currency, receipt, notes: { uid } });
+  } catch (e) {
+    // Razorpay SDK errors: { statusCode, error: { description } }. Auth failure -> 401, anything else -> 500.
+    const code = e && e.statusCode === 401 ? 401 : 500;
+    throw Object.assign(new Error((e && e.error && e.error.description) || 'razorpay error'), { status: code });
+  }
+  await db.collection('razorpayOrders').doc(order.id).set({ uid, amount, currency, receipt, paid: false });
+  return { order_id: order.id, amount: order.amount, currency: order.currency, keyId: env('RAZORPAY_KEY_ID') };
+}
+
+/** Verify the checkout signature. Marks the order paid only when it matches and belongs to the caller. */
+async function orderVerify(uid, body) {
+  const { razorpay_order_id: orderId, razorpay_payment_id: paymentId, razorpay_signature: signature } = body || {};
+  if (!orderId || !paymentId || !signature) throw Object.assign(new Error('missing fields'), { status: 400 });
+  if (!verifyOrderSignature({ orderId, paymentId, signature }, RAZORPAY_KEY_SECRET.value())) {
+    throw Object.assign(new Error('signature mismatch'), { status: 400 });
+  }
+  const ref = db.collection('razorpayOrders').doc(orderId);
+  const doc = await ref.get();
+  if (!doc.exists || doc.data().uid !== uid) throw Object.assign(new Error('unknown order'), { status: 400 });
+  await ref.set({ paid: true, paymentId, paidAt: Date.now() }, { merge: true });
+  return { success: true, orderId, paymentId };
 }
 
 // ---------- Razorpay ----------
@@ -133,6 +169,8 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
     if (req.method === 'GET' && path === '/v1/subscription') return send(res, 200, (await entRef(uid).get()).data() || FREE);
     if (req.method === 'GET' && path === '/v1/razorpay/plans') return send(res, 200, { plans: await razorpayPlans() });
     if (req.method === 'POST' && path === '/v1/razorpay/subscriptions') return send(res, 200, await razorpayCreate(uid, req.body.productId));
+    if (req.method === 'POST' && path === '/v1/razorpay/orders') return send(res, 200, await orderCreate(uid, req.body));
+    if (req.method === 'POST' && path === '/v1/razorpay/orders/verify') return send(res, 200, await orderVerify(uid, req.body));
     if (req.method === 'POST' && path === '/v1/razorpay/cancel') return send(res, 200, await razorpayCancel(uid));
     if (req.method === 'POST' && path === '/v1/subscriptions/verify') {
       const { platform, productId, purchaseToken } = req.body || {};

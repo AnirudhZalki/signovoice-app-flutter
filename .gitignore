@@ -58,3 +58,7 @@ android/key.properties
 ios/Runner/GoogleService-Info.plist
 config/dev.json
 config/prod.json
+
+# local Firebase emulator secrets
+.secret.local
+**/.secret.local
