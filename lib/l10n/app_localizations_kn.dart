@@ -1608,6 +1608,18 @@ class AppLocalizationsKn extends AppLocalizations {
   String get testPaymentFailed => 'ಪಾವತಿ ವಿಫಲವಾಗಿದೆ ಅಥವಾ ಪರಿಶೀಲಿಸಲಾಗಲಿಲ್ಲ.';
 
   @override
+  String get razorpayUnavailableMsg =>
+      'ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಪಾವತಿ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ. Google Play ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ.';
+
+  @override
+  String get razorpayPlansUnavailableMsg =>
+      'ಪಾವತಿ ಸರ್ವರ್‌ನಿಂದ ಯೋಜನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
+
+  @override
+  String get tryOtherPayment =>
+      'Play ಯೋಜನೆಗಳು ಲಭ್ಯವಿಲ್ಲವೇ? UPI, ಕಾರ್ಡ್ ಅಥವಾ ವ್ಯಾಲೆಟ್ ಮೂಲಕ ಪಾವತಿಸಿ.';
+
+  @override
   String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';
 
   @override

@@ -8,5 +8,7 @@
   "SUPPORT_EMAIL": "",
   "PRIVACY_POLICY_URL": "",
   "TERMS_URL": "",
-  "LIVEKIT_DEV_TOKEN": ""
+  "LIVEKIT_DEV_TOKEN": "",
+  "ENABLE_RAZORPAY": true,
+  "PAYMENT_METHOD": "razorpay"
 }

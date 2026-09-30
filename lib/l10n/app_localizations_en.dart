@@ -1605,6 +1605,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testPaymentFailed => 'Payment failed or could not be verified.';
 
   @override
+  String get razorpayUnavailableMsg =>
+      'Online payments aren\'t set up on this build yet. Try Google Play, or contact support.';
+
+  @override
+  String get razorpayPlansUnavailableMsg =>
+      'Plans couldn\'t be loaded from the payment server. Check your connection and retry.';
+
+  @override
+  String get tryOtherPayment =>
+      'Play plans unavailable? Pay with UPI, cards or wallets instead.';
+
+  @override
   String get notifLearnTitle => 'Time to practise';
 
   @override

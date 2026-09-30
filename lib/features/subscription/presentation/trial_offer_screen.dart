@@ -8,11 +8,14 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/utils/l10n_ext.dart';
 import '../../../shared/widgets/buttons.dart';
 import '../../../shared/widgets/brand.dart';
+import '../../../core/config/app_config.dart';
+import '../domain/payment_method.dart';
 import '../domain/trial_policy.dart';
 import 'purchase_flow_controller.dart';
 import 'subscription_labels.dart';
 import 'subscription_providers.dart';
 import 'terms_block.dart';
+import 'widgets/payment_method_selector.dart';
 import 'widgets/purchase_status_banner.dart';
 
 /// Shown once after sign-up. Clear terms first; nothing is charged without the
@@ -40,6 +43,7 @@ class _TrialOfferScreenState extends ConsumerState<TrialOfferScreen> {
     final ctrl = ref.read(purchaseFlowProvider.notifier);
     final ent = ref.watch(entitlementProvider);
     final text = Theme.of(context).textTheme;
+    final method = ref.watch(paymentMethodProvider);
 
     // Already premium (e.g. signed in on a new device): nothing to offer.
     ref.listen(entitlementProvider.select((e) => e.isPremium), (_, premium) {
@@ -71,9 +75,23 @@ class _TrialOfferScreenState extends ConsumerState<TrialOfferScreen> {
               ),
             ],
             const SizedBox(height: 20),
+            if (AppConfig.enableRazorpay) ...[
+              PaymentMethodSelector(
+                selected: method,
+                enabled: !flow.busy,
+                onChanged: (m) {
+                  ref.read(paymentMethodProvider.notifier).select(m);
+                  Future(() => ref.read(purchaseFlowProvider.notifier).loadProducts());
+                },
+              ),
+              if (method == PaymentMethod.googlePlay &&
+                  (flow.stage == PurchaseStage.productsUnavailable || flow.stage == PurchaseStage.billingUnavailable))
+                Padding(padding: const EdgeInsets.only(top: 8), child: Text(l.tryOtherPayment, style: text.bodySmall)),
+              const SizedBox(height: 16),
+            ],
             if (unavailable && flow.stage == PurchaseStage.ready) Text(l.trialNotAvailable, textAlign: TextAlign.center),
-            if (!unavailable || flow.stage != PurchaseStage.ready) TermsBlock(product: trialAvailable ? product : null),
-            PurchaseStatusBanner(state: flow, onRetryVerification: ctrl.retryVerification, onRetryLoad: ctrl.loadProducts),
+            if (!unavailable || flow.stage != PurchaseStage.ready) TermsBlock(product: trialAvailable ? product : null, method: method),
+            PurchaseStatusBanner(method: method, state: flow, onRetryVerification: ctrl.retryVerification, onRetryLoad: ctrl.loadProducts),
             const SizedBox(height: 12),
             if (flow.stage == PurchaseStage.success)
               PrimaryButton(label: l.continueLabel, onPressed: _continue)

@@ -112,7 +112,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
           const SizedBox(height: 4),
           TermsBlock(product: selected, method: method),
         ],
-        PurchaseStatusBanner(state: flow, onRetryVerification: ctrl.retryVerification, onRetryLoad: ctrl.loadProducts),
+        PurchaseStatusBanner(method: method, state: flow, onRetryVerification: ctrl.retryVerification, onRetryLoad: ctrl.loadProducts),
         if (canBuy) ...[
           const SizedBox(height: 8),
           if (!auth.isSignedIn)

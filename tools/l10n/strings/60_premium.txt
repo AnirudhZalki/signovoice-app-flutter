@@ -98,3 +98,6 @@ testPaymentButton | Test payment ₹1 (Razorpay) | टेस्ट भुगत�
 testPaymentOk | Test payment verified. | टेस्ट भुगतान सत्यापित हुआ। | ಪರೀಕ್ಷಾ ಪಾವತಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ.
 testPaymentCancelled | Payment cancelled. | भुगतान रद्द किया गया। | ಪಾವತಿ ರದ್ದಾಗಿದೆ.
 testPaymentFailed | Payment failed or could not be verified. | भुगतान विफल रहा या सत्यापित नहीं हो सका। | ಪಾವತಿ ವಿಫಲವಾಗಿದೆ ಅಥವಾ ಪರಿಶೀಲಿಸಲಾಗಲಿಲ್ಲ.
+razorpayUnavailableMsg | Online payments aren't set up on this build yet. Try Google Play, or contact support. | इस बिल्ड में ऑनलाइन भुगतान अभी सेट नहीं है। Google Play आज़माएं या सहायता से संपर्क करें। | ಈ ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಪಾವತಿ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ. Google Play ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ.
+razorpayPlansUnavailableMsg | Plans couldn't be loaded from the payment server. Check your connection and retry. | भुगतान सर्वर से योजनाएं लोड नहीं हो सकीं। कनेक्शन जांचें और पुनः प्रयास करें। | ಪಾವತಿ ಸರ್ವರ್‌ನಿಂದ ಯೋಜನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+tryOtherPayment | Play plans unavailable? Pay with UPI, cards or wallets instead. | Play योजनाएं उपलब्ध नहीं? UPI, कार्ड या वॉलेट से भुगतान करें। | Play ಯೋಜನೆಗಳು ಲಭ್ಯವಿಲ್ಲವೇ? UPI, ಕಾರ್ಡ್ ಅಥವಾ ವ್ಯಾಲೆಟ್ ಮೂಲಕ ಪಾವತಿಸಿ.

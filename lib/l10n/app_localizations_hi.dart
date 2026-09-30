@@ -1605,6 +1605,18 @@ class AppLocalizationsHi extends AppLocalizations {
   String get testPaymentFailed => 'भुगतान विफल रहा या सत्यापित नहीं हो सका।';
 
   @override
+  String get razorpayUnavailableMsg =>
+      'इस बिल्ड में ऑनलाइन भुगतान अभी सेट नहीं है। Google Play आज़माएं या सहायता से संपर्क करें।';
+
+  @override
+  String get razorpayPlansUnavailableMsg =>
+      'भुगतान सर्वर से योजनाएं लोड नहीं हो सकीं। कनेक्शन जांचें और पुनः प्रयास करें।';
+
+  @override
+  String get tryOtherPayment =>
+      'Play योजनाएं उपलब्ध नहीं? UPI, कार्ड या वॉलेट से भुगतान करें।';
+
+  @override
   String get notifLearnTitle => 'अभ्यास का समय';
 
   @override

@@ -2974,6 +2974,24 @@ abstract class AppLocalizations {
   /// **'Payment failed or could not be verified.'**
   String get testPaymentFailed;
 
+  /// No description provided for @razorpayUnavailableMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Online payments aren\'t set up on this build yet. Try Google Play, or contact support.'**
+  String get razorpayUnavailableMsg;
+
+  /// No description provided for @razorpayPlansUnavailableMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Plans couldn\'t be loaded from the payment server. Check your connection and retry.'**
+  String get razorpayPlansUnavailableMsg;
+
+  /// No description provided for @tryOtherPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Play plans unavailable? Pay with UPI, cards or wallets instead.'**
+  String get tryOtherPayment;
+
   /// No description provided for @notifLearnTitle.
   ///
   /// In en, this message translates to:

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/utils/l10n_ext.dart';
 import '../../../../shared/widgets/failure_message.dart';
+import '../../domain/payment_method.dart';
 import '../purchase_flow_controller.dart';
 
 /// Text + icon explanation of the current purchase state, with retry where useful.
 class PurchaseStatusBanner extends StatelessWidget {
-  const PurchaseStatusBanner({super.key, required this.state, this.onRetryVerification, this.onRetryLoad});
+  const PurchaseStatusBanner({super.key, required this.state, this.onRetryVerification, this.onRetryLoad, this.method = PaymentMethod.googlePlay});
+  final PaymentMethod method;
   final PurchaseFlowState state;
   final VoidCallback? onRetryVerification;
   final VoidCallback? onRetryLoad;
@@ -35,11 +37,11 @@ class PurchaseStatusBanner extends StatelessWidget {
         msg = l.purchaseCancelled;
         icon = Icons.cancel_outlined;
       case PurchaseStage.billingUnavailable:
-        msg = l.billingUnavailableMsg;
+        msg = method == PaymentMethod.razorpay ? l.razorpayUnavailableMsg : l.billingUnavailableMsg;
         icon = Icons.shopping_bag_outlined;
         error = true;
       case PurchaseStage.productsUnavailable:
-        msg = l.productsUnavailableMsg;
+        msg = method == PaymentMethod.razorpay ? l.razorpayPlansUnavailableMsg : l.productsUnavailableMsg;
         icon = Icons.inventory_2_outlined;
         error = true;
         retry = onRetryLoad;
