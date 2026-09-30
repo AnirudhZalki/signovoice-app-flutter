@@ -2356,6 +2356,18 @@ abstract class AppLocalizations {
   /// **'Audio call in progress'**
   String get audioCallActive;
 
+  /// No description provided for @devRoomTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test room (debug build only)'**
+  String get devRoomTitle;
+
+  /// No description provided for @devRoomBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend.'**
+  String get devRoomBody;
+
   /// No description provided for @premiumHeader.
   ///
   /// In en, this message translates to:

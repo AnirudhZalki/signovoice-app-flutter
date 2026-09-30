@@ -1,11 +1,12 @@
 {
   "API_BASE_URL": "https://api.example.com",
-  "LIVEKIT_URL": "wss://your-project.livekit.cloud",
+  "LIVEKIT_URL": "wss://signovoice-kki1ealv.livekit.cloud",
   "REMOTE_RECOGNITION_URL": "",
   "GOOGLE_SERVER_CLIENT_ID": "",
   "IAP_MONTHLY_ID": "signovoice_premium_monthly",
   "IAP_YEARLY_ID": "signovoice_premium_yearly",
   "SUPPORT_EMAIL": "",
   "PRIVACY_POLICY_URL": "",
-  "TERMS_URL": ""
+  "TERMS_URL": "",
+  "LIVEKIT_DEV_TOKEN": ""
 }

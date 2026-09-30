@@ -52,3 +52,5 @@ callDuration | Duration {time} | अवधि {time} | ಅವಧಿ {time}
 interpreterConnectedTo | In a call with {name} | {name} के साथ कॉल में | {name} ಜೊತೆ ಕರೆಯಲ್ಲಿ
 waitingForVideo | Waiting for the interpreter's video… | दुभाषिये के वीडियो की प्रतीक्षा… | ದುಭಾಷಿಯ ವೀಡಿಯೊಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ…
 audioCallActive | Audio call in progress | ऑडियो कॉल चल रही है | ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ
+devRoomTitle | Test room (debug build only) | टेस्ट रूम (केवल डीबग बिल्ड) | ಟೆಸ್ಟ್ ರೂಮ್ (ಡೀಬಗ್ ಬಿಲ್ಡ್ ಮಾತ್ರ)
+devRoomBody | Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend. | आपके डेवलपमेंट टोकन वाले LiveKit रूम में जुड़ता है, ताकि आप बैकएंड के बिना वीडियो, ऑडियो और चैट टेस्ट कर सकें। | ನಿಮ್ಮ ಡೆವಲಪ್‌ಮೆಂಟ್ ಟೋಕನ್ ನೀಡಿದ LiveKit ರೂಮ್‌ಗೆ ಸೇರುತ್ತದೆ, ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲದೆ ವೀಡಿಯೊ, ಆಡಿಯೊ ಮತ್ತು ಚಾಟ್ ಪರೀಕ್ಷಿಸಲು.

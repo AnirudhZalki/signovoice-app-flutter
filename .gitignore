@@ -56,3 +56,5 @@ android/key.properties
 *.jks
 *.keystore
 ios/Runner/GoogleService-Info.plist
+config/dev.json
+config/prod.json

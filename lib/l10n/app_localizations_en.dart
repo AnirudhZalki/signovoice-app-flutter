@@ -1246,6 +1246,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get audioCallActive => 'Audio call in progress';
 
   @override
+  String get devRoomTitle => 'Test room (debug build only)';
+
+  @override
+  String get devRoomBody =>
+      'Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend.';
+
+  @override
   String get premiumHeader => 'Unlock the full SignoVoice experience';
 
   @override

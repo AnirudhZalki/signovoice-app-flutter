@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
+
 /// Build-time configuration. Values are injected with `--dart-define` or
 /// `--dart-define-from-file=config/dev.json` and are never committed.
 /// See docs/EXTERNAL_SETUP.md. Nothing here is a secret: server-side secrets
@@ -10,6 +12,10 @@ class AppConfig {
 
   /// LiveKit WebSocket URL (wss://...). Tokens are minted by the backend.
   static const String livekitUrl = String.fromEnvironment('LIVEKIT_URL');
+
+  /// DEBUG BUILDS ONLY: a short-lived LiveKit token (from the LiveKit Cloud dashboard) that lets a
+  /// developer join a test room without the backend. Ignored in release builds. Never commit it.
+  static const String livekitDevToken = String.fromEnvironment('LIVEKIT_DEV_TOKEN');
 
   /// Optional remote recognition endpoint (receives landmarks, never images).
   static const String remoteRecognitionUrl =
@@ -35,6 +41,7 @@ class AppConfig {
 
   static bool get hasBackend => apiBaseUrl.startsWith('https://');
   static bool get hasLiveKit => livekitUrl.startsWith('wss://');
+  static bool get hasDevRoom => kDebugMode && hasLiveKit && livekitDevToken.isNotEmpty;
   static bool get hasRemoteRecognition =>
       remoteRecognitionUrl.startsWith('https://');
 

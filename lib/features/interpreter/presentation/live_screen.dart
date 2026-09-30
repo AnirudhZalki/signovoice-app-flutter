@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/errors/failure_mapper.dart';
+import '../../../core/config/app_config.dart';
 import '../../../core/providers.dart';
 import '../../../core/routing/routes.dart';
 import '../../../core/utils/l10n_ext.dart';
@@ -81,6 +82,41 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
                 const SizedBox(width: 12),
                 Expanded(child: Text(call.phase == CallPhase.waiting ? l.callWaiting : l.callConnected, style: text.titleMedium)),
                 const Icon(Icons.chevron_right_rounded),
+              ]),
+            ),
+          ),
+        if (AppConfig.hasDevRoom)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: AppCard(
+              color: Theme.of(context).colorScheme.tertiaryContainer,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Row(children: [const Icon(Icons.bug_report_outlined), const SizedBox(width: 8), Expanded(child: Text(l.devRoomTitle, style: text.titleMedium))]),
+                const SizedBox(height: 6),
+                Text(l.devRoomBody),
+                const SizedBox(height: 12),
+                Wrap(spacing: 8, runSpacing: 8, children: [
+                  FilledButton.icon(
+                    icon: const Icon(Icons.videocam_rounded),
+                    label: Text(l.requestVideoCall),
+                    onPressed: () {
+                      ref.read(callControllerProvider.notifier)
+                        ..reset()
+                        ..joinDevRoom(CallMode.video);
+                      context.push(Routes.interpreterCall);
+                    },
+                  ),
+                  OutlinedButton.icon(
+                    icon: const Icon(Icons.call_rounded),
+                    label: Text(l.requestAudioCall),
+                    onPressed: () {
+                      ref.read(callControllerProvider.notifier)
+                        ..reset()
+                        ..joinDevRoom(CallMode.audio);
+                      context.push(Routes.interpreterCall);
+                    },
+                  ),
+                ]),
               ]),
             ),
           ),

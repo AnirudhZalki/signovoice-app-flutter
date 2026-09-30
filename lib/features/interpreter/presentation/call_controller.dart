@@ -117,6 +117,20 @@ class CallController extends Notifier<CallState> {
     if (!_disposed) state = state.copyWith(phase: CallPhase.failed, failure: f, failureReason: reason);
   }
 
+  /// Debug-only test call: joins the LiveKit room the dev token was issued for (no backend needed).
+  Future<void> joinDevRoom(CallMode mode) async {
+    if (!AppConfig.hasDevRoom || state.phase == CallPhase.requesting || state.inCall) return;
+    state = CallState(phase: CallPhase.requesting, mode: mode, camOn: mode == CallMode.video);
+    final perms = ref.read(permissionServiceProvider);
+    if (await perms.request(AppPermission.microphone) != PermissionState.granted) {
+      return _fail(const Failure(FailureType.permissionDenied));
+    }
+    if (mode == CallMode.video && await perms.request(AppPermission.camera) != PermissionState.granted) {
+      return _fail(const Failure(FailureType.permissionDenied));
+    }
+    await _connect(const CallSession(callId: 'dev', token: AppConfig.livekitDevToken, roomName: 'dev', url: AppConfig.livekitUrl));
+  }
+
   Future<void> request({required CallMode mode, required String language, String? interpreterId, String? note}) async {
     if (state.phase == CallPhase.requesting || state.phase == CallPhase.waiting || state.inCall) return;
     state = CallState(phase: CallPhase.requesting, mode: mode, camOn: mode == CallMode.video);

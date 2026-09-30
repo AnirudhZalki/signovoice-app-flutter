@@ -1247,6 +1247,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get audioCallActive => 'ऑडियो कॉल चल रही है';
 
   @override
+  String get devRoomTitle => 'टेस्ट रूम (केवल डीबग बिल्ड)';
+
+  @override
+  String get devRoomBody =>
+      'आपके डेवलपमेंट टोकन वाले LiveKit रूम में जुड़ता है, ताकि आप बैकएंड के बिना वीडियो, ऑडियो और चैट टेस्ट कर सकें।';
+
+  @override
   String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
 
   @override

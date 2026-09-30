@@ -1250,6 +1250,13 @@ class AppLocalizationsKn extends AppLocalizations {
   String get audioCallActive => 'ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ';
 
   @override
+  String get devRoomTitle => 'ಟೆಸ್ಟ್ ರೂಮ್ (ಡೀಬಗ್ ಬಿಲ್ಡ್ ಮಾತ್ರ)';
+
+  @override
+  String get devRoomBody =>
+      'ನಿಮ್ಮ ಡೆವಲಪ್‌ಮೆಂಟ್ ಟೋಕನ್ ನೀಡಿದ LiveKit ರೂಮ್‌ಗೆ ಸೇರುತ್ತದೆ, ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲದೆ ವೀಡಿಯೊ, ಆಡಿಯೊ ಮತ್ತು ಚಾಟ್ ಪರೀಕ್ಷಿಸಲು.';
+
+  @override
   String get premiumHeader => 'ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ';
 
   @override
