@@ -22,3 +22,14 @@
 # Keep line numbers for readable crash reports (Crashlytics de-obfuscates with the mapping file).
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
+
+# Razorpay checkout (razorpay_flutter) — keep SDK classes and annotations used by its WebView bridge.
+-keepattributes JavascriptInterface
+-keepattributes *Annotation*
+-dontwarn com.razorpay.**
+-keep class com.razorpay.** {*;}
+-optimizations !method/inlining/*
+-keepclasseswithmembers class * {
+  public void onPayment*(...);
+}
+-dontwarn proguard.annotation.**
