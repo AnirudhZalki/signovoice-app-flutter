@@ -1,0 +1,12 @@
+{
+  "API_BASE_URL": "https://REGION-PROJECT.cloudfunctions.net/api",
+  "LIVEKIT_URL": "wss://signovoice-kki1ealv.livekit.cloud",
+  "GOOGLE_SERVER_CLIENT_ID": "",
+  "IAP_MONTHLY_ID": "signovoice_premium_monthly",
+  "IAP_YEARLY_ID": "signovoice_premium_yearly",
+  "SUPPORT_EMAIL": "",
+  "PRIVACY_POLICY_URL": "",
+  "TERMS_URL": "",
+  "ENABLE_RAZORPAY": false,
+  "PAYMENT_METHOD": "googlePlay"
+}

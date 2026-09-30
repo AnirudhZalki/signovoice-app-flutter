@@ -62,6 +62,12 @@ android {
             signingConfig = if (hasReleaseKey) {
                 signingConfigs.getByName("release")
             } else {
+                // A debug-signed .aab is useless for Play, so refuse to build one by accident.
+                // APK builds (e.g. testing on a phone) still fall back to the debug key.
+                val bundling = gradle.startParameter.taskNames.any { it.contains("bundle", ignoreCase = true) }
+                if (bundling) {
+                    throw GradleException("android/key.properties not found: create it (see android/key.properties.example) to sign the .aab for Google Play.")
+                }
                 logger.warn("android/key.properties not found: signing the release build with the DEBUG key. Not uploadable to Google Play.")
                 signingConfigs.getByName("debug")
             }

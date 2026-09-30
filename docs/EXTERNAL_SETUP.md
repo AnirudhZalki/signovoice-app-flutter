@@ -40,3 +40,12 @@ flutter build appbundle --release --dart-define-from-file=config/prod.json
 2. **Recognition quality.** The bundled model has 9 classes trained on 30 sequences each from one signer — expect limited accuracy for other people. See `tools/` and the legacy repo's `collect_data.py`/`train.py` to retrain with more signers, then replace `assets/models/*.onnx` and `labels.json` (label order **must** match training).
 3. **Free trial + purchase flow** with a license-tester account.
 4. **Interpreter call** end-to-end with two devices.
+
+## Building the Play Store bundle (.aab)
+1. `keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload`
+2. `cp android/key.properties.example android/key.properties` and fill it in (git-ignored).
+3. `cp config/prod.example.json config/prod.json` and fill in `API_BASE_URL` etc. Keep `ENABLE_RAZORPAY` false for Play.
+4. Bump the number after `+` in `pubspec.yaml` `version:` for every upload.
+5. `flutter build appbundle --release --dart-define-from-file=config/prod.json`
+6. Output: `build/app/outputs/bundle/release/app-release.aab` — upload it in Play Console (internal testing first).
+   Without `key.properties` the bundle build now stops with an error instead of debug-signing.
