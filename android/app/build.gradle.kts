@@ -25,12 +25,15 @@ android {
     namespace = "com.anirudhzalki.signovoice"
     // Flutter 3.47 defaults: compileSdk 36, targetSdk 36 (current Play requirement), minSdk 24
     // (MediaPipe tasks + ONNX Runtime need >= 24).
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        // Required by flutter_local_notifications (java.time backport).
+        isCoreLibraryDesugaringEnabled = true
     }
 
     defaultConfig {
@@ -73,6 +76,10 @@ kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
 }
 
 flutter {
