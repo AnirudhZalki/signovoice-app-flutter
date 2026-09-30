@@ -1,0 +1,13 @@
+{
+  "id": "signovoice_transformer_419",
+  "version": 2,
+  "engine": "tflite",
+  "model": "signovoice_model.tflite",
+  "classes": 419,
+  "labelsFile": "signovoice_model_labels.txt",
+  "sequenceLength": 30,
+  "featureCount": 126,
+  "hands": 2,
+  "preprocess": "raw",
+  "handOrder": "imageXAscending"
+}

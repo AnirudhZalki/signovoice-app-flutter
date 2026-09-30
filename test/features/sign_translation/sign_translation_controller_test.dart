@@ -32,6 +32,10 @@ class _Engine implements SignRecognitionEngine {
   @override
   List<String> get labels => const ['Hello'];
   @override
+  int get sequenceLength => 30;
+  @override
+  HandFeatureSpec get featureSpec => const HandFeatureSpec();
+  @override
   Future<void> initialize() async {}
   @override
   Future<SignPrediction?> predict(List<List<double>> window) async =>
@@ -93,7 +97,7 @@ ProviderContainer _container({required SignRecognitionEngine engine, _Tts? tts, 
     analyticsServiceProvider.overrideWithValue(analytics ?? NoopAnalyticsService()),
     ttsServiceProvider.overrideWithValue(tts ?? _Tts()),
     modelRepositoryProvider.overrideWithValue(_Models(engine)),
-    landmarkSourceFactoryProvider.overrideWithValue(({required bool mirrorX}) => _Source()),
+    landmarkSourceFactoryProvider.overrideWithValue(({required HandFeatureSpec spec}) => _Source()),
   ]);
   addTearDown(c.dispose);
   return c;

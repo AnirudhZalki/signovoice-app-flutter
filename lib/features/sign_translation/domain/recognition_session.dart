@@ -30,8 +30,9 @@ class RecognitionSession {
     this.glossProcessor = const GlossProcessor(),
     this.threshold = AppConstants.defaultConfidenceThreshold,
     this.minHandPresence = AppConstants.minHandPresence,
+    this.minMargin = 0.10,
     DateTime Function()? clock,
-  })  : buffer = buffer ?? LandmarkSequenceBuffer(length: AppConstants.sequenceLength),
+  })  : buffer = buffer ?? LandmarkSequenceBuffer(length: engine.sequenceLength),
         smoother = smoother ?? TemporalSmoother(),
         _clock = clock ?? DateTime.now;
 
@@ -43,6 +44,9 @@ class RecognitionSession {
 
   double threshold;
   final double minHandPresence;
+
+  /// Required lead of the top sign over the runner-up.
+  final double minMargin;
 
   bool _inFlight = false;
 
@@ -62,7 +66,7 @@ class RecognitionSession {
     _inFlight = true;
     try {
       final prediction = await engine.predict(buffer.toWindow());
-      final accepted = smoother.add(prediction, threshold: threshold, now: now);
+      final accepted = smoother.add(prediction, threshold: threshold, now: now, minMargin: minMargin);
       return RecognitionUpdate(
         handVisible: true,
         raw: prediction,

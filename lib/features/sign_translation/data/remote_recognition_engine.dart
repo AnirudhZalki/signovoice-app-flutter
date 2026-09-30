@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import '../../../core/errors/failure.dart';
 import '../../../core/errors/failure_mapper.dart';
 import '../../../core/services/api_client.dart';
+import '../domain/hand_frame.dart';
 import '../domain/model_manifest.dart';
 import '../domain/recognition_engine.dart';
 import '../domain/sign_prediction.dart';
@@ -31,6 +32,10 @@ class RemoteRecognitionEngine implements SignRecognitionEngine {
   bool get requiresInternet => true;
   @override
   List<String> get labels => manifest.labels;
+  @override
+  int get sequenceLength => manifest.sequenceLength;
+  @override
+  HandFeatureSpec get featureSpec => manifest.spec;
 
   @override
   Future<void> initialize() async {

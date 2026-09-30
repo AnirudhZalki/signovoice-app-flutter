@@ -20,6 +20,13 @@ class SignPrediction extends Equatable {
   final Map<String, double> probabilities;
   final DateTime? timestamp;
 
+  /// Gap between the best and second-best probability (1.0 when only one class is known).
+  double get margin {
+    if (probabilities.length < 2) return 1.0;
+    final v = probabilities.values.toList()..sort((a, b) => b.compareTo(a));
+    return v[0] - v[1];
+  }
+
   /// Top-[n] alternatives, most likely first.
   List<MapEntry<String, double>> topK(int n) {
     final e = probabilities.entries.toList()..sort((a, b) => b.value.compareTo(a.value));

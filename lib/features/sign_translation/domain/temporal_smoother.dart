@@ -31,13 +31,15 @@ class TemporalSmoother {
   }
 
   /// Returns the newly accepted label, or null.
-  String? add(SignPrediction? p, {required double threshold, required DateTime now}) {
+  String? add(SignPrediction? p, {required double threshold, required DateTime now, double minMargin = 0}) {
     if (p == null) {
       noteNoHand(now);
       return null;
     }
     _noHandSince = null;
-    _recent.add(p.confidence >= threshold ? p.label : null);
+    // A vote counts only if the model is confident AND clearly prefers this sign over the runner-up
+    // (with hundreds of classes a flat distribution means "not sure").
+    _recent.add(p.confidence >= threshold && p.margin >= minMargin ? p.label : null);
     if (_recent.length > windowSize) _recent.removeAt(0);
 
     final counts = <String, int>{};

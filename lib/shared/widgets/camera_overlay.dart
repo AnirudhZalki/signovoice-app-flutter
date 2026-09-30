@@ -89,7 +89,7 @@ class _CameraOverlayState extends State<CameraOverlay> with SingleTickerProvider
             builder: (context, _) => CustomPaint(
               size: Size.infinite,
               painter: _OverlayPainter(
-                points: widget.overlay?.points ?? const [],
+                hands: widget.overlay?.hands ?? const [],
                 mirror: widget.mirror,
                 sweep: animate ? _sweep.value : null,
                 bracketColor: widget.scanning ? AppColors.accent : AppColors.success,
@@ -103,8 +103,8 @@ class _CameraOverlayState extends State<CameraOverlay> with SingleTickerProvider
 }
 
 class _OverlayPainter extends CustomPainter {
-  _OverlayPainter({required this.points, required this.mirror, required this.sweep, required this.bracketColor});
-  final List<({double x, double y})> points;
+  _OverlayPainter({required this.hands, required this.mirror, required this.sweep, required this.bracketColor});
+  final List<List<({double x, double y})>> hands;
   final bool mirror;
   final double? sweep;
   final Color bracketColor;
@@ -140,7 +140,8 @@ class _OverlayPainter extends CustomPainter {
       );
     }
 
-    if (points.length == 21) {
+    for (final points in hands) {
+      if (points.length != 21) continue;
       Offset o(({double x, double y}) p) => Offset((mirror ? 1 - p.x : p.x) * size.width, p.y * size.height);
       final line = Paint()
         ..color = Colors.white.withValues(alpha: 0.9)

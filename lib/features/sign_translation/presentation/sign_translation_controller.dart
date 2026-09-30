@@ -39,8 +39,8 @@ final modelRepositoryProvider =
     Provider<ModelRepository>((ref) => ModelRepository(tokenProvider: ref.watch(authTokenProvider)));
 
 /// Factory so tests (and future platforms) can supply a different landmark source.
-final landmarkSourceFactoryProvider = Provider<HandLandmarkSource Function({required bool mirrorX})>(
-  (ref) => ({required bool mirrorX}) => MediaPipeHandLandmarkSource(mirrorX: mirrorX),
+final landmarkSourceFactoryProvider = Provider<HandLandmarkSource Function({required HandFeatureSpec spec})>(
+  (ref) => ({required HandFeatureSpec spec}) => MediaPipeHandLandmarkSource(spec: spec),
 );
 
 final translationEngineProvider = Provider<TranslationEngine>((ref) {
@@ -139,6 +139,7 @@ class SignTranslationController extends Notifier<SignTranslationState> {
   StreamSubscription<TtsState>? _ttsSub;
   Timer? _frameTimer;
   Timer? _inferTimer;
+  HandFrame _emptyFrame = HandFrame.empty;
   HandFrame _latest = HandFrame.empty;
   DateTime _latestAt = DateTime.fromMillisecondsSinceEpoch(0);
   DateTime _lastCameraFeed = DateTime.fromMillisecondsSinceEpoch(0);
@@ -192,7 +193,9 @@ class SignTranslationController extends Notifier<SignTranslationState> {
         await engine.initialize(); // throws the stored failure
       }
       _engine = engine;
-      _source = ref.read(landmarkSourceFactoryProvider)(mirrorX: prefs.mirrorCamera);
+      _emptyFrame = HandFrame.emptyFor(engine.featureSpec.featureCount);
+      _latest = _emptyFrame;
+      _source = ref.read(landmarkSourceFactoryProvider)(spec: engine.featureSpec.copyWith(mirrorX: prefs.mirrorCamera));
       _session = RecognitionSession(engine: engine, threshold: prefs.confidenceThreshold);
       _frameSub = _source!.frames.listen((f) {
         _latest = f;
@@ -222,7 +225,7 @@ class SignTranslationController extends Notifier<SignTranslationState> {
     _frameTimer = Timer.periodic(AppConstants.frameInterval, (_) {
       if (state.paused || _session == null) return;
       final fresh = DateTime.now().difference(_latestAt) < const Duration(milliseconds: 250);
-      _session!.pushFrame(fresh ? _latest : HandFrame.empty);
+      _session!.pushFrame(fresh ? _latest : _emptyFrame);
     });
     _inferTimer = Timer.periodic(AppConstants.inferenceInterval, (_) => _tick());
   }

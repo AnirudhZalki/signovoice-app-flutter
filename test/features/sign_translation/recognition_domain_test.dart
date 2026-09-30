@@ -26,6 +26,10 @@ class ScriptedEngine implements SignRecognitionEngine {
   @override
   List<String> get labels => const [];
   @override
+  int get sequenceLength => 30;
+  @override
+  HandFeatureSpec get featureSpec => const HandFeatureSpec();
+  @override
   Future<void> initialize() async {}
   @override
   Future<SignPrediction?> predict(List<List<double>> window) async => script[calls++ % script.length];

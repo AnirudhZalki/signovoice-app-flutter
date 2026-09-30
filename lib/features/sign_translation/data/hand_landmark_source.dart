@@ -24,11 +24,12 @@ abstract class HandLandmarkSource {
 
 /// Latest overlay points, without forcing a rebuild per frame.
 class ValueStreamOverlay {
-  List<({double x, double y})> points = const [];
+  /// One entry per detected hand (21 points each).
+  List<List<({double x, double y})>> hands = const [];
   final StreamController<void> _c = StreamController<void>.broadcast();
   Stream<void> get changes => _c.stream;
-  void set(List<({double x, double y})> p) {
-    points = p;
+  void set(List<List<({double x, double y})>> p) {
+    hands = p;
     if (!_c.isClosed) _c.add(null);
   }
 
@@ -37,21 +38,21 @@ class ValueStreamOverlay {
 
 /// MediaPipe Hand Landmarker (Android, on-device, background thread).
 class MediaPipeHandLandmarkSource implements HandLandmarkSource {
-  MediaPipeHandLandmarkSource({required this.mirrorX}) {
+  MediaPipeHandLandmarkSource({required this.spec}) {
     if (!isSupported) {
       throw const Failure(FailureType.modelUnavailable, debugDetail: 'hand landmarks unsupported on platform');
     }
     _plugin = HandLandmarkerPlugin.create(
-      numHands: 1,
+      numHands: spec.hands,
       minHandDetectionConfidence: 0.7,
       delegate: HandLandmarkerDelegate.gpu,
     );
     _sub = _plugin.landmarkStream.listen(_onHands, onError: (Object _) {
-      _controller.add(HandFrame.empty);
+      _controller.add(HandFrame.emptyFor(spec.featureCount));
     });
   }
 
-  final bool mirrorX;
+  final HandFeatureSpec spec;
   late final HandLandmarkerPlugin _plugin;
   StreamSubscription<List<Hand>>? _sub;
   final StreamController<HandFrame> _controller = StreamController<HandFrame>.broadcast();
@@ -69,14 +70,21 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
   ValueStreamOverlay get overlay => _overlay;
 
   void _onHands(List<Hand> hands) {
-    if (hands.isEmpty || hands.first.landmarks.length != 21) {
+    final valid = [
+      for (final h in hands)
+        if (h.landmarks.length == 21) h.landmarks,
+    ];
+    if (valid.isEmpty) {
       _overlay.set(const []);
-      _controller.add(HandFrame.empty);
+      _controller.add(HandFrame.emptyFor(spec.featureCount));
       return;
     }
-    final lms = hands.first.landmarks;
-    _overlay.set([for (final l in lms) (x: l.x, y: l.y)]);
-    _controller.add(HandFrame.fromLandmarks([for (final l in lms) (x: l.x, y: l.y, z: l.z)], mirrorX: mirrorX));
+    _overlay.set([
+      for (final h in valid) [for (final l in h) (x: l.x, y: l.y)],
+    ]);
+    _controller.add(HandFrame.fromHands([
+      for (final h in valid) [for (final l in h) (x: l.x, y: l.y, z: l.z)],
+    ], spec));
   }
 
   @override

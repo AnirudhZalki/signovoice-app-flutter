@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter_onnxruntime/flutter_onnxruntime.dart';
 
 import '../../../core/errors/failure.dart';
+import '../domain/hand_frame.dart';
 import '../domain/model_manifest.dart';
 import '../domain/recognition_engine.dart';
 import '../domain/sign_prediction.dart';
@@ -27,6 +28,10 @@ class LocalOnnxRecognitionEngine implements SignRecognitionEngine {
   bool get requiresInternet => false;
   @override
   List<String> get labels => manifest.labels;
+  @override
+  int get sequenceLength => manifest.sequenceLength;
+  @override
+  HandFeatureSpec get featureSpec => manifest.spec;
 
   @override
   Future<void> initialize() async {

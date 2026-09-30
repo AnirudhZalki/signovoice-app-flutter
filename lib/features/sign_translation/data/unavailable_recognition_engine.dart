@@ -1,4 +1,5 @@
 import '../../../core/errors/failure.dart';
+import '../domain/hand_frame.dart';
 import '../domain/recognition_engine.dart';
 import '../domain/sign_prediction.dart';
 
@@ -16,6 +17,10 @@ class UnavailableRecognitionEngine implements SignRecognitionEngine {
   bool get requiresInternet => false;
   @override
   List<String> get labels => const [];
+  @override
+  int get sequenceLength => 30;
+  @override
+  HandFeatureSpec get featureSpec => const HandFeatureSpec();
   @override
   Future<void> initialize() async => throw failure;
   @override

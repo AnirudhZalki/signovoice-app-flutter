@@ -76,10 +76,11 @@ class PracticeController extends Notifier<PracticeState> {
   StreamSubscription<HandFrame>? _sub;
   Timer? _frameTimer;
   Timer? _tickTimer;
+  HandFrame _emptyFrame = HandFrame.empty;
   HandFrame _latest = HandFrame.empty;
   DateTime _latestAt = DateTime.fromMillisecondsSinceEpoch(0);
   DateTime _lastFeed = DateTime.fromMillisecondsSinceEpoch(0);
-  final LandmarkSequenceBuffer _buffer = LandmarkSequenceBuffer(length: AppConstants.sequenceLength);
+  LandmarkSequenceBuffer _buffer = LandmarkSequenceBuffer(length: AppConstants.sequenceLength);
   final List<SignPrediction> _predictions = [];
   bool _inFlight = false;
   bool _disposed = false;
@@ -113,14 +114,17 @@ class PracticeController extends Notifier<PracticeState> {
       }
       if (engine.status != EngineStatus.ready) await engine.initialize();
       _engine = engine;
-      _source = ref.read(landmarkSourceFactoryProvider)(mirrorX: prefs.mirrorCamera);
+      _emptyFrame = HandFrame.emptyFor(engine.featureSpec.featureCount);
+      _latest = _emptyFrame;
+      _buffer = LandmarkSequenceBuffer(length: engine.sequenceLength);
+      _source = ref.read(landmarkSourceFactoryProvider)(spec: engine.featureSpec.copyWith(mirrorX: prefs.mirrorCamera));
       _sub = _source!.frames.listen((f) {
         _latest = f;
         _latestAt = DateTime.now();
       });
       _frameTimer = Timer.periodic(AppConstants.frameInterval, (_) {
         final fresh = DateTime.now().difference(_latestAt) < const Duration(milliseconds: 250);
-        final f = fresh ? _latest : HandFrame.empty;
+        final f = fresh ? _latest : _emptyFrame;
         _buffer.add(f);
         if (!_disposed && state.handVisible != f.hasHand && state.phase != PracticePhase.result) {
           state = state.copyWith(handVisible: f.hasHand);
