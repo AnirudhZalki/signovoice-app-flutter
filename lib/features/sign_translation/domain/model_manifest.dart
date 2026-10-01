@@ -20,6 +20,7 @@ class ModelManifest extends Equatable {
     this.hands = 1,
     this.preprocess = FeaturePreprocess.raw,
     this.handOrder = HandOrder.imageXAscending,
+    this.mirrorX,
   });
 
   final String id;
@@ -34,9 +35,14 @@ class ModelManifest extends Equatable {
   final FeaturePreprocess preprocess;
   final HandOrder handOrder;
 
+  /// When set, the model needs exactly this x-mirroring (the user's mirror setting is ignored).
+  final bool? mirrorX;
+
   String get assetPath => 'assets/models/$modelFile';
 
-  HandFeatureSpec get spec => HandFeatureSpec(hands: hands, preprocess: preprocess, order: handOrder);
+  HandFeatureSpec get spec => mirrorX == null
+      ? HandFeatureSpec(hands: hands, preprocess: preprocess, order: handOrder)
+      : HandFeatureSpec(hands: hands, preprocess: preprocess, order: handOrder, mirrorX: mirrorX!, lockMirror: true);
 
   /// [labels] may be supplied separately (a `labelsFile`), otherwise they come from the JSON.
   factory ModelManifest.fromJson(Map<String, dynamic> j, {List<String>? labels}) {
@@ -58,10 +64,11 @@ class ModelManifest extends Equatable {
       hands: hands,
       preprocess: e(FeaturePreprocess.values, j['preprocess'], FeaturePreprocess.raw),
       handOrder: e(HandOrder.values, j['handOrder'], HandOrder.imageXAscending),
+      mirrorX: j['mirrorX'] as bool?,
     );
   }
 
   @override
   List<Object?> get props =>
-      [id, version, modelFile, inputName, sequenceLength, featureCount, labels, engine, hands, preprocess, handOrder];
+      [id, version, modelFile, inputName, sequenceLength, featureCount, labels, engine, hands, preprocess, handOrder, mirrorX];
 }

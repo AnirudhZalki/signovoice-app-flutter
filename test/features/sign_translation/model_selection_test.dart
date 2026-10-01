@@ -31,6 +31,7 @@ LandmarkPoint p(double x, double y, [double z = 0]) => (x: x, y: y, z: z);
 List<LandmarkPoint> hand(double x0, {double y0 = 0.5}) => [for (var i = 0; i < 21; i++) p(x0 + i * 0.001, y0 + i * 0.002, 0.01 * i)];
 
 void main() {
+  _mirrorLockTests();
   group('model selection', () {
     ModelRepository repo(Map<String, String> files) => ModelRepository(tokenProvider: () async => null, bundle: _Bundle(files));
 
@@ -133,4 +134,14 @@ void main() {
   });
 
   test('RecognitionMode enum unchanged', () => expect(RecognitionMode.values.length, 2));
+}
+
+void _mirrorLockTests() {
+  test('manifest mirrorX pins the mirroring; the user setting only applies when unset', () {
+    final base = {'model': 'm.tflite', 'engine': 'tflite', 'hands': 2};
+    final free = ModelManifest.fromJson(base, labels: const ['a']).spec;
+    expect(free.copyWith(mirrorX: false).mirrorX, isFalse);
+    final locked = ModelManifest.fromJson({...base, 'mirrorX': false}, labels: const ['a']).spec;
+    expect(locked.copyWith(mirrorX: true).mirrorX, isFalse);
+  });
 }

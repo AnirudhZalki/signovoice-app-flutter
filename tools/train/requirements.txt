@@ -1,0 +1,5 @@
+numpy>=1.26
+opencv-python>=4.9
+mediapipe>=0.10.14,<0.10.30
+tensorflow>=2.16,<2.20
+scikit-learn>=1.4

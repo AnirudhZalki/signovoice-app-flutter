@@ -34,6 +34,7 @@ class HandFeatureSpec extends Equatable {
     this.preprocess = FeaturePreprocess.raw,
     this.order = HandOrder.imageXAscending,
     this.mirrorX = true,
+    this.lockMirror = false,
   });
 
   final int hands;
@@ -43,13 +44,20 @@ class HandFeatureSpec extends Equatable {
   /// Flip x (1 - x) — the original model was trained on a mirrored webcam feed.
   final bool mirrorX;
 
+  /// The model was trained with a fixed mirroring, so the user setting must not override it.
+  final bool lockMirror;
+
   int get featureCount => hands * HandFrame.perHand;
 
-  HandFeatureSpec copyWith({bool? mirrorX}) =>
-      HandFeatureSpec(hands: hands, preprocess: preprocess, order: order, mirrorX: mirrorX ?? this.mirrorX);
+  HandFeatureSpec copyWith({bool? mirrorX}) => HandFeatureSpec(
+      hands: hands,
+      preprocess: preprocess,
+      order: order,
+      mirrorX: lockMirror ? this.mirrorX : (mirrorX ?? this.mirrorX),
+      lockMirror: lockMirror);
 
   @override
-  List<Object?> get props => [hands, preprocess, order, mirrorX];
+  List<Object?> get props => [hands, preprocess, order, mirrorX, lockMirror];
 }
 
 /// Landmarks for one video frame: `hands × 21 × (x, y, z)` floats, zeros for missing hands.
