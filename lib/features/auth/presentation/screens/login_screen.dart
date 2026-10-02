@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -67,7 +68,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     } catch (e) {
       final f = toFailure(e);
       if (mounted && f.type != FailureType.cancelled) {
-        setState(() => _error = authFailureMessage(context.l10n, f));
+        setState(() => _error = authFailureMessage(context.l10n, f) + (kDebugMode && f.debugDetail != null ? '\n[debug] ${f.debugDetail}' : ''));
       }
     } finally {
       if (mounted) setState(() => _busy = false);

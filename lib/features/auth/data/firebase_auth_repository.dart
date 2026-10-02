@@ -78,7 +78,9 @@ class FirebaseAuthRepository implements AuthRepository {
           if (e.code == GoogleSignInExceptionCode.canceled) {
             throw const Failure(FailureType.cancelled, code: 'google-cancelled');
           }
-          throw Failure(FailureType.unknown, debugDetail: e.code.name);
+          // Typical causes: SHA-1/SHA-256 not added to the Firebase Android app, Google provider not enabled, or an
+          // outdated google-services.json (re-download it after changing either). See docs/FIREBASE_SETUP.md.
+          throw Failure(FailureType.unknown, debugDetail: 'google ${e.code.name}: ${e.description ?? ''}');
         }
         final idToken = account.authentication.idToken;
         if (idToken == null) throw const Failure(FailureType.unknown, debugDetail: 'no google idToken');

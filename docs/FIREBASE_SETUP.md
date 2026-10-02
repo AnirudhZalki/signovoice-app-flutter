@@ -18,3 +18,10 @@
 6. Run: `flutter run --dart-define-from-file=config/dev.json` (copy `config/dev.example.json`).
 
 Without `google-services.json` the app still runs: sign-in buttons show "This service isn't set up yet" and guest mode works.
+
+## Google sign-in checklist (if the button shows an error)
+In debug builds the error text ends with `[debug] …` telling you the cause:
+- `notConfigured` / "firebase not configured": `android/app/google-services.json` is missing or for another package. The old web projects in the other repos (`inclusisignbyzynoxgeni`) are a different Firebase project and cannot be reused.
+- `google clientConfigurationError` / developer error: the **SHA-1/SHA-256** of the key you signed with is not on the Firebase Android app, or the Google provider is not enabled. Add them, then **re-download** `google-services.json` (it must now contain an `oauth_client` of type 3 = web client).
+- No `GOOGLE_SERVER_CLIENT_ID` needed when that web client is in `google-services.json`; otherwise pass the Web client ID with `--dart-define`.
+- Email/password and phone also need their provider enabled; phone additionally needs SHA-256 and Play Integrity/reCAPTCHA set up.
