@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers.dart';
 import '../data/http_interpreter_repository.dart';
 import '../data/livekit_call_service.dart';
+import '../data/livekit_token_service.dart';
 import '../domain/call_service.dart';
 import '../domain/interpreter_models.dart';
 import '../domain/interpreter_repository.dart';
@@ -22,3 +23,6 @@ final interpretersProvider = StreamProvider.autoDispose.family<List<Interpreter>
     await Future<void>.delayed(const Duration(seconds: 15));
   }
 });
+
+final liveKitTokenServiceProvider = Provider<LiveKitTokenService>(
+    (ref) => LiveKitTokenService(authToken: ref.read(authTokenProvider)));

@@ -1265,6 +1265,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend.';
 
   @override
+  String get roomTitle => 'Join a live room';
+
+  @override
+  String get roomBody =>
+      'Enter the same room code as the other person (or interpreter) to start a live call.';
+
+  @override
+  String get roomCodeLabel => 'Room code';
+
+  @override
+  String get roomCodeInvalid => 'Use 3–40 letters, numbers, - or _';
+
+  @override
   String get premiumHeader => 'Unlock the full SignoVoice experience';
 
   @override

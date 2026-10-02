@@ -8,5 +8,6 @@
   "PRIVACY_POLICY_URL": "",
   "TERMS_URL": "",
   "ENABLE_RAZORPAY": false,
-  "PAYMENT_METHOD": "googlePlay"
+  "PAYMENT_METHOD": "googlePlay",
+  "LIVEKIT_TOKEN_URL": "https://signovoice-livekkit-server.onrender.com/token"
 }

@@ -17,6 +17,7 @@ import '../../auth/presentation/auth_controller.dart';
 import '../domain/interpreter_models.dart';
 import 'call_controller.dart';
 import 'interpreter_providers.dart';
+import 'room_card.dart';
 
 String interpreterStatusLabel(AppLocalizations l, InterpreterStatus s) => switch (s) {
       InterpreterStatus.available => l.statusAvailable,
@@ -85,6 +86,7 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
               ]),
             ),
           ),
+        if (AppConfig.hasTokenServer) const RoomCard(),
         if (AppConfig.hasDevRoom)
           Padding(
             padding: const EdgeInsets.only(bottom: 16),

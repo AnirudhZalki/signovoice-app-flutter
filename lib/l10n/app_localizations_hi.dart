@@ -1266,6 +1266,19 @@ class AppLocalizationsHi extends AppLocalizations {
       'आपके डेवलपमेंट टोकन वाले LiveKit रूम में जुड़ता है, ताकि आप बैकएंड के बिना वीडियो, ऑडियो और चैट टेस्ट कर सकें।';
 
   @override
+  String get roomTitle => 'लाइव रूम में शामिल हों';
+
+  @override
+  String get roomBody =>
+      'लाइव कॉल शुरू करने के लिए दूसरे व्यक्ति (या दुभाषिये) वाला ही रूम कोड दर्ज करें।';
+
+  @override
+  String get roomCodeLabel => 'रूम कोड';
+
+  @override
+  String get roomCodeInvalid => '3–40 अक्षर, अंक, - या _ का उपयोग करें';
+
+  @override
   String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
 
   @override

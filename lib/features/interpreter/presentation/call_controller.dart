@@ -131,6 +131,32 @@ class CallController extends Notifier<CallState> {
     await _connect(const CallSession(callId: 'dev', token: AppConfig.livekitDevToken, roomName: 'dev', url: AppConfig.livekitUrl));
   }
 
+  /// Join a room by code through the standalone LiveKit token server. Both people enter the same code.
+  Future<void> joinRoom(CallMode mode, String room) async {
+    if (!AppConfig.hasTokenServer || state.phase == CallPhase.requesting || state.inCall) return;
+    state = CallState(phase: CallPhase.requesting, mode: mode, camOn: mode == CallMode.video);
+    if (!(ref.read(isOnlineProvider).value ?? true)) return _fail(const Failure(FailureType.offline));
+    final perms = ref.read(permissionServiceProvider);
+    final mic = await perms.request(AppPermission.microphone);
+    if (mic != PermissionState.granted) {
+      return _fail(Failure(mic == PermissionState.permanentlyDenied ? FailureType.permissionPermanentlyDenied : FailureType.permissionDenied));
+    }
+    if (mode == CallMode.video) {
+      final cam = await perms.request(AppPermission.camera);
+      if (cam != PermissionState.granted) {
+        return _fail(Failure(cam == PermissionState.permanentlyDenied ? FailureType.permissionPermanentlyDenied : FailureType.permissionDenied));
+      }
+    }
+    try {
+      final auth = ref.read(authControllerProvider);
+      final identity = '${auth.uid}-${DateTime.now().millisecondsSinceEpoch % 100000}';
+      final session = await ref.read(liveKitTokenServiceProvider).fetch(room: room, identity: identity, name: auth.user?.displayName);
+      await _connect(session);
+    } catch (e) {
+      _fail(toFailure(e));
+    }
+  }
+
   Future<void> request({required CallMode mode, required String language, String? interpreterId, String? note}) async {
     if (state.phase == CallPhase.requesting || state.phase == CallPhase.waiting || state.inCall) return;
     state = CallState(phase: CallPhase.requesting, mode: mode, camOn: mode == CallMode.video);

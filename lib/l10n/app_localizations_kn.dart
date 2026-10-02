@@ -1269,6 +1269,19 @@ class AppLocalizationsKn extends AppLocalizations {
       'ನಿಮ್ಮ ಡೆವಲಪ್‌ಮೆಂಟ್ ಟೋಕನ್ ನೀಡಿದ LiveKit ರೂಮ್‌ಗೆ ಸೇರುತ್ತದೆ, ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲದೆ ವೀಡಿಯೊ, ಆಡಿಯೊ ಮತ್ತು ಚಾಟ್ ಪರೀಕ್ಷಿಸಲು.';
 
   @override
+  String get roomTitle => 'ಲೈವ್ ರೂಮ್‌ಗೆ ಸೇರಿ';
+
+  @override
+  String get roomBody =>
+      'ಲೈವ್ ಕರೆ ಪ್ರಾರಂಭಿಸಲು ಇನ್ನೊಬ್ಬ ವ್ಯಕ್ತಿ (ಅಥವಾ ಇಂಟರ್ಪ್ರಿಟರ್) ಬಳಸುವ ಅದೇ ರೂಮ್ ಕೋಡ್ ನಮೂದಿಸಿ.';
+
+  @override
+  String get roomCodeLabel => 'ರೂಮ್ ಕೋಡ್';
+
+  @override
+  String get roomCodeInvalid => '3–40 ಅಕ್ಷರಗಳು, ಸಂಖ್ಯೆಗಳು, - ಅಥವಾ _ ಬಳಸಿ';
+
+  @override
   String get premiumHeader => 'ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ';
 
   @override

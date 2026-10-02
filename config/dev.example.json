@@ -10,5 +10,6 @@
   "TERMS_URL": "",
   "LIVEKIT_DEV_TOKEN": "",
   "ENABLE_RAZORPAY": true,
-  "PAYMENT_METHOD": "razorpay"
+  "PAYMENT_METHOD": "razorpay",
+  "LIVEKIT_TOKEN_URL": "https://signovoice-livekkit-server.onrender.com/token"
 }

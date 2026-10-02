@@ -54,3 +54,7 @@ waitingForVideo | Waiting for the interpreter's video… | दुभाषिय
 audioCallActive | Audio call in progress | ऑडियो कॉल चल रही है | ಆಡಿಯೊ ಕರೆ ನಡೆಯುತ್ತಿದೆ
 devRoomTitle | Test room (debug build only) | टेस्ट रूम (केवल डीबग बिल्ड) | ಟೆಸ್ಟ್ ರೂಮ್ (ಡೀಬಗ್ ಬಿಲ್ಡ್ ಮಾತ್ರ)
 devRoomBody | Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend. | आपके डेवलपमेंट टोकन वाले LiveKit रूम में जुड़ता है, ताकि आप बैकएंड के बिना वीडियो, ऑडियो और चैट टेस्ट कर सकें। | ನಿಮ್ಮ ಡೆವಲಪ್‌ಮೆಂಟ್ ಟೋಕನ್ ನೀಡಿದ LiveKit ರೂಮ್‌ಗೆ ಸೇರುತ್ತದೆ, ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲದೆ ವೀಡಿಯೊ, ಆಡಿಯೊ ಮತ್ತು ಚಾಟ್ ಪರೀಕ್ಷಿಸಲು.
+roomTitle | Join a live room | लाइव रूम में शामिल हों | ಲೈವ್ ರೂಮ್‌ಗೆ ಸೇರಿ
+roomBody | Enter the same room code as the other person (or interpreter) to start a live call. | लाइव कॉल शुरू करने के लिए दूसरे व्यक्ति (या दुभाषिये) वाला ही रूम कोड दर्ज करें। | ಲೈವ್ ಕರೆ ಪ್ರಾರಂಭಿಸಲು ಇನ್ನೊಬ್ಬ ವ್ಯಕ್ತಿ (ಅಥವಾ ಇಂಟರ್ಪ್ರಿಟರ್) ಬಳಸುವ ಅದೇ ರೂಮ್ ಕೋಡ್ ನಮೂದಿಸಿ.
+roomCodeLabel | Room code | रूम कोड | ರೂಮ್ ಕೋಡ್
+roomCodeInvalid | Use 3–40 letters, numbers, - or _ | 3–40 अक्षर, अंक, - या _ का उपयोग करें | 3–40 ಅಕ್ಷರಗಳು, ಸಂಖ್ಯೆಗಳು, - ಅಥವಾ _ ಬಳಸಿ

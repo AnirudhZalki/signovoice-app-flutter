@@ -2392,6 +2392,30 @@ abstract class AppLocalizations {
   /// **'Joins the LiveKit room your development token was issued for, so you can test video, audio and chat without the backend.'**
   String get devRoomBody;
 
+  /// No description provided for @roomTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a live room'**
+  String get roomTitle;
+
+  /// No description provided for @roomBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the same room code as the other person (or interpreter) to start a live call.'**
+  String get roomBody;
+
+  /// No description provided for @roomCodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Room code'**
+  String get roomCodeLabel;
+
+  /// No description provided for @roomCodeInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Use 3–40 letters, numbers, - or _'**
+  String get roomCodeInvalid;
+
   /// No description provided for @premiumHeader.
   ///
   /// In en, this message translates to:

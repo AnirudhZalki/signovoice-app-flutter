@@ -13,6 +13,13 @@ class AppConfig {
   /// LiveKit WebSocket URL (wss://...). Tokens are minted by the backend.
   static const String livekitUrl = String.fromEnvironment('LIVEKIT_URL');
 
+  /// Standalone LiveKit token server (e.g. the Render service). The app asks it for a token for a room
+  /// code and joins directly. See docs/LIVEKIT_SETUP.md for the request/response shape it accepts.
+  static const String livekitTokenUrl = String.fromEnvironment(
+    'LIVEKIT_TOKEN_URL',
+    defaultValue: 'https://signovoice-livekkit-server.onrender.com/token',
+  );
+
   /// DEBUG BUILDS ONLY: a short-lived LiveKit token (from the LiveKit Cloud dashboard) that lets a
   /// developer join a test room without the backend. Ignored in release builds. Never commit it.
   static const String livekitDevToken = String.fromEnvironment('LIVEKIT_DEV_TOKEN');
@@ -50,6 +57,7 @@ class AppConfig {
 
   static bool get hasBackend => apiBaseUrl.startsWith('https://');
   static bool get hasLiveKit => livekitUrl.startsWith('wss://');
+  static bool get hasTokenServer => hasLiveKit && livekitTokenUrl.startsWith('https://');
   static bool get hasDevRoom => kDebugMode && hasLiveKit && livekitDevToken.isNotEmpty;
   static bool get hasRemoteRecognition =>
       remoteRecognitionUrl.startsWith('https://');
