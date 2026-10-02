@@ -84,6 +84,46 @@ class CallRequestState extends Equatable {
   List<Object?> get props => [requestId, status, session, queuePosition];
 }
 
+/// The signed-in person's interpreter profile (approved interpreters see the desk).
+class InterpreterMe extends Equatable {
+  const InterpreterMe({required this.approved, this.status = InterpreterStatus.offline, this.name = ''});
+  final bool approved;
+  final InterpreterStatus status;
+  final String name;
+
+  factory InterpreterMe.fromJson(Map<String, dynamic> j) => InterpreterMe(
+        approved: j['approved'] == true,
+        status: InterpreterStatus.values.firstWhere((s) => s.name == j['status'], orElse: () => InterpreterStatus.offline),
+        name: j['name'] as String? ?? '',
+      );
+
+  @override
+  List<Object?> get props => [approved, status, name];
+}
+
+/// A waiting request shown in the interpreter's queue.
+class IncomingRequest extends Equatable {
+  const IncomingRequest({required this.requestId, required this.name, required this.mode, required this.language, this.note, this.waitingSeconds = 0});
+  final String requestId;
+  final String name;
+  final CallMode mode;
+  final String language;
+  final String? note;
+  final int waitingSeconds;
+
+  factory IncomingRequest.fromJson(Map<String, dynamic> j) => IncomingRequest(
+        requestId: j['requestId'] as String,
+        name: j['name'] as String? ?? '',
+        mode: j['mode'] == 'audio' ? CallMode.audio : CallMode.video,
+        language: j['language'] as String? ?? '',
+        note: (j['note'] as String?)?.isEmpty ?? true ? null : j['note'] as String,
+        waitingSeconds: (j['waitingSeconds'] as num?)?.toInt() ?? 0,
+      );
+
+  @override
+  List<Object?> get props => [requestId, name, mode, language, note, waitingSeconds];
+}
+
 class CallChatMessage extends Equatable {
   const CallChatMessage({required this.id, required this.fromMe, required this.text, required this.timestamp});
   final String id;

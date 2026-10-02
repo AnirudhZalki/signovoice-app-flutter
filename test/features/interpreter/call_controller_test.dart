@@ -54,6 +54,16 @@ class _Repo implements InterpreterRepository {
   Future<void> submitFeedback({required String callId, required int rating, String? comment}) async {}
   @override
   Future<void> reportIssue({required String callId, required IssueCategory category, String? details}) async {}
+  @override
+  Future<InterpreterMe> me() async => const InterpreterMe(approved: false);
+  @override
+  Future<void> setAvailability({required bool available}) async {}
+  @override
+  Future<List<IncomingRequest>> queue() async => const [];
+  @override
+  Future<CallSession> accept(String requestId) async => throw UnimplementedError();
+  @override
+  Future<void> endCall(String callId) async {}
 }
 
 class _Call implements CallService {

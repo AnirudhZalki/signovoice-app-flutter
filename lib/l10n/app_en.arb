@@ -617,6 +617,24 @@
   "roomBody": "Enter the same room code as the other person (or interpreter) to start a live call.",
   "roomCodeLabel": "Room code",
   "roomCodeInvalid": "Use 3–40 letters, numbers, - or _",
+  "deskTitle": "Interpreter desk",
+  "deskNotInterpreter": "This account isn't approved as an interpreter.",
+  "deskOnline": "You're online",
+  "deskOffline": "You're offline",
+  "deskOnlineHint": "Go online to receive requests that match your languages.",
+  "deskQueue": "Waiting requests",
+  "deskGoOnline": "Go online to see waiting requests.",
+  "deskEmpty": "No one is waiting right now. This list updates automatically.",
+  "deskSomeone": "Someone",
+  "deskWaiting": "Waiting {seconds} s",
+  "@deskWaiting": {
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "deskAccept": "Accept and join",
   "premiumHeader": "Unlock the full SignoVoice experience",
   "premiumSubheader": "Free stays genuinely useful. Premium removes limits and adds deeper tools.",
   "freePlan": "Free",

@@ -72,3 +72,31 @@ test('razorpay order signature: order_id|payment_id', () => {
   assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1', signature: 'x' }, secret), false);
   assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1' }, secret), false);
 });
+
+const { isExpired, queuePosition, canTake, publicInterpreter, REQUEST_TTL_MS } = require('../lib/interpreters');
+
+test('interpreter queue: oldest first, expired requests do not count', () => {
+  const now = 1_000_000_000;
+  const reqs = [
+    { id: 'b', status: 'waiting', createdAt: now - 20_000 },
+    { id: 'a', status: 'waiting', createdAt: now - 60_000 },
+    { id: 'old', status: 'waiting', createdAt: now - REQUEST_TTL_MS - 1 },
+    { id: 'done', status: 'accepted', createdAt: now - 90_000 },
+  ];
+  assert.equal(queuePosition(reqs, 'a', now), 1);
+  assert.equal(queuePosition(reqs, 'b', now), 2);
+  assert.equal(queuePosition(reqs, 'old', now), null);
+  assert.equal(queuePosition(reqs, 'done', now), null);
+  assert.equal(isExpired(reqs[2], now), true);
+});
+
+test('interpreter eligibility: approved, available, language and named-interpreter checks', () => {
+  const i = { id: 'i1', approved: true, status: 'available', languages: ['en', 'hi'] };
+  assert.equal(canTake(i, { language: 'hi' }), true);
+  assert.equal(canTake(i, { language: 'kn' }), false);
+  assert.equal(canTake(i, { language: 'hi', interpreterId: 'other' }), false);
+  assert.equal(canTake({ ...i, status: 'busy' }, { language: 'hi' }), false);
+  assert.equal(canTake({ ...i, approved: false }, { language: 'hi' }), false);
+  assert.equal(canTake(null, { language: 'hi' }), false);
+  assert.equal(publicInterpreter('x', { name: 'N', status: 'weird' }).status, 'offline');
+});

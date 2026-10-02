@@ -9,4 +9,11 @@ abstract class InterpreterRepository {
   Future<void> cancelRequest(String requestId);
   Future<void> submitFeedback({required String callId, required int rating, String? comment});
   Future<void> reportIssue({required String callId, required IssueCategory category, String? details});
+
+  // Interpreter side
+  Future<InterpreterMe> me();
+  Future<void> setAvailability({required bool available});
+  Future<List<IncomingRequest>> queue();
+  Future<CallSession> accept(String requestId);
+  Future<void> endCall(String callId);
 }

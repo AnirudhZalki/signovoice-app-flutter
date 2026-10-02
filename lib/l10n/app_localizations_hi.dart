@@ -1279,6 +1279,44 @@ class AppLocalizationsHi extends AppLocalizations {
   String get roomCodeInvalid => '3–40 अक्षर, अंक, - या _ का उपयोग करें';
 
   @override
+  String get deskTitle => 'दुभाषिया डेस्क';
+
+  @override
+  String get deskNotInterpreter =>
+      'यह खाता दुभाषिये के रूप में स्वीकृत नहीं है।';
+
+  @override
+  String get deskOnline => 'आप ऑनलाइन हैं';
+
+  @override
+  String get deskOffline => 'आप ऑफ़लाइन हैं';
+
+  @override
+  String get deskOnlineHint =>
+      'अपनी भाषाओं से मेल खाने वाले अनुरोध पाने के लिए ऑनलाइन हों।';
+
+  @override
+  String get deskQueue => 'प्रतीक्षारत अनुरोध';
+
+  @override
+  String get deskGoOnline => 'प्रतीक्षारत अनुरोध देखने के लिए ऑनलाइन हों।';
+
+  @override
+  String get deskEmpty =>
+      'अभी कोई प्रतीक्षा में नहीं है। यह सूची अपने आप अपडेट होती है।';
+
+  @override
+  String get deskSomeone => 'कोई';
+
+  @override
+  String deskWaiting(String seconds) {
+    return '$seconds सेकंड से प्रतीक्षा में';
+  }
+
+  @override
+  String get deskAccept => 'स्वीकार करें और जुड़ें';
+
+  @override
   String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
 
   @override

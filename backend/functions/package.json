@@ -1,18 +1,22 @@
 {
   "name": "signovoice-functions",
   "private": true,
-  "engines": { "node": "20" },
+  "engines": {
+    "node": "20"
+  },
   "main": "index.js",
   "scripts": {
     "test": "node --test test/*.test.js",
     "serve": "firebase emulators:start --only functions,firestore",
-    "deploy": "firebase deploy --only functions"
+    "deploy": "firebase deploy --only functions",
+    "start": "node server.js"
   },
   "dependencies": {
     "firebase-admin": "^13.0.0",
     "firebase-functions": "^6.0.0",
     "googleapis": "^144.0.0",
     "livekit-server-sdk": "^2.9.0",
-    "razorpay": "^2.9.5"
+    "razorpay": "^2.9.5",
+    "express": "^4.21.0"
   }
 }

@@ -86,6 +86,19 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
               ]),
             ),
           ),
+        if (ref.watch(interpreterMeProvider).value?.approved ?? false)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: AppCard(
+              onTap: () => context.push(Routes.interpreterDesk),
+              child: Row(children: [
+                const Icon(Icons.support_agent_rounded),
+                const SizedBox(width: 12),
+                Expanded(child: Text(l.deskTitle, style: text.titleMedium)),
+                const Icon(Icons.chevron_right_rounded),
+              ]),
+            ),
+          ),
         if (AppConfig.hasTokenServer) const RoomCard(),
         if (AppConfig.hasDevRoom)
           Padding(

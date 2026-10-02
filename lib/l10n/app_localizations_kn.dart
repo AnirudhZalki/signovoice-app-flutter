@@ -1282,6 +1282,43 @@ class AppLocalizationsKn extends AppLocalizations {
   String get roomCodeInvalid => '3–40 ಅಕ್ಷರಗಳು, ಸಂಖ್ಯೆಗಳು, - ಅಥವಾ _ ಬಳಸಿ';
 
   @override
+  String get deskTitle => 'ಇಂಟರ್ಪ್ರಿಟರ್ ಡೆಸ್ಕ್';
+
+  @override
+  String get deskNotInterpreter => 'ಈ ಖಾತೆ ಇಂಟರ್ಪ್ರಿಟರ್ ಆಗಿ ಅನುಮೋದಿತವಾಗಿಲ್ಲ.';
+
+  @override
+  String get deskOnline => 'ನೀವು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿದ್ದೀರಿ';
+
+  @override
+  String get deskOffline => 'ನೀವು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿದ್ದೀರಿ';
+
+  @override
+  String get deskOnlineHint =>
+      'ನಿಮ್ಮ ಭಾಷೆಗಳಿಗೆ ಹೊಂದುವ ವಿನಂತಿಗಳನ್ನು ಪಡೆಯಲು ಆನ್‌ಲೈನ್ ಆಗಿ.';
+
+  @override
+  String get deskQueue => 'ಕಾಯುತ್ತಿರುವ ವಿನಂತಿಗಳು';
+
+  @override
+  String get deskGoOnline => 'ಕಾಯುತ್ತಿರುವ ವಿನಂತಿಗಳನ್ನು ನೋಡಲು ಆನ್‌ಲೈನ್ ಆಗಿ.';
+
+  @override
+  String get deskEmpty =>
+      'ಈಗ ಯಾರೂ ಕಾಯುತ್ತಿಲ್ಲ. ಈ ಪಟ್ಟಿ ತಾನಾಗಿ ನವೀಕರಣವಾಗುತ್ತದೆ.';
+
+  @override
+  String get deskSomeone => 'ಯಾರೋ';
+
+  @override
+  String deskWaiting(String seconds) {
+    return '$seconds ಸೆ ಕಾಯುತ್ತಿದ್ದಾರೆ';
+  }
+
+  @override
+  String get deskAccept => 'ಸ್ವೀಕರಿಸಿ ಮತ್ತು ಸೇರಿ';
+
+  @override
   String get premiumHeader => 'ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ';
 
   @override

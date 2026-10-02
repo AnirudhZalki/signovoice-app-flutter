@@ -1278,6 +1278,44 @@ class AppLocalizationsEn extends AppLocalizations {
   String get roomCodeInvalid => 'Use 3–40 letters, numbers, - or _';
 
   @override
+  String get deskTitle => 'Interpreter desk';
+
+  @override
+  String get deskNotInterpreter =>
+      'This account isn\'t approved as an interpreter.';
+
+  @override
+  String get deskOnline => 'You\'re online';
+
+  @override
+  String get deskOffline => 'You\'re offline';
+
+  @override
+  String get deskOnlineHint =>
+      'Go online to receive requests that match your languages.';
+
+  @override
+  String get deskQueue => 'Waiting requests';
+
+  @override
+  String get deskGoOnline => 'Go online to see waiting requests.';
+
+  @override
+  String get deskEmpty =>
+      'No one is waiting right now. This list updates automatically.';
+
+  @override
+  String get deskSomeone => 'Someone';
+
+  @override
+  String deskWaiting(String seconds) {
+    return 'Waiting $seconds s';
+  }
+
+  @override
+  String get deskAccept => 'Accept and join';
+
+  @override
   String get premiumHeader => 'Unlock the full SignoVoice experience';
 
   @override

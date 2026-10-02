@@ -54,4 +54,29 @@ class HttpInterpreterRepository implements InterpreterRepository {
       if (details != null && details.trim().isNotEmpty) 'details': details.trim(),
     });
   }
+
+  @override
+  Future<InterpreterMe> me() async => InterpreterMe.fromJson(_map(await api.get('/v1/interpreter/me')));
+
+  @override
+  Future<void> setAvailability({required bool available}) async {
+    await api.post('/v1/interpreter/me/status', body: {'status': available ? 'available' : 'offline'});
+  }
+
+  @override
+  Future<List<IncomingRequest>> queue() async {
+    final d = _map(await api.get('/v1/interpreter/queue'));
+    return [for (final e in (d['requests'] as List<dynamic>? ?? const [])) IncomingRequest.fromJson(e as Map<String, dynamic>)];
+  }
+
+  @override
+  Future<CallSession> accept(String requestId) async {
+    final d = _map(await api.post('/v1/interpreter/queue/$requestId/accept'));
+    return CallSession.fromJson(_map(d['session']));
+  }
+
+  @override
+  Future<void> endCall(String callId) async {
+    await api.post('/v1/interpreter/calls/$callId/end');
+  }
 }

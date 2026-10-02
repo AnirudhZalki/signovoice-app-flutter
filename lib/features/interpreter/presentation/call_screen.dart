@@ -31,7 +31,7 @@ class CallScreen extends ConsumerWidget {
     final ctrl = ref.read(callControllerProvider.notifier);
 
     ref.listen(callControllerProvider.select((v) => v.phase), (prev, next) {
-      if (next == CallPhase.ended && ref.read(callControllerProvider).callId == 'dev') {
+      if (next == CallPhase.ended && (ref.read(callControllerProvider).callId == 'dev' || ref.read(callControllerProvider).interpreterSide)) {
         ref.read(callControllerProvider.notifier).reset(); // test room: nothing to rate
         context.pop();
       } else if (next == CallPhase.ended && ref.read(callControllerProvider).callId != null) {

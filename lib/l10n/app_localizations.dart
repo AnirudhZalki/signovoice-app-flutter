@@ -2416,6 +2416,72 @@ abstract class AppLocalizations {
   /// **'Use 3–40 letters, numbers, - or _'**
   String get roomCodeInvalid;
 
+  /// No description provided for @deskTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter desk'**
+  String get deskTitle;
+
+  /// No description provided for @deskNotInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'This account isn\'t approved as an interpreter.'**
+  String get deskNotInterpreter;
+
+  /// No description provided for @deskOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re online'**
+  String get deskOnline;
+
+  /// No description provided for @deskOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline'**
+  String get deskOffline;
+
+  /// No description provided for @deskOnlineHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Go online to receive requests that match your languages.'**
+  String get deskOnlineHint;
+
+  /// No description provided for @deskQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting requests'**
+  String get deskQueue;
+
+  /// No description provided for @deskGoOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Go online to see waiting requests.'**
+  String get deskGoOnline;
+
+  /// No description provided for @deskEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No one is waiting right now. This list updates automatically.'**
+  String get deskEmpty;
+
+  /// No description provided for @deskSomeone.
+  ///
+  /// In en, this message translates to:
+  /// **'Someone'**
+  String get deskSomeone;
+
+  /// No description provided for @deskWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting {seconds} s'**
+  String deskWaiting(String seconds);
+
+  /// No description provided for @deskAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept and join'**
+  String get deskAccept;
+
   /// No description provided for @premiumHeader.
   ///
   /// In en, this message translates to:

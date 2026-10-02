@@ -28,6 +28,7 @@ class CallState {
     this.remoteVideo = false,
     this.messages = const [],
     this.unread = 0,
+    this.interpreterSide = false,
   });
 
   final CallPhase phase;
@@ -46,6 +47,9 @@ class CallState {
   final List<CallChatMessage> messages;
   final int unread;
 
+  /// This device is the interpreter in the call (no feedback screen afterwards).
+  final bool interpreterSide;
+
   bool get inCall => phase == CallPhase.connected || phase == CallPhase.reconnecting;
 
   CallState copyWith({
@@ -63,6 +67,7 @@ class CallState {
     bool? remoteVideo,
     List<CallChatMessage>? messages,
     int? unread,
+    bool? interpreterSide,
   }) =>
       CallState(
         phase: phase ?? this.phase,
@@ -78,6 +83,7 @@ class CallState {
         remoteVideo: remoteVideo ?? this.remoteVideo,
         messages: messages ?? this.messages,
         unread: unread ?? this.unread,
+        interpreterSide: interpreterSide ?? this.interpreterSide,
       );
 }
 
@@ -155,6 +161,20 @@ class CallController extends Notifier<CallState> {
     } catch (e) {
       _fail(toFailure(e));
     }
+  }
+
+  /// Interpreter accepted a request from the desk: join the room it returned.
+  Future<void> joinAsInterpreter(CallSession session, CallMode mode) async {
+    if (state.phase == CallPhase.requesting || state.inCall) return;
+    state = CallState(phase: CallPhase.requesting, mode: mode, camOn: mode == CallMode.video, interpreterSide: true);
+    final perms = ref.read(permissionServiceProvider);
+    if (await perms.request(AppPermission.microphone) != PermissionState.granted) {
+      return _fail(const Failure(FailureType.permissionDenied));
+    }
+    if (mode == CallMode.video && await perms.request(AppPermission.camera) != PermissionState.granted) {
+      return _fail(const Failure(FailureType.permissionDenied));
+    }
+    await _connect(session);
   }
 
   Future<void> request({required CallMode mode, required String language, String? interpreterId, String? note}) async {
@@ -324,6 +344,11 @@ class CallController extends Notifier<CallState> {
     _service = null;
     await s?.disconnect();
     unawaited(s?.dispose());
+    final id = state.callId;
+    if (id != null && id != 'dev') {
+      // Frees the interpreter for the next person; best effort.
+      unawaited(ref.read(interpreterRepositoryProvider).endCall(id).catchError((Object _) {}));
+    }
     if (!_disposed) state = state.copyWith(phase: CallPhase.ended, remoteVideo: false);
   }
 

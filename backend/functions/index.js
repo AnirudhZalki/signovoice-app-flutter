@@ -15,6 +15,7 @@ const { defineSecret } = require('firebase-functions/params');
 const { fromRazorpay, fromPlay } = require('./lib/entitlement');
 const { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature } = require('./lib/razorpay');
 const { requireUser, rateLimit } = require('./lib/auth');
+const { isExpired, queuePosition, canTake, publicInterpreter } = require('./lib/interpreters');
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -156,6 +157,153 @@ async function livekitToken(uid, room) {
   return { url: env('LIVEKIT_URL'), token: await at.toJwt(), roomName: name };
 }
 
+async function mintToken({ identity, name, room }) {
+  const { AccessToken } = require('livekit-server-sdk');
+  const at = new AccessToken(env('LIVEKIT_API_KEY'), LIVEKIT_API_SECRET.value(), { identity, name, ttl: '1h' });
+  at.addGrant({ roomJoin: true, room, canPublish: true, canSubscribe: true, canPublishData: true });
+  return at.toJwt();
+}
+
+// ---------- Interpreter matching ----------
+const reqCol = () => db.collection('interpreterRequests');
+const interpCol = () => db.collection('interpreters');
+const bad = (msg, status = 400) => Object.assign(new Error(msg), { status });
+
+async function interpreterProfile(uid) {
+  const d = await interpCol().doc(uid).get();
+  return d.exists ? { id: uid, ...d.data() } : null;
+}
+
+async function listInterpreters(language) {
+  const snap = await interpCol().where('approved', '==', true).get();
+  return snap.docs.map((d) => publicInterpreter(d.id, d.data()))
+    .filter((i) => !language || i.languages.length === 0 || i.languages.includes(language))
+    .sort((a, b) => (a.status === 'available' ? 0 : 1) - (b.status === 'available' ? 0 : 1));
+}
+
+async function createRequest(uid, body, name) {
+  const mode = body && body.mode;
+  const language = String((body && body.language) || '');
+  if (!['video', 'audio'].includes(mode)) throw bad('invalid mode');
+  if (!/^[a-z]{2,3}$/.test(language)) throw bad('invalid language');
+  // At most one open request per person.
+  const open = await reqCol().where('uid', '==', uid).where('status', '==', 'waiting').get();
+  const now = Date.now();
+  for (const d of open.docs) {
+    if (isExpired({ ...d.data() }, now)) await d.ref.update({ status: 'expired' });
+    else await d.ref.update({ status: 'cancelled' });
+  }
+  const ref = reqCol().doc();
+  await ref.set({ uid, name: name || '', mode, language, interpreterId: (body && body.interpreterId) || null,
+    note: String((body && body.note) || '').slice(0, 300), status: 'waiting', createdAt: now });
+  return { requestId: ref.id, status: 'waiting', position: await positionOf(ref.id, now) };
+}
+
+async function positionOf(id, now) {
+  const snap = await reqCol().where('status', '==', 'waiting').get();
+  return queuePosition(snap.docs.map((d) => ({ id: d.id, ...d.data() })), id, now);
+}
+
+async function requestStatus(uid, id) {
+  const ref = reqCol().doc(id);
+  const doc = await ref.get();
+  if (!doc.exists || doc.data().uid !== uid) throw bad('not found', 404);
+  let r = { id, ...doc.data() };
+  const now = Date.now();
+  if (isExpired(r, now)) { await ref.update({ status: 'expired' }); r = { ...r, status: 'expired' }; }
+  if (r.status === 'accepted') {
+    const room = r.roomName;
+    return { requestId: id, status: 'accepted', session: {
+      callId: r.callId, roomName: room, url: env('LIVEKIT_URL'), interpreterName: r.interpreterName || '',
+      token: await mintToken({ identity: uid, name: r.name || uid, room }),
+    } };
+  }
+  if (r.status === 'waiting') return { requestId: id, status: 'waiting', position: await positionOf(id, now) };
+  return { requestId: id, status: r.status };
+}
+
+async function cancelRequest(uid, id) {
+  const ref = reqCol().doc(id);
+  const doc = await ref.get();
+  if (!doc.exists || doc.data().uid !== uid) throw bad('not found', 404);
+  if (doc.data().status === 'waiting') await ref.update({ status: 'cancelled' });
+  return { ok: true };
+}
+
+// Interpreter side -----------------------------------------------------------
+async function requireInterpreter(uid) {
+  const p = await interpreterProfile(uid);
+  if (!p || !p.approved) throw bad('not an approved interpreter', 403);
+  return p;
+}
+
+async function interpreterQueue(uid) {
+  const me = await requireInterpreter(uid);
+  const now = Date.now();
+  const snap = await reqCol().where('status', '==', 'waiting').get();
+  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+    .filter((r) => !isExpired(r, now) && canTake({ ...me, status: 'available' }, r))
+    .sort((a, b) => a.createdAt - b.createdAt)
+    .map((r) => ({ requestId: r.id, name: r.name, mode: r.mode, language: r.language, note: r.note, waitingSeconds: Math.round((now - r.createdAt) / 1000) }));
+}
+
+async function setInterpreterStatus(uid, status) {
+  await requireInterpreter(uid);
+  if (!['available', 'offline'].includes(status)) throw bad('invalid status');
+  await interpCol().doc(uid).set({ status, updatedAt: Date.now() }, { merge: true });
+  return { status };
+}
+
+async function acceptRequest(uid, id, name) {
+  const me = await requireInterpreter(uid);
+  if (me.status === 'busy') throw bad('already in a call', 409);
+  const ref = reqCol().doc(id);
+  const callRef = db.collection('interpreterCalls').doc();
+  const room = `sv-call-${callRef.id}`;
+  await db.runTransaction(async (tx) => {
+    const doc = await tx.get(ref);
+    if (!doc.exists) throw bad('not found', 404);
+    const r = { id, ...doc.data() };
+    if (isExpired(r, Date.now())) throw bad('request expired', 410);
+    if (r.status !== 'waiting') throw bad('request already taken', 409);
+    if (!canTake({ ...me, status: 'available' }, r)) throw bad('cannot take this request', 403);
+    tx.update(ref, { status: 'accepted', callId: callRef.id, roomName: room, interpreterId: uid, interpreterName: me.name || name || '', acceptedAt: Date.now() });
+    tx.set(callRef, { requestId: id, requesterUid: r.uid, interpreterUid: uid, roomName: room, mode: r.mode, language: r.language, startedAt: Date.now() });
+    tx.set(interpCol().doc(uid), { status: 'busy', updatedAt: Date.now() }, { merge: true });
+  });
+  return { session: { callId: callRef.id, roomName: room, url: env('LIVEKIT_URL'), token: await mintToken({ identity: uid, name: me.name || name || uid, room }) } };
+}
+
+async function endCall(uid, callId) {
+  const ref = db.collection('interpreterCalls').doc(callId);
+  const doc = await ref.get();
+  if (!doc.exists || ![doc.data().interpreterUid, doc.data().requesterUid].includes(uid)) throw bad('not found', 404);
+  await ref.set({ endedAt: Date.now() }, { merge: true });
+  await interpCol().doc(doc.data().interpreterUid).set({ status: 'available', updatedAt: Date.now() }, { merge: true });
+  return { ok: true };
+}
+
+async function callNote(uid, callId, kind, body) {
+  const ref = db.collection('interpreterCalls').doc(callId);
+  const doc = await ref.get();
+  if (!doc.exists || doc.data().requesterUid !== uid) throw bad('not found', 404);
+  const text = String((body && (body.comment || body.details)) || '').slice(0, 1000);
+  if (kind === 'feedback') {
+    const rating = Number(body && body.rating);
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) throw bad('rating must be 1-5');
+    await ref.collection('feedback').doc(uid).set({ rating, comment: text, at: Date.now() });
+    const iref = interpCol().doc(doc.data().interpreterUid);
+    await db.runTransaction(async (tx) => {
+      const i = (await tx.get(iref)).data() || {};
+      const n = (i.ratingCount || 0) + 1;
+      tx.set(iref, { ratingCount: n, rating: Math.round((((i.rating || 0) * (n - 1) + rating) / n) * 100) / 100 }, { merge: true });
+    });
+  } else {
+    await ref.collection('reports').add({ uid, category: String((body && body.category) || 'other'), details: text, at: Date.now() });
+  }
+  return { ok: true };
+}
+
 // ---------- HTTP API ----------
 exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, LIVEKIT_API_SECRET], cors: false, maxInstances: 20 }, async (req, res) => {
   try {
@@ -185,6 +333,17 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
       if (!snap.empty) { const d = snap.docs[0].data(); return send(res, 200, await playVerify(uid, d.productId, d.token)); }
       return send(res, 200, (await entRef(uid).get()).data() || FREE);
     }
+    const m = path.match(/^\/v1\/interpreter\/(requests|queue|calls)\/([A-Za-z0-9_-]+)(?:\/(accept|end|feedback|report))?$/);
+    if (req.method === 'GET' && path === '/v1/interpreters') return send(res, 200, { interpreters: await listInterpreters(req.query.language) });
+    if (req.method === 'POST' && path === '/v1/interpreter/requests') return send(res, 200, await createRequest(uid, req.body, user.name));
+    if (req.method === 'GET' && path === '/v1/interpreter/me') { const p = await interpreterProfile(uid); return send(res, 200, p && p.approved ? { approved: true, status: p.status || 'offline', name: p.name || '', languages: p.languages || [] } : { approved: false }); }
+    if (req.method === 'POST' && path === '/v1/interpreter/me/status') return send(res, 200, await setInterpreterStatus(uid, req.body && req.body.status));
+    if (req.method === 'GET' && path === '/v1/interpreter/queue') return send(res, 200, { requests: await interpreterQueue(uid) });
+    if (m && m[1] === 'requests' && !m[3] && req.method === 'GET') return send(res, 200, await requestStatus(uid, m[2]));
+    if (m && m[1] === 'requests' && !m[3] && req.method === 'DELETE') return send(res, 200, await cancelRequest(uid, m[2]));
+    if (m && m[1] === 'queue' && m[3] === 'accept' && req.method === 'POST') return send(res, 200, await acceptRequest(uid, m[2], user.name));
+    if (m && m[1] === 'calls' && m[3] === 'end' && req.method === 'POST') return send(res, 200, await endCall(uid, m[2]));
+    if (m && m[1] === 'calls' && (m[3] === 'feedback' || m[3] === 'report') && req.method === 'POST') return send(res, 200, await callNote(uid, m[2], m[3], req.body));
     if (req.method === 'POST' && path === '/v1/livekit/token') return send(res, 200, await livekitToken(uid, req.body && req.body.room));
     return send(res, 404, { error: 'not found' });
   } catch (e) {

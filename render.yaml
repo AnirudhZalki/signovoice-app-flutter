@@ -1,0 +1,33 @@
+# Render blueprint: runs backend/functions as a plain Node web service (alternative to Firebase Cloud Functions).
+services:
+  - type: web
+    name: signovoice-api
+    runtime: node
+    rootDir: backend/functions
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: LIVEKIT_URL
+        value: wss://signovoice-kki1ealv.livekit.cloud
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_PLANS
+        sync: false
+      - key: PLAY_PACKAGE_NAME
+        value: com.anirudhzalki.signovoice
+      - key: TRIAL_DAYS
+        value: 30
+      # Secrets: set these in the Render dashboard (never in git)
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false

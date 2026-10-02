@@ -26,3 +26,21 @@ final interpretersProvider = StreamProvider.autoDispose.family<List<Interpreter>
 
 final liveKitTokenServiceProvider = Provider<LiveKitTokenService>(
     (ref) => LiveKitTokenService(authToken: ref.read(authTokenProvider)));
+
+/// The signed-in person's interpreter profile; errors (no backend, offline) read as "not an interpreter".
+final interpreterMeProvider = FutureProvider.autoDispose<InterpreterMe>((ref) async {
+  try {
+    return await ref.watch(interpreterRepositoryProvider).me();
+  } catch (_) {
+    return const InterpreterMe(approved: false);
+  }
+});
+
+/// The interpreter's queue, refreshed every 4 s while the desk is open.
+final interpreterQueueProvider = StreamProvider.autoDispose<List<IncomingRequest>>((ref) async* {
+  final repo = ref.watch(interpreterRepositoryProvider);
+  while (true) {
+    yield await repo.queue();
+    await Future<void>.delayed(const Duration(seconds: 4));
+  }
+});

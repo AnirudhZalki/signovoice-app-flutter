@@ -12,3 +12,17 @@ Two ways the app gets a LiveKit token (the API *secret* never lives in the app):
 Render's free tier sleeps: the first request can take ~60 s, so the app waits up to 75 s.
 Quick server check: `curl -X POST https://signovoice-livekkit-server.onrender.com/token -H 'content-type: application/json' -d '{"room":"test","identity":"me"}'` should return a token.
 The LiveKit server itself must have the same API key/secret as the project at `signovoice-kki1ealv.livekit.cloud`.
+
+## Interpreter calls (matching + tokens) — `backend/functions`
+The app's **Request an interpreter** flow and the **Interpreter desk** use `/v1/interpreter/*` and `/v1/interpreters` from the reference backend.
+The backend mints LiveKit tokens itself with `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` (server-side only), so it does not need the Render token server.
+
+**Host it on Render (free, same place as your token server):** the repo has `render.yaml`. In Render → New → Blueprint → this repo, then set the secret env vars:
+`LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, `FIREBASE_SERVICE_ACCOUNT` (Firebase console → Project settings → Service accounts → Generate key; paste the JSON on one line), and optionally the Razorpay variables.
+Use the service URL as `API_BASE_URL` in the app. (Or deploy to Firebase Functions instead: `firebase deploy --only functions`.)
+
+**Make someone an interpreter:** in Firestore create `interpreters/<their Firebase uid>` with
+`{ approved: true, name: "Ravi", languages: ["en","hi"], status: "offline", rating: null, ratingCount: 0 }`.
+They then see an **Interpreter desk** tile on the Live screen: go online → accept waiting requests → joins the call room.
+Flow: person taps *Request* → request waits (3 min max) → an online interpreter who speaks the language accepts → both get tokens for room `sv-call-<id>` → call.
+Rotate the LiveKit API secret if it was ever shared in chat or committed.

@@ -62,3 +62,5 @@ config/prod.json
 # local Firebase emulator secrets
 .secret.local
 **/.secret.local
+
+node_modules/
