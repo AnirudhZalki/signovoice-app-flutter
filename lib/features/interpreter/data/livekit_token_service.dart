@@ -10,7 +10,7 @@ import '../domain/interpreter_models.dart';
 
 /// Gets a LiveKit access token for a room from a standalone token server (the API *secret* stays on
 /// that server). Tolerant of the common shapes so the server can stay as it is:
-///  - `POST {url}` with JSON `{room, roomName, identity, name}`; on 404/405 falls back to `GET {url}?room=&identity=&name=`
+///  - `POST {url}` with JSON `{roomId, room, roomName, identity, name}`; on 404/405 falls back to `GET {url}?room=&identity=&name=`
 ///  - response JSON with `token` (or `accessToken` / `jwt`) and optionally `url` / `serverUrl` / `wsUrl`, or a bare JWT string.
 class LiveKitTokenService {
   LiveKitTokenService({Dio? dio, String? url, TokenProvider? authToken})
@@ -30,7 +30,8 @@ class LiveKitTokenService {
     final auth = await _auth?.call();
     if (auth != null) headers['Authorization'] = 'Bearer $auth';
     final options = Options(headers: headers, connectTimeout: _patience, receiveTimeout: _patience, sendTimeout: _patience, responseType: ResponseType.plain);
-    final body = {'room': room, 'roomName': room, 'identity': identity, 'name': name ?? identity};
+    // `roomId` is what the SignoVoice token server (SignoVoice-livekkit-server) requires; the others are for other servers.
+    final body = {'roomId': room, 'room': room, 'roomName': room, 'identity': identity, 'name': name ?? identity};
 
     try {
       Response<String> res;

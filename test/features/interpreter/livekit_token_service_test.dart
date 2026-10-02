@@ -43,7 +43,20 @@ void main() {
     final s = await LiveKitTokenService(dio: dio, url: url).fetch(room: 'abc', identity: 'u1');
     expect(s.token, 'x.y.z');
     expect(adapter.calls.first, startsWith('POST'));
-    expect(adapter.calls.last, contains('GET https://tokens.example.com/token?room=abc'));
+    expect(adapter.calls.last, contains('GET https://tokens.example.com/token?roomId=abc'));
+  });
+
+  test('sends roomId (required by the SignoVoice token server) and works with its {token}-only reply', () async {
+    Object? sent;
+    final dio = Dio()
+      ..httpClientAdapter = _Adapter((o) {
+        sent = o.data;
+        return _json({'token': 'x.y.z'}, 200);
+      });
+    final s = await LiveKitTokenService(dio: dio, url: url).fetch(room: 'abc', identity: 'u1');
+    expect((sent as Map)['roomId'], 'abc');
+    expect((sent as Map)['identity'], 'u1');
+    expect((s.token, s.url), ('x.y.z', null)); // no url in the reply -> app falls back to LIVEKIT_URL
   });
 
   test('server errors become failures, never a session', () async {

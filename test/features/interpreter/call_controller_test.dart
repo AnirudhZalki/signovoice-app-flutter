@@ -129,6 +129,7 @@ ProviderContainer _make({
 }) {
   final c = ProviderContainer(overrides: [
     keyValueStoreProvider.overrideWithValue(InMemoryKeyValueStore()),
+    livekitUrlProvider.overrideWithValue(''), // no build-time default in tests
     authControllerProvider.overrideWith(() => _Auth(signedIn)),
     apiClientProvider.overrideWithValue(ApiClient(tokenProvider: () async => null, baseUrl: configured ? 'https://api.test' : '')),
     isOnlineProvider.overrideWith((ref) => Stream.value(true)),

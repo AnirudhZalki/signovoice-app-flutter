@@ -11,7 +11,8 @@ class AppConfig {
   static const String apiBaseUrl = String.fromEnvironment('API_BASE_URL');
 
   /// LiveKit WebSocket URL (wss://...). Tokens are minted by the backend.
-  static const String livekitUrl = String.fromEnvironment('LIVEKIT_URL');
+  static const String livekitUrl =
+      String.fromEnvironment('LIVEKIT_URL', defaultValue: 'wss://signovoice-kki1ealv.livekit.cloud');
 
   /// Standalone LiveKit token server (e.g. the Render service). The app asks it for a token for a room
   /// code and joins directly. See docs/LIVEKIT_SETUP.md for the request/response shape it accepts.

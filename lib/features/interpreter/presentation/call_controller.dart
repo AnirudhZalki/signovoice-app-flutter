@@ -250,7 +250,7 @@ class CallController extends Notifier<CallState> {
 
   Future<void> _connect(CallSession session) async {
     _poll?.cancel();
-    final url = (session.url != null && session.url!.startsWith('wss://')) ? session.url! : AppConfig.livekitUrl;
+    final url = (session.url != null && session.url!.startsWith('wss://')) ? session.url! : ref.read(livekitUrlProvider);
     if (!url.startsWith('wss://')) return _fail(const Failure(FailureType.notConfigured, debugDetail: 'LIVEKIT_URL'));
     state = state.copyWith(phase: CallPhase.connecting, callId: session.callId, interpreterName: session.interpreterName);
     final service = ref.read(callServiceFactoryProvider)();

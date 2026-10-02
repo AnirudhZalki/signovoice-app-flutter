@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/config/app_config.dart';
 import '../../../core/providers.dart';
 import '../data/http_interpreter_repository.dart';
 import '../data/livekit_call_service.dart';
@@ -44,3 +45,6 @@ final interpreterQueueProvider = StreamProvider.autoDispose<List<IncomingRequest
     await Future<void>.delayed(const Duration(seconds: 4));
   }
 });
+
+/// LiveKit server URL used when a session doesn't carry one (overridden in tests).
+final livekitUrlProvider = Provider<String>((_) => AppConfig.livekitUrl);
