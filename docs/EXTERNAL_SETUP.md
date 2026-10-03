@@ -49,3 +49,11 @@ flutter build appbundle --release --dart-define-from-file=config/prod.json
 5. `flutter build appbundle --release --dart-define-from-file=config/prod.json`
 6. Output: `build/app/outputs/bundle/release/app-release.aab` — upload it in Play Console (internal testing first).
    Without `key.properties` the bundle build now stops with an error instead of debug-signing.
+
+### Build the .aab on GitHub (no local Android setup)
+Actions → **Build release AAB** → *Run workflow* (set versionCode higher than your last Play upload). Download `…-aab` from the run's **Artifacts**.
+Add these repo secrets first (Settings → Secrets and variables → Actions):
+- `UPLOAD_KEYSTORE_BASE64` — `base64 -w0 upload-keystore.jks` (create the keystore with the `keytool` command above)
+- `KEYSTORE_PASSWORD`, `KEY_PASSWORD`, `KEY_ALIAS` (usually `upload`)
+- `GOOGLE_SERVICES_JSON_BASE64` — `base64 -w0 google-services.json` (optional; without it sign-in is off)
+- `PROD_CONFIG_JSON` — the contents of your `config/prod.json` (optional; `API_BASE_URL`, `LIVEKIT_URL`, …)
