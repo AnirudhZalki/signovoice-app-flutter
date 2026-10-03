@@ -1,28 +1,32 @@
 # Premium subscription & auto-pay setup
 
-## Quick plan: Free + Premium ₹200 per 6 months (auto-renewing, 1-month free trial)
-The app already has the **Free** plan (daily recognition/history limits) and Premium (unlimited). Prices are **never hard-coded**: the app shows
-what Google Play / Razorpay return, so set ₹200 in those two places. Product id for the 6-month plan: `signovoice_premium_6months`
-(monthly `signovoice_premium_monthly` and yearly `signovoice_premium_yearly` also work; delete any you don't want to sell — the app shows only what the store returns).
+## Plans: Free, Premium ₹75 / month, Premium ₹200 / 6 months — both with a 1-month free trial
+The app already has the **Free** plan (daily recognition/history limits) and **Premium** (unlimited). Two paid products, ids:
+`signovoice_premium_monthly` (₹75 every month) and `signovoice_premium_6months` (₹200 every 6 months; the app shows a "Save N%" badge computed from the real prices, ≈56%).
+Prices are **never hard-coded**: the app shows what Google Play / Razorpay return, so you set ₹75 / ₹200 in those two places. The 6-month plan is pre-selected.
 
 ### Google Play (Play Store builds — Play autopay)
-1. Play Console → your app → **Monetize with Play → Products → Subscriptions → Create subscription**. Product ID `signovoice_premium_6months`, name "Premium 6 months".
-2. **Add base plan**: Auto-renewing, billing period **Every 6 months**, grace period 7 days, account hold 30 days, resubscribe allowed. **Price: India ₹200** (set other countries or "Convert from INR").
-3. **Add offer** on the base plan → *New customer acquisition*, eligibility "Never had this subscription", phase **Free trial → 1 month**. Activate the offer and the base plan.
-4. Turn on **Real-time developer notifications** (Monetization setup → Pub/Sub topic) and deploy the backend (see section A below).
-5. Upload a build to Internal testing, add **license testers** (Setup → License testing), install from the Play link (billing does not work in sideloaded APKs — that is the "plans couldn't be loaded" error).
-6. Auto-renew is automatic on Play; users cancel in Play › Subscriptions (the app's "Manage subscription" opens it).
+Create **two subscriptions** (Monetize with Play → Products → Subscriptions → Create subscription):
+| Product ID | Base plan | Price |
+|---|---|---|
+| `signovoice_premium_monthly` | Auto-renewing, billing period **Monthly** | **₹75** (India) |
+| `signovoice_premium_6months` | Auto-renewing, billing period **Every 6 months** | **₹200** (India) |
+For each: grace period 7 days, account hold 30 days, resubscribe allowed. Then **Add offer** on the base plan → *New customer acquisition*, phase **Free trial, 1 month**, and **activate** the offer and the base plan.
+To stop a person getting a free month on *each* plan, set the offer's eligibility to the option that excludes anyone who ever had **any subscription in this app** when Play offers it (otherwise "never had this subscription" lets someone trial both once).
+Then: turn on **Real-time developer notifications** (Pub/Sub), deploy the backend (section A), upload a build to **Internal testing**, add **license testers** (Setup → License testing) and install from the Play link — billing never works in a sideloaded APK (that is the "plans couldn't be loaded" error). Play renews automatically; users cancel in Play › Subscriptions (the app's *Manage subscription* opens it).
 
 ### Razorpay (APK / website builds — UPI AutoPay, cards, e-mandate)
-1. Razorpay Dashboard (Test mode first) → **Subscriptions → Plans → Create Plan**: Billing frequency **Monthly**, **Every 6** cycles (interval = 6), Amount **200** (= 20000 paise), name "Premium 6 months". Copy the `plan_…` id.
-2. Settings → **Payment methods**: enable UPI (AutoPay), cards, e-mandate. UPI AutoPay mandates up to ₹15,000 need no extra OTP after the first approval.
+1. Dashboard (Test mode first) → **Subscriptions → Plans → Create Plan**, twice:
+   - "Premium monthly": billing frequency **Monthly**, every **1**, amount **75** (7500 paise).
+   - "Premium 6 months": **Monthly**, every **6**, amount **200** (20000 paise).
+   Copy both `plan_…` ids.
+2. Settings → **Payment methods**: enable UPI (AutoPay), cards, e-mandate (amounts ≤ ₹15,000 need no extra OTP after the first mandate approval).
 3. Backend env `RAZORPAY_PLANS`:
-   `{"signovoice_premium_6months":{"planId":"plan_XXXX","title":"Premium 6 months","months":6,"totalCount":20}}`
-   (`totalCount` = number of 6-month cycles, 20 = 10 years). Plan price and cycle are read from Razorpay, so a price change is made in the dashboard (create a new plan, update the id).
-4. Free month: handled by the backend (first charge starts after `TRIAL_DAYS=30`); the user still approves the mandate up front.
-5. Build with `--dart-define=ENABLE_RAZORPAY=true` (+ `--dart-define=PAYMENT_METHOD=razorpay` to make it the default). **Do not enable it in the Google Play build** — Play requires Play Billing for in-app subscriptions.
-6. Go live: switch to Live keys, recreate the plan in Live mode, update `RAZORPAY_KEY_ID/SECRET`, `RAZORPAY_PLANS`, and the webhook secret.
-
+   `{"signovoice_premium_monthly":{"planId":"plan_AAA","title":"Premium monthly","months":1,"totalCount":120},"signovoice_premium_6months":{"planId":"plan_BBB","title":"Premium 6 months","months":6,"totalCount":20}}`
+   (`totalCount` = number of billing cycles; cycle and price are read from the Razorpay plan, so a price change = new plan + new id here.)
+4. Free month: the backend starts the first charge after `TRIAL_DAYS=30` and gives **one trial per account** across both plans (it remembers `trialStartDate`). The user still approves the mandate up front.
+5. Build with `--dart-define=ENABLE_RAZORPAY=true` (+ `PAYMENT_METHOD=razorpay` to make it the default). **Never in the Google Play build** — Play requires Play Billing for in-app subscriptions.
+6. Go live: Live keys, recreate both plans in Live mode, update `RAZORPAY_KEY_ID/SECRET`, `RAZORPAY_PLANS` and the webhook secret.
 
 The app supports two payment methods behind one verified flow (purchase → **backend verification** → entitlement; the client never grants Premium by itself):
 

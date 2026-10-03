@@ -86,20 +86,23 @@ const monthlyTrial = StoreProduct(
   offerToken: 'tok-trial',
   phases: [
     PricingPhase(billingPeriod: 'P1M', priceMicros: 0, formattedPrice: 'Free'),
-    PricingPhase(billingPeriod: 'P1M', priceMicros: 99000000, formattedPrice: '₹99.00'),
+    PricingPhase(billingPeriod: 'P1M', priceMicros: 75000000, formattedPrice: '₹75.00'),
   ],
 );
 const monthlyBase = StoreProduct(
   id: 'signovoice_premium_monthly',
   title: 'Premium monthly',
   offerToken: 'tok-base',
-  phases: [PricingPhase(billingPeriod: 'P1M', priceMicros: 99000000, formattedPrice: '₹99.00')],
+  phases: [PricingPhase(billingPeriod: 'P1M', priceMicros: 75000000, formattedPrice: '₹75.00')],
 );
-const yearly = StoreProduct(
-  id: 'signovoice_premium_yearly',
-  title: 'Premium yearly',
-  offerToken: 'tok-y',
-  phases: [PricingPhase(billingPeriod: 'P1Y', priceMicros: 799000000, formattedPrice: '₹799.00')],
+const sixMonth = StoreProduct(
+  id: 'signovoice_premium_6months',
+  title: 'Premium 6 months',
+  offerToken: 'tok-6',
+  phases: [
+    PricingPhase(billingPeriod: 'P1M', priceMicros: 0, formattedPrice: 'Free'),
+    PricingPhase(billingPeriod: 'P6M', priceMicros: 200000000, formattedPrice: '₹200.00'),
+  ],
 );
 
 const purchase = StorePurchase(
@@ -146,7 +149,7 @@ void main() {
       expect(pickBestOffer([monthlyBase]), monthlyBase);
       expect(pickBestOffer(const []), isNull);
       expect(monthlyTrial.hasFreeTrial, isTrue);
-      expect(monthlyTrial.recurring.formattedPrice, '₹99.00');
+      expect(monthlyTrial.recurring.formattedPrice, '₹75.00');
       expect(monthlyBase.hasFreeTrial, isFalse);
     });
     test('parses ISO billing periods', () {
@@ -160,13 +163,14 @@ void main() {
 
   group('loading products', () {
     test('ready with store prices; trial offer chosen', () async {
-      final c = _make(billing: _Billing(products: [monthlyBase, monthlyTrial, yearly]), repo: _Repo());
+      final c = _make(billing: _Billing(products: [monthlyBase, monthlyTrial, sixMonth]), repo: _Repo());
       await c.read(purchaseFlowProvider.notifier).loadProducts();
       final s = c.read(purchaseFlowProvider);
       expect(s.stage, PurchaseStage.ready);
       expect(s.products.length, 2);
       expect(s.selected!.hasFreeTrial, isTrue);
-      expect(s.selectedId, 'signovoice_premium_monthly');
+      expect(s.selectedId, 'signovoice_premium_6months'); // best value is pre-selected
+      expect(s.products['signovoice_premium_6months']!.recurring.billingPeriod, 'P6M');
     });
     test('billing unavailable', () async {
       final c = _make(billing: _Billing(available: false), repo: _Repo());

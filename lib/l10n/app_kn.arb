@@ -500,6 +500,7 @@
   "planSixMonth": "6 ತಿಂಗಳು",
   "periodMonths": "{count} ತಿಂಗಳು",
   "periodYears": "{count} ವರ್ಷಗಳು",
+  "planSave": "{percent}% ಉಳಿಸಿ",
   "notifLearnTitle": "ಅಭ್ಯಾಸದ ಸಮಯ",
   "notifLearnBody": "ದಿನಕ್ಕೆ ಕೆಲವು ಸಂಜ್ಞೆಗಳು ಅವನ್ನು ತಾಜಾವಾಗಿಡುತ್ತವೆ. ಇಂದು ಕಲಿಯಲು ಸೈನೋವಾಯ್ಸ್ ತೆರೆಯಿರಿ.",
   "notifStreakTitle": "ನಿಮ್ಮ ಸರಣಿಯನ್ನು ಮುಂದುವರಿಸಿ",

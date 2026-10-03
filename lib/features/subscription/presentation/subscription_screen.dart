@@ -13,6 +13,7 @@ import '../../../core/providers.dart';
 import '../../../shared/widgets/failure_message.dart';
 import '../data/razorpay_order_checkout.dart';
 import '../../../core/theme/app_colors.dart';
+import '../domain/billing_service.dart';
 import '../domain/subscription.dart';
 import '../domain/trial_policy.dart';
 import 'purchase_flow_controller.dart';
@@ -29,6 +30,17 @@ class SubscriptionScreen extends ConsumerStatefulWidget {
 
   @override
   ConsumerState<SubscriptionScreen> createState() => _SubscriptionScreenState();
+}
+
+/// Saving of a multi-month plan versus the monthly plan, from the real store prices (same currency only).
+int? _savePercent(Map<String, StoreProduct> all, StoreProduct p) {
+  final months = parseBillingPeriod(p.recurring.billingPeriod);
+  final monthly = all[AppConfig.monthlyProductId];
+  if (monthly == null || p.id == monthly.id || months.unit != BillingUnit.month || months.count < 2) return null;
+  final base = monthly.recurring.priceMicros * months.count;
+  if (base <= 0 || p.recurring.priceMicros <= 0) return null;
+  final pct = ((1 - p.recurring.priceMicros / base) * 100).round();
+  return pct >= 5 ? pct : null;
 }
 
 class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
@@ -106,7 +118,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
             const Padding(padding: EdgeInsets.all(16), child: Center(child: CircularProgressIndicator()))
           else
             for (final p in flow.products.values) ...[
-              SubscriptionCard(product: p, selected: p.id == flow.selectedId, onTap: () => ctrl.select(p.id)),
+              SubscriptionCard(product: p, selected: p.id == flow.selectedId, onTap: () => ctrl.select(p.id), savePercent: _savePercent(flow.products, p)),
               const SizedBox(height: 10),
             ],
           const SizedBox(height: 4),

@@ -104,3 +104,4 @@ tryOtherPayment | Play plans unavailable? Pay with UPI, cards or wallets instead
 planSixMonth | 6 months | 6 महीने | 6 ತಿಂಗಳು
 periodMonths | {count} months | {count} महीने | {count} ತಿಂಗಳು
 periodYears | {count} years | {count} वर्ष | {count} ವರ್ಷಗಳು
+planSave | Save {percent}% | {percent}% बचाएं | {percent}% ಉಳಿಸಿ

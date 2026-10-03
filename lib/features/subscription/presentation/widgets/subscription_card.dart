@@ -7,10 +7,13 @@ import '../subscription_labels.dart';
 
 /// A selectable plan (monthly / yearly) showing the *store's* price.
 class SubscriptionCard extends StatelessWidget {
-  const SubscriptionCard({super.key, required this.product, required this.selected, required this.onTap});
+  const SubscriptionCard({super.key, required this.product, required this.selected, required this.onTap, this.savePercent});
   final StoreProduct product;
   final bool selected;
   final VoidCallback onTap;
+
+  /// "Save N%" versus paying the monthly price for the same time, when both prices are known.
+  final int? savePercent;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +48,7 @@ class SubscriptionCard extends StatelessWidget {
                 Text(l.planPerPeriod(price, period), style: Theme.of(context).textTheme.bodyMedium),
               ]),
             ),
+            if (savePercent != null) Padding(padding: const EdgeInsetsDirectional.only(end: 8), child: StatusBadge(label: l.planSave('$savePercent'), tone: StatusTone.info, icon: Icons.savings_outlined)),
             if (product.hasFreeTrial) Flexible(child: StatusBadge(label: l.planFirstFree, tone: StatusTone.success, icon: Icons.card_giftcard_rounded)),
           ]),
         ),

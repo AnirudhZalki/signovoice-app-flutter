@@ -1681,6 +1681,11 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String planSave(String percent) {
+    return '$percent% बचाएं';
+  }
+
+  @override
   String get notifLearnTitle => 'अभ्यास का समय';
 
   @override

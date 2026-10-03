@@ -1683,6 +1683,11 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
+  String planSave(String percent) {
+    return '$percent% ಉಳಿಸಿ';
+  }
+
+  @override
   String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';
 
   @override

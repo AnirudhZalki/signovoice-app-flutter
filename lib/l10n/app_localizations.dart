@@ -3100,6 +3100,12 @@ abstract class AppLocalizations {
   /// **'{count} years'**
   String periodYears(String count);
 
+  /// No description provided for @planSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save {percent}%'**
+  String planSave(String percent);
+
   /// No description provided for @notifLearnTitle.
   ///
   /// In en, this message translates to:

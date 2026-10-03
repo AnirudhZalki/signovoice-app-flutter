@@ -500,6 +500,7 @@
   "planSixMonth": "6 महीने",
   "periodMonths": "{count} महीने",
   "periodYears": "{count} वर्ष",
+  "planSave": "{percent}% बचाएं",
   "notifLearnTitle": "अभ्यास का समय",
   "notifLearnBody": "दिन में कुछ साइन उन्हें ताज़ा रखते हैं। आज सीखने के लिए साइनोवॉइस खोलें।",
   "notifStreakTitle": "अपनी लगातार गतिविधि जारी रखें",
