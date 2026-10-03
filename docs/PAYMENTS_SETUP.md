@@ -1,5 +1,29 @@
 # Premium subscription & auto-pay setup
 
+## Quick plan: Free + Premium ₹200 per 6 months (auto-renewing, 1-month free trial)
+The app already has the **Free** plan (daily recognition/history limits) and Premium (unlimited). Prices are **never hard-coded**: the app shows
+what Google Play / Razorpay return, so set ₹200 in those two places. Product id for the 6-month plan: `signovoice_premium_6months`
+(monthly `signovoice_premium_monthly` and yearly `signovoice_premium_yearly` also work; delete any you don't want to sell — the app shows only what the store returns).
+
+### Google Play (Play Store builds — Play autopay)
+1. Play Console → your app → **Monetize with Play → Products → Subscriptions → Create subscription**. Product ID `signovoice_premium_6months`, name "Premium 6 months".
+2. **Add base plan**: Auto-renewing, billing period **Every 6 months**, grace period 7 days, account hold 30 days, resubscribe allowed. **Price: India ₹200** (set other countries or "Convert from INR").
+3. **Add offer** on the base plan → *New customer acquisition*, eligibility "Never had this subscription", phase **Free trial → 1 month**. Activate the offer and the base plan.
+4. Turn on **Real-time developer notifications** (Monetization setup → Pub/Sub topic) and deploy the backend (see section A below).
+5. Upload a build to Internal testing, add **license testers** (Setup → License testing), install from the Play link (billing does not work in sideloaded APKs — that is the "plans couldn't be loaded" error).
+6. Auto-renew is automatic on Play; users cancel in Play › Subscriptions (the app's "Manage subscription" opens it).
+
+### Razorpay (APK / website builds — UPI AutoPay, cards, e-mandate)
+1. Razorpay Dashboard (Test mode first) → **Subscriptions → Plans → Create Plan**: Billing frequency **Monthly**, **Every 6** cycles (interval = 6), Amount **200** (= 20000 paise), name "Premium 6 months". Copy the `plan_…` id.
+2. Settings → **Payment methods**: enable UPI (AutoPay), cards, e-mandate. UPI AutoPay mandates up to ₹15,000 need no extra OTP after the first approval.
+3. Backend env `RAZORPAY_PLANS`:
+   `{"signovoice_premium_6months":{"planId":"plan_XXXX","title":"Premium 6 months","months":6,"totalCount":20}}`
+   (`totalCount` = number of 6-month cycles, 20 = 10 years). Plan price and cycle are read from Razorpay, so a price change is made in the dashboard (create a new plan, update the id).
+4. Free month: handled by the backend (first charge starts after `TRIAL_DAYS=30`); the user still approves the mandate up front.
+5. Build with `--dart-define=ENABLE_RAZORPAY=true` (+ `--dart-define=PAYMENT_METHOD=razorpay` to make it the default). **Do not enable it in the Google Play build** — Play requires Play Billing for in-app subscriptions.
+6. Go live: switch to Live keys, recreate the plan in Live mode, update `RAZORPAY_KEY_ID/SECRET`, `RAZORPAY_PLANS`, and the webhook secret.
+
+
 The app supports two payment methods behind one verified flow (purchase → **backend verification** → entitlement; the client never grants Premium by itself):
 
 | Method | Use for | Auto-pay |

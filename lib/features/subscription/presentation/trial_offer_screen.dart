@@ -69,7 +69,7 @@ class _TrialOfferScreenState extends ConsumerState<TrialOfferScreen> {
             if (trialAvailable) ...[
               const SizedBox(height: 8),
               Text(
-                l.trialOfferPrice(product!.recurring.formattedPrice, periodWord(l, product.recurring.billingPeriod)),
+                l.trialOfferPrice(product!.recurring.formattedPrice, periodLabel(l, product.recurring.billingPeriod)),
                 style: text.titleMedium,
                 textAlign: TextAlign.center,
               ),

@@ -1668,6 +1668,19 @@ class AppLocalizationsHi extends AppLocalizations {
       'Play योजनाएं उपलब्ध नहीं? UPI, कार्ड या वॉलेट से भुगतान करें।';
 
   @override
+  String get planSixMonth => '6 महीने';
+
+  @override
+  String periodMonths(String count) {
+    return '$count महीने';
+  }
+
+  @override
+  String periodYears(String count) {
+    return '$count वर्ष';
+  }
+
+  @override
   String get notifLearnTitle => 'अभ्यास का समय';
 
   @override

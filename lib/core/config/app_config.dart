@@ -37,6 +37,11 @@ class AppConfig {
     'IAP_MONTHLY_ID',
     defaultValue: 'signovoice_premium_monthly',
   );
+  /// 6-month plan (e.g. ₹200 / 6 months). Product id must match Play Console + the Razorpay plan map.
+  static const String sixMonthProductId = String.fromEnvironment(
+    'IAP_6MONTH_ID',
+    defaultValue: 'signovoice_premium_6months',
+  );
   static const String yearlyProductId = String.fromEnvironment(
     'IAP_YEARLY_ID',
     defaultValue: 'signovoice_premium_yearly',
@@ -64,5 +69,5 @@ class AppConfig {
       remoteRecognitionUrl.startsWith('https://');
 
   static Set<String> get subscriptionProductIds =>
-      {monthlyProductId, yearlyProductId};
+      {monthlyProductId, sixMonthProductId, yearlyProductId};
 }

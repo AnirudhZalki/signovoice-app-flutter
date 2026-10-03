@@ -1670,6 +1670,19 @@ class AppLocalizationsKn extends AppLocalizations {
       'Play ಯೋಜನೆಗಳು ಲಭ್ಯವಿಲ್ಲವೇ? UPI, ಕಾರ್ಡ್ ಅಥವಾ ವ್ಯಾಲೆಟ್ ಮೂಲಕ ಪಾವತಿಸಿ.';
 
   @override
+  String get planSixMonth => '6 ತಿಂಗಳು';
+
+  @override
+  String periodMonths(String count) {
+    return '$count ತಿಂಗಳು';
+  }
+
+  @override
+  String periodYears(String count) {
+    return '$count ವರ್ಷಗಳು';
+  }
+
+  @override
   String get notifLearnTitle => 'ಅಭ್ಯಾಸದ ಸಮಯ';
 
   @override

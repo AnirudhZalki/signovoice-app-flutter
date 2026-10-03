@@ -136,7 +136,9 @@ class PurchaseFlowController extends Notifier<PurchaseFlowState> {
       }
       final selected = best.containsKey(state.selectedId)
           ? state.selectedId
-          : (best.containsKey(AppConfig.monthlyProductId) ? AppConfig.monthlyProductId : best.keys.first);
+          : (best.containsKey(AppConfig.sixMonthProductId)
+              ? AppConfig.sixMonthProductId
+              : (best.containsKey(AppConfig.monthlyProductId) ? AppConfig.monthlyProductId : best.keys.first));
       state = state.copyWith(stage: PurchaseStage.ready, products: best, selectedId: selected);
     } catch (e) {
       state = state.copyWith(stage: PurchaseStage.failed, failure: toFailure(e));

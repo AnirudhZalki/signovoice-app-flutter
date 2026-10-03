@@ -3082,6 +3082,24 @@ abstract class AppLocalizations {
   /// **'Play plans unavailable? Pay with UPI, cards or wallets instead.'**
   String get tryOtherPayment;
 
+  /// No description provided for @planSixMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'6 months'**
+  String get planSixMonth;
+
+  /// No description provided for @periodMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} months'**
+  String periodMonths(String count);
+
+  /// No description provided for @periodYears.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} years'**
+  String periodYears(String count);
+
   /// No description provided for @notifLearnTitle.
   ///
   /// In en, this message translates to:

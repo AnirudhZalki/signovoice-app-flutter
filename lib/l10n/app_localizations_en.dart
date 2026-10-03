@@ -1668,6 +1668,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Play plans unavailable? Pay with UPI, cards or wallets instead.';
 
   @override
+  String get planSixMonth => '6 months';
+
+  @override
+  String periodMonths(String count) {
+    return '$count months';
+  }
+
+  @override
+  String periodYears(String count) {
+    return '$count years';
+  }
+
+  @override
   String get notifLearnTitle => 'Time to practise';
 
   @override

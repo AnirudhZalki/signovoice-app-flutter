@@ -25,7 +25,7 @@ const RAZORPAY_WEBHOOK_SECRET = defineSecret('RAZORPAY_WEBHOOK_SECRET');
 const LIVEKIT_API_SECRET = defineSecret('LIVEKIT_API_SECRET');
 
 const env = (k, d = '') => process.env[k] || d;
-const plans = () => JSON.parse(env('RAZORPAY_PLANS', '{}')); // {"signovoice_premium_monthly":{"planId":"plan_x","period":"monthly","title":"Premium monthly","totalCount":120}}
+const plans = () => JSON.parse(env('RAZORPAY_PLANS', '{}')); // {"signovoice_premium_6months":{"planId":"plan_x","title":"Premium 6 months","months":6,"totalCount":20}}  (cycle + price come from the Razorpay plan itself)
 const trialDays = () => Number(env('TRIAL_DAYS', '30'));
 const packageName = () => env('PLAY_PACKAGE_NAME', 'com.anirudhzalki.signovoice');
 
@@ -83,7 +83,7 @@ async function razorpayPlans() {
   const out = [];
   for (const [productId, p] of Object.entries(plans())) {
     const plan = await rz.plans.fetch(p.planId);
-    out.push({ productId, planId: p.planId, title: p.title || productId, period: p.period, amountPaise: plan.item.amount, currency: plan.item.currency, trialDays: trialDays() });
+    out.push({ productId, planId: p.planId, title: p.title || productId, period: plan.period || p.period, interval: plan.interval || 1, amountPaise: plan.item.amount, currency: plan.item.currency, trialDays: trialDays() });
   }
   return out;
 }
@@ -93,7 +93,7 @@ async function razorpayCreate(uid, productId) {
   if (!p) throw Object.assign(new Error('unknown product'), { status: 404 });
   const existing = (await entRef(uid).get()).data();
   const alreadyTrialed = !!(existing && existing.trialStartDate);
-  const req = { plan_id: p.planId, total_count: p.totalCount || (p.period === 'yearly' ? 10 : 120), quantity: 1, customer_notify: 1, notes: { uid, productId } };
+  const req = { plan_id: p.planId, total_count: p.totalCount || Math.max(1, Math.floor(120 / Math.max(1, p.months || (p.period === 'yearly' ? 12 : 1)))), quantity: 1, customer_notify: 1, notes: { uid, productId } };
   // Free trial: authorise the mandate now, first charge after the trial (UPI AutoPay / e-mandate).
   if (!alreadyTrialed && trialDays() > 0) req.start_at = Math.floor(Date.now() / 1000) + trialDays() * 86400;
   const sub = await razorpay().subscriptions.create(req);

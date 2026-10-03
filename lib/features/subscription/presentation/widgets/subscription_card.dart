@@ -17,7 +17,7 @@ class SubscriptionCard extends StatelessWidget {
     final l = context.l10n;
     final scheme = Theme.of(context).colorScheme;
     final price = product.recurring.formattedPrice;
-    final period = periodWord(l, product.recurring.billingPeriod);
+    final period = periodLabel(l, product.recurring.billingPeriod);
     return Semantics(
       button: true,
       selected: selected,

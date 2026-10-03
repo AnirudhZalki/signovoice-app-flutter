@@ -49,7 +49,9 @@ class RazorpayBillingService implements BillingService {
       final currency = (p['currency'] as String?) ?? 'INR';
       final amount = (p['amountPaise'] as num).toInt();
       final fmt = NumberFormat.simpleCurrency(name: currency, locale: 'en_IN', decimalDigits: amount % 100 == 0 ? 0 : 2);
-      final period = (p['period'] as String?) == 'yearly' ? 'P1Y' : 'P1M';
+      // Backend sends the plan's real billing cycle: `period` (monthly|yearly) x `interval` (e.g. 6 => every 6 months).
+      final interval = (p['interval'] as num?)?.toInt() ?? 1;
+      final period = (p['period'] as String?) == 'yearly' ? 'P${interval}Y' : 'P${interval}M';
       final trialDays = (p['trialDays'] as num?)?.toInt() ?? 0;
       out.add(StoreProduct(
         id: id,

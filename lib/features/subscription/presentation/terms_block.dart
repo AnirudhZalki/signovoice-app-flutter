@@ -28,7 +28,7 @@ class TermsBlock extends StatelessWidget {
       paragraph = l.priceShownAtCheckout;
     } else {
       final price = p.recurring.formattedPrice;
-      final period = periodWord(l, p.recurring.billingPeriod);
+      final period = periodLabel(l, p.recurring.billingPeriod);
       bullets = [
         if (p.hasFreeTrial) (Icons.card_giftcard_rounded, l.trialOneMonthFree),
         (Icons.payments_outlined, l.trialThenPrice(price, period)),
