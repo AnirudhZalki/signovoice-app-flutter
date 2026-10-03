@@ -635,6 +635,76 @@
     }
   },
   "deskAccept": "Accept and join",
+  "priceFree": "Free",
+  "pricePerSession": "{price} / {minutes} min",
+  "@pricePerSession": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "payAndConnect": "Pay {price} and connect",
+  "@payAndConnect": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "connectNow": "Connect now",
+  "payRefundNote": "You pay only if the interpreter accepts: if nobody accepts in time or you cancel while waiting, you are refunded automatically.",
+  "sessionWith": "Session with {name}",
+  "@sessionWith": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "becomeInterpreter": "Become an interpreter",
+  "becomeInterpreterBody": "Help people communicate and earn per session. Set your languages and your rate, then go online whenever you are free.",
+  "applicationPending": "Your interpreter application is waiting for approval.",
+  "interpreterProfileTitle": "Interpreter profile",
+  "profileName": "Display name",
+  "profileLanguages": "Languages you interpret",
+  "profileRate": "Your rate per {minutes}-minute session (₹)",
+  "@profileRate": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "profileRateHint": "Enter 0 to offer sessions for free, or 1 to 5000. The platform keeps a service fee from paid sessions.",
+  "profileBio": "About you (optional)",
+  "profileSave": "Save profile",
+  "profileSaved": "Profile saved.",
+  "profileInvalidRate": "Enter 0 or a whole number from 1 to 5000.",
+  "profilePickLanguage": "Choose at least one language.",
+  "deskRate": "Your rate",
+  "deskEarnings": "Total earned: {amount}",
+  "@deskEarnings": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "deskEditProfile": "Edit profile and rate",
+  "deskYouEarn": "You earn {amount}",
+  "@deskYouEarn": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "deskDecline": "Decline",
+  "callPaymentCancelled": "Payment wasn't completed. You haven't been charged.",
   "premiumHeader": "Unlock the full SignoVoice experience",
   "premiumSubheader": "Free stays genuinely useful. Premium removes limits and adds deeper tools.",
   "freePlan": "Free",

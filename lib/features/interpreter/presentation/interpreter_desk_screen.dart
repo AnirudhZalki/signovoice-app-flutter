@@ -9,6 +9,7 @@ import '../../../shared/widgets/cards.dart';
 import '../../../shared/widgets/failure_message.dart';
 import '../domain/interpreter_models.dart';
 import 'call_controller.dart';
+import 'money.dart';
 import 'interpreter_providers.dart';
 
 /// For approved interpreters: go online, see waiting requests, accept one and join its room.
@@ -37,6 +38,15 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
     } finally {
       if (mounted) setState(() => _busy = false);
     }
+  }
+
+  Future<void> _decline(IncomingRequest r) async {
+    try {
+      await ref.read(interpreterRepositoryProvider).decline(r.requestId);
+    } catch (e) {
+      if (mounted) setState(() => _error = failureMessage(context.l10n, toFailure(e)));
+    }
+    ref.invalidate(interpreterQueueProvider);
   }
 
   Future<void> _accept(IncomingRequest r) async {
@@ -84,6 +94,22 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
                 onChanged: _busy ? null : _setOnline,
               ),
             ),
+            const SizedBox(height: 12),
+            AppCard(
+              onTap: () => context.push(Routes.interpreterProfile),
+              child: Row(children: [
+                const Icon(Icons.payments_outlined),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Text('${l.deskRate}: ${m.ratePaise > 0 ? formatPaise(l, m.ratePaise) : l.priceFree}', style: text.titleMedium),
+                    Text(l.deskEarnings(formatPaiseRaw(m.earningsPaise)), style: text.bodySmall),
+                    Text(l.deskEditProfile, style: text.bodySmall?.copyWith(color: Theme.of(context).colorScheme.primary)),
+                  ]),
+                ),
+                const Icon(Icons.chevron_right_rounded),
+              ]),
+            ),
             if (_error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Semantics(liveRegion: true, child: Text(_error!, style: TextStyle(color: Theme.of(context).colorScheme.error)))),
             const SizedBox(height: 16),
             Semantics(header: true, child: Text(l.deskQueue, style: text.titleMedium)),
@@ -111,8 +137,15 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
                                 if (r.note != null) Padding(padding: const EdgeInsets.only(top: 6), child: Text(r.note!)),
                                 const SizedBox(height: 4),
                                 Text(l.deskWaiting('${r.waitingSeconds}'), style: text.bodySmall),
+                                if (r.amountPaise > 0) Text(l.deskYouEarn(formatPaiseRaw(r.earnPaise)), style: text.titleSmall),
                                 const SizedBox(height: 8),
-                                FilledButton(onPressed: _busy ? null : () => _accept(r), child: Text(l.deskAccept)),
+                                Row(children: [
+                                  Expanded(child: FilledButton(onPressed: _busy ? null : () => _accept(r), child: Text(l.deskAccept))),
+                                  if (r.directed) ...[
+                                    const SizedBox(width: 8),
+                                    OutlinedButton(onPressed: _busy ? null : () => _decline(r), child: Text(l.deskDecline)),
+                                  ],
+                                ]),
                               ]),
                             ),
                           ),

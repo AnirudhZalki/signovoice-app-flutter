@@ -2482,6 +2482,156 @@ abstract class AppLocalizations {
   /// **'Accept and join'**
   String get deskAccept;
 
+  /// No description provided for @priceFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get priceFree;
+
+  /// No description provided for @pricePerSession.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / {minutes} min'**
+  String pricePerSession(String minutes, String price);
+
+  /// No description provided for @payAndConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay {price} and connect'**
+  String payAndConnect(String price);
+
+  /// No description provided for @connectNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect now'**
+  String get connectNow;
+
+  /// No description provided for @payRefundNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You pay only if the interpreter accepts: if nobody accepts in time or you cancel while waiting, you are refunded automatically.'**
+  String get payRefundNote;
+
+  /// No description provided for @sessionWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Session with {name}'**
+  String sessionWith(String name);
+
+  /// No description provided for @becomeInterpreter.
+  ///
+  /// In en, this message translates to:
+  /// **'Become an interpreter'**
+  String get becomeInterpreter;
+
+  /// No description provided for @becomeInterpreterBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Help people communicate and earn per session. Set your languages and your rate, then go online whenever you are free.'**
+  String get becomeInterpreterBody;
+
+  /// No description provided for @applicationPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your interpreter application is waiting for approval.'**
+  String get applicationPending;
+
+  /// No description provided for @interpreterProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpreter profile'**
+  String get interpreterProfileTitle;
+
+  /// No description provided for @profileName.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get profileName;
+
+  /// No description provided for @profileLanguages.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages you interpret'**
+  String get profileLanguages;
+
+  /// No description provided for @profileRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Your rate per {minutes}-minute session (₹)'**
+  String profileRate(String minutes);
+
+  /// No description provided for @profileRateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 0 to offer sessions for free, or 1 to 5000. The platform keeps a service fee from paid sessions.'**
+  String get profileRateHint;
+
+  /// No description provided for @profileBio.
+  ///
+  /// In en, this message translates to:
+  /// **'About you (optional)'**
+  String get profileBio;
+
+  /// No description provided for @profileSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save profile'**
+  String get profileSave;
+
+  /// No description provided for @profileSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile saved.'**
+  String get profileSaved;
+
+  /// No description provided for @profileInvalidRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter 0 or a whole number from 1 to 5000.'**
+  String get profileInvalidRate;
+
+  /// No description provided for @profilePickLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose at least one language.'**
+  String get profilePickLanguage;
+
+  /// No description provided for @deskRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Your rate'**
+  String get deskRate;
+
+  /// No description provided for @deskEarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Total earned: {amount}'**
+  String deskEarnings(String amount);
+
+  /// No description provided for @deskEditProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile and rate'**
+  String get deskEditProfile;
+
+  /// No description provided for @deskYouEarn.
+  ///
+  /// In en, this message translates to:
+  /// **'You earn {amount}'**
+  String deskYouEarn(String amount);
+
+  /// No description provided for @deskDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get deskDecline;
+
+  /// No description provided for @callPaymentCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment wasn\'t completed. You haven\'t been charged.'**
+  String get callPaymentCancelled;
+
   /// No description provided for @premiumHeader.
   ///
   /// In en, this message translates to:

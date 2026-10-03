@@ -11,6 +11,7 @@ import 'package:signovoice/core/services/permission_service.dart';
 import 'package:signovoice/core/services/storage.dart';
 import 'package:signovoice/features/auth/domain/app_user.dart';
 import 'package:signovoice/features/auth/presentation/auth_controller.dart';
+import 'package:signovoice/features/interpreter/data/order_checkout_runner.dart';
 import 'package:signovoice/features/interpreter/domain/call_service.dart';
 import 'package:signovoice/features/interpreter/domain/interpreter_models.dart';
 import 'package:signovoice/features/interpreter/domain/interpreter_repository.dart';
@@ -41,6 +42,8 @@ class _Repo implements InterpreterRepository {
   final List<CallRequestState> responses; // first = request result, rest = polls
   int polls = 0;
   bool cancelled = false;
+  String? paidWith; // payment id sent to /pay
+  CallRequestState payResult = const CallRequestState(requestId: 'r1', status: RequestStatus.waiting, queuePosition: 1);
   @override
   Future<List<Interpreter>> list({String? language}) async => const [];
   @override
@@ -54,6 +57,16 @@ class _Repo implements InterpreterRepository {
   Future<void> submitFeedback({required String callId, required int rating, String? comment}) async {}
   @override
   Future<void> reportIssue({required String callId, required IssueCategory category, String? details}) async {}
+  @override
+  Future<CallRequestState> payRequest({required String requestId, required String orderId, required String paymentId, required String signature}) async {
+    paidWith = paymentId;
+    return payResult;
+  }
+  @override
+  Future<InterpreterMe> saveProfile({required String name, required List<String> languages, required int ratePaise, String? bio}) async =>
+      const InterpreterMe(approved: false);
+  @override
+  Future<void> decline(String requestId) async {}
   @override
   Future<InterpreterMe> me() async => const InterpreterMe(approved: false);
   @override
@@ -118,6 +131,20 @@ class _Call implements CallService {
 
 const _session = CallSession(callId: 'call1', token: 'tok', roomName: 'room', url: 'wss://lk.test', interpreterName: 'Asha');
 const _accepted = CallRequestState(requestId: 'r1', status: RequestStatus.accepted, session: _session);
+const _order = PaymentOrder(orderId: 'order_1', amountPaise: 15000, currency: 'INR', keyId: 'rzp_test_x');
+const _awaitingPayment = CallRequestState(requestId: 'r1', status: RequestStatus.awaitingPayment, order: _order);
+
+class _Runner implements OrderCheckoutRunner {
+  _Runner(this.result);
+  final CheckoutResult result;
+  PaymentOrder? opened;
+  @override
+  Future<CheckoutResult> run(PaymentOrder order, {String? description}) async {
+    opened = order;
+    return result;
+  }
+}
+
 const _waiting = CallRequestState(requestId: 'r1', status: RequestStatus.waiting, queuePosition: 2);
 
 ProviderContainer _make({
@@ -125,6 +152,7 @@ ProviderContainer _make({
   bool configured = true,
   PermissionState perm = PermissionState.granted,
   required _Repo repo,
+  OrderCheckoutRunner? runner,
   _Call? call,
 }) {
   final c = ProviderContainer(overrides: [
@@ -138,6 +166,7 @@ ProviderContainer _make({
     interpreterRepositoryProvider.overrideWithValue(repo),
     callServiceFactoryProvider.overrideWithValue(() => call ?? _Call()),
     callPollIntervalProvider.overrideWithValue(const Duration(milliseconds: 30)),
+    if (runner != null) orderCheckoutRunnerProvider.overrideWithValue(runner),
   ]);
   addTearDown(c.dispose);
   c.listen(callControllerProvider, (_, _) {});
@@ -241,5 +270,38 @@ void main() {
     await c.read(callControllerProvider.notifier).request(mode: CallMode.video, language: 'en');
     await _until(() => c.read(callControllerProvider).phase == CallPhase.failed);
     expect(c.read(callControllerProvider).failure?.type, FailureType.notConfigured);
+  });
+
+  group('paid interpreter session', () {
+    test('pays, backend verifies, then the request waits and connects when accepted', () async {
+      final repo = _Repo([_awaitingPayment, _accepted]); // 1st = request, then polls
+      final runner = _Runner(const CheckoutResult(CheckoutOutcome.success, orderId: 'order_1', paymentId: 'pay_1', signature: 'sig'));
+      final c = _make(repo: repo, runner: runner);
+      await c.read(callControllerProvider.notifier).request(mode: CallMode.video, language: 'en', interpreterId: 'i1');
+      await _until(() => c.read(callControllerProvider).phase == CallPhase.connecting || c.read(callControllerProvider).phase == CallPhase.connected);
+      expect(runner.opened?.amountPaise, 15000);
+      expect(repo.paidWith, 'pay_1');
+    });
+
+    test('closing the payment sheet cancels the request and nothing is queued', () async {
+      final repo = _Repo([_awaitingPayment]);
+      final runner = _Runner(const CheckoutResult(CheckoutOutcome.cancelled));
+      final c = _make(repo: repo, runner: runner);
+      await c.read(callControllerProvider.notifier).request(mode: CallMode.video, language: 'en', interpreterId: 'i1');
+      await _until(() => c.read(callControllerProvider).phase == CallPhase.failed);
+      expect(repo.paidWith, isNull);
+      expect(repo.cancelled, isTrue);
+      expect(c.read(callControllerProvider).failureReason, RequestStatus.cancelled);
+    });
+
+    test('a payment the backend cannot verify fails the request instead of waiting', () async {
+      final repo = _Repo([_awaitingPayment]);
+      final c = _make(repo: repo, runner: _Runner(const CheckoutResult(CheckoutOutcome.success, orderId: 'order_1', paymentId: 'pay_1', signature: 'bad')));
+      repo.payResult = const CallRequestState(requestId: 'r1', status: RequestStatus.cancelled);
+      await c.read(callControllerProvider.notifier).request(mode: CallMode.video, language: 'en', interpreterId: 'i1');
+      await _until(() => c.read(callControllerProvider).phase == CallPhase.failed);
+      expect(repo.paidWith, 'pay_1');
+      expect(c.read(callControllerProvider).failureReason, RequestStatus.cancelled);
+    });
   });
 }

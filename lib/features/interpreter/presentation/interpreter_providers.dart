@@ -4,6 +4,7 @@ import '../../../core/config/app_config.dart';
 import '../../../core/providers.dart';
 import '../data/http_interpreter_repository.dart';
 import '../data/livekit_call_service.dart';
+import '../data/order_checkout_runner.dart';
 import '../data/livekit_token_service.dart';
 import '../domain/call_service.dart';
 import '../domain/interpreter_models.dart';
@@ -48,3 +49,5 @@ final interpreterQueueProvider = StreamProvider.autoDispose<List<IncomingRequest
 
 /// LiveKit server URL used when a session doesn't carry one (overridden in tests).
 final livekitUrlProvider = Provider<String>((_) => AppConfig.livekitUrl);
+
+final orderCheckoutRunnerProvider = Provider<OrderCheckoutRunner>((ref) => RazorpayCheckoutRunner());

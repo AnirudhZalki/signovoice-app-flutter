@@ -73,7 +73,7 @@ test('razorpay order signature: order_id|payment_id', () => {
   assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1' }, secret), false);
 });
 
-const { isExpired, queuePosition, canTake, publicInterpreter, REQUEST_TTL_MS } = require('../lib/interpreters');
+const { splitAmount, validateProfile, isExpired, queuePosition, canTake, publicInterpreter, REQUEST_TTL_MS } = require('../lib/interpreters');
 
 test('interpreter queue: oldest first, expired requests do not count', () => {
   const now = 1_000_000_000;
@@ -99,4 +99,22 @@ test('interpreter eligibility: approved, available, language and named-interpret
   assert.equal(canTake({ ...i, approved: false }, { language: 'hi' }), false);
   assert.equal(canTake(null, { language: 'hi' }), false);
   assert.equal(publicInterpreter('x', { name: 'N', status: 'weird' }).status, 'offline');
+});
+
+test('platform fee split keeps every paisa and rounds the fee up', () => {
+  assert.deepEqual(splitAmount(20000, 20), { amountPaise: 20000, feePaise: 4000, interpreterPaise: 16000 });
+  const odd = splitAmount(101, 20);
+  assert.equal(odd.feePaise + odd.interpreterPaise, 101);
+  assert.deepEqual(splitAmount(5000, 0), { amountPaise: 5000, feePaise: 0, interpreterPaise: 5000 });
+  assert.equal(splitAmount(5000, 150).interpreterPaise, 0); // fee capped at 100%
+});
+
+test('interpreter profile validation', () => {
+  const ok = validateProfile({ name: ' Ravi ', languages: ['EN', 'hi', 'en'], ratePaise: 15000, bio: 'x' });
+  assert.deepEqual([ok.name, ok.languages, ok.ratePaise], ['Ravi', ['en', 'hi'], 15000]);
+  assert.equal(validateProfile({ name: 'Ravi', languages: ['en'] }).ratePaise, 0); // free is allowed
+  for (const bad of [{ name: 'R', languages: ['en'] }, { name: 'Ravi', languages: [] }, { name: 'Ravi', languages: ['english'] },
+    { name: 'Ravi', languages: ['en'], ratePaise: 50 }, { name: 'Ravi', languages: ['en'], ratePaise: 99999999 }, { name: 'Ravi', languages: ['en'], ratePaise: 10.5 }]) {
+    assert.throws(() => validateProfile(bad), (e) => e.status === 400);
+  }
 });

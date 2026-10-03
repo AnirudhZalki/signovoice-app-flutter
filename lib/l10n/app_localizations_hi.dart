@@ -1317,6 +1317,99 @@ class AppLocalizationsHi extends AppLocalizations {
   String get deskAccept => 'स्वीकार करें और जुड़ें';
 
   @override
+  String get priceFree => 'निःशुल्क';
+
+  @override
+  String pricePerSession(String minutes, String price) {
+    return '$price / $minutes मिनट';
+  }
+
+  @override
+  String payAndConnect(String price) {
+    return '$price चुकाएं और जुड़ें';
+  }
+
+  @override
+  String get connectNow => 'अभी जुड़ें';
+
+  @override
+  String get payRefundNote =>
+      'आप तभी भुगतान करते हैं जब दुभाषिया स्वीकार करे: समय पर कोई स्वीकार न करे या आप प्रतीक्षा में रद्द करें तो पैसे अपने आप वापस हो जाते हैं।';
+
+  @override
+  String sessionWith(String name) {
+    return '$name के साथ सत्र';
+  }
+
+  @override
+  String get becomeInterpreter => 'दुभाषिया बनें';
+
+  @override
+  String get becomeInterpreterBody =>
+      'लोगों को संवाद में मदद करें और प्रति सत्र कमाएं। अपनी भाषाएं और दर तय करें, फिर जब खाली हों ऑनलाइन हों।';
+
+  @override
+  String get applicationPending =>
+      'आपका दुभाषिया आवेदन स्वीकृति की प्रतीक्षा में है।';
+
+  @override
+  String get interpreterProfileTitle => 'दुभाषिया प्रोफ़ाइल';
+
+  @override
+  String get profileName => 'प्रदर्शित नाम';
+
+  @override
+  String get profileLanguages => 'जिन भाषाओं में आप दुभाषिया करते हैं';
+
+  @override
+  String profileRate(String minutes) {
+    return 'प्रति $minutes-मिनट सत्र आपकी दर (₹)';
+  }
+
+  @override
+  String get profileRateHint =>
+      'निःशुल्क सत्र के लिए 0 या 1 से 5000 दर्ज करें। सशुल्क सत्रों से प्लेटफ़ॉर्म सेवा शुल्क रखता है।';
+
+  @override
+  String get profileBio => 'आपके बारे में (वैकल्पिक)';
+
+  @override
+  String get profileSave => 'प्रोफ़ाइल सहेजें';
+
+  @override
+  String get profileSaved => 'प्रोफ़ाइल सहेजी गई।';
+
+  @override
+  String get profileInvalidRate =>
+      '0 या 1 से 5000 तक की पूर्ण संख्या दर्ज करें।';
+
+  @override
+  String get profilePickLanguage => 'कम से कम एक भाषा चुनें।';
+
+  @override
+  String get deskRate => 'आपकी दर';
+
+  @override
+  String deskEarnings(String amount) {
+    return 'कुल कमाई: $amount';
+  }
+
+  @override
+  String get deskEditProfile => 'प्रोफ़ाइल और दर बदलें';
+
+  @override
+  String deskYouEarn(String amount) {
+    return 'आप कमाएंगे $amount';
+  }
+
+  @override
+  String get deskDecline => 'अस्वीकार करें';
+
+  @override
+  String get callPaymentCancelled =>
+      'भुगतान पूरा नहीं हुआ। आपसे कोई शुल्क नहीं लिया गया।';
+
+  @override
   String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
 
   @override

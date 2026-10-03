@@ -1316,6 +1316,98 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deskAccept => 'Accept and join';
 
   @override
+  String get priceFree => 'Free';
+
+  @override
+  String pricePerSession(String minutes, String price) {
+    return '$price / $minutes min';
+  }
+
+  @override
+  String payAndConnect(String price) {
+    return 'Pay $price and connect';
+  }
+
+  @override
+  String get connectNow => 'Connect now';
+
+  @override
+  String get payRefundNote =>
+      'You pay only if the interpreter accepts: if nobody accepts in time or you cancel while waiting, you are refunded automatically.';
+
+  @override
+  String sessionWith(String name) {
+    return 'Session with $name';
+  }
+
+  @override
+  String get becomeInterpreter => 'Become an interpreter';
+
+  @override
+  String get becomeInterpreterBody =>
+      'Help people communicate and earn per session. Set your languages and your rate, then go online whenever you are free.';
+
+  @override
+  String get applicationPending =>
+      'Your interpreter application is waiting for approval.';
+
+  @override
+  String get interpreterProfileTitle => 'Interpreter profile';
+
+  @override
+  String get profileName => 'Display name';
+
+  @override
+  String get profileLanguages => 'Languages you interpret';
+
+  @override
+  String profileRate(String minutes) {
+    return 'Your rate per $minutes-minute session (₹)';
+  }
+
+  @override
+  String get profileRateHint =>
+      'Enter 0 to offer sessions for free, or 1 to 5000. The platform keeps a service fee from paid sessions.';
+
+  @override
+  String get profileBio => 'About you (optional)';
+
+  @override
+  String get profileSave => 'Save profile';
+
+  @override
+  String get profileSaved => 'Profile saved.';
+
+  @override
+  String get profileInvalidRate => 'Enter 0 or a whole number from 1 to 5000.';
+
+  @override
+  String get profilePickLanguage => 'Choose at least one language.';
+
+  @override
+  String get deskRate => 'Your rate';
+
+  @override
+  String deskEarnings(String amount) {
+    return 'Total earned: $amount';
+  }
+
+  @override
+  String get deskEditProfile => 'Edit profile and rate';
+
+  @override
+  String deskYouEarn(String amount) {
+    return 'You earn $amount';
+  }
+
+  @override
+  String get deskDecline => 'Decline';
+
+  @override
+  String get callPaymentCancelled =>
+      'Payment wasn\'t completed. You haven\'t been charged.';
+
+  @override
   String get premiumHeader => 'Unlock the full SignoVoice experience';
 
   @override

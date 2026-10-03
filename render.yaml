@@ -20,6 +20,12 @@ services:
         value: com.anirudhzalki.signovoice
       - key: TRIAL_DAYS
         value: 30
+      - key: PLATFORM_FEE_PERCENT
+        value: 20
+      - key: INTERPRETER_AUTO_APPROVE
+        value: false
+      - key: ADMIN_UIDS
+        sync: false
       # Secrets: set these in the Render dashboard (never in git)
       - key: LIVEKIT_API_KEY
         sync: false

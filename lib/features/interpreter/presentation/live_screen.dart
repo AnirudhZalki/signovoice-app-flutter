@@ -17,6 +17,7 @@ import '../../auth/presentation/auth_controller.dart';
 import '../domain/interpreter_models.dart';
 import 'call_controller.dart';
 import 'interpreter_providers.dart';
+import 'money.dart';
 import 'room_card.dart';
 
 String interpreterStatusLabel(AppLocalizations l, InterpreterStatus s) => switch (s) {
@@ -41,11 +42,11 @@ class LiveScreen extends ConsumerStatefulWidget {
 class _LiveScreenState extends ConsumerState<LiveScreen> {
   String? _language;
 
-  Future<void> _openRequestSheet({String? interpreterId}) async {
+  Future<void> _openRequestSheet({Interpreter? interpreter}) async {
     final result = await showModalBottomSheet<_RequestOptions>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => _RequestSheet(initialLanguage: _language ?? 'en'),
+      builder: (_) => _RequestSheet(initialLanguage: _language ?? 'en', interpreter: interpreter),
     );
     if (result == null || !mounted) return;
     ref.read(callControllerProvider.notifier).reset();
@@ -53,7 +54,7 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
     ref.read(callControllerProvider.notifier).request(
           mode: result.mode,
           language: result.language,
-          interpreterId: interpreterId,
+          interpreterId: interpreter?.id,
           note: result.note,
         );
     context.push(Routes.interpreterCall);
@@ -84,6 +85,32 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
                 Expanded(child: Text(call.phase == CallPhase.waiting ? l.callWaiting : l.callConnected, style: text.titleMedium)),
                 const Icon(Icons.chevron_right_rounded),
               ]),
+            ),
+          ),
+        if (auth.isSignedIn && api.isConfigured && ref.watch(interpreterMeProvider).hasValue && !(ref.watch(interpreterMeProvider).value?.applied ?? true))
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: AppCard(
+              onTap: () => context.push(Routes.interpreterProfile),
+              child: Row(children: [
+                const Icon(Icons.how_to_reg_outlined),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Text(l.becomeInterpreter, style: text.titleMedium),
+                    Text(l.becomeInterpreterBody, style: text.bodySmall),
+                  ]),
+                ),
+                const Icon(Icons.chevron_right_rounded),
+              ]),
+            ),
+          ),
+        if ((ref.watch(interpreterMeProvider).value?.applied ?? false) && !(ref.watch(interpreterMeProvider).value?.approved ?? false))
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: AppCard(
+              color: Theme.of(context).colorScheme.tertiaryContainer,
+              child: Row(children: [const Icon(Icons.hourglass_top_rounded), const SizedBox(width: 12), Expanded(child: Text(l.applicationPending))]),
             ),
           ),
         if (ref.watch(interpreterMeProvider).value?.approved ?? false)
@@ -166,7 +193,7 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
             ChoiceChip(label: Text(l.langKannada), selected: _language == 'kn', onSelected: (_) => setState(() => _language = 'kn')),
           ]),
           const SizedBox(height: 12),
-          _InterpreterList(language: _language, onRequest: (i) => _openRequestSheet(interpreterId: i.id)),
+          _InterpreterList(language: _language, onRequest: (i) => _openRequestSheet(interpreter: i)),
         ],
       ]),
     );
@@ -233,10 +260,20 @@ class _InterpreterCard extends StatelessWidget {
           Wrap(spacing: 6, children: [for (final lang in interpreter.languages) Chip(label: Text(lang.toUpperCase()), visualDensity: VisualDensity.compact)]),
         ],
         const SizedBox(height: 8),
-        Align(
-          alignment: AlignmentDirectional.centerEnd,
-          child: FilledButton.tonal(onPressed: interpreter.isAvailable ? onRequest : null, child: Text(l.requestInterpreter)),
-        ),
+        Row(children: [
+          Expanded(
+            child: Text(
+              interpreter.ratePaise > 0
+                  ? l.pricePerSession(formatPaise(l, interpreter.ratePaise), '${interpreter.sessionMinutes}')
+                  : l.priceFree,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+          ),
+          FilledButton.tonal(
+            onPressed: interpreter.isAvailable ? onRequest : null,
+            child: Text(interpreter.ratePaise > 0 ? l.payAndConnect(formatPaise(l, interpreter.ratePaise)) : l.connectNow),
+          ),
+        ]),
       ]),
     );
   }
@@ -250,8 +287,9 @@ class _RequestOptions {
 }
 
 class _RequestSheet extends StatefulWidget {
-  const _RequestSheet({required this.initialLanguage});
+  const _RequestSheet({required this.initialLanguage, this.interpreter});
   final String initialLanguage;
+  final Interpreter? interpreter;
 
   @override
   State<_RequestSheet> createState() => _RequestSheetState();
@@ -259,7 +297,15 @@ class _RequestSheet extends StatefulWidget {
 
 class _RequestSheetState extends State<_RequestSheet> {
   CallMode _mode = CallMode.video;
-  late String _lang = widget.initialLanguage;
+  late String _lang = _initialLang();
+  List<String> get _langs {
+    final all = ['en', 'hi', 'kn'];
+    final spoken = widget.interpreter?.languages ?? const <String>[];
+    final ok = all.where((c) => spoken.isEmpty || spoken.contains(c)).toList();
+    return ok.isEmpty ? all : ok;
+  }
+
+  String _initialLang() => _langs.contains(widget.initialLanguage) ? widget.initialLanguage : _langs.first;
   final _note = TextEditingController();
 
   @override
@@ -275,7 +321,11 @@ class _RequestSheetState extends State<_RequestSheet> {
       padding: EdgeInsets.fromLTRB(16, 0, 16, 16 + MediaQuery.viewInsetsOf(context).bottom),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
-          Text(l.requestInterpreter, style: Theme.of(context).textTheme.titleLarge),
+          Text(widget.interpreter == null ? l.requestInterpreter : l.sessionWith(widget.interpreter!.name), style: Theme.of(context).textTheme.titleLarge),
+          if (widget.interpreter != null && widget.interpreter!.ratePaise > 0) ...[
+            const SizedBox(height: 4),
+            Text(l.pricePerSession(formatPaise(l, widget.interpreter!.ratePaise), '${widget.interpreter!.sessionMinutes}'), style: Theme.of(context).textTheme.titleMedium),
+          ],
           const SizedBox(height: 16),
           SegmentedButton<CallMode>(
             segments: [
@@ -287,15 +337,24 @@ class _RequestSheetState extends State<_RequestSheet> {
           ),
           const SizedBox(height: 16),
           Wrap(spacing: 8, runSpacing: 8, children: [
-            ChoiceChip(label: Text(l.langEnglish), selected: _lang == 'en', onSelected: (_) => setState(() => _lang = 'en')),
-            ChoiceChip(label: Text(l.langHindi), selected: _lang == 'hi', onSelected: (_) => setState(() => _lang = 'hi')),
-            ChoiceChip(label: Text(l.langKannada), selected: _lang == 'kn', onSelected: (_) => setState(() => _lang = 'kn')),
+            for (final c in _langs)
+              ChoiceChip(
+                label: Text(switch (c) { 'hi' => l.langHindi, 'kn' => l.langKannada, _ => l.langEnglish }),
+                selected: _lang == c,
+                onSelected: (_) => setState(() => _lang = c),
+              ),
           ]),
           const SizedBox(height: 16),
           TextField(controller: _note, maxLines: 2, maxLength: 240, decoration: InputDecoration(labelText: l.noteOptional)),
           const SizedBox(height: 8),
+          if (widget.interpreter != null && widget.interpreter!.ratePaise > 0) ...[
+            Text(l.payRefundNote, style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: 8),
+          ],
           PrimaryButton(
-            label: l.requestInterpreter,
+            label: widget.interpreter == null
+                ? l.requestInterpreter
+                : (widget.interpreter!.ratePaise > 0 ? l.payAndConnect(formatPaise(l, widget.interpreter!.ratePaise)) : l.connectNow),
             icon: _mode == CallMode.video ? Icons.videocam_rounded : Icons.call_rounded,
             onPressed: () => Navigator.pop(context, _RequestOptions(_mode, _lang, _note.text)),
           ),

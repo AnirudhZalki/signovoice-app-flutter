@@ -69,3 +69,28 @@ deskEmpty | No one is waiting right now. This list updates automatically. | अ�
 deskSomeone | Someone | कोई | ಯಾರೋ
 deskWaiting | Waiting {seconds} s | {seconds} सेकंड से प्रतीक्षा में | {seconds} ಸೆ ಕಾಯುತ್ತಿದ್ದಾರೆ
 deskAccept | Accept and join | स्वीकार करें और जुड़ें | ಸ್ವೀಕರಿಸಿ ಮತ್ತು ಸೇರಿ
+priceFree | Free | निःशुल्क | ಉಚಿತ
+pricePerSession | {price} / {minutes} min | {price} / {minutes} मिनट | {price} / {minutes} ನಿಮಿಷ
+payAndConnect | Pay {price} and connect | {price} चुकाएं और जुड़ें | {price} ಪಾವತಿಸಿ ಮತ್ತು ಸಂಪರ್ಕಿಸಿ
+connectNow | Connect now | अभी जुड़ें | ಈಗ ಸಂಪರ್ಕಿಸಿ
+payRefundNote | You pay only if the interpreter accepts: if nobody accepts in time or you cancel while waiting, you are refunded automatically. | आप तभी भुगतान करते हैं जब दुभाषिया स्वीकार करे: समय पर कोई स्वीकार न करे या आप प्रतीक्षा में रद्द करें तो पैसे अपने आप वापस हो जाते हैं। | ದುಭಾಷಿ ಸ್ವೀಕರಿಸಿದರೆ ಮಾತ್ರ ನೀವು ಪಾವತಿಸುತ್ತೀರಿ: ಸಮಯಕ್ಕೆ ಯಾರೂ ಸ್ವೀಕರಿಸದಿದ್ದರೆ ಅಥವಾ ನೀವು ಕಾಯುವಾಗ ರದ್ದುಗೊಳಿಸಿದರೆ ಹಣ ತಾನಾಗಿ ಮರುಪಾವತಿಯಾಗುತ್ತದೆ.
+sessionWith | Session with {name} | {name} के साथ सत्र | {name} ಜೊತೆ ಸೆಷನ್
+becomeInterpreter | Become an interpreter | दुभाषिया बनें | ಇಂಟರ್ಪ್ರಿಟರ್ ಆಗಿ
+becomeInterpreterBody | Help people communicate and earn per session. Set your languages and your rate, then go online whenever you are free. | लोगों को संवाद में मदद करें और प्रति सत्र कमाएं। अपनी भाषाएं और दर तय करें, फिर जब खाली हों ऑनलाइन हों। | ಜನರಿಗೆ ಸಂವಹನಕ್ಕೆ ಸಹಾಯ ಮಾಡಿ ಮತ್ತು ಪ್ರತಿ ಸೆಷನ್‌ಗೆ ಗಳಿಸಿ. ನಿಮ್ಮ ಭಾಷೆಗಳು ಮತ್ತು ದರ ಹೊಂದಿಸಿ, ಬಿಡುವಾದಾಗ ಆನ್‌ಲೈನ್ ಆಗಿ.
+applicationPending | Your interpreter application is waiting for approval. | आपका दुभाषिया आवेदन स्वीकृति की प्रतीक्षा में है। | ನಿಮ್ಮ ಇಂಟರ್ಪ್ರಿಟರ್ ಅರ್ಜಿ ಅನುಮೋದನೆಗಾಗಿ ಕಾಯುತ್ತಿದೆ.
+interpreterProfileTitle | Interpreter profile | दुभाषिया प्रोफ़ाइल | ಇಂಟರ್ಪ್ರಿಟರ್ ಪ್ರೊಫೈಲ್
+profileName | Display name | प्रदर्शित नाम | ಪ್ರದರ್ಶನ ಹೆಸರು
+profileLanguages | Languages you interpret | जिन भाषाओं में आप दुभाषिया करते हैं | ನೀವು ಅನುವಾದಿಸುವ ಭಾಷೆಗಳು
+profileRate | Your rate per {minutes}-minute session (₹) | प्रति {minutes}-मिनट सत्र आपकी दर (₹) | {minutes} ನಿಮಿಷದ ಸೆಷನ್‌ಗೆ ನಿಮ್ಮ ದರ (₹)
+profileRateHint | Enter 0 to offer sessions for free, or 1 to 5000. The platform keeps a service fee from paid sessions. | निःशुल्क सत्र के लिए 0 या 1 से 5000 दर्ज करें। सशुल्क सत्रों से प्लेटफ़ॉर्म सेवा शुल्क रखता है। | ಉಚಿತ ಸೆಷನ್‌ಗೆ 0 ಅಥವಾ 1 ರಿಂದ 5000 ನಮೂದಿಸಿ. ಪಾವತಿಸಿದ ಸೆಷನ್‌ಗಳಿಂದ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಸೇವಾ ಶುಲ್ಕ ಇರಿಸಿಕೊಳ್ಳುತ್ತದೆ.
+profileBio | About you (optional) | आपके बारे में (वैकल्पिक) | ನಿಮ್ಮ ಬಗ್ಗೆ (ಐಚ್ಛಿಕ)
+profileSave | Save profile | प्रोफ़ाइल सहेजें | ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ
+profileSaved | Profile saved. | प्रोफ़ाइल सहेजी गई। | ಪ್ರೊಫೈಲ್ ಉಳಿಸಲಾಗಿದೆ.
+profileInvalidRate | Enter 0 or a whole number from 1 to 5000. | 0 या 1 से 5000 तक की पूर्ण संख्या दर्ज करें। | 0 ಅಥವಾ 1 ರಿಂದ 5000 ರ ಪೂರ್ಣ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ.
+profilePickLanguage | Choose at least one language. | कम से कम एक भाषा चुनें। | ಕನಿಷ್ಠ ಒಂದು ಭಾಷೆಯನ್ನು ಆರಿಸಿ.
+deskRate | Your rate | आपकी दर | ನಿಮ್ಮ ದರ
+deskEarnings | Total earned: {amount} | कुल कमाई: {amount} | ಒಟ್ಟು ಗಳಿಕೆ: {amount}
+deskEditProfile | Edit profile and rate | प्रोफ़ाइल और दर बदलें | ಪ್ರೊಫೈಲ್ ಮತ್ತು ದರ ಬದಲಿಸಿ
+deskYouEarn | You earn {amount} | आप कमाएंगे {amount} | ನೀವು ಗಳಿಸುತ್ತೀರಿ {amount}
+deskDecline | Decline | अस्वीकार करें | ತಿರಸ್ಕರಿಸಿ
+callPaymentCancelled | Payment wasn't completed. You haven't been charged. | भुगतान पूरा नहीं हुआ। आपसे कोई शुल्क नहीं लिया गया। | ಪಾವತಿ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ. ನಿಮಗೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿಲ್ಲ.

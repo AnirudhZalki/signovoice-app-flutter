@@ -79,4 +79,28 @@ class HttpInterpreterRepository implements InterpreterRepository {
   Future<void> endCall(String callId) async {
     await api.post('/v1/interpreter/calls/$callId/end');
   }
+
+  @override
+  Future<CallRequestState> payRequest({required String requestId, required String orderId, required String paymentId, required String signature}) async {
+    final d = _map(await api.post('/v1/interpreter/requests/$requestId/pay', body: {
+      'razorpay_order_id': orderId,
+      'razorpay_payment_id': paymentId,
+      'razorpay_signature': signature,
+    }));
+    return CallRequestState.fromJson(d, fallbackId: requestId);
+  }
+
+  @override
+  Future<InterpreterMe> saveProfile({required String name, required List<String> languages, required int ratePaise, String? bio}) async =>
+      InterpreterMe.fromJson(_map(await api.put('/v1/interpreter/me', body: {
+        'name': name,
+        'languages': languages,
+        'ratePaise': ratePaise,
+        if (bio != null && bio.trim().isNotEmpty) 'bio': bio.trim(),
+      })));
+
+  @override
+  Future<void> decline(String requestId) async {
+    await api.post('/v1/interpreter/queue/$requestId/decline');
+  }
 }

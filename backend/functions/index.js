@@ -15,7 +15,7 @@ const { defineSecret } = require('firebase-functions/params');
 const { fromRazorpay, fromPlay } = require('./lib/entitlement');
 const { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature } = require('./lib/razorpay');
 const { requireUser, rateLimit } = require('./lib/auth');
-const { isExpired, queuePosition, canTake, publicInterpreter } = require('./lib/interpreters');
+const { isExpired, queuePosition, canTake, publicInterpreter, splitAmount, validateProfile } = require('./lib/interpreters');
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -164,10 +164,13 @@ async function mintToken({ identity, name, room }) {
   return at.toJwt();
 }
 
-// ---------- Interpreter matching ----------
+// ---------- Interpreter matching + payment ----------
 const reqCol = () => db.collection('interpreterRequests');
 const interpCol = () => db.collection('interpreters');
 const bad = (msg, status = 400) => Object.assign(new Error(msg), { status });
+const feePercent = () => Number(env('PLATFORM_FEE_PERCENT', '20'));
+const defaultRatePaise = () => Number(env('DEFAULT_RATE_PAISE', '0')); // price of "any interpreter" requests (0 = free)
+const PAYMENT_WINDOW_MS = 15 * 60 * 1000;
 
 async function interpreterProfile(uid) {
   const d = await interpCol().doc(uid).get();
@@ -181,22 +184,99 @@ async function listInterpreters(language) {
     .sort((a, b) => (a.status === 'available' ? 0 : 1) - (b.status === 'available' ? 0 : 1));
 }
 
+/** Interpreter registers or edits their profile. New profiles need approval (or INTERPRETER_AUTO_APPROVE=true). */
+async function saveInterpreterProfile(uid, body) {
+  const clean = validateProfile(body);
+  const existing = await interpreterProfile(uid);
+  const autoApprove = env('INTERPRETER_AUTO_APPROVE', 'false') === 'true';
+  const doc = { ...clean, approved: !!(existing && existing.approved) || autoApprove, appliedAt: (existing && existing.appliedAt) || Date.now(), updatedAt: Date.now() };
+  if (!existing) Object.assign(doc, { status: 'offline', rating: null, ratingCount: 0, earningsPaise: 0 });
+  await interpCol().doc(uid).set(doc, { merge: true });
+  return interpreterMe(uid);
+}
+
+async function interpreterMe(uid) {
+  const p = await interpreterProfile(uid);
+  if (!p) return { approved: false, applied: false };
+  return { approved: !!p.approved, applied: true, status: p.status || 'offline', name: p.name || '', languages: p.languages || [],
+    ratePaise: p.ratePaise || 0, bio: p.bio || '', sessionMinutes: p.sessionMinutes || 30, earningsPaise: p.earningsPaise || 0 };
+}
+
+async function adminApprove(uid, targetUid, approved) {
+  const admins = env('ADMIN_UIDS', '').split(',').map((s) => s.trim()).filter(Boolean);
+  if (!admins.includes(uid)) throw bad('forbidden', 403);
+  if (!(await interpreterProfile(targetUid))) throw bad('not found', 404);
+  await interpCol().doc(targetUid).set({ approved: !!approved, ...(approved ? {} : { status: 'offline' }) }, { merge: true });
+  return { ok: true };
+}
+
+async function refundIfPaid(ref, r) {
+  if (!r.paid || !r.paymentId || r.refunded) return;
+  try {
+    await razorpay().payments.refund(r.paymentId, { amount: r.amountPaise, notes: { requestId: ref.id, reason: String(r.status) } });
+    await ref.set({ refunded: true, refundedAt: Date.now() }, { merge: true });
+  } catch (e) {
+    console.error('refund failed', ref.id, e && e.error && e.error.description); // never log keys; retried on next status read
+  }
+}
+
 async function createRequest(uid, body, name) {
   const mode = body && body.mode;
   const language = String((body && body.language) || '');
   if (!['video', 'audio'].includes(mode)) throw bad('invalid mode');
   if (!/^[a-z]{2,3}$/.test(language)) throw bad('invalid language');
-  // At most one open request per person.
-  const open = await reqCol().where('uid', '==', uid).where('status', '==', 'waiting').get();
-  const now = Date.now();
-  for (const d of open.docs) {
-    if (isExpired({ ...d.data() }, now)) await d.ref.update({ status: 'expired' });
-    else await d.ref.update({ status: 'cancelled' });
+  const interpreterId = (body && body.interpreterId) || null;
+  let rate = defaultRatePaise();
+  let interpreterName = '';
+  if (interpreterId) {
+    const p = await interpreterProfile(interpreterId);
+    if (!p || !p.approved) throw bad('interpreter not found', 404);
+    if (p.status !== 'available') throw bad('interpreter is not available', 409);
+    if (interpreterId === uid) throw bad('you cannot request yourself');
+    rate = p.ratePaise || 0;
+    interpreterName = p.name || '';
   }
+  // At most one open request per person; an abandoned unpaid one is simply cancelled, a paid waiting one is refunded.
+  const open = await reqCol().where('uid', '==', uid).get();
+  for (const d of open.docs) {
+    const r = d.data();
+    if (r.status === 'waiting' || r.status === 'awaiting_payment') {
+      await d.ref.update({ status: 'cancelled' });
+      await refundIfPaid(d.ref, r);
+    }
+  }
+  const now = Date.now();
   const ref = reqCol().doc();
-  await ref.set({ uid, name: name || '', mode, language, interpreterId: (body && body.interpreterId) || null,
-    note: String((body && body.note) || '').slice(0, 300), status: 'waiting', createdAt: now });
+  const base = { uid, name: name || '', mode, language, interpreterId, interpreterName, note: String((body && body.note) || '').slice(0, 300), createdAt: now, amountPaise: rate, paid: false };
+  if (rate > 0) {
+    let order;
+    try {
+      order = await razorpay().orders.create({ amount: rate, currency: 'INR', receipt: `ir_${ref.id}`.slice(0, 40), notes: { uid, requestId: ref.id } });
+    } catch (e) {
+      throw bad((e && e.error && e.error.description) || 'payment provider error', e && e.statusCode === 401 ? 401 : 502);
+    }
+    await ref.set({ ...base, status: 'awaiting_payment', orderId: order.id });
+    return { requestId: ref.id, status: 'awaiting_payment', amountPaise: rate,
+      order: { order_id: order.id, amount: order.amount, currency: order.currency, keyId: env('RAZORPAY_KEY_ID') } };
+  }
+  await ref.set({ ...base, status: 'waiting' });
   return { requestId: ref.id, status: 'waiting', position: await positionOf(ref.id, now) };
+}
+
+/** Payment done in the app: verify the signature, then the request enters the interpreter's queue (TTL starts now). */
+async function payRequest(uid, id, body) {
+  const { razorpay_order_id: orderId, razorpay_payment_id: paymentId, razorpay_signature: signature } = body || {};
+  const ref = reqCol().doc(id);
+  const doc = await ref.get();
+  if (!doc.exists || doc.data().uid !== uid) throw bad('not found', 404);
+  const r = doc.data();
+  if (r.paid) return { requestId: id, status: r.status };
+  if (r.status !== 'awaiting_payment') throw bad('request is not awaiting payment', 409);
+  if (!orderId || !paymentId || !signature || orderId !== r.orderId) throw bad('missing or wrong payment fields');
+  if (!verifyOrderSignature({ orderId, paymentId, signature }, RAZORPAY_KEY_SECRET.value())) throw bad('signature mismatch');
+  const now = Date.now();
+  await ref.update({ paid: true, paymentId, paidAt: now, status: 'waiting', createdAt: now });
+  return { requestId: id, status: 'waiting', position: await positionOf(id, now) };
 }
 
 async function positionOf(id, now) {
@@ -204,13 +284,26 @@ async function positionOf(id, now) {
   return queuePosition(snap.docs.map((d) => ({ id: d.id, ...d.data() })), id, now);
 }
 
+async function expireIfStale(ref, r, now) {
+  if (isExpired(r, now)) {
+    await ref.update({ status: 'expired' });
+    await refundIfPaid(ref, { ...r, status: 'expired' });
+    return { ...r, status: 'expired' };
+  }
+  if (r.status === 'awaiting_payment' && now - r.createdAt > PAYMENT_WINDOW_MS) {
+    await ref.update({ status: 'expired' });
+    return { ...r, status: 'expired' };
+  }
+  return r;
+}
+
 async function requestStatus(uid, id) {
   const ref = reqCol().doc(id);
   const doc = await ref.get();
   if (!doc.exists || doc.data().uid !== uid) throw bad('not found', 404);
-  let r = { id, ...doc.data() };
   const now = Date.now();
-  if (isExpired(r, now)) { await ref.update({ status: 'expired' }); r = { ...r, status: 'expired' }; }
+  const r = await expireIfStale(ref, { id, ...doc.data() }, now);
+  if (['expired', 'declined', 'cancelled'].includes(r.status) && r.paid && !r.refunded) await refundIfPaid(ref, r);
   if (r.status === 'accepted') {
     const room = r.roomName;
     return { requestId: id, status: 'accepted', session: {
@@ -219,14 +312,18 @@ async function requestStatus(uid, id) {
     } };
   }
   if (r.status === 'waiting') return { requestId: id, status: 'waiting', position: await positionOf(id, now) };
-  return { requestId: id, status: r.status };
+  return { requestId: id, status: r.status, refunded: !!r.refunded };
 }
 
 async function cancelRequest(uid, id) {
   const ref = reqCol().doc(id);
   const doc = await ref.get();
   if (!doc.exists || doc.data().uid !== uid) throw bad('not found', 404);
-  if (doc.data().status === 'waiting') await ref.update({ status: 'cancelled' });
+  const r = doc.data();
+  if (r.status === 'waiting' || r.status === 'awaiting_payment') {
+    await ref.update({ status: 'cancelled' });
+    await refundIfPaid(ref, { ...r, status: 'cancelled' }); // nobody accepted yet: money back
+  }
   return { ok: true };
 }
 
@@ -241,10 +338,15 @@ async function interpreterQueue(uid) {
   const me = await requireInterpreter(uid);
   const now = Date.now();
   const snap = await reqCol().where('status', '==', 'waiting').get();
-  return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
-    .filter((r) => !isExpired(r, now) && canTake({ ...me, status: 'available' }, r))
-    .sort((a, b) => a.createdAt - b.createdAt)
-    .map((r) => ({ requestId: r.id, name: r.name, mode: r.mode, language: r.language, note: r.note, waitingSeconds: Math.round((now - r.createdAt) / 1000) }));
+  const out = [];
+  for (const d of snap.docs) {
+    const r = await expireIfStale(d.ref, { id: d.id, ...d.data() }, now); // also refunds abandoned paid requests
+    if (r.status !== 'waiting' || !canTake({ ...me, status: 'available' }, r)) continue;
+    out.push(r);
+  }
+  return out.sort((a, b) => a.createdAt - b.createdAt)
+    .map((r) => ({ requestId: r.id, name: r.name, mode: r.mode, language: r.language, note: r.note, waitingSeconds: Math.round((now - r.createdAt) / 1000),
+      amountPaise: r.amountPaise || 0, earnPaise: splitAmount(r.amountPaise || 0, feePercent()).interpreterPaise, directed: r.interpreterId === uid }));
 }
 
 async function setInterpreterStatus(uid, status) {
@@ -252,6 +354,19 @@ async function setInterpreterStatus(uid, status) {
   if (!['available', 'offline'].includes(status)) throw bad('invalid status');
   await interpCol().doc(uid).set({ status, updatedAt: Date.now() }, { merge: true });
   return { status };
+}
+
+async function declineRequest(uid, id) {
+  await requireInterpreter(uid);
+  const ref = reqCol().doc(id);
+  const doc = await ref.get();
+  if (!doc.exists) throw bad('not found', 404);
+  const r = doc.data();
+  if (r.status === 'waiting' && r.interpreterId === uid) { // only a request addressed to this interpreter can be declined
+    await ref.update({ status: 'declined' });
+    await refundIfPaid(ref, { ...r, status: 'declined' });
+  }
+  return { ok: true };
 }
 
 async function acceptRequest(uid, id, name) {
@@ -266,10 +381,13 @@ async function acceptRequest(uid, id, name) {
     const r = { id, ...doc.data() };
     if (isExpired(r, Date.now())) throw bad('request expired', 410);
     if (r.status !== 'waiting') throw bad('request already taken', 409);
+    if (r.amountPaise > 0 && !r.paid) throw bad('request is not paid', 402);
     if (!canTake({ ...me, status: 'available' }, r)) throw bad('cannot take this request', 403);
+    const split = splitAmount(r.paid ? r.amountPaise : 0, feePercent());
     tx.update(ref, { status: 'accepted', callId: callRef.id, roomName: room, interpreterId: uid, interpreterName: me.name || name || '', acceptedAt: Date.now() });
-    tx.set(callRef, { requestId: id, requesterUid: r.uid, interpreterUid: uid, roomName: room, mode: r.mode, language: r.language, startedAt: Date.now() });
-    tx.set(interpCol().doc(uid), { status: 'busy', updatedAt: Date.now() }, { merge: true });
+    tx.set(callRef, { requestId: id, requesterUid: r.uid, interpreterUid: uid, roomName: room, mode: r.mode, language: r.language, startedAt: Date.now(),
+      amountPaise: split.amountPaise, feePaise: split.feePaise, interpreterPaise: split.interpreterPaise, paymentId: r.paymentId || null });
+    tx.set(interpCol().doc(uid), { status: 'busy', updatedAt: Date.now(), earningsPaise: (me.earningsPaise || 0) + split.interpreterPaise }, { merge: true });
   });
   return { session: { callId: callRef.id, roomName: room, url: env('LIVEKIT_URL'), token: await mintToken({ identity: uid, name: me.name || name || uid, room }) } };
 }
@@ -333,14 +451,19 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
       if (!snap.empty) { const d = snap.docs[0].data(); return send(res, 200, await playVerify(uid, d.productId, d.token)); }
       return send(res, 200, (await entRef(uid).get()).data() || FREE);
     }
-    const m = path.match(/^\/v1\/interpreter\/(requests|queue|calls)\/([A-Za-z0-9_-]+)(?:\/(accept|end|feedback|report))?$/);
+    const m = path.match(/^\/v1\/interpreter\/(requests|queue|calls)\/([A-Za-z0-9_-]+)(?:\/(accept|decline|pay|end|feedback|report))?$/);
     if (req.method === 'GET' && path === '/v1/interpreters') return send(res, 200, { interpreters: await listInterpreters(req.query.language) });
     if (req.method === 'POST' && path === '/v1/interpreter/requests') return send(res, 200, await createRequest(uid, req.body, user.name));
-    if (req.method === 'GET' && path === '/v1/interpreter/me') { const p = await interpreterProfile(uid); return send(res, 200, p && p.approved ? { approved: true, status: p.status || 'offline', name: p.name || '', languages: p.languages || [] } : { approved: false }); }
+    if (req.method === 'GET' && path === '/v1/interpreter/me') return send(res, 200, await interpreterMe(uid));
+    if (req.method === 'PUT' && path === '/v1/interpreter/me') return send(res, 200, await saveInterpreterProfile(uid, req.body));
+    const adm = path.match(/^\/v1\/admin\/interpreters\/([A-Za-z0-9_-]+)\/(approve|revoke)$/);
+    if (adm && req.method === 'POST') return send(res, 200, await adminApprove(uid, adm[1], adm[2] === 'approve'));
     if (req.method === 'POST' && path === '/v1/interpreter/me/status') return send(res, 200, await setInterpreterStatus(uid, req.body && req.body.status));
     if (req.method === 'GET' && path === '/v1/interpreter/queue') return send(res, 200, { requests: await interpreterQueue(uid) });
     if (m && m[1] === 'requests' && !m[3] && req.method === 'GET') return send(res, 200, await requestStatus(uid, m[2]));
     if (m && m[1] === 'requests' && !m[3] && req.method === 'DELETE') return send(res, 200, await cancelRequest(uid, m[2]));
+    if (m && m[1] === 'requests' && m[3] === 'pay' && req.method === 'POST') return send(res, 200, await payRequest(uid, m[2], req.body));
+    if (m && m[1] === 'queue' && m[3] === 'decline' && req.method === 'POST') return send(res, 200, await declineRequest(uid, m[2]));
     if (m && m[1] === 'queue' && m[3] === 'accept' && req.method === 'POST') return send(res, 200, await acceptRequest(uid, m[2], user.name));
     if (m && m[1] === 'calls' && m[3] === 'end' && req.method === 'POST') return send(res, 200, await endCall(uid, m[2]));
     if (m && m[1] === 'calls' && (m[3] === 'feedback' || m[3] === 'report') && req.method === 'POST') return send(res, 200, await callNote(uid, m[2], m[3], req.body));
@@ -361,6 +484,23 @@ async function webhook(req, res) {
     if (map) {
       const ref = (await refRef(map.uid).get()).data() || {};
       await saveEntitlement(map.uid, fromRazorpay(sub, { trialStart: ref.trialStart, cancelRequested: ref.cancelRequested }, Date.now(), map.productId));
+    }
+  }
+  // Interpreter session paid (order.paid): queue the request even if the app died before calling /pay.
+  const order = req.body && req.body.event === 'order.paid' && req.body.payload && req.body.payload.order && req.body.payload.order.entity;
+  const payment = req.body && req.body.payload && req.body.payload.payment && req.body.payload.payment.entity;
+  if (order && order.id) {
+    const snap = await reqCol().where('orderId', '==', order.id).limit(1).get();
+    if (!snap.empty) {
+      const d = snap.docs[0];
+      const r = d.data();
+      if (!r.paid && order.amount_paid >= r.amountPaise) {
+        if (r.status === 'awaiting_payment') await d.ref.update({ paid: true, paymentId: payment ? payment.id : null, paidAt: Date.now(), status: 'waiting', createdAt: Date.now() });
+        else if (['expired', 'cancelled'].includes(r.status)) { // paid after we gave up: refund it
+          await d.ref.update({ paid: true, paymentId: payment ? payment.id : null });
+          await refundIfPaid(d.ref, { ...r, paid: true, paymentId: payment ? payment.id : null });
+        }
+      }
     }
   }
   return send(res, 200, { ok: true });

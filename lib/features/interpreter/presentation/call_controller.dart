@@ -9,6 +9,7 @@ import '../../../core/providers.dart';
 import '../../../core/services/analytics_service.dart';
 import '../../../core/services/permission_service.dart';
 import '../../auth/presentation/auth_controller.dart';
+import '../data/order_checkout_runner.dart';
 import '../domain/call_service.dart';
 import '../domain/interpreter_models.dart';
 import 'interpreter_providers.dart';
@@ -205,11 +206,47 @@ class CallController extends Notifier<CallState> {
       _requestId = req.requestId;
       ref.read(analyticsServiceProvider).log(AnalyticsEvents.interpreterRequest, {'mode': mode.name});
       if (_disposed) return;
-      state = state.copyWith(phase: CallPhase.waiting, queuePosition: req.queuePosition);
+      var queued = req;
+      if (req.status == RequestStatus.awaitingPayment) {
+        final paid = await _pay(req);
+        if (paid == null) return; // cancelled / failed: _pay already reported it
+        if (paid.status != RequestStatus.waiting) {
+          _fail(const Failure(FailureType.unknown), reason: paid.status); // e.g. backend rejected the payment
+          return;
+        }
+        queued = paid;
+      }
+      state = state.copyWith(phase: CallPhase.waiting, queuePosition: queued.queuePosition);
       _startPolling();
       if (req.status == RequestStatus.accepted && req.session != null) await _connect(req.session!);
     } catch (e) {
       _fail(toFailure(e));
+    }
+  }
+
+  /// Opens the payment sheet, then asks the backend to verify it. Nothing is queued (and no interpreter sees the
+  /// request) until the backend has verified the payment signature.
+  Future<CallRequestState?> _pay(CallRequestState req) async {
+    final order = req.order;
+    if (order == null) {
+      _fail(const Failure(FailureType.serviceUnavailable, debugDetail: 'payment order missing'));
+      return null;
+    }
+    final repo = ref.read(interpreterRepositoryProvider);
+    final r = await ref.read(orderCheckoutRunnerProvider).run(order, description: 'Interpreter session');
+    if (_disposed) return null;
+    if (r.outcome != CheckoutOutcome.success) {
+      unawaited(repo.cancelRequest(req.requestId).catchError((Object _) {}));
+      _fail(const Failure(FailureType.cancelled), reason: RequestStatus.cancelled);
+      return null;
+    }
+    try {
+      return await repo.payRequest(requestId: req.requestId, orderId: r.orderId ?? '', paymentId: r.paymentId ?? '', signature: r.signature ?? '');
+    } catch (e) {
+      // Money may have been taken but not verified: do NOT cancel/refund automatically here; the backend
+      // refunds unverified-but-paid orders it can match, and support can reconcile by payment id.
+      _fail(toFailure(e));
+      return null;
     }
   }
 
@@ -226,6 +263,7 @@ class CallController extends Notifier<CallState> {
         final s = await ref.read(interpreterRepositoryProvider).requestStatus(_requestId!);
         if (_disposed || state.phase != CallPhase.waiting) return;
         switch (s.status) {
+          case RequestStatus.awaitingPayment:
           case RequestStatus.waiting:
             state = state.copyWith(queuePosition: s.queuePosition);
           case RequestStatus.accepted:

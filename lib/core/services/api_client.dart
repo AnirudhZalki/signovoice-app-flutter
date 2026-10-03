@@ -53,6 +53,15 @@ class ApiClient {
     }
   }
 
+  Future<dynamic> put(String path, {Object? body}) async {
+    _ensure();
+    try {
+      return (await _dio.put<dynamic>(path, data: body)).data;
+    } catch (e) {
+      throw toFailure(e);
+    }
+  }
+
   Future<dynamic> delete(String path) async {
     _ensure();
     try {
