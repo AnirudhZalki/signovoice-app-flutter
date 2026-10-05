@@ -18,7 +18,8 @@ class AppConstants {
   static const int freeHistoryEntries = 30;
 
   static const Duration trialLength = Duration(days: 30);
-  static const Duration networkTimeout = Duration(seconds: 15);
+  /// Long enough for a free-tier backend (Render) to wake from sleep (~30-60 s) on the first request.
+  static const Duration networkTimeout = Duration(seconds: 60);
 }
 
 /// Keys used with the key-value store.

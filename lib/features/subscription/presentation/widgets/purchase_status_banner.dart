@@ -55,7 +55,12 @@ class PurchaseStatusBanner extends StatelessWidget {
           retry = onRetryVerification;
         } else {
           msg = failureMessage(l, state.failure ?? const Failure(FailureType.unknown));
+          // Plans never loaded (e.g. server waking up): let the person retry.
+          if (state.products.isEmpty) retry = onRetryLoad;
         }
+        // A short, non-sensitive reason ("timeout", "unauthorized · 401") so a problem can be reported precisely.
+        final f = state.failure;
+        if (f != null) msg = '$msg\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})';
       default:
         break;
     }

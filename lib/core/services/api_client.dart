@@ -29,6 +29,12 @@ class ApiClient {
   final Dio _dio;
   final String _baseUrl;
 
+  /// Fire-and-forget request that wakes a sleeping backend (Render free tier) while the person reads the screen.
+  void warmUp() {
+    if (!isConfigured) return;
+    _dio.get<dynamic>('/healthz').then<void>((_) {}, onError: (Object _) {});
+  }
+
   bool get isConfigured => _baseUrl.startsWith('https://');
 
   void _ensure() {

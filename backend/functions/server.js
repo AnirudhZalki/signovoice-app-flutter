@@ -20,7 +20,22 @@ const { api } = require('./index');
 
 const app = express();
 app.disable('x-powered-by');
-app.get('/healthz', (_req, res) => res.json({ ok: true }));
+// Shows which settings are present (never their values) so a missing variable is easy to spot from a browser.
+app.get('/healthz', (_req, res) => {
+  const has = (k) => !!process.env[k];
+  let plans = 0;
+  let plansOk = true;
+  try { plans = Object.keys(JSON.parse(process.env.RAZORPAY_PLANS || '{}')).length; } catch (_) { plansOk = false; }
+  res.json({
+    ok: true,
+    config: {
+      razorpayKeyId: has('RAZORPAY_KEY_ID'), razorpayKeySecret: has('RAZORPAY_KEY_SECRET'), razorpayWebhookSecret: has('RAZORPAY_WEBHOOK_SECRET'),
+      razorpayPlans: plans, razorpayPlansValidJson: plansOk,
+      firebaseServiceAccount: has('FIREBASE_SERVICE_ACCOUNT') || has('GOOGLE_APPLICATION_CREDENTIALS'),
+      livekitUrl: has('LIVEKIT_URL'), livekitKey: has('LIVEKIT_API_KEY'), livekitSecret: has('LIVEKIT_API_SECRET'),
+    },
+  });
+});
 app.all(/.*/, (req, res) => api(req, res));
 
 const port = Number(process.env.PORT) || 8080;

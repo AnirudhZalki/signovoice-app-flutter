@@ -55,3 +55,16 @@ Run: `flutter run --dart-define-from-file=config/dev.json` · APK for friends/te
 2. Razorpay test UPI id `success@razorpay` (failure: `failure@razorpay`); test card `4111 1111 1111 1111`, any future expiry/CVV.
 3. A debug build also shows **Test payment ₹1** on the Premium page: it runs the one-time order → verify path.
 4. After success the entitlement flips to Premium only after the backend verified the signature.
+
+## Troubleshooting: "I can't pay on my phone"
+Work top to bottom — the first failing item is the cause.
+1. **Is the backend up and configured?** Open `https://signovoice-api.onrender.com/healthz` in the phone's browser (first load can take up to a minute: free Render sleeps). You should see `{"ok":true,"config":{…}}` with `razorpayKeyId`, `razorpayKeySecret`, `razorpayWebhookSecret`, `firebaseServiceAccount` all `true` and `razorpayPlans: 2`, `razorpayPlansValidJson: true`. Any `false`/`0` is a missing Render environment variable.
+2. **Was the app built with Razorpay on?** It must be built with `--dart-define-from-file=config/razorpay.json`. Without it there is no "UPI, cards & wallets" option and no backend URL ("Online payments aren't set up on this build yet").
+3. **Are you signed in?** Guests cannot pay (button says "Sign in to start your free trial"). Sign-in needs `google-services.json` in the build (see `docs/FIREBASE_SETUP.md`); the backend also needs `FIREBASE_SERVICE_ACCOUNT` to verify your login.
+4. **Read the error line.** The Premium page now ends failures with a short reason in brackets:
+   - `(timeout)` / `(offline)` – server asleep or no internet. Wait ~1 min and tap **Retry** (the app now wakes the server when the page opens and waits up to 60 s).
+   - `(unauthorized · 401)` – the backend rejected your login: Firebase service account missing/for another project on Render, or you are not signed in.
+   - `(serviceUnavailable · 500)` – server error: open Render → Logs. Typical: `RAZORPAY_PLANS` missing/invalid JSON, wrong key id/secret pair, plans created in the other mode (test vs live).
+   - `(notFound · 404)` – wrong `API_BASE_URL` (must be the Render URL with no trailing path).
+5. **Razorpay sheet opens but payment fails:** use test UPI `success@razorpay` or test card `4111 1111 1111 1111`. Real UPI apps do not work with Test keys.
+6. **Paid but Premium did not unlock:** the backend verifies the payment; check Render logs and that `RAZORPAY_KEY_SECRET` on Render matches the key id the app received.

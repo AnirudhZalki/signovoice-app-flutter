@@ -74,6 +74,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
   @override
   void initState() {
     super.initState();
+    ref.read(apiClientProvider).warmUp(); // wakes a sleeping free-tier backend before plans are requested
     Future(() => ref.read(purchaseFlowProvider.notifier).loadProducts());
   }
 
