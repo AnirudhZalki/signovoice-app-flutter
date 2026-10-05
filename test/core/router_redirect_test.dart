@@ -21,13 +21,9 @@ void main() {
     expect(redirectFor(SessionStage.needsAuth, Routes.legalPrivacy), isNull);
   });
 
-  test('profile setup and trial offer gate the app', () {
+  test('profile setup gates the app, and there is no plan/offer step in onboarding', () {
     expect(redirectFor(SessionStage.needsProfile, Routes.home), Routes.profileSetup);
-    expect(redirectFor(SessionStage.trialOffer, Routes.home), Routes.trialOffer);
-    expect(redirectFor(SessionStage.trialOffer, Routes.trialOffer), isNull);
-    // The offer links to benefits and legal pages; those must stay reachable.
-    expect(redirectFor(SessionStage.trialOffer, Routes.premiumBenefits), isNull);
-    expect(redirectFor(SessionStage.trialOffer, Routes.legalTerms), isNull);
+    expect(SessionStage.values.map((e) => e.name), isNot(contains('trialOffer')));
   });
 
   test('ready users are moved off entry screens but keep deep links', () {

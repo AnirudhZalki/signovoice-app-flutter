@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/utils/l10n_ext.dart';
 
-/// Bottom-navigation shell (Home · Translate · Learn · Live · Profile).
+/// Bottom-navigation shell (Home · Learn · Live · Profile).
 class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.shell});
   final StatefulNavigationShell shell;
@@ -13,7 +13,6 @@ class AppShell extends StatelessWidget {
     final l = context.l10n;
     final items = <(IconData, IconData, String)>[
       (Icons.home_outlined, Icons.home_rounded, l.navHome),
-      (Icons.translate_rounded, Icons.translate_rounded, l.navTranslate),
       (Icons.school_outlined, Icons.school_rounded, l.navLearn),
       (Icons.video_call_outlined, Icons.video_call_rounded, l.navLive),
       (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),

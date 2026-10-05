@@ -40,13 +40,11 @@ import '../../features/subscription/presentation/manage_subscription_screen.dart
 import '../../features/subscription/presentation/premium_benefits_screen.dart';
 import '../../features/subscription/presentation/subscription_providers.dart';
 import '../../features/subscription/presentation/subscription_screen.dart';
-import '../../features/subscription/presentation/trial_offer_screen.dart';
 import '../../features/voice_translation/presentation/voice_to_sign_screen.dart';
 import '../../features/history/presentation/history_screen.dart';
 import '../../features/home/presentation/app_shell.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/home/presentation/splash_screen.dart';
-import '../../features/home/presentation/translate_hub_screen.dart';
 import '../../features/sign_translation/presentation/sign_translation_controller.dart';
 import '../../features/sign_translation/presentation/sign_translation_screen.dart';
 import 'routes.dart';
@@ -75,8 +73,6 @@ String? redirectFor(SessionStage stage, String location) {
       return (_authPaths.contains(location) || _isLegal(location)) ? null : Routes.login;
     case SessionStage.needsProfile:
       return location == Routes.profileSetup || _isLegal(location) ? null : Routes.profileSetup;
-    case SessionStage.trialOffer:
-      return location == Routes.trialOffer || location == Routes.premiumBenefits || _isLegal(location) ? null : Routes.trialOffer;
     case SessionStage.ready:
       const gated = {
         Routes.splash,
@@ -87,7 +83,6 @@ String? redirectFor(SessionStage stage, String location) {
         Routes.phone,
         Routes.otp,
         Routes.profileSetup,
-        Routes.trialOffer,
       };
       return gated.contains(location) ? Routes.home : null;
   }
@@ -154,7 +149,6 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.about, builder: (_, _) => const AboutScreen()),
       GoRoute(path: Routes.legalPrivacy, builder: (_, _) => const LegalScreen(doc: LegalDoc.privacy)),
       GoRoute(path: Routes.legalTerms, builder: (_, _) => const LegalScreen(doc: LegalDoc.terms)),
-      GoRoute(path: Routes.trialOffer, builder: (_, _) => const TrialOfferScreen()),
       GoRoute(path: Routes.premium, builder: (_, _) => const SubscriptionScreen()),
       GoRoute(path: Routes.premiumBenefits, builder: (_, _) => const PremiumBenefitsScreen()),
       GoRoute(path: Routes.manageSubscription, builder: (_, _) => const ManageSubscriptionScreen()),
@@ -170,7 +164,6 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [
           StatefulShellBranch(routes: [GoRoute(path: Routes.home, builder: (_, _) => const HomeScreen())]),
-          StatefulShellBranch(routes: [GoRoute(path: Routes.translate, builder: (_, _) => const TranslateHubScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.learn, builder: (_, _) => const LearnScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.live, builder: (_, _) => const LiveScreen())]),
           StatefulShellBranch(routes: [GoRoute(path: Routes.profile, builder: (_, _) => const ProfileScreen())]),

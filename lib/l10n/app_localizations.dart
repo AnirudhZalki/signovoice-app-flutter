@@ -1108,6 +1108,48 @@ abstract class AppLocalizations {
   /// **'Premium feature'**
   String get aiShortcutPremium;
 
+  /// No description provided for @homeAboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What is SignoVoice?'**
+  String get homeAboutTitle;
+
+  /// No description provided for @homeAboutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'SignoVoice helps people who sign and people who don\'t know sign language understand each other. Translate signs into text and speech, turn speech into signs, talk to a live interpreter, and learn Indian Sign Language.'**
+  String get homeAboutBody;
+
+  /// No description provided for @homeMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More with SignoVoice'**
+  String get homeMore;
+
+  /// No description provided for @homeHowTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How it works'**
+  String get homeHowTitle;
+
+  /// No description provided for @homeHow1.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose what you want to do: sign to text, voice to sign, or a live interpreter.'**
+  String get homeHow1;
+
+  /// No description provided for @homeHow2.
+  ///
+  /// In en, this message translates to:
+  /// **'Show your hands to the camera or speak. Recognition runs on your phone.'**
+  String get homeHow2;
+
+  /// No description provided for @homeHow3.
+  ///
+  /// In en, this message translates to:
+  /// **'Read, hear or see the translation instantly, and find it later in History.'**
+  String get homeHow3;
+
   /// No description provided for @introSignToText.
   ///
   /// In en, this message translates to:
@@ -3523,7 +3565,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsSubscription.
   ///
   /// In en, this message translates to:
-  /// **'Subscription'**
+  /// **'Get Premium'**
   String get settingsSubscription;
 
   /// No description provided for @settingsAbout.

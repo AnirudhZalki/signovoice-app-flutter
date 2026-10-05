@@ -10,11 +10,9 @@ class Routes {
   static const phone = '/phone';
   static const otp = '/otp';
   static const profileSetup = '/profile-setup';
-  static const trialOffer = '/trial-offer';
 
   // Shell tabs
   static const home = '/home';
-  static const translate = '/translate';
   static const learn = '/learn';
   static const live = '/live';
   static const profile = '/profile';

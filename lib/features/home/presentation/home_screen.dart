@@ -15,8 +15,6 @@ import '../../history/presentation/history_controller.dart';
 import '../../history/presentation/history_screen.dart';
 import '../../notifications/presentation/notification_providers.dart';
 import '../../profile/presentation/profile_controller.dart';
-import '../../subscription/presentation/subscription_providers.dart';
-import '../../subscription/presentation/widgets/trial_status_card.dart';
 
 String greetingFor(AppLocalizations l, DateTime now) => switch (dayPartOf(now)) {
       DayPart.morning => l.greetingMorning,
@@ -106,32 +104,79 @@ class HomeScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             _HeroCard(onStart: () => context.push(Routes.signToText)),
-            const SizedBox(height: 8),
-            SectionHeader(title: l.quickActions),
-            _ActionGrid(
-              columns: wide ? 2 : 1,
-              children: [
-                for (final a in actions)
-                  FeatureCard(
-                    icon: a.icon,
-                    title: a.title,
-                    subtitle: a.subtitle,
-                    accent: a.color,
-                    onTap: () => (a.route == Routes.live || a.route == Routes.learn) ? context.go(a.route) : context.push(a.route),
-                  ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            SectionHeader(title: l.todayUsage),
-            _StatusRow(ref: ref),
             const SizedBox(height: 12),
-            _AiShortcut(ref: ref),
+            const _AboutCard(),
+            const SizedBox(height: 8),
+            SectionHeader(title: l.navTranslate),
+            _ActionGrid(columns: wide ? 2 : 1, children: [for (final a in actions.take(3)) _card(context, a)]),
+            const SizedBox(height: 8),
+            SectionHeader(title: l.homeMore),
+            _ActionGrid(columns: wide ? 2 : 1, children: [for (final a in actions.skip(3)) _card(context, a)]),
+            const SizedBox(height: 8),
+            SectionHeader(title: l.homeHowTitle),
+            const _HowItWorks(),
+            const SizedBox(height: 8),
             SectionHeader(title: l.recentActivity, actionLabel: l.seeAll, onAction: () => context.push(Routes.history)),
             _RecentActivity(ref: ref),
             SizedBox(height: AppSpacing.md, child: ColoredBox(color: scheme.surface)),
           ],
         ),
       ),
+    );
+  }
+}
+
+Widget _card(BuildContext context, QuickAction a) => FeatureCard(
+      icon: a.icon,
+      title: a.title,
+      subtitle: a.subtitle,
+      accent: a.color,
+      onTap: () => (a.route == Routes.live || a.route == Routes.learn) ? context.go(a.route) : context.push(a.route),
+    );
+
+/// Plain-language introduction so people learn what the app is for without leaving Home.
+class _AboutCard extends StatelessWidget {
+  const _AboutCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return AppCard(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [
+          Icon(Icons.info_outline_rounded, color: Theme.of(context).colorScheme.primary),
+          const SizedBox(width: 8),
+          Expanded(child: Semantics(header: true, child: Text(l.homeAboutTitle, style: Theme.of(context).textTheme.titleMedium))),
+        ]),
+        const SizedBox(height: 8),
+        Text(l.homeAboutBody),
+      ]),
+    );
+  }
+}
+
+class _HowItWorks extends StatelessWidget {
+  const _HowItWorks();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    final steps = [l.homeHow1, l.homeHow2, l.homeHow3];
+    final scheme = Theme.of(context).colorScheme;
+    return AppCard(
+      child: Column(children: [
+        for (var i = 0; i < steps.length; i++)
+          Padding(
+            padding: EdgeInsets.only(bottom: i == steps.length - 1 ? 0 : 12),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              ExcludeSemantics(
+                child: CircleAvatar(radius: 14, backgroundColor: scheme.primaryContainer, child: Text('${i + 1}', style: TextStyle(color: scheme.onPrimaryContainer, fontWeight: FontWeight.w700))),
+              ),
+              const SizedBox(width: 12),
+              Expanded(child: Text(steps[i])),
+            ]),
+          ),
+      ]),
     );
   }
 }
@@ -174,58 +219,6 @@ class _HeroCard extends StatelessWidget {
   }
 }
 
-
-/// Plan status + today's usage.
-class _StatusRow extends StatelessWidget {
-  const _StatusRow({required this.ref});
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    final l = context.l10n;
-    final ent = ref.watch(entitlementProvider);
-    final usage = ref.watch(usageServiceProvider);
-    final limit = ent.dailySignLimit;
-    return Column(children: [
-      TrialStatusCard(entitlement: ent, onTap: () => context.push(Routes.premium)),
-      const SizedBox(height: 8),
-      AppCard(
-        semanticLabel: limit < 0 ? l.usageSigns('${usage.signsToday}') : l.usageSignsOfLimit('${usage.signsToday}', '$limit'),
-        child: Row(children: [
-          const Icon(Icons.bolt_rounded),
-          const SizedBox(width: 10),
-          Expanded(child: Text(limit < 0 ? l.usageSigns('${usage.signsToday}') : l.usageSignsOfLimit('${usage.signsToday}', '$limit'))),
-        ]),
-      ),
-    ]);
-  }
-}
-
-class _AiShortcut extends StatelessWidget {
-  const _AiShortcut({required this.ref});
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    final l = context.l10n;
-    final premium = ref.watch(isPremiumProvider);
-    return AppCard(
-      onTap: () => context.push(premium ? Routes.settingsTranslation : Routes.premium),
-      semanticLabel: '${l.aiShortcutTitle}. ${premium ? l.aiShortcutIncluded : l.aiShortcutPremium}',
-      child: Row(children: [
-        Icon(Icons.auto_awesome_rounded, color: Theme.of(context).colorScheme.primary),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(l.aiShortcutTitle, style: Theme.of(context).textTheme.titleMedium),
-            Text(l.aiShortcutBody, style: Theme.of(context).textTheme.bodySmall),
-          ]),
-        ),
-        Text(premium ? l.aiShortcutIncluded : l.aiShortcutPremium, style: Theme.of(context).textTheme.labelMedium),
-      ]),
-    );
-  }
-}
 
 class _RecentActivity extends StatelessWidget {
   const _RecentActivity({required this.ref});

@@ -554,6 +554,31 @@ class AppLocalizationsKn extends AppLocalizations {
   String get aiShortcutPremium => 'ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ';
 
   @override
+  String get homeAboutTitle => 'ಸೈನೋವಾಯ್ಸ್ ಎಂದರೇನು?';
+
+  @override
+  String get homeAboutBody =>
+      'ಸೈನೋವಾಯ್ಸ್ ಸಂಜ್ಞೆ ಮಾಡುವವರು ಮತ್ತು ಸಂಜ್ಞಾ ಭಾಷೆ ತಿಳಿಯದವರು ಪರಸ್ಪರ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಸಂಜ್ಞೆಗಳನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ ಅನುವಾದಿಸಿ, ಧ್ವನಿಯನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಮಾಡಿ, ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್‌ನೊಂದಿಗೆ ಮಾತನಾಡಿ ಮತ್ತು ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆ ಕಲಿಯಿರಿ.';
+
+  @override
+  String get homeMore => 'ಸೈನೋವಾಯ್ಸ್‌ನೊಂದಿಗೆ ಇನ್ನಷ್ಟು';
+
+  @override
+  String get homeHowTitle => 'ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ';
+
+  @override
+  String get homeHow1 =>
+      'ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ ಎಂದು ಆರಿಸಿ: ಸಂಜ್ಞೆಯಿಂದ ಪಠ್ಯ, ಧ್ವನಿಯಿಂದ ಸಂಜ್ಞೆ, ಅಥವಾ ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್.';
+
+  @override
+  String get homeHow2 =>
+      'ಕ್ಯಾಮೆರಾಗೆ ನಿಮ್ಮ ಕೈಗಳನ್ನು ತೋರಿಸಿ ಅಥವಾ ಮಾತನಾಡಿ. ಗುರುತಿಸುವಿಕೆ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ನಡೆಯುತ್ತದೆ.';
+
+  @override
+  String get homeHow3 =>
+      'ಅನುವಾದವನ್ನು ತಕ್ಷಣ ಓದಿ, ಕೇಳಿ ಅಥವಾ ನೋಡಿ, ನಂತರ ಇತಿಹಾಸದಲ್ಲಿ ಹುಡುಕಿ.';
+
+  @override
   String get introSignToText => 'ಸೈನ್ → ಪಠ್ಯ';
 
   @override
@@ -1930,7 +1955,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get settingsPrivacy => 'ಗೌಪ್ಯತೆ ಮತ್ತು ಡೇಟಾ';
 
   @override
-  String get settingsSubscription => 'ಚಂದಾದಾರಿಕೆ';
+  String get settingsSubscription => 'ಪ್ರೀಮಿಯಂ ಪಡೆಯಿರಿ';
 
   @override
   String get settingsAbout => 'ಸೈನೋವಾಯ್ಸ್ ಬಗ್ಗೆ';

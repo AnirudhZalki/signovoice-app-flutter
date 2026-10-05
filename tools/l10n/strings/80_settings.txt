@@ -19,7 +19,7 @@ settingsAccessibility | Accessibility | पहुँच-योग्यता | 
 settingsVoice | Voice | आवाज़ | ಧ್ವನಿ
 settingsTranslation | Translation | अनुवाद | ಅನುವಾದ
 settingsPrivacy | Privacy & data | गोपनीयता और डेटा | ಗೌಪ್ಯತೆ ಮತ್ತು ಡೇಟಾ
-settingsSubscription | Subscription | सदस्यता | ಚಂದಾದಾರಿಕೆ
+settingsSubscription | Get Premium | प्रीमियम लें | ಪ್ರೀಮಿಯಂ ಪಡೆಯಿರಿ
 settingsAbout | About SignoVoice | साइनोवॉइस के बारे में | ಸೈನೋವಾಯ್ಸ್ ಬಗ್ಗೆ
 settingsHelp | Help & support | सहायता और समर्थन | ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ
 settingsSecurity | Security | सुरक्षा | ಭದ್ರತೆ

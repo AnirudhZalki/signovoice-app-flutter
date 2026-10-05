@@ -7,3 +7,10 @@ aiShortcutTitle | Advanced AI translation | उन्नत एआई अनु�
 aiShortcutBody | Smoother sentences from an online AI service. | ऑनलाइन एआई सेवा से अधिक सहज वाक्य। | ಆನ್‌ಲೈನ್ ಎಐ ಸೇವೆಯಿಂದ ಸುಗಮ ವಾಕ್ಯಗಳು.
 aiShortcutIncluded | Included with your plan | आपकी योजना में शामिल | ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಸೇರಿದೆ
 aiShortcutPremium | Premium feature | प्रीमियम सुविधा | ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯ
+homeAboutTitle | What is SignoVoice? | साइनोवॉइस क्या है? | ಸೈನೋವಾಯ್ಸ್ ಎಂದರೇನು?
+homeAboutBody | SignoVoice helps people who sign and people who don't know sign language understand each other. Translate signs into text and speech, turn speech into signs, talk to a live interpreter, and learn Indian Sign Language. | साइनोवॉइस साइन करने वालों और साइन भाषा न जानने वालों को एक-दूसरे को समझने में मदद करता है। साइन को टेक्स्ट और आवाज़ में बदलें, आवाज़ को साइन में बदलें, लाइव दुभाषिये से बात करें और भारतीय साइन भाषा सीखें। | ಸೈನೋವಾಯ್ಸ್ ಸಂಜ್ಞೆ ಮಾಡುವವರು ಮತ್ತು ಸಂಜ್ಞಾ ಭಾಷೆ ತಿಳಿಯದವರು ಪರಸ್ಪರ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಸಂಜ್ಞೆಗಳನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ ಅನುವಾದಿಸಿ, ಧ್ವನಿಯನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಮಾಡಿ, ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್‌ನೊಂದಿಗೆ ಮಾತನಾಡಿ ಮತ್ತು ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆ ಕಲಿಯಿರಿ.
+homeMore | More with SignoVoice | साइनोवॉइस के साथ और | ಸೈನೋವಾಯ್ಸ್‌ನೊಂದಿಗೆ ಇನ್ನಷ್ಟು
+homeHowTitle | How it works | यह कैसे काम करता है | ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ
+homeHow1 | Choose what you want to do: sign to text, voice to sign, or a live interpreter. | चुनें कि आप क्या करना चाहते हैं: साइन से टेक्स्ट, आवाज़ से साइन, या लाइव दुभाषिया। | ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ ಎಂದು ಆರಿಸಿ: ಸಂಜ್ಞೆಯಿಂದ ಪಠ್ಯ, ಧ್ವನಿಯಿಂದ ಸಂಜ್ಞೆ, ಅಥವಾ ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್.
+homeHow2 | Show your hands to the camera or speak. Recognition runs on your phone. | कैमरे को अपने हाथ दिखाएं या बोलें। पहचान आपके फ़ोन पर ही होती है। | ಕ್ಯಾಮೆರಾಗೆ ನಿಮ್ಮ ಕೈಗಳನ್ನು ತೋರಿಸಿ ಅಥವಾ ಮಾತನಾಡಿ. ಗುರುತಿಸುವಿಕೆ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ನಡೆಯುತ್ತದೆ.
+homeHow3 | Read, hear or see the translation instantly, and find it later in History. | अनुवाद तुरंत पढ़ें, सुनें या देखें, और बाद में इतिहास में पाएं। | ಅನುವಾದವನ್ನು ತಕ್ಷಣ ಓದಿ, ಕೇಳಿ ಅಥವಾ ನೋಡಿ, ನಂತರ ಇತಿಹಾಸದಲ್ಲಿ ಹುಡುಕಿ.

@@ -49,14 +49,13 @@ void main() {
     expect(find.text('Sign → Text'), findsWidgets);
   });
 
-  testWidgets('returning guest lands on Home and can move between all five tabs', (tester) async {
+  testWidgets('returning guest lands on Home and can move between all four tabs', (tester) async {
     final h = Harness();
     await h.pump(tester);
-    expect(find.text('Quick actions'), findsOneWidget);
-
-    await tester.tap(find.text('Translate').last);
-    await settle(tester);
-    expect(find.text('What would you like to do?'), findsOneWidget);
+    // Home now introduces the app and holds every mode (the separate Translate tab is gone).
+    expect(find.text('What is SignoVoice?'), findsOneWidget);
+    expect(find.text('Translate'), findsOneWidget); // section header only, not a tab
+    expect(find.text('Sign → Text'), findsWidgets);
 
     await tester.tap(find.text('Learn').last);
     await pumpUntilFound(tester, find.text('Topics'));
@@ -100,6 +99,7 @@ void main() {
   testWidgets('Voice → Sign converts typed text to signs and flags unknown words', (tester) async {
     final h = Harness();
     await h.pump(tester);
+    await scrollTo(tester, find.text('Voice → Sign').first); // Home lists it below the intro
     await tester.tap(find.text('Voice → Sign').first);
     await settle(tester);
     expect(find.text('Voice → Sign'), findsWidgets);
@@ -118,7 +118,7 @@ void main() {
     final h = Harness(prefs: const UserPreferences(localeCode: 'kn'));
     await h.pump(tester);
     expect(find.text('ಇಂದು ಸಂವಹನ ಮಾಡಲು ನಾವು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?'), findsOneWidget);
-    expect(find.text('ತ್ವರಿತ ಕ್ರಿಯೆಗಳು'), findsOneWidget);
+    expect(find.text('ಸೈನೋವಾಯ್ಸ್ ಎಂದರೇನು?'), findsOneWidget);
   });
 
   testWidgets('Hindi UI works too', (tester) async {

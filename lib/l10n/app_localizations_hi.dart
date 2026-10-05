@@ -552,6 +552,31 @@ class AppLocalizationsHi extends AppLocalizations {
   String get aiShortcutPremium => 'प्रीमियम सुविधा';
 
   @override
+  String get homeAboutTitle => 'साइनोवॉइस क्या है?';
+
+  @override
+  String get homeAboutBody =>
+      'साइनोवॉइस साइन करने वालों और साइन भाषा न जानने वालों को एक-दूसरे को समझने में मदद करता है। साइन को टेक्स्ट और आवाज़ में बदलें, आवाज़ को साइन में बदलें, लाइव दुभाषिये से बात करें और भारतीय साइन भाषा सीखें।';
+
+  @override
+  String get homeMore => 'साइनोवॉइस के साथ और';
+
+  @override
+  String get homeHowTitle => 'यह कैसे काम करता है';
+
+  @override
+  String get homeHow1 =>
+      'चुनें कि आप क्या करना चाहते हैं: साइन से टेक्स्ट, आवाज़ से साइन, या लाइव दुभाषिया।';
+
+  @override
+  String get homeHow2 =>
+      'कैमरे को अपने हाथ दिखाएं या बोलें। पहचान आपके फ़ोन पर ही होती है।';
+
+  @override
+  String get homeHow3 =>
+      'अनुवाद तुरंत पढ़ें, सुनें या देखें, और बाद में इतिहास में पाएं।';
+
+  @override
   String get introSignToText => 'साइन → टेक्स्ट';
 
   @override
@@ -1929,7 +1954,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsPrivacy => 'गोपनीयता और डेटा';
 
   @override
-  String get settingsSubscription => 'सदस्यता';
+  String get settingsSubscription => 'प्रीमियम लें';
 
   @override
   String get settingsAbout => 'साइनोवॉइस के बारे में';

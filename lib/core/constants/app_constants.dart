@@ -14,7 +14,7 @@ class AppConstants {
   static const double minHandPresence = 0.6;
 
   // Free plan limits (premium = unlimited). freeDailyTranslations counts recognised signs per day.
-  static const int freeDailyTranslations = 100;
+  static const int freeDailyTranslations = 50;
   static const int freeHistoryEntries = 30;
 
   static const Duration trialLength = Duration(days: 30);
@@ -26,7 +26,6 @@ class PrefKeys {
   const PrefKeys._();
   static const onboardingDone = 'onboarding_done';
   static const profileSetupDone = 'profile_setup_done';
-  static const trialOfferSeen = 'trial_offer_seen';
   static const preferences = 'user_preferences_v1';
   static const guestMode = 'guest_mode';
   static const usagePrefix = 'usage_';

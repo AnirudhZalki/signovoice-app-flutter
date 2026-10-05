@@ -20,7 +20,7 @@ void main() {
       const s = Subscription.free;
       expect(TrialPolicy.isTrialEligible(s), isTrue);
       expect(TrialPolicy.hasPremiumAccess(s, t0), isFalse);
-      expect(Entitlement.at(s, t0).dailySignLimit, 100);
+      expect(Entitlement.at(s, t0).dailySignLimit, 50);
     });
   });
 

@@ -551,6 +551,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiShortcutPremium => 'Premium feature';
 
   @override
+  String get homeAboutTitle => 'What is SignoVoice?';
+
+  @override
+  String get homeAboutBody =>
+      'SignoVoice helps people who sign and people who don\'t know sign language understand each other. Translate signs into text and speech, turn speech into signs, talk to a live interpreter, and learn Indian Sign Language.';
+
+  @override
+  String get homeMore => 'More with SignoVoice';
+
+  @override
+  String get homeHowTitle => 'How it works';
+
+  @override
+  String get homeHow1 =>
+      'Choose what you want to do: sign to text, voice to sign, or a live interpreter.';
+
+  @override
+  String get homeHow2 =>
+      'Show your hands to the camera or speak. Recognition runs on your phone.';
+
+  @override
+  String get homeHow3 =>
+      'Read, hear or see the translation instantly, and find it later in History.';
+
+  @override
   String get introSignToText => 'Sign → Text';
 
   @override
@@ -1927,7 +1952,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsPrivacy => 'Privacy & data';
 
   @override
-  String get settingsSubscription => 'Subscription';
+  String get settingsSubscription => 'Get Premium';
 
   @override
   String get settingsAbout => 'About SignoVoice';
