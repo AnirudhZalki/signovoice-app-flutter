@@ -75,3 +75,10 @@ This is the server answering **401**: it could not verify your Firebase login. T
 2. In your app's `android/app/google-services.json` look at `"project_id"`. The two **must be identical**. If not: Firebase console (the app's project) → Project settings → Service accounts → **Generate new private key**, paste the whole JSON (one line) into Render's `FIREBASE_SERVICE_ACCOUNT`, save.
 3. `firebaseServiceAccountValid` must be `true`. Then sign out and in again in the app and reopen Premium.
 Render → Logs shows the exact reason as `verifyIdToken failed: …`.
+
+### Easiest way to set the Firebase service account on Render (survives copy/paste)
+1. Firebase console → Project settings → Service accounts → **Generate new private key** → save the `.json` file.
+2. PowerShell (put the real file name): `[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\path\to\your-key.json")) | Set-Clipboard`
+3. Render → Environment → add **`FIREBASE_SERVICE_ACCOUNT_BASE64`** = paste (Ctrl+V). Delete the old `FIREBASE_SERVICE_ACCOUNT` entry. Save.
+4. `/healthz` must now show `"firebaseServiceAccountValid":true` and a `firebaseProjectId` equal to `project_id` in the app's `google-services.json`.
+Also fix: `RAZORPAY_PLANS` (run `node scripts/create-plans.js`, paste the printed JSON line) and `RAZORPAY_WEBHOOK_SECRET` (any long random text, same as in the Razorpay webhook).

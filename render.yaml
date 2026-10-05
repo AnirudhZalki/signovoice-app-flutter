@@ -35,5 +35,5 @@ services:
         sync: false
       - key: RAZORPAY_WEBHOOK_SECRET
         sync: false
-      - key: FIREBASE_SERVICE_ACCOUNT
+      - key: FIREBASE_SERVICE_ACCOUNT_BASE64
         sync: false

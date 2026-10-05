@@ -9,9 +9,25 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-if (process.env.FIREBASE_SERVICE_ACCOUNT && !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+/** Service-account JSON from FIREBASE_SERVICE_ACCOUNT_BASE64 (recommended: survives copy/paste) or FIREBASE_SERVICE_ACCOUNT (raw JSON). */
+function readServiceAccount() {
+  let raw = process.env.FIREBASE_SERVICE_ACCOUNT_BASE64
+    ? Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_BASE64.trim(), 'base64').toString('utf8')
+    : (process.env.FIREBASE_SERVICE_ACCOUNT || '');
+  raw = raw.trim();
+  if (raw.length > 1 && raw.startsWith('"') && raw.endsWith('"')) raw = raw.slice(1, -1).replace(/\\"/g, '"'); // pasted with wrapping quotes
+  try {
+    const sa = JSON.parse(raw);
+    return sa && sa.client_email && sa.private_key ? { sa, raw } : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+const serviceAccount = readServiceAccount();
+if (serviceAccount && !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
   const file = path.join(os.tmpdir(), 'firebase-sa.json');
-  fs.writeFileSync(file, process.env.FIREBASE_SERVICE_ACCOUNT, { mode: 0o600 });
+  fs.writeFileSync(file, JSON.stringify(serviceAccount.sa), { mode: 0o600 });
   process.env.GOOGLE_APPLICATION_CREDENTIALS = file;
 }
 
@@ -26,13 +42,8 @@ app.get('/healthz', (_req, res) => {
   let plans = 0;
   let plansOk = true;
   try { plans = Object.keys(JSON.parse(process.env.RAZORPAY_PLANS || '{}')).length; } catch (_) { plansOk = false; }
-  let projectId = null;
-  let saValid = false;
-  try {
-    const sa = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT || '');
-    projectId = sa.project_id || null; // not a secret: compare it with the Firebase project of the app's google-services.json
-    saValid = !!(sa.client_email && sa.private_key);
-  } catch (_) { /* leave null */ }
+  const projectId = serviceAccount ? serviceAccount.sa.project_id || null : null; // not a secret: must equal "project_id" in the app's google-services.json
+  const saValid = !!serviceAccount;
   res.json({
     ok: true,
     firebaseProjectId: projectId,
@@ -40,7 +51,7 @@ app.get('/healthz', (_req, res) => {
     config: {
       razorpayKeyId: has('RAZORPAY_KEY_ID'), razorpayKeySecret: has('RAZORPAY_KEY_SECRET'), razorpayWebhookSecret: has('RAZORPAY_WEBHOOK_SECRET'),
       razorpayPlans: plans, razorpayPlansValidJson: plansOk,
-      firebaseServiceAccount: has('FIREBASE_SERVICE_ACCOUNT') || has('GOOGLE_APPLICATION_CREDENTIALS'),
+      firebaseServiceAccountSet: has('FIREBASE_SERVICE_ACCOUNT') || has('FIREBASE_SERVICE_ACCOUNT_BASE64') || has('GOOGLE_APPLICATION_CREDENTIALS'),
       livekitUrl: has('LIVEKIT_URL'), livekitKey: has('LIVEKIT_API_KEY'), livekitSecret: has('LIVEKIT_API_SECRET'),
     },
   });
