@@ -22,6 +22,8 @@ String authFailureMessage(AppLocalizations l, Failure f) {
     case 'user-not-found':
       return l.authInvalidCredentials;
     case 'email-already-in-use':
+    case 'account-exists-with-different-credential':
+    case 'credential-already-in-use':
       return l.authEmailInUse;
     case 'weak-password':
       return l.authWeakPassword;

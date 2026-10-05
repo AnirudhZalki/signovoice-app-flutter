@@ -40,6 +40,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   }
 
   Future<void> _submit() async {
+    if (_busy) return;
     final ok = _form.currentState!.validate();
     setState(() => _showAgreeError = !_agree);
     if (!ok || !_agree) return;
@@ -113,6 +114,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                       controller: _confirm,
                       obscureText: _obscure,
                       textInputAction: TextInputAction.done,
+                      onFieldSubmitted: (_) => _submit(),
                       decoration: InputDecoration(labelText: l.confirmPassword, prefixIcon: const Icon(Icons.lock_outline)),
                       validator: (v) => validationText(l, Validators.confirmPassword(v, _password.text)),
                     ),

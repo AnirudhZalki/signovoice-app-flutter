@@ -64,7 +64,8 @@ Failure _fromFirebaseAuth(FirebaseAuthException e) {
     'invalid-email' ||
     'invalid-phone-number' ||
     'too-many-requests' ||
-    'credential-already-in-use' =>
+    'credential-already-in-use' ||
+    'account-exists-with-different-credential' =>
       Failure(FailureType.validation, code: e.code),
     'operation-not-allowed' ||
     'app-not-authorized' =>
