@@ -68,3 +68,10 @@ Work top to bottom — the first failing item is the cause.
    - `(notFound · 404)` – wrong `API_BASE_URL` (must be the Render URL with no trailing path).
 5. **Razorpay sheet opens but payment fails:** use test UPI `success@razorpay` or test card `4111 1111 1111 1111`. Real UPI apps do not work with Test keys.
 6. **Paid but Premium did not unlock:** the backend verifies the payment; check Render logs and that `RAZORPAY_KEY_SECRET` on Render matches the key id the app received.
+
+### "Please sign in again to continue" while signed in (no plans shown, Start free trial greyed out)
+This is the server answering **401**: it could not verify your Firebase login. The usual cause is that Render's `FIREBASE_SERVICE_ACCOUNT` belongs to a **different Firebase project** than the app's `google-services.json`, or is missing/malformed JSON.
+1. Open `https://signovoice-api.onrender.com/healthz` → note `firebaseProjectId` and `firebaseServiceAccountValid`.
+2. In your app's `android/app/google-services.json` look at `"project_id"`. The two **must be identical**. If not: Firebase console (the app's project) → Project settings → Service accounts → **Generate new private key**, paste the whole JSON (one line) into Render's `FIREBASE_SERVICE_ACCOUNT`, save.
+3. `firebaseServiceAccountValid` must be `true`. Then sign out and in again in the app and reopen Premium.
+Render → Logs shows the exact reason as `verifyIdToken failed: …`.

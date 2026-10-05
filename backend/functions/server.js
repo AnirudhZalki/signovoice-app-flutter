@@ -26,8 +26,17 @@ app.get('/healthz', (_req, res) => {
   let plans = 0;
   let plansOk = true;
   try { plans = Object.keys(JSON.parse(process.env.RAZORPAY_PLANS || '{}')).length; } catch (_) { plansOk = false; }
+  let projectId = null;
+  let saValid = false;
+  try {
+    const sa = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT || '');
+    projectId = sa.project_id || null; // not a secret: compare it with the Firebase project of the app's google-services.json
+    saValid = !!(sa.client_email && sa.private_key);
+  } catch (_) { /* leave null */ }
   res.json({
     ok: true,
+    firebaseProjectId: projectId,
+    firebaseServiceAccountValid: saValid,
     config: {
       razorpayKeyId: has('RAZORPAY_KEY_ID'), razorpayKeySecret: has('RAZORPAY_KEY_SECRET'), razorpayWebhookSecret: has('RAZORPAY_WEBHOOK_SECRET'),
       razorpayPlans: plans, razorpayPlansValidJson: plansOk,

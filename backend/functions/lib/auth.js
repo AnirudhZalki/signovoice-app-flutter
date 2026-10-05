@@ -8,7 +8,12 @@ async function requireUser(req) {
   if (!m) throw Object.assign(new Error('missing token'), { status: 401 });
   try {
     return await admin.auth().verifyIdToken(m[1]);
-  } catch (_) {
+  } catch (e) {
+    // Logged for Render's log viewer (reason only, never the token). Typical causes:
+    //  - auth/argument-error: not a Firebase ID token; auth/id-token-expired
+    //  - "incorrect aud/iss": the app's Firebase project differs from the service account's project
+    //  - app/invalid-credential: FIREBASE_SERVICE_ACCOUNT missing or malformed
+    console.error('verifyIdToken failed:', (e && (e.code || e.errorInfo && e.errorInfo.code)) || 'unknown', String((e && e.message) || '').slice(0, 160));
     throw Object.assign(new Error('invalid token'), { status: 401 });
   }
 }
