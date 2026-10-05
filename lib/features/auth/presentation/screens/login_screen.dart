@@ -75,6 +75,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     }
   }
 
+  void _submit() {
+    if (_busy || !_form.currentState!.validate()) return;
+    _run(() => ref.read(authControllerProvider.notifier).signInWithEmail(_email.text, _password.text));
+  }
+
   @override
   Widget build(BuildContext context) {
     final l = context.l10n;
@@ -131,6 +136,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             obscureText: _obscure,
                             autofillHints: const [AutofillHints.password],
                             textInputAction: TextInputAction.done,
+                            onFieldSubmitted: (_) => _submit(),
                             decoration: InputDecoration(
                               labelText: l.password,
                               prefixIcon: const Icon(Icons.lock_outline),
@@ -166,11 +172,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     PrimaryButton(
                       label: l.signIn,
                       loading: _busy,
-                      onPressed: () {
-                        if (_form.currentState!.validate()) {
-                          _run(() => auth.signInWithEmail(_email.text, _password.text));
-                        }
-                      },
+                      onPressed: _submit,
                     ),
                     const SizedBox(height: 16),
                     Row(children: [

@@ -57,17 +57,26 @@ class FirebaseAuthRepository implements AuthRepository {
           {required String email, required String password, required String name}) =>
       _guard(() async {
         final c = await _auth.createUserWithEmailAndPassword(email: email.trim(), password: password);
-        await c.user!.updateDisplayName(name.trim());
-        await c.user!.reload();
-        return _map(_auth.currentUser!, isNew: true);
+        final user = c.user!;
+        // The account exists at this point; a failed name update must not report registration as failed.
+        try {
+          await user.updateDisplayName(name.trim());
+          await user.reload();
+        } catch (_) {}
+        return _map(_auth.currentUser ?? user, isNew: true);
       });
 
   @override
   Future<AppUser> signInWithGoogle() => _guard(() async {
-        _googleInit ??= GoogleSignIn.instance.initialize(
-          serverClientId: AppConfig.googleServerClientId.isEmpty ? null : AppConfig.googleServerClientId,
-        );
-        await _googleInit;
+        try {
+          _googleInit ??= GoogleSignIn.instance.initialize(
+            serverClientId: AppConfig.googleServerClientId.isEmpty ? null : AppConfig.googleServerClientId,
+          );
+          await _googleInit;
+        } catch (_) {
+          _googleInit = null; // allow a retry instead of caching the failure forever
+          rethrow;
+        }
         if (!GoogleSignIn.instance.supportsAuthenticate()) {
           throw const Failure(FailureType.notConfigured, debugDetail: 'google authenticate unsupported');
         }
@@ -80,7 +89,16 @@ class FirebaseAuthRepository implements AuthRepository {
           }
           // Typical causes: SHA-1/SHA-256 not added to the Firebase Android app, Google provider not enabled, or an
           // outdated google-services.json (re-download it after changing either). See docs/FIREBASE_SETUP.md.
-          throw Failure(FailureType.unknown, debugDetail: 'google ${e.code.name}: ${e.description ?? ''}');
+          final detail = 'google ${e.code.name}: ${e.description ?? ''}';
+          throw switch (e.code) {
+            GoogleSignInExceptionCode.interrupted ||
+            GoogleSignInExceptionCode.uiUnavailable =>
+              Failure(FailureType.network, debugDetail: detail),
+            GoogleSignInExceptionCode.clientConfigurationError ||
+            GoogleSignInExceptionCode.providerConfigurationError =>
+              Failure(FailureType.notConfigured, debugDetail: detail),
+            _ => Failure(FailureType.unknown, debugDetail: detail),
+          };
         }
         final idToken = account.authentication.idToken;
         if (idToken == null) throw const Failure(FailureType.unknown, debugDetail: 'no google idToken');

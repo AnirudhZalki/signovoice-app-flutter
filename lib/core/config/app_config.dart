@@ -30,8 +30,13 @@ class AppConfig {
       String.fromEnvironment('REMOTE_RECOGNITION_URL');
 
   /// Google Sign-In web/server client id (from the Firebase console).
-  static const String googleServerClientId =
-      String.fromEnvironment('GOOGLE_SERVER_CLIENT_ID');
+  /// This must be the *Web* OAuth client (client_type 3 in google-services.json), not the Android one.
+  /// The default is the project's Web client so a plain `flutter run` (no --dart-define) still works;
+  /// it is a public identifier, not a secret.
+  static const String googleServerClientId = String.fromEnvironment(
+    'GOOGLE_SERVER_CLIENT_ID',
+    defaultValue: '725800326911-1tkflevomuvkhbuc7aoj74t09mb57hj0.apps.googleusercontent.com',
+  );
 
   static const String monthlyProductId = String.fromEnvironment(
     'IAP_MONTHLY_ID',
