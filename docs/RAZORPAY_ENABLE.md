@@ -82,3 +82,17 @@ Render → Logs shows the exact reason as `verifyIdToken failed: …`.
 3. Render → Environment → add **`FIREBASE_SERVICE_ACCOUNT_BASE64`** = paste (Ctrl+V). Delete the old `FIREBASE_SERVICE_ACCOUNT` entry. Save.
 4. `/healthz` must now show `"firebaseServiceAccountValid":true` and a `firebaseProjectId` equal to `project_id` in the app's `google-services.json`.
 Also fix: `RAZORPAY_PLANS` (run `node scripts/create-plans.js`, paste the printed JSON line) and `RAZORPAY_WEBHOOK_SECRET` (any long random text, same as in the Razorpay webhook).
+
+## What the app does per Razorpay's Android Standard Checkout steps
+| Razorpay step | In this repo |
+|---|---|
+| Add the SDK | `razorpay_flutter` (wraps the Android Checkout SDK) in `pubspec.yaml`; Android needs minSdk ≥ 19 (app uses 24) |
+| Create an order / subscription on **your server** | `POST /v1/razorpay/subscriptions` and `/v1/razorpay/orders` (Key *secret* stays on the server) |
+| Open Checkout with key id + order/subscription id | `razorpay_billing_service.dart`, `order_checkout_runner.dart`, options in `razorpay_options.dart` |
+| Payment methods | UPI shown first (UPI intent opens Google Pay / PhonePe / Paytm; UPI AutoPay for subscriptions), then cards, netbanking, wallets — `config.display` in `razorpay_options.dart`; edit there to hide/reorder methods or enable more in the Razorpay dashboard (Settings → Payment methods) |
+| Android 11+ UPI apps visible | `<queries>` for `upi://pay` / `upi://mandate` in `AndroidManifest.xml` |
+| ProGuard/R8 for release | `android/app/proguard-rules.pro` (Razorpay keep rules) |
+| Handle success / error / external wallet | `EVENT_PAYMENT_SUCCESS` / `EVENT_PAYMENT_ERROR` / `EVENT_EXTERNAL_WALLET` handlers |
+| **Verify the signature on your server** | `/v1/subscriptions/verify` and `/v1/razorpay/orders/verify` (HMAC-SHA256); webhook as the safety net |
+| Prefill customer | email / phone / name of the signed-in user |
+The checkout never works until the backend answers — see the troubleshooting section above (`/healthz` must show a valid Firebase service account, 2 plans and the webhook secret).

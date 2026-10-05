@@ -4,6 +4,7 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 import '../../../core/errors/failure.dart';
 import '../../../core/services/api_client.dart';
+import 'razorpay_options.dart';
 
 enum OrderPaymentOutcome { success, cancelled, failed }
 
@@ -41,10 +42,7 @@ class RazorpayOrderCheckout {
       'order_id': order['order_id'],
       'amount': order['amount'],
       'currency': order['currency'],
-      'name': name,
-      'description': description,
-      'theme': {'color': '#3157D5'},
-      'retry': {'enabled': true, 'max_count': 2},
+      ...razorpayBaseOptions(description: description),
     });
     return c.future;
   }

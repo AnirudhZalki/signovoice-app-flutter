@@ -30,7 +30,13 @@ final paymentMethodProvider = NotifierProvider<PaymentMethodController, PaymentM
 
 final billingServiceProvider = Provider<BillingService>((ref) {
   final BillingService s = ref.watch(paymentMethodProvider) == PaymentMethod.razorpay
-      ? RazorpayBillingService(api: ref.watch(apiClientProvider))
+      ? RazorpayBillingService(
+          api: ref.watch(apiClientProvider),
+          prefill: () {
+            final u = ref.read(authControllerProvider).user;
+            return (email: u?.email, contact: u?.phone, name: u?.displayName);
+          },
+        )
       : InAppBillingService();
   ref.onDispose(s.dispose);
   return s;

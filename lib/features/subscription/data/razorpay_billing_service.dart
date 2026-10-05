@@ -8,6 +8,7 @@ import '../../../core/errors/failure.dart';
 import '../../../core/services/api_client.dart';
 import '../domain/billing_service.dart';
 import '../domain/subscription.dart';
+import 'razorpay_options.dart';
 
 /// Razorpay Subscriptions (UPI AutoPay incl. Google Pay, cards, e-mandate) behind the same
 /// [BillingService] contract as Google Play, so the purchase → **backend verification** →
@@ -16,7 +17,7 @@ import '../domain/subscription.dart';
 /// Secrets never live here: the backend creates the subscription with the Razorpay key *secret* and
 /// verifies the checkout signature. See docs/PAYMENTS_SETUP.md and docs/BACKEND_CONTRACT.md.
 class RazorpayBillingService implements BillingService {
-  RazorpayBillingService({required this.api, Razorpay? razorpay}) : _rz = razorpay ?? Razorpay() {
+  RazorpayBillingService({required this.api, Razorpay? razorpay, this.prefill}) : _rz = razorpay ?? Razorpay() {
     _rz.on(Razorpay.EVENT_PAYMENT_SUCCESS, _onSuccess, rawMap: true);
     _rz.on(Razorpay.EVENT_PAYMENT_ERROR, _onError, rawMap: true);
     _rz.on(Razorpay.EVENT_EXTERNAL_WALLET, (Object? _) {}, rawMap: true);
@@ -24,6 +25,9 @@ class RazorpayBillingService implements BillingService {
 
   final ApiClient api;
   final Razorpay _rz;
+
+  /// Email / phone / name of the signed-in person, so they don't retype them in the checkout.
+  final ({String? email, String? contact, String? name}) Function()? prefill;
   final _out = StreamController<StorePurchase>.broadcast();
   String? _pendingProductId;
 
@@ -73,13 +77,11 @@ class RazorpayBillingService implements BillingService {
       throw const Failure(FailureType.serviceUnavailable, debugDetail: 'malformed razorpay subscription');
     }
     _pendingProductId = product.id;
+    final p = prefill?.call();
     _rz.open({
       'key': res['keyId'],
       'subscription_id': res['subscriptionId'],
-      'name': 'SignoVoice',
-      'description': product.title,
-      'theme': {'color': '#3157D5'},
-      'retry': {'enabled': true, 'max_count': 2},
+      ...razorpayBaseOptions(description: product.title, email: p?.email, contact: p?.contact, name: p?.name),
     });
     return true;
   }

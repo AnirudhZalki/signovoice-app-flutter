@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
+import '../../subscription/data/razorpay_options.dart';
 import '../domain/interpreter_models.dart';
 
 enum CheckoutOutcome { success, cancelled, failed }
@@ -46,10 +47,7 @@ class RazorpayCheckoutRunner implements OrderCheckoutRunner {
       'order_id': order.orderId,
       'amount': order.amountPaise,
       'currency': order.currency,
-      'name': 'SignoVoice',
-      'description': description,
-      'theme': {'color': '#3157D5'},
-      'retry': {'enabled': true, 'max_count': 2},
+      ...razorpayBaseOptions(description: description),
     });
     return done.future.whenComplete(rz.clear);
   }
