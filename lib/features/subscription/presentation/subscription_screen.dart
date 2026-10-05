@@ -64,7 +64,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
             OrderPaymentOutcome.failed => l.testPaymentFailed,
           });
     } catch (e) {
-      if (mounted) setState(() => _testMessage = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _testMessage = failureMessageWithReason(context.l10n, toFailure(e)));
     } finally {
       checkout.dispose();
       if (mounted) setState(() => _testBusy = false);

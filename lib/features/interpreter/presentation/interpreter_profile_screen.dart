@@ -75,7 +75,7 @@ class _InterpreterProfileScreenState extends ConsumerState<InterpreterProfileScr
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.profileSaved)));
       context.pop();
     } catch (e) {
-      if (mounted) setState(() => _error = failureMessage(l, toFailure(e)));
+      if (mounted) setState(() => _error = failureMessageWithReason(l, toFailure(e)));
     } finally {
       if (mounted) setState(() => _busy = false);
     }

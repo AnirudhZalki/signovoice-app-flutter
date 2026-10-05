@@ -48,7 +48,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
       await ref.read(interpreterRepositoryProvider).submitFeedback(callId: widget.callId, rating: _rating, comment: _comment.text);
       if (mounted) setState(() => _done = true);
     } catch (e) {
-      if (mounted) setState(() => _error = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _error = failureMessageWithReason(context.l10n, toFailure(e)));
     } finally {
       if (mounted) setState(() => _busy = false);
     }

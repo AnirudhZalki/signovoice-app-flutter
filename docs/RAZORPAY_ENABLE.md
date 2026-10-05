@@ -96,3 +96,6 @@ Also fix: `RAZORPAY_PLANS` (run `node scripts/create-plans.js`, paste the printe
 | **Verify the signature on your server** | `/v1/subscriptions/verify` and `/v1/razorpay/orders/verify` (HMAC-SHA256); webhook as the safety net |
 | Prefill customer | email / phone / name of the signed-in user |
 The checkout never works until the backend answers — see the troubleshooting section above (`/healthz` must show a valid Firebase service account, 2 plans and the webhook secret).
+
+### Every signed-in action says "Please sign in again" (Premium, interpreter registration, Interpreter desk…)
+One root cause: **the backend rejects your Firebase login (401)**. All of these screens call the same backend with your login token; none of them work until `/healthz` shows `"firebaseServiceAccountValid":true` and a `firebaseProjectId` equal to `project_id` in the app's `google-services.json`. Fix the service account on Render (section above), wait for the redeploy, then sign out and in again. The red message now ends with a reason such as `(unauthorized · 401)`.

@@ -34,7 +34,7 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
       await ref.read(interpreterRepositoryProvider).setAvailability(available: v);
       if (mounted) setState(() => _online = v);
     } catch (e) {
-      if (mounted) setState(() => _error = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _error = failureMessageWithReason(context.l10n, toFailure(e)));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -44,7 +44,7 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
     try {
       await ref.read(interpreterRepositoryProvider).decline(r.requestId);
     } catch (e) {
-      if (mounted) setState(() => _error = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _error = failureMessageWithReason(context.l10n, toFailure(e)));
     }
     ref.invalidate(interpreterQueueProvider);
   }
@@ -62,7 +62,7 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
         ..joinAsInterpreter(session, r.mode);
       context.push(Routes.interpreterCall);
     } catch (e) {
-      if (mounted) setState(() => _error = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _error = failureMessageWithReason(context.l10n, toFailure(e)));
       ref.invalidate(interpreterQueueProvider);
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -119,7 +119,7 @@ class _InterpreterDeskScreenState extends ConsumerState<InterpreterDeskScreen> {
             else
               queue.when(
                 loading: () => const Padding(padding: EdgeInsets.all(16), child: Center(child: CircularProgressIndicator())),
-                error: (e, _) => Text(failureMessage(l, toFailure(e))),
+                error: (e, _) => Text(failureMessageWithReason(l, toFailure(e))),
                 data: (items) => items.isEmpty
                     ? Text(l.deskEmpty)
                     : Column(children: [

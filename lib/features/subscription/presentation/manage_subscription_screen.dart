@@ -36,7 +36,7 @@ class _ManageSubscriptionScreenState extends ConsumerState<ManageSubscriptionScr
       await ref.read(subscriptionProvider.notifier).refresh();
       if (mounted) setState(() => _message = context.l10n.statusRefreshed);
     } catch (e) {
-      if (mounted) setState(() => _message = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _message = failureMessageWithReason(context.l10n, toFailure(e)));
     } finally {
       if (mounted) setState(() => _refreshing = false);
     }
@@ -72,7 +72,7 @@ class _ManageSubscriptionScreenState extends ConsumerState<ManageSubscriptionScr
       await ref.read(subscriptionProvider.notifier).applyVerified(sub);
       if (mounted) setState(() => _message = context.l10n.autoRenewCancelled);
     } catch (e) {
-      if (mounted) setState(() => _message = failureMessage(context.l10n, toFailure(e)));
+      if (mounted) setState(() => _message = failureMessageWithReason(context.l10n, toFailure(e)));
     } finally {
       if (mounted) setState(() => _refreshing = false);
     }

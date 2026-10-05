@@ -20,3 +20,7 @@ String failureMessage(AppLocalizations l, Failure f) => switch (f.type) {
       FailureType.limitReached => l.failureLimit,
       FailureType.unknown => l.failureUnknown,
     };
+
+/// [failureMessage] plus a short, non-sensitive reason such as "(unauthorized · 401)", so a problem can be reported precisely.
+String failureMessageWithReason(AppLocalizations l, Failure f) =>
+    '${failureMessage(l, f)}\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})';
