@@ -4,6 +4,7 @@
  * Verifies your Razorpay keys end to end from your own machine:
  *   cd backend/functions && npm install && node scripts/check-razorpay.js
  * Reads RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET from the environment or backend/functions/.env + .secret.local.
+ * PowerShell:  $env:RAZORPAY_KEY_ID='rzp_test_...'; $env:RAZORPAY_KEY_SECRET='...'; node scripts/check-razorpay.js
  * Creates a Rs 1 TEST order, then checks the signature logic with a locally computed signature.
  */
 const fs = require('fs');
@@ -13,7 +14,10 @@ const crypto = require('crypto');
 for (const f of ['.env', '.secret.local']) {
   const p = path.join(__dirname, '..', f);
   if (!fs.existsSync(p)) continue;
-  for (const line of fs.readFileSync(p, 'utf8').split('\n')) {
+  let buf = fs.readFileSync(p);
+  // Windows PowerShell's `>` writes UTF-16 with a BOM; accept that as well as UTF-8.
+  const text = buf[0] === 0xff && buf[1] === 0xfe ? buf.toString('utf16le') : buf.toString('utf8').replace(/^\uFEFF/, '');
+  for (const line of text.split(/\r?\n/)) {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
   }

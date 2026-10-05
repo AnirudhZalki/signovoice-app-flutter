@@ -4,13 +4,18 @@ Already in the repo (don't re-create): order create + signature verify + subscri
 (`razorpay_order_checkout.dart`, `razorpay_billing_service.dart`, interpreter payments). What's left is **running the backend and building the app with Razorpay enabled**.
 
 ## 1. Check your keys (30 s, on your computer)
+**Windows PowerShell** (no files needed — type your own key id and secret):
 ```
-cd backend/functions && npm install
-printf 'RAZORPAY_KEY_ID=rzp_test_TiILQgKZAz7bSM\n' > .env
-printf 'RAZORPAY_KEY_SECRET=<your key secret>\n' > .secret.local     # both files are git-ignored
+cd backend\functions
+npm install
+$env:RAZORPAY_KEY_ID = "rzp_test_XXXXXXXX"
+$env:RAZORPAY_KEY_SECRET = "YOUR_SECRET"
 node scripts/check-razorpay.js
 ```
-Expect `order created: order_…` and `OK: keys work`. A 401 means the key id/secret pair is wrong. (The secret was pasted in a chat — **regenerate it** in Razorpay → Settings → API Keys before going live.)
+**Mac / Linux:** `RAZORPAY_KEY_ID=rzp_test_XXXX RAZORPAY_KEY_SECRET=YOUR_SECRET node scripts/check-razorpay.js`
+(`npm install` warnings about Node version or "moderate vulnerabilities" are harmless here. `printf` does not exist in PowerShell; use the lines above.)
+Expect `order created: order_…` and `OK: keys work`. A 401 means the key id and secret are not a matching pair (copy both again from Razorpay → Settings → API Keys, same mode: Test or Live).
+Never paste the secret into chats or commit it; if you did, **regenerate** it in the dashboard.
 
 ## 2. Run the backend on Render (free)
 1. Render → **New → Blueprint** → pick this repo (it reads `render.yaml`).
