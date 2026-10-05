@@ -425,7 +425,8 @@ async function callNote(uid, callId, kind, body) {
 // ---------- HTTP API ----------
 exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, LIVEKIT_API_SECRET], cors: false, maxInstances: 20 }, async (req, res) => {
   try {
-    const path = req.path.replace(/\/+$/, '');
+    // `/api/...` is an alias of `/v1/...` (e.g. the webhook URL https://host/api/razorpay/webhook).
+    const path = req.path.replace(/\/+$/, '').replace(/^\/api(?=\/)/, '/v1');
     if (req.method === 'POST' && path === '/v1/razorpay/webhook') return webhook(req, res); // Razorpay -> us (signature, no user token)
 
     const user = await requireUser(req);

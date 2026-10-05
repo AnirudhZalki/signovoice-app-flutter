@@ -1,0 +1,9 @@
+{
+  "API_BASE_URL": "https://signovoice-api.onrender.com",
+  "LIVEKIT_URL": "wss://signovoice-kki1ealv.livekit.cloud",
+  "LIVEKIT_TOKEN_URL": "https://signovoice-livekkit-server.onrender.com/token",
+  "IAP_MONTHLY_ID": "signovoice_premium_monthly",
+  "IAP_6MONTH_ID": "signovoice_premium_6months",
+  "ENABLE_RAZORPAY": true,
+  "PAYMENT_METHOD": "razorpay"
+}

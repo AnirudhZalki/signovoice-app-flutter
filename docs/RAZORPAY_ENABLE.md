@@ -1,5 +1,19 @@
 # Turn Razorpay on — checklist (test mode)
 
+## Your setup, fastest path (backend on https://signovoice-api.onrender.com)
+1. **Create the two plans (₹75 / month, ₹200 / 6 months)** — PowerShell, from `backend\functions` (after `git pull`):
+   ```
+   $env:RAZORPAY_KEY_ID="rzp_test_..."; $env:RAZORPAY_KEY_SECRET="..."; node scripts/create-plans.js
+   ```
+   It prints a one-line JSON. (If Razorpay says Subscriptions are not enabled: dashboard → Subscriptions → Get started.)
+2. **Render → your service → Environment**: set `RAZORPAY_PLANS` = that JSON, plus `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `RAZORPAY_WEBHOOK_SECRET` (any long random string), `FIREBASE_SERVICE_ACCOUNT`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`. Save → it redeploys. Check `https://signovoice-api.onrender.com/healthz` → `{"ok":true}`.
+3. **Razorpay → Webhooks → Add**: URL `https://signovoice-api.onrender.com/api/razorpay/webhook` (the `/api/...` path works as an alias of `/v1/...`), the same secret as `RAZORPAY_WEBHOOK_SECRET`, events `order.paid`, `subscription.activated`, `subscription.charged`, `subscription.halted`, `subscription.cancelled`, `subscription.completed`, `subscription.paused`, `subscription.resumed`.
+4. **Run the app with Razorpay on:** `flutter run --dart-define-from-file=config/razorpay.json` (APK: `flutter build apk --release --dart-define-from-file=config/razorpay.json`). Not for the Play `.aab`.
+5. Sign in → Profile → **Get Premium** → UPI, cards & wallets → pick a plan → test with `success@razorpay`.
+Prices live in Razorpay: change `PRICE_MONTHLY_RS` / `PRICE_6MONTH_RS` when running `create-plans.js` and update `RAZORPAY_PLANS` with the new plan ids.
+
+---
+
 Already in the repo (don't re-create): order create + signature verify + subscriptions + webhook in `backend/functions`, checkout in the app
 (`razorpay_order_checkout.dart`, `razorpay_billing_service.dart`, interpreter payments). What's left is **running the backend and building the app with Razorpay enabled**.
 
