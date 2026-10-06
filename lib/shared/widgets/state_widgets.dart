@@ -58,7 +58,7 @@ class ErrorState extends StatelessWidget {
               Text(l.errorTitle,
                   style: Theme.of(context).textTheme.titleLarge, textAlign: TextAlign.center),
               const SizedBox(height: 8),
-              Text(failureMessage(l, failure),
+              Text(failureMessageWithReason(l, failure),
                   style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center),
               if (onRetry != null && failure.isRetryable) ...[
                 const SizedBox(height: 20),

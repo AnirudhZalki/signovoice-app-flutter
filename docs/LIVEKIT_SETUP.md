@@ -54,3 +54,9 @@ If the app dies right after paying, the Razorpay `order.paid` **webhook** still 
 **Compliance notes — please check before launch.** Taking payments for a *human service* delivered through the app is treated differently from digital goods, but Google Play's payments policy and your Razorpay account terms apply; verify that live interpretation fits Play's "real-world services" rules for your listing. You are also responsible for GST/TDS and for interpreter KYC. Do not enable this in production until your backend, webhook and Razorpay Live keys are set up.
 
 **Admin screen.** Signed in as an admin (e.g. zalkianirudh@gmail.com via Google), the **Live** tab shows an **Admin: interpreters** card → *Pending* / *Approved* tabs with **Approve** and **Remove approval** buttons. The server enforces admin rights; the app only hides the card from everyone else.
+
+### Testing "Pay ₹X and connect" (needs TWO accounts)
+1. Phone/account **A** (interpreter): registered, **approved** (admin screen), Interpreter desk → **Online**.
+2. Phone/account **B** (user): Live → Find an interpreter → A appears with the rate → **Pay ₹50 and connect** → pay with `success@razorpay`.
+3. A's desk shows the paid request → **Accept and join** → both are in the call.
+You cannot book yourself (your own profile is hidden from your list). If the button is greyed, A is offline. Errors show the server's reason under the red message (e.g. "interpreter is not available" 409, "you cannot book yourself" 400, a Razorpay message 502).

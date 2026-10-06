@@ -121,6 +121,7 @@ class _Failed extends ConsumerWidget {
     final reasonText = switch (state.failureReason) {
       RequestStatus.declined => l.callDeclined,
       RequestStatus.expired => l.callExpired,
+      RequestStatus.cancelled => l.callPaymentCancelled,
       _ => null,
     };
     if (reasonText != null) {

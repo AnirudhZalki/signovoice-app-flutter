@@ -181,9 +181,10 @@ async function interpreterProfile(uid) {
   return d.exists ? { id: uid, ...d.data() } : null;
 }
 
-async function listInterpreters(language) {
+async function listInterpreters(language, excludeUid) {
   const snap = await interpCol().where('approved', '==', true).get();
   return snap.docs.map((d) => publicInterpreter(d.id, d.data()))
+    .filter((i) => i.id !== excludeUid) // you cannot book yourself
     .filter((i) => !language || i.languages.length === 0 || i.languages.includes(language))
     .sort((a, b) => (a.status === 'available' ? 0 : 1) - (b.status === 'available' ? 0 : 1));
 }
@@ -245,7 +246,7 @@ async function createRequest(uid, body, name) {
     const p = await interpreterProfile(interpreterId);
     if (!p || !p.approved) throw bad('interpreter not found', 404);
     if (p.status !== 'available') throw bad('interpreter is not available', 409);
-    if (interpreterId === uid) throw bad('you cannot request yourself');
+    if (interpreterId === uid) throw bad('you cannot book yourself: use a second account to test');
     rate = p.ratePaise || 0;
     interpreterName = p.name || '';
   }
@@ -466,7 +467,7 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
       return send(res, 200, (await entRef(uid).get()).data() || FREE);
     }
     const m = path.match(/^\/v1\/interpreter\/(requests|queue|calls)\/([A-Za-z0-9_-]+)(?:\/(accept|decline|pay|end|feedback|report))?$/);
-    if (req.method === 'GET' && path === '/v1/interpreters') return send(res, 200, { interpreters: await listInterpreters(req.query.language) });
+    if (req.method === 'GET' && path === '/v1/interpreters') return send(res, 200, { interpreters: await listInterpreters(req.query.language, uid) });
     if (req.method === 'POST' && path === '/v1/interpreter/requests') return send(res, 200, await createRequest(uid, req.body, user.name));
     if (req.method === 'GET' && path === '/v1/interpreter/me') return send(res, 200, await interpreterMe(uid));
     if (req.method === 'PUT' && path === '/v1/interpreter/me') return send(res, 200, await saveInterpreterProfile(uid, req.body, user.email));
