@@ -68,6 +68,12 @@ class _Repo implements InterpreterRepository {
   @override
   Future<void> decline(String requestId) async {}
   @override
+  Future<bool> isAdmin() async => false;
+  @override
+  Future<List<AdminInterpreter>> adminInterpreters({String filter = 'all'}) async => const [];
+  @override
+  Future<void> adminSetApproved(String uid, {required bool approved}) async {}
+  @override
   Future<InterpreterMe> me() async => const InterpreterMe(approved: false);
   @override
   Future<void> setAvailability({required bool available}) async {}

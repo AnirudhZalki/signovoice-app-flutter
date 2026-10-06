@@ -126,6 +126,19 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
               ]),
             ),
           ),
+        if (ref.watch(isAdminProvider).value ?? false)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: AppCard(
+              onTap: () => context.push(Routes.adminInterpreters),
+              child: Row(children: [
+                const Icon(Icons.admin_panel_settings_outlined),
+                const SizedBox(width: 12),
+                Expanded(child: Text(l.adminTitle, style: text.titleMedium)),
+                const Icon(Icons.chevron_right_rounded),
+              ]),
+            ),
+          ),
         if (AppConfig.hasTokenServer) const RoomCard(),
         if (AppConfig.hasDevRoom)
           Padding(

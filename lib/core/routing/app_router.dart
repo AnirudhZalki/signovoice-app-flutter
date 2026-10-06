@@ -12,6 +12,7 @@ import '../../features/dictionary/presentation/dictionary_entry_screen.dart';
 import '../../features/dictionary/presentation/dictionary_screen.dart';
 import '../../features/interpreter/presentation/call_screen.dart';
 import '../../features/interpreter/presentation/feedback_screen.dart';
+import '../../features/interpreter/presentation/admin_interpreters_screen.dart';
 import '../../features/interpreter/presentation/interpreter_desk_screen.dart';
 import '../../features/interpreter/presentation/interpreter_profile_screen.dart';
 import '../../features/interpreter/presentation/live_screen.dart';
@@ -155,6 +156,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.interpreterCall, builder: (_, _) => const CallScreen()),
       GoRoute(path: Routes.interpreterDesk, builder: (_, _) => const InterpreterDeskScreen()),
       GoRoute(path: Routes.interpreterProfile, builder: (_, _) => const InterpreterProfileScreen()),
+      GoRoute(path: Routes.adminInterpreters, builder: (_, _) => const AdminInterpretersScreen()),
       GoRoute(
         path: Routes.interpreterFeedback,
         redirect: (_, state) => state.extra is String ? null : Routes.live,

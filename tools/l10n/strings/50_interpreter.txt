@@ -94,3 +94,11 @@ deskEditProfile | Edit profile and rate | प्रोफ़ाइल और द
 deskYouEarn | You earn {amount} | आप कमाएंगे {amount} | ನೀವು ಗಳಿಸುತ್ತೀರಿ {amount}
 deskDecline | Decline | अस्वीकार करें | ತಿರಸ್ಕರಿಸಿ
 callPaymentCancelled | Payment wasn't completed. You haven't been charged. | भुगतान पूरा नहीं हुआ। आपसे कोई शुल्क नहीं लिया गया। | ಪಾವತಿ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ. ನಿಮಗೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿಲ್ಲ.
+adminTitle | Admin: interpreters | एडमिन: दुभाषिये | ಅಡ್ಮಿನ್: ಇಂಟರ್ಪ್ರಿಟರ್‌ಗಳು
+adminPending | Pending | लंबित | ಬಾಕಿ
+adminApproved | Approved | स्वीकृत | ಅನುಮೋದಿತ
+adminApprove | Approve | स्वीकृत करें | ಅನುಮೋದಿಸಿ
+adminRevoke | Remove approval | स्वीकृति हटाएं | ಅನುಮೋದನೆ ತೆಗೆಯಿರಿ
+adminNonePending | No applications waiting. | कोई आवेदन प्रतीक्षा में नहीं। | ಯಾವುದೇ ಅರ್ಜಿ ಕಾಯುತ್ತಿಲ್ಲ.
+adminNoneApproved | No approved interpreters yet. | अभी कोई स्वीकृत दुभाषिया नहीं। | ಇನ್ನೂ ಅನುಮೋದಿತ ಇಂಟರ್ಪ್ರಿಟರ್‌ಗಳಿಲ್ಲ.
+adminNotAllowed | Only an administrator can open this page. | यह पृष्ठ केवल प्रशासक खोल सकता है। | ಈ ಪುಟವನ್ನು ನಿರ್ವಾಹಕರು ಮಾತ್ರ ತೆರೆಯಬಹುದು.

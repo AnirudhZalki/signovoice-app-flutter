@@ -103,4 +103,18 @@ class HttpInterpreterRepository implements InterpreterRepository {
   Future<void> decline(String requestId) async {
     await api.post('/v1/interpreter/queue/$requestId/decline');
   }
+
+  @override
+  Future<bool> isAdmin() async => _map(await api.get('/v1/admin/me'))['admin'] == true;
+
+  @override
+  Future<List<AdminInterpreter>> adminInterpreters({String filter = 'all'}) async {
+    final d = _map(await api.get('/v1/admin/interpreters', query: {'filter': filter}));
+    return [for (final e in (d['interpreters'] as List<dynamic>? ?? const [])) AdminInterpreter.fromJson(e as Map<String, dynamic>)];
+  }
+
+  @override
+  Future<void> adminSetApproved(String uid, {required bool approved}) async {
+    await api.post('/v1/admin/interpreters/$uid/${approved ? 'approve' : 'revoke'}');
+  }
 }

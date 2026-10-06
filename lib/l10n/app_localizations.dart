@@ -2674,6 +2674,54 @@ abstract class AppLocalizations {
   /// **'Payment wasn\'t completed. You haven\'t been charged.'**
   String get callPaymentCancelled;
 
+  /// No description provided for @adminTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin: interpreters'**
+  String get adminTitle;
+
+  /// No description provided for @adminPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get adminPending;
+
+  /// No description provided for @adminApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved'**
+  String get adminApproved;
+
+  /// No description provided for @adminApprove.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve'**
+  String get adminApprove;
+
+  /// No description provided for @adminRevoke.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove approval'**
+  String get adminRevoke;
+
+  /// No description provided for @adminNonePending.
+  ///
+  /// In en, this message translates to:
+  /// **'No applications waiting.'**
+  String get adminNonePending;
+
+  /// No description provided for @adminNoneApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'No approved interpreters yet.'**
+  String get adminNoneApproved;
+
+  /// No description provided for @adminNotAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Only an administrator can open this page.'**
+  String get adminNotAllowed;
+
   /// No description provided for @premiumHeader.
   ///
   /// In en, this message translates to:

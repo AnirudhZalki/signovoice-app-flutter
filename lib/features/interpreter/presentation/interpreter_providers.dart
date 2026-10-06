@@ -51,3 +51,12 @@ final interpreterQueueProvider = StreamProvider.autoDispose<List<IncomingRequest
 final livekitUrlProvider = Provider<String>((_) => AppConfig.livekitUrl);
 
 final orderCheckoutRunnerProvider = Provider<OrderCheckoutRunner>((ref) => RazorpayCheckoutRunner());
+
+/// Is the signed-in person an admin? Errors (no backend, offline, not signed in) read as "no".
+final isAdminProvider = FutureProvider.autoDispose<bool>((ref) async {
+  try {
+    return await ref.watch(interpreterRepositoryProvider).isAdmin();
+  } catch (_) {
+    return false;
+  }
+});

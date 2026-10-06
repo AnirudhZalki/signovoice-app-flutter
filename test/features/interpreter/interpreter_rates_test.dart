@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:signovoice/features/interpreter/domain/interpreter_models.dart';
 
 void main() {
+  adminModelTest();
   test('interpreter list item carries the rate; missing rate means free', () {
     final i = Interpreter.fromJson({'id': 'i1', 'name': 'Ravi', 'status': 'available', 'ratePaise': 15000, 'sessionMinutes': 30, 'languages': ['en', 'hi']});
     expect((i.ratePaise, i.sessionMinutes, i.isAvailable), (15000, 30, true));
@@ -25,5 +26,12 @@ void main() {
     expect(InterpreterMe.fromJson({'approved': false}).applied, isFalse);
     final q = IncomingRequest.fromJson({'requestId': 'r', 'mode': 'video', 'language': 'hi', 'amountPaise': 15000, 'earnPaise': 12000, 'directed': true});
     expect((q.amountPaise, q.earnPaise, q.directed), (15000, 12000, true));
+  });
+}
+
+void adminModelTest() {
+  test('admin list item parses the backend shape', () {
+    final a = AdminInterpreter.fromJson({'uid': 'u1', 'name': 'Ravi', 'email': 'r@x.com', 'languages': ['en'], 'ratePaise': 5000, 'approved': false});
+    expect((a.uid, a.email, a.ratePaise, a.approved), ('u1', 'r@x.com', 5000, false));
   });
 }

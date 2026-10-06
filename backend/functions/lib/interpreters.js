@@ -55,4 +55,12 @@ function validateProfile(body) {
 
 const validRoom = (s) => /^sv-[A-Za-z0-9_-]{4,64}$/.test(s || '');
 
-module.exports = { splitAmount, validateProfile, DEFAULT_SESSION_MINUTES, REQUEST_TTL_MS, isExpired, queuePosition, canTake, publicInterpreter, validRoom };
+/** Admin = a listed Firebase uid, or a listed e-mail address that Firebase has VERIFIED (never trust an unverified e-mail). */
+function isAdmin(decoded, { emails = [], uids = [] } = {}) {
+  if (!decoded) return false;
+  if (decoded.uid && uids.includes(decoded.uid)) return true;
+  const mail = String(decoded.email || '').trim().toLowerCase();
+  return !!mail && decoded.email_verified === true && emails.map((e) => e.trim().toLowerCase()).includes(mail);
+}
+
+module.exports = { isAdmin, splitAmount, validateProfile, DEFAULT_SESSION_MINUTES, REQUEST_TTL_MS, isExpired, queuePosition, canTake, publicInterpreter, validRoom };

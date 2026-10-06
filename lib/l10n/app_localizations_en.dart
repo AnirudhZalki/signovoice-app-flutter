@@ -1433,6 +1433,30 @@ class AppLocalizationsEn extends AppLocalizations {
       'Payment wasn\'t completed. You haven\'t been charged.';
 
   @override
+  String get adminTitle => 'Admin: interpreters';
+
+  @override
+  String get adminPending => 'Pending';
+
+  @override
+  String get adminApproved => 'Approved';
+
+  @override
+  String get adminApprove => 'Approve';
+
+  @override
+  String get adminRevoke => 'Remove approval';
+
+  @override
+  String get adminNonePending => 'No applications waiting.';
+
+  @override
+  String get adminNoneApproved => 'No approved interpreters yet.';
+
+  @override
+  String get adminNotAllowed => 'Only an administrator can open this page.';
+
+  @override
   String get premiumHeader => 'Unlock the full SignoVoice experience';
 
   @override

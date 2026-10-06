@@ -1435,6 +1435,30 @@ class AppLocalizationsHi extends AppLocalizations {
       'भुगतान पूरा नहीं हुआ। आपसे कोई शुल्क नहीं लिया गया।';
 
   @override
+  String get adminTitle => 'एडमिन: दुभाषिये';
+
+  @override
+  String get adminPending => 'लंबित';
+
+  @override
+  String get adminApproved => 'स्वीकृत';
+
+  @override
+  String get adminApprove => 'स्वीकृत करें';
+
+  @override
+  String get adminRevoke => 'स्वीकृति हटाएं';
+
+  @override
+  String get adminNonePending => 'कोई आवेदन प्रतीक्षा में नहीं।';
+
+  @override
+  String get adminNoneApproved => 'अभी कोई स्वीकृत दुभाषिया नहीं।';
+
+  @override
+  String get adminNotAllowed => 'यह पृष्ठ केवल प्रशासक खोल सकता है।';
+
+  @override
   String get premiumHeader => 'पूरा साइनोवॉइस अनुभव अनलॉक करें';
 
   @override

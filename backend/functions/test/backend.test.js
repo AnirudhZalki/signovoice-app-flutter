@@ -73,7 +73,7 @@ test('razorpay order signature: order_id|payment_id', () => {
   assert.equal(verifyOrderSignature({ orderId: 'order_1', paymentId: 'pay_1' }, secret), false);
 });
 
-const { splitAmount, validateProfile, isExpired, queuePosition, canTake, publicInterpreter, REQUEST_TTL_MS } = require('../lib/interpreters');
+const { isAdmin, splitAmount, validateProfile, isExpired, queuePosition, canTake, publicInterpreter, REQUEST_TTL_MS } = require('../lib/interpreters');
 
 test('interpreter queue: oldest first, expired requests do not count', () => {
   const now = 1_000_000_000;
@@ -117,4 +117,15 @@ test('interpreter profile validation', () => {
     { name: 'Ravi', languages: ['en'], ratePaise: 50 }, { name: 'Ravi', languages: ['en'], ratePaise: 99999999 }, { name: 'Ravi', languages: ['en'], ratePaise: 10.5 }]) {
     assert.throws(() => validateProfile(bad), (e) => e.status === 400);
   }
+});
+
+test('admin check: verified e-mail or listed uid only', () => {
+  const cfg = { emails: ['Owner@Gmail.com'], uids: ['uid_admin'] };
+  assert.equal(isAdmin({ uid: 'x', email: 'owner@gmail.com', email_verified: true }, cfg), true); // case-insensitive
+  assert.equal(isAdmin({ uid: 'x', email: 'owner@gmail.com', email_verified: false }, cfg), false); // unverified e-mail is never trusted
+  assert.equal(isAdmin({ uid: 'x', email: 'owner@gmail.com' }, cfg), false);
+  assert.equal(isAdmin({ uid: 'uid_admin' }, cfg), true);
+  assert.equal(isAdmin({ uid: 'other', email: 'other@gmail.com', email_verified: true }, cfg), false);
+  assert.equal(isAdmin(null, cfg), false);
+  assert.equal(isAdmin({ uid: 'x', email: 'a@b.c', email_verified: true }, {}), false);
 });

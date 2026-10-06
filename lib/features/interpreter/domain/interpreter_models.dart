@@ -160,6 +160,33 @@ class InterpreterMe extends Equatable {
   List<Object?> get props => [approved, applied, status, name, languages, ratePaise, bio, earningsPaise];
 }
 
+/// An interpreter application as seen by an admin.
+class AdminInterpreter extends Equatable {
+  const AdminInterpreter({required this.uid, required this.name, this.email = '', this.languages = const [], this.ratePaise = 0, this.bio = '', this.approved = false, this.earningsPaise = 0});
+  final String uid;
+  final String name;
+  final String email;
+  final List<String> languages;
+  final int ratePaise;
+  final String bio;
+  final bool approved;
+  final int earningsPaise;
+
+  factory AdminInterpreter.fromJson(Map<String, dynamic> j) => AdminInterpreter(
+        uid: j['uid'] as String,
+        name: j['name'] as String? ?? '',
+        email: j['email'] as String? ?? '',
+        languages: (j['languages'] as List<dynamic>? ?? const []).cast<String>(),
+        ratePaise: (j['ratePaise'] as num?)?.toInt() ?? 0,
+        bio: j['bio'] as String? ?? '',
+        approved: j['approved'] == true,
+        earningsPaise: (j['earningsPaise'] as num?)?.toInt() ?? 0,
+      );
+
+  @override
+  List<Object?> get props => [uid, name, email, languages, ratePaise, bio, approved, earningsPaise];
+}
+
 /// A waiting request shown in the interpreter's queue.
 class IncomingRequest extends Equatable {
   const IncomingRequest({required this.requestId, required this.name, required this.mode, required this.language, this.note, this.waitingSeconds = 0, this.amountPaise = 0, this.earnPaise = 0, this.directed = false});

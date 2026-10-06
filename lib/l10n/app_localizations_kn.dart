@@ -1436,6 +1436,30 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಪಾವತಿ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ. ನಿಮಗೆ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿಲ್ಲ.';
 
   @override
+  String get adminTitle => 'ಅಡ್ಮಿನ್: ಇಂಟರ್ಪ್ರಿಟರ್‌ಗಳು';
+
+  @override
+  String get adminPending => 'ಬಾಕಿ';
+
+  @override
+  String get adminApproved => 'ಅನುಮೋದಿತ';
+
+  @override
+  String get adminApprove => 'ಅನುಮೋದಿಸಿ';
+
+  @override
+  String get adminRevoke => 'ಅನುಮೋದನೆ ತೆಗೆಯಿರಿ';
+
+  @override
+  String get adminNonePending => 'ಯಾವುದೇ ಅರ್ಜಿ ಕಾಯುತ್ತಿಲ್ಲ.';
+
+  @override
+  String get adminNoneApproved => 'ಇನ್ನೂ ಅನುಮೋದಿತ ಇಂಟರ್ಪ್ರಿಟರ್‌ಗಳಿಲ್ಲ.';
+
+  @override
+  String get adminNotAllowed => 'ಈ ಪುಟವನ್ನು ನಿರ್ವಾಹಕರು ಮಾತ್ರ ತೆರೆಯಬಹುದು.';
+
+  @override
   String get premiumHeader => 'ಪೂರ್ಣ ಸೈನೋವಾಯ್ಸ್ ಅನುಭವವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ';
 
   @override

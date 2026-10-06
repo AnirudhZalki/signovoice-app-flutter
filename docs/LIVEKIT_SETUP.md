@@ -43,6 +43,7 @@ If the app dies right after paying, the Razorpay `order.paid` **webhook** still 
 | `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `RAZORPAY_WEBHOOK_SECRET` | payments (secrets never in the app) |
 | `PLATFORM_FEE_PERCENT` | your cut of each paid session (default `20`); the rest is credited to the interpreter's `earningsPaise` |
 | `INTERPRETER_AUTO_APPROVE` | `true` = anyone who registers is approved immediately (testing only); default `false` |
+| `ADMIN_EMAILS` | comma-separated admin e-mails (default `zalkianirudh@gmail.com`). Counts only when Firebase marks the e-mail **verified** (Google sign-in does) |
 | `ADMIN_UIDS` | comma-separated Firebase uids allowed to call `POST /v1/admin/interpreters/<uid>/approve` (or `/revoke`) |
 | `DEFAULT_RATE_PAISE` | price of the generic *Request an interpreter* button (0 = free) |
 
@@ -51,3 +52,5 @@ If the app dies right after paying, the Razorpay `order.paid` **webhook** still 
 **Payouts.** The app records each interpreter's share (`interpreterCalls/<id>.interpreterPaise`, running total `interpreters/<uid>.earningsPaise`). Money lands in **your** Razorpay account; paying interpreters out is manual (bank/UPI) or via Razorpay Route/RazorpayX once you set up linked accounts and KYC for them — not automated yet.
 
 **Compliance notes — please check before launch.** Taking payments for a *human service* delivered through the app is treated differently from digital goods, but Google Play's payments policy and your Razorpay account terms apply; verify that live interpretation fits Play's "real-world services" rules for your listing. You are also responsible for GST/TDS and for interpreter KYC. Do not enable this in production until your backend, webhook and Razorpay Live keys are set up.
+
+**Admin screen.** Signed in as an admin (e.g. zalkianirudh@gmail.com via Google), the **Live** tab shows an **Admin: interpreters** card → *Pending* / *Approved* tabs with **Approve** and **Remove approval** buttons. The server enforces admin rights; the app only hides the card from everyone else.

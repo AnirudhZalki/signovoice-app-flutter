@@ -42,6 +42,7 @@ class Routes {
   static const interpreterCall = '/interpreter/call';
   static const interpreterDesk = '/interpreter/desk';
   static const interpreterProfile = '/interpreter/profile';
+  static const adminInterpreters = '/admin/interpreters';
   static const interpreterFeedback = '/interpreter/feedback';
 
   // Subscription

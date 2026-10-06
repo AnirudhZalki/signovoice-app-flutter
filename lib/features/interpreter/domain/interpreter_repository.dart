@@ -21,4 +21,9 @@ abstract class InterpreterRepository {
   Future<List<IncomingRequest>> queue();
   Future<CallSession> accept(String requestId);
   Future<void> endCall(String callId);
+
+  // Admin
+  Future<bool> isAdmin();
+  Future<List<AdminInterpreter>> adminInterpreters({String filter = 'all'});
+  Future<void> adminSetApproved(String uid, {required bool approved});
 }

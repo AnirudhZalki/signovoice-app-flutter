@@ -15,7 +15,7 @@ const { defineSecret } = require('firebase-functions/params');
 const { fromRazorpay, fromPlay } = require('./lib/entitlement');
 const { verifyOrderSignature, verifyCheckoutSignature, verifyWebhookSignature } = require('./lib/razorpay');
 const { requireUser, rateLimit } = require('./lib/auth');
-const { isExpired, queuePosition, canTake, publicInterpreter, splitAmount, validateProfile } = require('./lib/interpreters');
+const { isExpired, queuePosition, canTake, publicInterpreter, splitAmount, validateProfile, isAdmin } = require('./lib/interpreters');
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -171,6 +171,10 @@ const bad = (msg, status = 400) => Object.assign(new Error(msg), { status });
 const feePercent = () => Number(env('PLATFORM_FEE_PERCENT', '20'));
 const defaultRatePaise = () => Number(env('DEFAULT_RATE_PAISE', '0')); // price of "any interpreter" requests (0 = free)
 const PAYMENT_WINDOW_MS = 15 * 60 * 1000;
+// Admins: verified e-mails (default: the owner) and/or Firebase uids. Override with ADMIN_EMAILS / ADMIN_UIDS (comma separated).
+const csv = (v) => String(v || '').split(',').map((x) => x.trim()).filter(Boolean);
+const adminConfig = () => ({ emails: env('ADMIN_EMAILS') ? csv(env('ADMIN_EMAILS')) : ['zalkianirudh@gmail.com'], uids: csv(env('ADMIN_UIDS')) });
+const requireAdmin = (user) => { if (!isAdmin(user, adminConfig())) throw bad('forbidden', 403); };
 
 async function interpreterProfile(uid) {
   const d = await interpCol().doc(uid).get();
@@ -185,11 +189,11 @@ async function listInterpreters(language) {
 }
 
 /** Interpreter registers or edits their profile. New profiles need approval (or INTERPRETER_AUTO_APPROVE=true). */
-async function saveInterpreterProfile(uid, body) {
+async function saveInterpreterProfile(uid, body, email) {
   const clean = validateProfile(body);
   const existing = await interpreterProfile(uid);
   const autoApprove = env('INTERPRETER_AUTO_APPROVE', 'false') === 'true';
-  const doc = { ...clean, approved: !!(existing && existing.approved) || autoApprove, appliedAt: (existing && existing.appliedAt) || Date.now(), updatedAt: Date.now() };
+  const doc = { ...clean, email: email || null, approved: !!(existing && existing.approved) || autoApprove, appliedAt: (existing && existing.appliedAt) || Date.now(), updatedAt: Date.now() };
   if (!existing) Object.assign(doc, { status: 'offline', rating: null, ratingCount: 0, earningsPaise: 0 });
   await interpCol().doc(uid).set(doc, { merge: true });
   return interpreterMe(uid);
@@ -202,9 +206,18 @@ async function interpreterMe(uid) {
     ratePaise: p.ratePaise || 0, bio: p.bio || '', sessionMinutes: p.sessionMinutes || 30, earningsPaise: p.earningsPaise || 0 };
 }
 
-async function adminApprove(uid, targetUid, approved) {
-  const admins = env('ADMIN_UIDS', '').split(',').map((s) => s.trim()).filter(Boolean);
-  if (!admins.includes(uid)) throw bad('forbidden', 403);
+async function adminList(user, filter) {
+  requireAdmin(user);
+  const snap = await interpCol().get();
+  return snap.docs.map((d) => ({ uid: d.id, ...d.data() }))
+    .filter((p) => filter === 'pending' ? !p.approved : filter === 'approved' ? !!p.approved : true)
+    .sort((a, b) => (b.appliedAt || 0) - (a.appliedAt || 0))
+    .map((p) => ({ uid: p.uid, name: p.name || '', email: p.email || '', languages: p.languages || [], ratePaise: p.ratePaise || 0, bio: p.bio || '',
+      approved: !!p.approved, status: p.status || 'offline', appliedAt: p.appliedAt || 0, earningsPaise: p.earningsPaise || 0 }));
+}
+
+async function adminApprove(user, targetUid, approved) {
+  requireAdmin(user);
   if (!(await interpreterProfile(targetUid))) throw bad('not found', 404);
   await interpCol().doc(targetUid).set({ approved: !!approved, ...(approved ? {} : { status: 'offline' }) }, { merge: true });
   return { ok: true };
@@ -456,9 +469,11 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
     if (req.method === 'GET' && path === '/v1/interpreters') return send(res, 200, { interpreters: await listInterpreters(req.query.language) });
     if (req.method === 'POST' && path === '/v1/interpreter/requests') return send(res, 200, await createRequest(uid, req.body, user.name));
     if (req.method === 'GET' && path === '/v1/interpreter/me') return send(res, 200, await interpreterMe(uid));
-    if (req.method === 'PUT' && path === '/v1/interpreter/me') return send(res, 200, await saveInterpreterProfile(uid, req.body));
+    if (req.method === 'PUT' && path === '/v1/interpreter/me') return send(res, 200, await saveInterpreterProfile(uid, req.body, user.email));
     const adm = path.match(/^\/v1\/admin\/interpreters\/([A-Za-z0-9_-]+)\/(approve|revoke)$/);
-    if (adm && req.method === 'POST') return send(res, 200, await adminApprove(uid, adm[1], adm[2] === 'approve'));
+    if (adm && req.method === 'POST') return send(res, 200, await adminApprove(user, adm[1], adm[2] === 'approve'));
+    if (req.method === 'GET' && path === '/v1/admin/me') return send(res, 200, { admin: isAdmin(user, adminConfig()) });
+    if (req.method === 'GET' && path === '/v1/admin/interpreters') return send(res, 200, { interpreters: await adminList(user, req.query.filter) });
     if (req.method === 'POST' && path === '/v1/interpreter/me/status') return send(res, 200, await setInterpreterStatus(uid, req.body && req.body.status));
     if (req.method === 'GET' && path === '/v1/interpreter/queue') return send(res, 200, { requests: await interpreterQueue(uid) });
     if (m && m[1] === 'requests' && !m[3] && req.method === 'GET') return send(res, 200, await requestStatus(uid, m[2]));
