@@ -4,13 +4,13 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/providers.dart';
 import '../../../core/routing/routes.dart';
-import '../../../core/theme/app_spacing.dart';
 import '../../../core/utils/l10n_ext.dart';
 import '../../../shared/camera/camera_preview_frame.dart';
 import '../../../shared/camera/camera_session.dart';
 import '../../../shared/widgets/buttons.dart';
 import '../../../shared/widgets/camera_overlay.dart';
 import '../../../shared/widgets/misc_widgets.dart';
+import '../../../shared/widgets/panel_sheet.dart';
 import '../../../shared/widgets/record_buttons.dart';
 import '../../../shared/widgets/state_widgets.dart';
 import '../../../shared/widgets/status_widgets.dart';
@@ -91,31 +91,13 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
         label: title,
         child: Scaffold(
           backgroundColor: Colors.black,
-          body: SafeArea(
-            child: LayoutBuilder(
-              builder: (context, c) {
-                return Column(
-                  children: [
-                    Expanded(child: _cameraArea(context, s, title)),
-                    ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxHeight: c.maxHeight * 0.58,
-                      ),
-                      child: Material(
-                        color: Theme.of(context).colorScheme.surface,
-                        borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(AppSpacing.radiusLg),
-                        ),
-                        child: SingleChildScrollView(
-                          padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
-                          child: _panel(context, s, prefs.confidenceThreshold),
-                        ),
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
+          // Full-screen camera; the result panel floats over it and can be dragged taller or shorter.
+          body: Stack(
+            fit: StackFit.expand,
+            children: [
+              Positioned.fill(child: _cameraArea(context, s, title)),
+              PanelSheet(child: _panel(context, s, prefs.confidenceThreshold)),
+            ],
           ),
         ),
       ),
@@ -201,9 +183,9 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
                 ),
               if (s.ready && !s.handVisible && !s.paused)
                 Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.topCenter,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
+                    padding: EdgeInsets.only(top: MediaQuery.paddingOf(context).top + 72),
                     child: _HintPill(
                       icon: Icons.back_hand_outlined,
                       text: l.showHandHint,
@@ -220,7 +202,7 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
       children: [
         body,
         Positioned(
-          top: 8,
+          top: MediaQuery.paddingOf(context).top + 8,
           left: 8,
           right: 8,
           child: _topBar(context, s, title),

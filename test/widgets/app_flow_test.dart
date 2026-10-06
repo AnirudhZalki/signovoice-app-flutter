@@ -106,12 +106,14 @@ void main() {
 
     await tester.enterText(find.byType(TextField), 'Where is the hospital zorblax');
     await pumpUntilFound(tester, find.text('Signs'));
-    // Result cards are built lazily as the list scrolls.
-    await scrollTo(tester, find.text('Hospital'));
-    expect(find.text('Hospital'), findsWidgets);
-    await scrollTo(tester, find.text('No sign available yet'));
-    expect(find.text('No sign available yet'), findsOneWidget);
+    // Full-screen stage shows one sign at a time; every word is a chip in the panel.
+    await scrollTo(tester, find.widgetWithText(ChoiceChip, 'Hospital'));
+    expect(find.widgetWithText(ChoiceChip, 'Hospital'), findsOneWidget);
     expect(find.textContaining("1 word(s) don't have a sign"), findsOneWidget);
+    // Jump to the word that has no sign: the stage says so plainly.
+    await tester.tap(find.widgetWithText(ChoiceChip, 'zorblax'));
+    await settle(tester);
+    expect(find.text('No sign available yet'), findsWidgets);
   });
 
   testWidgets('Kannada UI: strings are localised, nothing hard-coded on Home', (tester) async {
