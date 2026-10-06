@@ -60,7 +60,7 @@ class PurchaseStatusBanner extends StatelessWidget {
         }
         // A short, non-sensitive reason ("timeout", "unauthorized · 401") so a problem can be reported precisely.
         final f = state.failure;
-        if (f != null) msg = '$msg\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})';
+        if (f != null) msg = '$msg\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})${f.code != null && f.debugDetail != null ? '\n${f.debugDetail}' : ''}';
       default:
         break;
     }

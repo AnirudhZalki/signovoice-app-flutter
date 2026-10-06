@@ -40,12 +40,22 @@ Failure _fromDio(DioException e) {
       return const Failure(FailureType.cancelled);
     default:
       final s = e.response?.statusCode ?? 0;
-      if (s == 401 || s == 403) return Failure(FailureType.unauthorized, code: '$s');
-      if (s == 404) return Failure(FailureType.notFound, code: '$s');
-      if (s == 429) return Failure(FailureType.limitReached, code: '$s');
-      if (s >= 500) return Failure(FailureType.serviceUnavailable, code: '$s');
-      return Failure(FailureType.unknown, code: '$s');
+      final why = _serverReason(e.response?.data);
+      if (s == 401 || s == 403) return Failure(FailureType.unauthorized, code: '$s', debugDetail: why);
+      if (s == 404) return Failure(FailureType.notFound, code: '$s', debugDetail: why);
+      if (s == 429) return Failure(FailureType.limitReached, code: '$s', debugDetail: why);
+      if (s >= 500) return Failure(FailureType.serviceUnavailable, code: '$s', debugDetail: why);
+      return Failure(FailureType.unknown, code: '$s', debugDetail: why);
   }
+}
+
+/// Short reason the SignoVoice backend put in its JSON error body (`detail`, else `error`); never secrets.
+String? _serverReason(Object? data) {
+  if (data is! Map) return null;
+  final parts = [for (final k in const ['error', 'detail']) if (data[k] is String && (data[k] as String).isNotEmpty) data[k] as String];
+  if (parts.isEmpty) return null;
+  final text = parts.join(' — ');
+  return text.length > 160 ? text.substring(0, 160) : text;
 }
 
 Failure _fromFirebaseAuth(FirebaseAuthException e) {

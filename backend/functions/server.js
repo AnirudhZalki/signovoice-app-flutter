@@ -36,6 +36,9 @@ const { api } = require('./index');
 
 const app = express();
 app.disable('x-powered-by');
+// Firebase's onRequest handler expects the body to be parsed already (Cloud Functions does that for it; a plain
+// Node server does not). Without this every POST sees req.body === undefined. rawBody is needed for webhook signatures.
+app.use(express.json({ limit: '256kb', verify: (req, _res, buf) => { req.rawBody = buf; } }));
 // Shows which settings are present (never their values) so a missing variable is easy to spot from a browser.
 app.get('/healthz', (_req, res) => {
   const has = (k) => !!process.env[k];

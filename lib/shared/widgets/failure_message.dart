@@ -23,4 +23,6 @@ String failureMessage(AppLocalizations l, Failure f) => switch (f.type) {
 
 /// [failureMessage] plus a short, non-sensitive reason such as "(unauthorized · 401)", so a problem can be reported precisely.
 String failureMessageWithReason(AppLocalizations l, Failure f) =>
-    '${failureMessage(l, f)}\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})';
+    '${failureMessage(l, f)}\n(${f.type.name}${f.code == null ? '' : ' · ${f.code}'})'
+    // For server answers (code is an HTTP status) also show the server's own short reason.
+    '${f.code != null && f.debugDetail != null ? '\n${f.debugDetail}' : ''}';

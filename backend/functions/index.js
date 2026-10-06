@@ -488,7 +488,9 @@ exports.api = onRequest({ secrets: [RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET
   } catch (e) {
     const status = e.status || (e.statusCode && e.statusCode >= 400 && e.statusCode < 500 ? 400 : 500);
     if (status >= 500) console.error(e); // never log tokens/signatures
-    return send(res, status, { error: status >= 500 ? 'server error' : e.message });
+    // `detail` is a short, non-secret reason shown in the app's error line (Razorpay's own description or a Firestore/gRPC code).
+    const detail = (e && e.error && e.error.description) ? `razorpay: ${e.error.description}` : (e && e.code ? `code ${e.code}` : '');
+    return send(res, status, { error: status >= 500 ? 'server error' : e.message, ...(detail ? { detail: String(detail).slice(0, 160) } : {}) });
   }
 });
 

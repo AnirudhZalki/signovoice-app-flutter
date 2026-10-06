@@ -99,3 +99,6 @@ The checkout never works until the backend answers — see the troubleshooting s
 
 ### Every signed-in action says "Please sign in again" (Premium, interpreter registration, Interpreter desk…)
 One root cause: **the backend rejects your Firebase login (401)**. All of these screens call the same backend with your login token; none of them work until `/healthz` shows `"firebaseServiceAccountValid":true` and a `firebaseProjectId` equal to `project_id` in the app's `google-services.json`. Fix the service account on Render (section above), wait for the redeploy, then sign out and in again. The red message now ends with a reason such as `(unauthorized · 401)`.
+
+### 500 on "Start free trial" and 400 on "Test payment ₹1" (found and fixed)
+Cause: the Render server did not parse JSON request bodies (Cloud Functions does this automatically, a plain Node server does not), so the server saw no `amount`/`productId`. Fixed in `backend/functions/server.js`; **Render must redeploy the latest commit** (Manual Deploy → Deploy latest commit). Failures now also show the server's short reason under the red message.
