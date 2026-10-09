@@ -8,7 +8,8 @@ class AppConfig {
   const AppConfig._();
 
   /// Base URL of the SignoVoice backend (HTTPS only), e.g. https://api.example.com
-  static const String apiBaseUrl = String.fromEnvironment('API_BASE_URL');
+  static const String apiBaseUrl =
+      String.fromEnvironment('API_BASE_URL', defaultValue: 'https://signovoice-api.onrender.com');
 
   /// LiveKit WebSocket URL (wss://...). Tokens are minted by the backend.
   static const String livekitUrl =
@@ -52,10 +53,11 @@ class AppConfig {
   /// IMPORTANT: for apps distributed through Google Play, digital subscriptions must use Play Billing
   /// (unless you are enrolled in an alternative-billing programme). Enable this for direct-APK /
   /// website distribution builds. See docs/PAYMENTS_SETUP.md.
-  static const bool enableRazorpay = bool.fromEnvironment('ENABLE_RAZORPAY');
+  /// On by default (direct-APK builds); the Play config sets ENABLE_RAZORPAY=false explicitly.
+  static const bool enableRazorpay = bool.fromEnvironment('ENABLE_RAZORPAY', defaultValue: true);
 
   /// Default method when Razorpay is enabled: `googlePlay` or `razorpay`.
-  static const String defaultPaymentMethod = String.fromEnvironment('PAYMENT_METHOD', defaultValue: 'googlePlay');
+  static const String defaultPaymentMethod = String.fromEnvironment('PAYMENT_METHOD', defaultValue: 'razorpay');
 
   static const String supportEmail = String.fromEnvironment('SUPPORT_EMAIL');
   static const String privacyPolicyUrl =

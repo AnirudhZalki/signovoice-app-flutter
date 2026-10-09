@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:signovoice/core/config/app_config.dart';
 import 'package:signovoice/core/services/api_client.dart';
@@ -26,6 +27,8 @@ class _Adapter implements HttpClientAdapter {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+      .setMockMethodCallHandler(const MethodChannel('razorpay_flutter'), (_) async => null);
 
   test('a Rs 200 / 6-month Razorpay plan with a 30-day trial maps to P6M and shows the real price', () async {
     final api = ApiClient(tokenProvider: () async => null, baseUrl: 'https://api.test', dio: Dio()..httpClientAdapter = _Adapter());

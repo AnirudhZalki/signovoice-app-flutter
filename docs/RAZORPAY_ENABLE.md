@@ -59,7 +59,7 @@ Run: `flutter run --dart-define-from-file=config/dev.json` · APK for friends/te
 ## Troubleshooting: "I can't pay on my phone"
 Work top to bottom — the first failing item is the cause.
 1. **Is the backend up and configured?** Open `https://signovoice-api.onrender.com/healthz` in the phone's browser (first load can take up to a minute: free Render sleeps). You should see `{"ok":true,"config":{…}}` with `razorpayKeyId`, `razorpayKeySecret`, `razorpayWebhookSecret`, `firebaseServiceAccount` all `true` and `razorpayPlans: 2`, `razorpayPlansValidJson: true`. Any `false`/`0` is a missing Render environment variable.
-2. **Was the app built with Razorpay on?** It must be built with `--dart-define-from-file=config/razorpay.json`. Without it there is no "UPI, cards & wallets" option and no backend URL ("Online payments aren't set up on this build yet").
+2. **Was the app built with Razorpay on?** It must be built with `--dart-define-from-file=config/razorpay.json` (optional now: Razorpay and the Render API are the defaults; Play builds set `ENABLE_RAZORPAY=false`). Without it there is no "UPI, cards & wallets" option and no backend URL ("Online payments aren't set up on this build yet").
 3. **Are you signed in?** Guests cannot pay (button says "Sign in to start your free trial"). Sign-in needs `google-services.json` in the build (see `docs/FIREBASE_SETUP.md`); the backend also needs `FIREBASE_SERVICE_ACCOUNT` to verify your login.
 4. **Read the error line.** The Premium page now ends failures with a short reason in brackets:
    - `(timeout)` / `(offline)` – server asleep or no internet. Wait ~1 min and tap **Retry** (the app now wakes the server when the page opens and waits up to 60 s).
