@@ -73,6 +73,8 @@ android {
             }
             isMinifyEnabled = true
             isShrinkResources = true
+            // Native debug symbols are uploaded for crash reports but kept small (symbol table, not full DWARF).
+            ndk { debugSymbolLevel = "SYMBOL_TABLE" }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }

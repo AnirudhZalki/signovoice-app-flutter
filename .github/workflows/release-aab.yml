@@ -61,7 +61,20 @@ jobs:
           if [ -n "$PROD_CONFIG_JSON" ]; then echo "$PROD_CONFIG_JSON" > config/prod.json; else cp config/prod.example.json config/prod.json; fi
 
       - run: flutter pub get
-      - run: flutter build appbundle --release --build-name=${{ inputs.build_name }} --build-number=${{ inputs.build_number }} --dart-define-from-file=config/prod.json
+      # Phones need only arm64 (+ old 32-bit arm); x86 is emulator-only. Obfuscation + split symbols shrink the Dart code.
+      - run: >
+          flutter build appbundle --release
+          --target-platform android-arm,android-arm64
+          --obfuscate --split-debug-info=build/symbols
+          --build-name=${{ inputs.build_name }} --build-number=${{ inputs.build_number }}
+          --dart-define-from-file=config/prod.json
+      - name: Size report
+        run: python3 tools/size/apk_report.py build/app/outputs/bundle/release/app-release.aab | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dart-symbols-${{ inputs.build_name }}+${{ inputs.build_number }}
+          path: build/symbols
+          if-no-files-found: ignore
 
       - uses: actions/upload-artifact@v4
         with:
