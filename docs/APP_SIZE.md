@@ -23,3 +23,8 @@ A release arm64 build with every feature on is typically **well under half** of 
 2. x86 / x86_64 are already excluded from Play/APK builds above (`--target-platform`).
 3. Dart code is obfuscated and symbols split (`--obfuscate --split-debug-info`), native symbols kept small (`SYMBOL_TABLE`), R8 + resource shrinking are on.
 4. Further, only if measurement says they matter: drop unused Firebase pieces (`cloud_firestore`/`firebase_storage`/`firebase_messaging` if the features aren't needed), fetch the 5 sign videos on demand instead of bundling them.
+
+## Quantization — already done, nothing left to gain
+`signovoice_model.tflite` is **already int8-quantized** (weights 724 KB of 780 KB). The old ONNX model is 0.73 MB. Together with the 5 sign videos (0.35 MB), the dictionary and fonts, **all bundled assets are ~3 MB**, so quantizing, pruning or recompressing models cannot make a visible difference to a 350 MB (or a ~50 MB) app. The size is the native libraries listed above. Re-quantizing would risk accuracy for ~0.1 MB.
+
+Done instead (safe, measured): the four Inter font files were trimmed to the Latin characters the app uses (**334 KB → 133 KB each, ~0.8 MB total**, no used character lost; `python tools/size/subset_fonts.py` re-runs it and refuses to drop a character the app uses).
