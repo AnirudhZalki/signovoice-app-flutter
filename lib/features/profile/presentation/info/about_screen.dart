@@ -6,6 +6,7 @@ import '../../../../core/constants/app_constants.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/utils/l10n_ext.dart';
 import '../../../../shared/widgets/brand.dart';
+import 'community_card.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -34,6 +35,8 @@ class AboutScreen extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         Text(l.aboutMission, style: text.bodyLarge, textAlign: TextAlign.center),
+        const SizedBox(height: 16),
+        const CommunityCard(),
         const SizedBox(height: 16),
         Card(child: Padding(padding: const EdgeInsets.all(16), child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const Icon(Icons.info_outline),

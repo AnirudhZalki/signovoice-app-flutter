@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../sign_translation/presentation/widgets/translation_panel.dart' show shareText;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -105,6 +106,7 @@ class ProfileScreen extends ConsumerWidget {
         SettingsTile(icon: Icons.privacy_tip_outlined, title: l.settingsPrivacy, onTap: () => context.push(Routes.settingsPrivacy)),
         SettingsTile(icon: Icons.lock_outline_rounded, title: l.settingsSecurity, onTap: () => context.push(Routes.settingsSecurity)),
         SettingsHeader(l.sectionSupport),
+        SettingsTile(icon: Icons.share_outlined, title: l.shareWithOthers, onTap: () => shareText(l.homeShareMessage)),
         SettingsTile(icon: Icons.help_outline_rounded, title: l.settingsHelp, onTap: () => context.push(Routes.help)),
         SettingsTile(icon: Icons.info_outline_rounded, title: l.settingsAbout, onTap: () => context.push(Routes.about)),
         const Divider(),

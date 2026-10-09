@@ -53,7 +53,7 @@ void main() {
     final h = Harness();
     await h.pump(tester);
     // Home now speaks to the community it is for and holds every mode (the separate Translate tab is gone).
-    expect(find.text('Made for the deaf and speech-impaired community'), findsOneWidget);
+    expect(find.byTooltip('Share SignoVoice with others'), findsOneWidget); // share button in the Home header
     await scrollTo(tester, find.text('Translate')); // section header further down, not a tab
     expect(find.text('Translate'), findsOneWidget);
     expect(find.text('Sign → Text'), findsWidgets);
@@ -121,7 +121,6 @@ void main() {
     final h = Harness(prefs: const UserPreferences(localeCode: 'kn'));
     await h.pump(tester);
     expect(find.text('ಇಂದು ಸಂವಹನ ಮಾಡಲು ನಾವು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?'), findsOneWidget);
-    expect(find.text('ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳ ಸಮುದಾಯಕ್ಕಾಗಿ ರೂಪಿಸಲಾಗಿದೆ'), findsOneWidget);
   });
 
   testWidgets('Hindi UI works too', (tester) async {

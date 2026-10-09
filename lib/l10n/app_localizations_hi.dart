@@ -617,6 +617,9 @@ class AppLocalizationsHi extends AppLocalizations {
       'साइनोवॉइस बधिर और वाक्-बाधित लोगों को संवाद करने में मदद करता है — यह साइन को टेक्स्ट और आवाज़ में, और आवाज़ को साइन में बदलता है। मुफ़्त पाएं: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
 
   @override
+  String get shareWithOthers => 'साइनोवॉइस दूसरों के साथ साझा करें';
+
+  @override
   String get introSignToText => 'साइन → टेक्स्ट';
 
   @override

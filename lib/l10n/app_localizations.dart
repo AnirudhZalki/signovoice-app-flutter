@@ -1222,6 +1222,12 @@ abstract class AppLocalizations {
   /// **'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice'**
   String get homeShareMessage;
 
+  /// No description provided for @shareWithOthers.
+  ///
+  /// In en, this message translates to:
+  /// **'Share SignoVoice with others'**
+  String get shareWithOthers;
+
   /// No description provided for @introSignToText.
   ///
   /// In en, this message translates to:

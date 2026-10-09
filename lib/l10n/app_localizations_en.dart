@@ -619,6 +619,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
 
   @override
+  String get shareWithOthers => 'Share SignoVoice with others';
+
+  @override
   String get introSignToText => 'Sign → Text';
 
   @override
