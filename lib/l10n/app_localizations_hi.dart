@@ -577,6 +577,46 @@ class AppLocalizationsHi extends AppLocalizations {
       'अनुवाद तुरंत पढ़ें, सुनें या देखें, और बाद में इतिहास में पाएं।';
 
   @override
+  String get homeCommunityTitle => 'बधिर और वाक्-बाधित समुदाय के लिए बनाया गया';
+
+  @override
+  String get homeCommunityBody =>
+      'आप समझे जाने के हक़दार हैं — घर पर, स्कूल में, काम पर और डॉक्टर के पास। साइनोवॉइस आपके साइन को टेक्स्ट और आवाज़ में बदलता है, दूसरों की बात को साइन में बदलता है, और ज़रूरत पड़ने पर लाइव दुभाषिये से जोड़ता है।';
+
+  @override
+  String get homeBenefit1Title => 'कहीं भी समझे जाएं';
+
+  @override
+  String get homeBenefit1Body =>
+      'कैमरे के सामने साइन करें और फ़ोन आपकी ओर से बोलेगा।';
+
+  @override
+  String get homeBenefit2Title => 'दूसरों को समझें';
+
+  @override
+  String get homeBenefit2Body => 'बोलें या लिखें और हर शब्द का साइन देखें।';
+
+  @override
+  String get homeBenefit3Title => 'परिवार और दोस्त भी सीख सकते हैं';
+
+  @override
+  String get homeBenefit3Body => 'सभी के लिए भारतीय साइन भाषा के छोटे पाठ।';
+
+  @override
+  String get homeBenefit4Title => 'डिज़ाइन से निजी';
+
+  @override
+  String get homeBenefit4Body =>
+      'हाथ की पहचान आपके फ़ोन पर चलती है; आपका कैमरा वीडियो अपलोड नहीं होता।';
+
+  @override
+  String get homeShareCta => 'जिसे साइनोवॉइस की ज़रूरत हो उसे बताएं';
+
+  @override
+  String get homeShareMessage =>
+      'साइनोवॉइस बधिर और वाक्-बाधित लोगों को संवाद करने में मदद करता है — यह साइन को टेक्स्ट और आवाज़ में, और आवाज़ को साइन में बदलता है। मुफ़्त पाएं: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
+
+  @override
   String get introSignToText => 'साइन → टेक्स्ट';
 
   @override

@@ -1150,6 +1150,78 @@ abstract class AppLocalizations {
   /// **'Read, hear or see the translation instantly, and find it later in History.'**
   String get homeHow3;
 
+  /// No description provided for @homeCommunityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Made for the deaf and speech-impaired community'**
+  String get homeCommunityTitle;
+
+  /// No description provided for @homeCommunityBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You deserve to be understood — at home, at school, at work and at the doctor. SignoVoice turns your signs into text and speech, turns what others say into signs, and connects you with a live interpreter when it matters.'**
+  String get homeCommunityBody;
+
+  /// No description provided for @homeBenefit1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Be understood anywhere'**
+  String get homeBenefit1Title;
+
+  /// No description provided for @homeBenefit1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign to the camera and the phone speaks for you.'**
+  String get homeBenefit1Body;
+
+  /// No description provided for @homeBenefit2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand others'**
+  String get homeBenefit2Title;
+
+  /// No description provided for @homeBenefit2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak or type and watch the signs for every word.'**
+  String get homeBenefit2Body;
+
+  /// No description provided for @homeBenefit3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Family and friends can learn too'**
+  String get homeBenefit3Title;
+
+  /// No description provided for @homeBenefit3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Short Indian Sign Language lessons for everyone.'**
+  String get homeBenefit3Body;
+
+  /// No description provided for @homeBenefit4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Private by design'**
+  String get homeBenefit4Title;
+
+  /// No description provided for @homeBenefit4Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Hand recognition runs on your phone; your camera video is not uploaded.'**
+  String get homeBenefit4Body;
+
+  /// No description provided for @homeShareCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell someone who could use SignoVoice'**
+  String get homeShareCta;
+
+  /// No description provided for @homeShareMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice'**
+  String get homeShareMessage;
+
   /// No description provided for @introSignToText.
   ///
   /// In en, this message translates to:

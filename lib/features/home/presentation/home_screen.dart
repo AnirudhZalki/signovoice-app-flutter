@@ -14,6 +14,7 @@ import '../../auth/presentation/auth_controller.dart';
 import '../../history/presentation/history_controller.dart';
 import '../../history/presentation/history_screen.dart';
 import '../../notifications/presentation/notification_providers.dart';
+import '../../sign_translation/presentation/widgets/translation_panel.dart' show shareText;
 import '../../profile/presentation/profile_controller.dart';
 
 String greetingFor(AppLocalizations l, DateTime now) => switch (dayPartOf(now)) {
@@ -105,16 +106,13 @@ class HomeScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             _HeroCard(onStart: () => context.push(Routes.signToText)),
             const SizedBox(height: 12),
-            const _AboutCard(),
+            const _CommunityCard(),
             const SizedBox(height: 8),
             SectionHeader(title: l.navTranslate),
             _ActionGrid(columns: wide ? 2 : 1, children: [for (final a in actions.take(3)) _card(context, a)]),
             const SizedBox(height: 8),
             SectionHeader(title: l.homeMore),
             _ActionGrid(columns: wide ? 2 : 1, children: [for (final a in actions.skip(3)) _card(context, a)]),
-            const SizedBox(height: 8),
-            SectionHeader(title: l.homeHowTitle),
-            const _HowItWorks(),
             const SizedBox(height: 8),
             SectionHeader(title: l.recentActivity, actionLabel: l.seeAll, onAction: () => context.push(Routes.history)),
             _RecentActivity(ref: ref),
@@ -134,48 +132,54 @@ Widget _card(BuildContext context, QuickAction a) => FeatureCard(
       onTap: () => (a.route == Routes.live || a.route == Routes.learn) ? context.go(a.route) : context.push(a.route),
     );
 
-/// Plain-language introduction so people learn what the app is for without leaving Home.
-class _AboutCard extends StatelessWidget {
-  const _AboutCard();
+/// Says who the app is for and why it helps, instead of explaining what it is.
+class _CommunityCard extends StatelessWidget {
+  const _CommunityCard();
 
   @override
   Widget build(BuildContext context) {
     final l = context.l10n;
+    final scheme = Theme.of(context).colorScheme;
+    final text = Theme.of(context).textTheme;
+    final benefits = [
+      (Icons.record_voice_over_rounded, l.homeBenefit1Title, l.homeBenefit1Body),
+      (Icons.hearing_rounded, l.homeBenefit2Title, l.homeBenefit2Body),
+      (Icons.family_restroom_rounded, l.homeBenefit3Title, l.homeBenefit3Body),
+      (Icons.lock_outline_rounded, l.homeBenefit4Title, l.homeBenefit4Body),
+    ];
     return AppCard(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [
-          Icon(Icons.info_outline_rounded, color: Theme.of(context).colorScheme.primary),
+        Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Icon(Icons.favorite_rounded, color: scheme.primary),
           const SizedBox(width: 8),
-          Expanded(child: Semantics(header: true, child: Text(l.homeAboutTitle, style: Theme.of(context).textTheme.titleMedium))),
+          Expanded(child: Semantics(header: true, child: Text(l.homeCommunityTitle, style: text.titleMedium))),
         ]),
         const SizedBox(height: 8),
-        Text(l.homeAboutBody),
-      ]),
-    );
-  }
-}
-
-class _HowItWorks extends StatelessWidget {
-  const _HowItWorks();
-
-  @override
-  Widget build(BuildContext context) {
-    final l = context.l10n;
-    final steps = [l.homeHow1, l.homeHow2, l.homeHow3];
-    final scheme = Theme.of(context).colorScheme;
-    return AppCard(
-      child: Column(children: [
-        for (var i = 0; i < steps.length; i++)
+        Text(l.homeCommunityBody),
+        const SizedBox(height: 12),
+        for (final b in benefits)
           Padding(
-            padding: EdgeInsets.only(bottom: i == steps.length - 1 ? 0 : 12),
+            padding: const EdgeInsets.only(bottom: 10),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              ExcludeSemantics(
-                child: CircleAvatar(radius: 14, backgroundColor: scheme.primaryContainer, child: Text('${i + 1}', style: TextStyle(color: scheme.onPrimaryContainer, fontWeight: FontWeight.w700))),
-              ),
+              ExcludeSemantics(child: Icon(b.$1, size: 22, color: scheme.secondary)),
               const SizedBox(width: 12),
-              Expanded(child: Text(steps[i])),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(b.$2, style: text.titleSmall),
+                  Text(b.$3, style: text.bodySmall),
+                ]),
+              ),
             ]),
           ),
+        const SizedBox(height: 4),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            onPressed: () => shareText(l.homeShareMessage),
+            icon: const Icon(Icons.share_rounded),
+            label: Text(l.homeShareCta),
+          ),
+        ),
       ]),
     );
   }

@@ -52,9 +52,10 @@ void main() {
   testWidgets('returning guest lands on Home and can move between all four tabs', (tester) async {
     final h = Harness();
     await h.pump(tester);
-    // Home now introduces the app and holds every mode (the separate Translate tab is gone).
-    expect(find.text('What is SignoVoice?'), findsOneWidget);
-    expect(find.text('Translate'), findsOneWidget); // section header only, not a tab
+    // Home now speaks to the community it is for and holds every mode (the separate Translate tab is gone).
+    expect(find.text('Made for the deaf and speech-impaired community'), findsOneWidget);
+    await scrollTo(tester, find.text('Translate')); // section header further down, not a tab
+    expect(find.text('Translate'), findsOneWidget);
     expect(find.text('Sign → Text'), findsWidgets);
 
     await tester.tap(find.text('Learn').last);
@@ -120,7 +121,7 @@ void main() {
     final h = Harness(prefs: const UserPreferences(localeCode: 'kn'));
     await h.pump(tester);
     expect(find.text('ಇಂದು ಸಂವಹನ ಮಾಡಲು ನಾವು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?'), findsOneWidget);
-    expect(find.text('ಸೈನೋವಾಯ್ಸ್ ಎಂದರೇನು?'), findsOneWidget);
+    expect(find.text('ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳ ಸಮುದಾಯಕ್ಕಾಗಿ ರೂಪಿಸಲಾಗಿದೆ'), findsOneWidget);
   });
 
   testWidgets('Hindi UI works too', (tester) async {

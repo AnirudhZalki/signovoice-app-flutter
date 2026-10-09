@@ -576,6 +576,49 @@ class AppLocalizationsEn extends AppLocalizations {
       'Read, hear or see the translation instantly, and find it later in History.';
 
   @override
+  String get homeCommunityTitle =>
+      'Made for the deaf and speech-impaired community';
+
+  @override
+  String get homeCommunityBody =>
+      'You deserve to be understood — at home, at school, at work and at the doctor. SignoVoice turns your signs into text and speech, turns what others say into signs, and connects you with a live interpreter when it matters.';
+
+  @override
+  String get homeBenefit1Title => 'Be understood anywhere';
+
+  @override
+  String get homeBenefit1Body =>
+      'Sign to the camera and the phone speaks for you.';
+
+  @override
+  String get homeBenefit2Title => 'Understand others';
+
+  @override
+  String get homeBenefit2Body =>
+      'Speak or type and watch the signs for every word.';
+
+  @override
+  String get homeBenefit3Title => 'Family and friends can learn too';
+
+  @override
+  String get homeBenefit3Body =>
+      'Short Indian Sign Language lessons for everyone.';
+
+  @override
+  String get homeBenefit4Title => 'Private by design';
+
+  @override
+  String get homeBenefit4Body =>
+      'Hand recognition runs on your phone; your camera video is not uploaded.';
+
+  @override
+  String get homeShareCta => 'Tell someone who could use SignoVoice';
+
+  @override
+  String get homeShareMessage =>
+      'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
+
+  @override
   String get introSignToText => 'Sign → Text';
 
   @override

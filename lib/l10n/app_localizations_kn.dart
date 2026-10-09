@@ -579,6 +579,48 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಅನುವಾದವನ್ನು ತಕ್ಷಣ ಓದಿ, ಕೇಳಿ ಅಥವಾ ನೋಡಿ, ನಂತರ ಇತಿಹಾಸದಲ್ಲಿ ಹುಡುಕಿ.';
 
   @override
+  String get homeCommunityTitle =>
+      'ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳ ಸಮುದಾಯಕ್ಕಾಗಿ ರೂಪಿಸಲಾಗಿದೆ';
+
+  @override
+  String get homeCommunityBody =>
+      'ನೀವು ಅರ್ಥವಾಗಲು ಅರ್ಹರು — ಮನೆಯಲ್ಲಿ, ಶಾಲೆಯಲ್ಲಿ, ಕೆಲಸದಲ್ಲಿ ಮತ್ತು ವೈದ್ಯರ ಬಳಿ. ಸೈನೋವಾಯ್ಸ್ ನಿಮ್ಮ ಸಂಜ್ಞೆಗಳನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ, ಇತರರ ಮಾತನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಬದಲಿಸುತ್ತದೆ ಮತ್ತು ಅಗತ್ಯವಿದ್ದಾಗ ಲೈವ್ ಇಂಟರ್ಪ್ರಿಟರ್‌ಗೆ ಸಂಪರ್ಕಿಸುತ್ತದೆ.';
+
+  @override
+  String get homeBenefit1Title => 'ಎಲ್ಲಿಯಾದರೂ ಅರ್ಥವಾಗಿ';
+
+  @override
+  String get homeBenefit1Body =>
+      'ಕ್ಯಾಮೆರಾ ಮುಂದೆ ಸಂಜ್ಞೆ ಮಾಡಿ, ಫೋನ್ ನಿಮ್ಮ ಪರವಾಗಿ ಮಾತನಾಡುತ್ತದೆ.';
+
+  @override
+  String get homeBenefit2Title => 'ಇತರರನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ';
+
+  @override
+  String get homeBenefit2Body =>
+      'ಮಾತನಾಡಿ ಅಥವಾ ಟೈಪ್ ಮಾಡಿ, ಪ್ರತಿ ಪದದ ಸಂಜ್ಞೆಯನ್ನು ನೋಡಿ.';
+
+  @override
+  String get homeBenefit3Title => 'ಕುಟುಂಬ ಮತ್ತು ಸ್ನೇಹಿತರೂ ಕಲಿಯಬಹುದು';
+
+  @override
+  String get homeBenefit3Body => 'ಎಲ್ಲರಿಗೂ ಭಾರತೀಯ ಸಂಜ್ಞಾ ಭಾಷೆಯ ಚಿಕ್ಕ ಪಾಠಗಳು.';
+
+  @override
+  String get homeBenefit4Title => 'ವಿನ್ಯಾಸದಿಂದಲೇ ಖಾಸಗಿ';
+
+  @override
+  String get homeBenefit4Body =>
+      'ಕೈ ಗುರುತಿಸುವಿಕೆ ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲೇ ನಡೆಯುತ್ತದೆ; ನಿಮ್ಮ ಕ್ಯಾಮೆರಾ ವೀಡಿಯೊ ಅಪ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ.';
+
+  @override
+  String get homeShareCta => 'ಸೈನೋವಾಯ್ಸ್ ಬೇಕಾದವರಿಗೆ ತಿಳಿಸಿ';
+
+  @override
+  String get homeShareMessage =>
+      'ಸೈನೋವಾಯ್ಸ್ ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳವರು ಸಂವಹನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ — ಸಂಜ್ಞೆಯನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ, ಧ್ವನಿಯನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಬದಲಿಸುತ್ತದೆ. ಉಚಿತವಾಗಿ ಪಡೆಯಿರಿ: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
+
+  @override
   String get introSignToText => 'ಸೈನ್ → ಪಠ್ಯ';
 
   @override
