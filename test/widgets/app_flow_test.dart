@@ -100,8 +100,8 @@ void main() {
   testWidgets('Voice → Sign converts typed text to signs and flags unknown words', (tester) async {
     final h = Harness();
     await h.pump(tester);
-    await scrollTo(tester, find.text('Voice → Sign').first); // Home lists it below the intro
-    await tester.tap(find.text('Voice → Sign').first);
+    await scrollTo(tester, find.text('Voice → Sign')); // Home lists it below the community message (built lazily)
+    await tester.tap(find.text('Voice → Sign'));
     await settle(tester);
     expect(find.text('Voice → Sign'), findsWidgets);
 
