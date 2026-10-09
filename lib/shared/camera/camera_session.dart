@@ -1,7 +1,21 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show DeviceOrientation;
 
 import '../../core/services/permission_service.dart';
+
+/// Clockwise degrees to rotate a raw camera frame so it is upright for the current phone orientation
+/// (same rule as CameraX / Android docs): front = sensor + device, back = sensor - device.
+/// Passing only the sensor orientation is right in portrait but wrong in landscape.
+int cameraRotationDegrees({required int sensorOrientation, required bool front, required DeviceOrientation device}) {
+  final dev = switch (device) {
+    DeviceOrientation.portraitUp => 0,
+    DeviceOrientation.landscapeLeft => 90,
+    DeviceOrientation.portraitDown => 180,
+    DeviceOrientation.landscapeRight => 270,
+  };
+  return front ? (sensorOrientation + dev) % 360 : (sensorOrientation - dev + 360) % 360;
+}
 
 enum CameraStatus { checkingPermission, needsPermission, permanentlyDenied, initializing, ready, error }
 
@@ -15,7 +29,8 @@ class CameraSession extends ChangeNotifier {
   }) : direction = initialDirection;
 
   final PermissionService permissions;
-  final void Function(CameraImage image, int sensorOrientation) onImage;
+  /// Called for every frame with the clockwise rotation (degrees) that makes it upright.
+  final void Function(CameraImage image, int rotationDegrees) onImage;
   final CameraLensDirection initialDirection;
 
   CameraController? controller;
@@ -80,7 +95,14 @@ class CameraSession extends ChangeNotifier {
         await c.dispose();
         return;
       }
-      await c.startImageStream((image) => onImage(image, cam.sensorOrientation));
+      await c.startImageStream((image) => onImage(
+            image,
+            cameraRotationDegrees(
+              sensorOrientation: cam.sensorOrientation,
+              front: cam.lensDirection == CameraLensDirection.front,
+              device: c.value.deviceOrientation,
+            ),
+          ));
       controller = c;
       flashOn = false;
       _set(CameraStatus.ready);

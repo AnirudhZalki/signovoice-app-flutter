@@ -30,3 +30,6 @@ if the TFLite model scores below `--min-val-acc` (default 0.6) on held-out clips
 - Frame rate: training samples ~20 fps clips and resamples windows to 30 frames; the app fills 30 consecutive camera frames. If live
   results look too fast/slow, change `--fps` to match the camera rate and retrain.
 - Validate on a phone before shipping; the training script cannot test the Android camera path.
+
+## Phone held upright (portrait) vs landscape
+The models are trained on landscape webcam video. Since the camera frame of an upright phone is tall, the app now (1) rotates each frame by the *current* phone orientation (`cameraRotationDegrees`) instead of assuming portrait, and (2) re-expresses the hand landmarks on the landscape canvas of the same sensor in real pixel proportions (`toLandscapeCanvas`), so a sign looks the same to the model in either orientation. When you record your own training clips, record landscape (or accept the same conversion in `tools/train/features.py`: apply the same mapping to portrait clips before building features).

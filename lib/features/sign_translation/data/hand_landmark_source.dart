@@ -18,7 +18,8 @@ abstract class HandLandmarkSource {
   /// Latest raw landmarks (x,y in 0..1 image space) for drawing overlays.
   ValueStreamOverlay get overlay;
 
-  void processCameraImage(CameraImage image, int sensorOrientation);
+  /// [rotationDegrees]: clockwise degrees that make the frame upright (see `cameraRotationDegrees`).
+  void processCameraImage(CameraImage image, int rotationDegrees);
   Future<void> dispose();
 }
 
@@ -57,6 +58,8 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
   StreamSubscription<List<Hand>>? _sub;
   final StreamController<HandFrame> _controller = StreamController<HandFrame>.broadcast();
   final ValueStreamOverlay _overlay = ValueStreamOverlay();
+  double _uprightW = 0;
+  double _uprightH = 0;
 
   static bool get platformSupported => Platform.isAndroid;
 
@@ -82,15 +85,21 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
     _overlay.set([
       for (final h in valid) [for (final l in h) (x: l.x, y: l.y)],
     ]);
+    // The overlay keeps raw coordinates (drawn on the preview); the model gets landscape-canvas coordinates.
     _controller.add(HandFrame.fromHands([
-      for (final h in valid) [for (final l in h) (x: l.x, y: l.y, z: l.z)],
+      for (final h in valid)
+        toLandscapeCanvas([for (final l in h) (x: l.x, y: l.y, z: l.z)], frameWidth: _uprightW, frameHeight: _uprightH),
     ], spec));
   }
 
   @override
-  void processCameraImage(CameraImage image, int sensorOrientation) {
+  void processCameraImage(CameraImage image, int rotationDegrees) {
+    // Upright frame size: a 90/270 rotation swaps width and height.
+    final swap = rotationDegrees % 180 != 0;
+    _uprightW = (swap ? image.height : image.width).toDouble();
+    _uprightH = (swap ? image.width : image.height).toDouble();
     try {
-      _plugin.processFrame(image, sensorOrientation);
+      _plugin.processFrame(image, rotationDegrees);
     } catch (_) {
       // A dropped frame is harmless; never crash the camera loop.
     }

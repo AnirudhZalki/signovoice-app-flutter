@@ -60,6 +60,25 @@ class HandFeatureSpec extends Equatable {
   List<Object?> get props => [hands, preprocess, order, mirrorX, lockMirror];
 }
 
+/// Hand positions the models were trained on come from LANDSCAPE webcam video (x and y normalised by a wide frame).
+/// A phone held upright gives a TALL frame, which squeezes x and stretches y relative to that data and narrows the
+/// view, so the same sign looks different to the model. This re-expresses the landmarks on the landscape canvas of the
+/// same sensor (long side = width) in real pixel proportions: shapes and sizes stay identical to a landscape capture.
+/// [frameWidth]/[frameHeight] are the UPRIGHT frame size (after rotation). Landscape input is returned unchanged.
+List<LandmarkPoint> toLandscapeCanvas(List<LandmarkPoint> pts, {required double frameWidth, required double frameHeight}) {
+  if (frameWidth <= 0 || frameHeight <= 0 || frameWidth >= frameHeight) return pts;
+  final long = frameHeight; // the sensor's long side becomes the canvas width
+  final short = frameWidth;
+  return [
+    for (final p in pts)
+      (
+        x: (p.x * frameWidth + (long - frameWidth) / 2) / long,
+        y: p.y * frameHeight / short - (frameHeight - short) / 2 / short,
+        z: p.z * frameWidth / long,
+      ),
+  ];
+}
+
 /// Landmarks for one video frame: `hands × 21 × (x, y, z)` floats, zeros for missing hands.
 class HandFrame extends Equatable {
   const HandFrame(this.features, {required this.hasHand});

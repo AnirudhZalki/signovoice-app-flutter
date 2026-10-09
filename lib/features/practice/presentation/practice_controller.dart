@@ -138,12 +138,12 @@ class PracticeController extends Notifier<PracticeState> {
     }
   }
 
-  void onCameraImage(CameraImage image, int sensorOrientation) {
+  void onCameraImage(CameraImage image, int rotationDegrees) {
     if (_source == null) return;
     final now = DateTime.now();
     if (now.difference(_lastFeed) < const Duration(milliseconds: 60)) return;
     _lastFeed = now;
-    _source!.processCameraImage(image, sensorOrientation);
+    _source!.processCameraImage(image, rotationDegrees);
   }
 
   /// Starts countdown then capture. Safe to call again for "Try again".

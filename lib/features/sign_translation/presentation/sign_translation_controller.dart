@@ -288,12 +288,12 @@ class SignTranslationController extends Notifier<SignTranslationState> {
     }
   }
 
-  void onCameraImage(CameraImage image, int sensorOrientation) {
+  void onCameraImage(CameraImage image, int rotationDegrees) {
     if (state.paused || _source == null) return;
     final now = DateTime.now();
     if (now.difference(_lastCameraFeed) < const Duration(milliseconds: 60)) return; // ~16 fps into the detector
     _lastCameraFeed = now;
-    _source!.processCameraImage(image, sensorOrientation);
+    _source!.processCameraImage(image, rotationDegrees);
   }
 
   void togglePause() {

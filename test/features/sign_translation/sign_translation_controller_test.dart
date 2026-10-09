@@ -64,7 +64,7 @@ class _Source implements HandLandmarkSource {
   @override
   final ValueStreamOverlay overlay = ValueStreamOverlay();
   @override
-  void processCameraImage(CameraImage image, int sensorOrientation) {}
+  void processCameraImage(CameraImage image, int rotationDegrees) {}
   @override
   Future<void> dispose() async {
     _t?.cancel();
