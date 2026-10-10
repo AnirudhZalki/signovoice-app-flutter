@@ -27,7 +27,7 @@ const LIVEKIT_API_SECRET = defineSecret('LIVEKIT_API_SECRET');
 const env = (k, d = '') => process.env[k] || d;
 const plans = () => JSON.parse(env('RAZORPAY_PLANS', '{}')); // {"signovoice_premium_6months":{"planId":"plan_x","title":"Premium 6 months","months":6,"totalCount":20}}  (cycle + price come from the Razorpay plan itself)
 const trialDays = () => Number(env('TRIAL_DAYS', '30'));
-const packageName = () => env('PLAY_PACKAGE_NAME', 'com.anirudhzalki.signovoice');
+const packageName = () => env('PLAY_PACKAGE_NAME', 'com.anirudhzalki.signovoiceapp');
 
 const razorpay = () => new (require('razorpay'))({ key_id: env('RAZORPAY_KEY_ID'), key_secret: RAZORPAY_KEY_SECRET.value() });
 const entRef = (uid) => db.collection('entitlements').doc(uid);           // client-readable (see firestore.rules)

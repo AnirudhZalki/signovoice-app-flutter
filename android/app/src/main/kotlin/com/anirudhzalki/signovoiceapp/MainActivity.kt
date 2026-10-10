@@ -1,4 +1,4 @@
-package com.anirudhzalki.signovoice
+package com.anirudhzalki.signovoiceapp
 
 import io.flutter.embedding.android.FlutterActivity
 

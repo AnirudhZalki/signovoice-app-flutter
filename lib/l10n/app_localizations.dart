@@ -1219,7 +1219,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeShareMessage.
   ///
   /// In en, this message translates to:
-  /// **'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice'**
+  /// **'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoiceapp'**
   String get homeShareMessage;
 
   /// No description provided for @shareWithOthers.

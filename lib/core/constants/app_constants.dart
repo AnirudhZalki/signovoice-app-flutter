@@ -33,4 +33,4 @@ class PrefKeys {
 }
 
 /// Android application id (also used for Play Store deep links).
-const String kApplicationId = 'com.anirudhzalki.signovoice';
+const String kApplicationId = 'com.anirudhzalki.signovoiceapp';

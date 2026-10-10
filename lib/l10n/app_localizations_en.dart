@@ -616,7 +616,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeShareMessage =>
-      'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
+      'SignoVoice helps deaf and speech-impaired people communicate — it turns signs into text and speech and speech into signs. Get it free: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoiceapp';
 
   @override
   String get shareWithOthers => 'Share SignoVoice with others';

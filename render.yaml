@@ -17,7 +17,7 @@ services:
       - key: RAZORPAY_PLANS
         sync: false
       - key: PLAY_PACKAGE_NAME
-        value: com.anirudhzalki.signovoice
+        value: com.anirudhzalki.signovoiceapp
       - key: TRIAL_DAYS
         value: 30
       - key: PLATFORM_FEE_PERCENT

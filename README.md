@@ -2,7 +2,7 @@
 
 *One Gesture. One Voice. One Connection.*
 
-An AI-assisted accessibility app that helps sign-language users and people who don't sign communicate — Flutter, Material 3, Android-first (`com.anirudhzalki.signovoice`).
+An AI-assisted accessibility app that helps sign-language users and people who don't sign communicate — Flutter, Material 3, Android-first (`com.anirudhzalki.signovoiceapp`).
 
 | | |
 |---|---|

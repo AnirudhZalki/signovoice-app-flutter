@@ -4,7 +4,7 @@ The app compiles and runs without any of this: it starts in **guest mode** and e
 
 | Feature | What you must provide | Where it goes |
 |---|---|---|
-| Accounts (email, Google, phone OTP), sync, push, crash reports | A **Firebase project** with Authentication (Email/Password, Google, Phone), Firestore, Storage, Analytics, Crashlytics, Cloud Messaging. Add the Android app `com.anirudhzalki.signovoice` with your release **and** debug SHA-1/SHA-256. | `android/app/google-services.json` (git-ignored). The Gradle plugins are applied automatically when the file exists. |
+| Accounts (email, Google, phone OTP), sync, push, crash reports | A **Firebase project** with Authentication (Email/Password, Google, Phone), Firestore, Storage, Analytics, Crashlytics, Cloud Messaging. Add the Android app `com.anirudhzalki.signovoiceapp` with your release **and** debug SHA-1/SHA-256. | `android/app/google-services.json` (git-ignored). The Gradle plugins are applied automatically when the file exists. |
 | Google Sign-In | The **web client ID** from Firebase console → Authentication → Google | `--dart-define GOOGLE_SERVER_CLIENT_ID=…` |
 | Security rules | Deploy `firestore.rules` and `storage.rules` (`firebase deploy --only firestore:rules,storage`) | Firebase CLI |
 | Subscriptions | A Google Play Console app with **subscription products** `signovoice_premium_monthly` and `signovoice_premium_yearly`, each with a base plan and a **free-trial offer of 1 month** (Play decides eligibility). Upload a signed build to an internal testing track and add license testers. | Product IDs are configurable: `IAP_MONTHLY_ID`, `IAP_YEARLY_ID` |

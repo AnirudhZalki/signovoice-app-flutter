@@ -618,7 +618,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get homeShareMessage =>
-      'ಸೈನೋವಾಯ್ಸ್ ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳವರು ಸಂವಹನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ — ಸಂಜ್ಞೆಯನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ, ಧ್ವನಿಯನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಬದಲಿಸುತ್ತದೆ. ಉಚಿತವಾಗಿ ಪಡೆಯಿರಿ: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoice';
+      'ಸೈನೋವಾಯ್ಸ್ ಕಿವುಡ ಮತ್ತು ಮಾತಿನ ಅಡಚಣೆಯುಳ್ಳವರು ಸಂವಹನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ — ಸಂಜ್ಞೆಯನ್ನು ಪಠ್ಯ ಮತ್ತು ಧ್ವನಿಯಾಗಿ, ಧ್ವನಿಯನ್ನು ಸಂಜ್ಞೆಯಾಗಿ ಬದಲಿಸುತ್ತದೆ. ಉಚಿತವಾಗಿ ಪಡೆಯಿರಿ: https://play.google.com/store/apps/details?id=com.anirudhzalki.signovoiceapp';
 
   @override
   String get shareWithOthers => 'ಸೈನೋವಾಯ್ಸ್ ಅನ್ನು ಇತರರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ';

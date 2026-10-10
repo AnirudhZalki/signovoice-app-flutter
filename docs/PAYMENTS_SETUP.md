@@ -42,7 +42,7 @@ The reference implementation is in `backend/functions` (Firebase Cloud Functions
 ```
 cd backend/functions && npm install && node --test test/*.test.js
 firebase functions:secrets:set RAZORPAY_KEY_SECRET RAZORPAY_WEBHOOK_SECRET LIVEKIT_API_SECRET
-# functions/.env: RAZORPAY_KEY_ID, RAZORPAY_PLANS, TRIAL_DAYS=30, PLAY_PACKAGE_NAME=com.anirudhzalki.signovoice, LIVEKIT_URL, LIVEKIT_API_KEY
+# functions/.env: RAZORPAY_KEY_ID, RAZORPAY_PLANS, TRIAL_DAYS=30, PLAY_PACKAGE_NAME=com.anirudhzalki.signovoiceapp, LIVEKIT_URL, LIVEKIT_API_KEY
 firebase deploy --only functions
 ```
 Set the app's `API_BASE_URL` to the deployed function URL (Firebase ID token is sent as `Authorization: Bearer`).

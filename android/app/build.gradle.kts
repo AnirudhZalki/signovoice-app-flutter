@@ -22,7 +22,7 @@ val keystoreProperties = Properties().apply {
 val hasReleaseKey = keystoreProperties.containsKey("storeFile")
 
 android {
-    namespace = "com.anirudhzalki.signovoice"
+    namespace = "com.anirudhzalki.signovoiceapp"
     // Flutter 3.47 defaults: compileSdk 36, targetSdk 36 (current Play requirement), minSdk 24
     // (MediaPipe tasks + ONNX Runtime need >= 24).
     compileSdk = 37
@@ -37,7 +37,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.anirudhzalki.signovoice"
+        applicationId = "com.anirudhzalki.signovoiceapp"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // versionName / versionCode come from pubspec.yaml `version: MAJOR.MINOR.PATCH+BUILD`

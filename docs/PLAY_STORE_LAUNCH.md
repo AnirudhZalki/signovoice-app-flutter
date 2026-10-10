@@ -9,7 +9,7 @@
 
 ## 1. Create the app (Play Console → Create app)
 Name **SignoVoice — Breaking Barriers** · Default language English (India) · App · **Free** (subscriptions are in-app) · accept declarations.
-Package is fixed by the build: `com.anirudhzalki.signovoice`.
+Package is fixed by the build: `com.anirudhzalki.signovoiceapp`.
 
 ## 2. App content (Policy → App content) — answers matched to this app
 | Section | Answer |
@@ -53,3 +53,13 @@ Follow `docs/PAYMENTS_SETUP.md` → "Google Play": `signovoice_premium_monthly` 
 - [ ] Subscription test purchase succeeds and Premium unlocks only after backend verification.
 - [ ] Privacy policy URL, deletion URL, test account all filled in. No placeholder text ("lorem", test keys) anywhere. Razorpay disabled.
 - [ ] Recognition limits are stated honestly in the listing (no medical/guaranteed-accuracy claims).
+
+## Application ID changed to `com.anirudhzalki.signovoiceapp`
+
+The old id `com.anirudhzalki.signovoice` belongs to a different app, so Play treats this as a new app. Before building the `.aab`:
+
+1. Firebase console → Add app → Android → package `com.anirudhzalki.signovoiceapp` (add your upload-key **and** Play app-signing SHA-1/SHA-256). Download the new `google-services.json` into `android/app/` (replaces the old one).
+2. Authentication → Google sign-in stays enabled; copy the new web client ID into `GOOGLE_SERVER_CLIENT_ID` if it changed.
+3. Render: set `PLAY_PACKAGE_NAME=com.anirudhzalki.signovoiceapp` (only needed if Play verification is used).
+4. `flutter clean && flutter build appbundle --release --dart-define-from-file=config/prod.json`, create the app in Play Console with this id, upload the `.aab`.
+5. The installed old build is a different app; uninstall it from test phones first.

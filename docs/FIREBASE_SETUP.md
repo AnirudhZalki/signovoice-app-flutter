@@ -1,7 +1,7 @@
 # Firebase setup (matches the "Add Firebase to your Android app" screen)
 
 1. **Register app** — Firebase console → your project → *Add app → Android*.
-   - **Android package name:** `com.anirudhzalki.signovoice` (must match exactly; it is `applicationId` in `android/app/build.gradle.kts`).
+   - **Android package name:** `com.anirudhzalki.signovoiceapp` (must match exactly; it is `applicationId` in `android/app/build.gradle.kts`).
    - **App nickname:** `SignoVoice` (optional).
    - **Debug signing certificate SHA-1:** required for Google Sign-In and phone auth. Get it with
      `cd android && ./gradlew signingReport` (use the `debug` variant), or
