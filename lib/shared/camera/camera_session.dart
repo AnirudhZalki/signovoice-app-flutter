@@ -86,7 +86,7 @@ class CameraSession extends ChangeNotifier {
       direction = cam.lensDirection;
       final c = CameraController(
         cam,
-        ResolutionPreset.medium,
+        ResolutionPreset.high, // 720p: finger detail matters for landmark accuracy
         enableAudio: false,
         imageFormatGroup: ImageFormatGroup.yuv420,
       );

@@ -6,6 +6,7 @@ import 'package:hand_landmarker/hand_landmarker.dart';
 
 import '../../../core/errors/failure.dart';
 import '../domain/hand_frame.dart';
+import '../domain/hand_stabilizer.dart';
 
 /// Produces [HandFrame]s from camera images. Implementations wrap a hand
 /// landmark detector so the pipeline is independent of the vendor.
@@ -45,7 +46,7 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
     }
     _plugin = HandLandmarkerPlugin.create(
       numHands: spec.hands,
-      minHandDetectionConfidence: 0.7,
+      minHandDetectionConfidence: 0.6,
       delegate: HandLandmarkerDelegate.gpu,
     );
     _sub = _plugin.landmarkStream.listen(_onHands, onError: (Object _) {
@@ -58,6 +59,8 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
   StreamSubscription<List<Hand>>? _sub;
   final StreamController<HandFrame> _controller = StreamController<HandFrame>.broadcast();
   final ValueStreamOverlay _overlay = ValueStreamOverlay();
+  final HandStabilizer _stabilizer = HandStabilizer();
+  DateTime _lastHands = DateTime.now();
   double _uprightW = 0;
   double _uprightH = 0;
 
@@ -73,22 +76,28 @@ class MediaPipeHandLandmarkSource implements HandLandmarkSource {
   ValueStreamOverlay get overlay => _overlay;
 
   void _onHands(List<Hand> hands) {
+    final now = DateTime.now();
+    final dt = now.difference(_lastHands).inMicroseconds / 1e6;
+    _lastHands = now;
+    // Keep only physically plausible skeletons: a distorted one would be shown and classified wrongly.
     final valid = [
       for (final h in hands)
-        if (h.landmarks.length == 21) h.landmarks,
+        if (h.landmarks.length == 21)
+          if (isPlausibleHand([for (final l in h.landmarks) (x: l.x, y: l.y, z: l.z)])) [for (final l in h.landmarks) (x: l.x, y: l.y, z: l.z)],
     ];
     if (valid.isEmpty) {
+      _stabilizer.reset();
       _overlay.set(const []);
       _controller.add(HandFrame.emptyFor(spec.featureCount));
       return;
     }
-    _overlay.set([
-      for (final h in valid) [for (final l in h) (x: l.x, y: l.y)],
-    ]);
+    final smooth = _stabilizer.smooth(valid, dt);
     // The overlay keeps raw coordinates (drawn on the preview); the model gets landscape-canvas coordinates.
+    _overlay.set([
+      for (final h in smooth) [for (final l in h) (x: l.x, y: l.y)],
+    ]);
     _controller.add(HandFrame.fromHands([
-      for (final h in valid)
-        toLandscapeCanvas([for (final l in h) (x: l.x, y: l.y, z: l.z)], frameWidth: _uprightW, frameHeight: _uprightH),
+      for (final h in smooth) toLandscapeCanvas(h, frameWidth: _uprightW, frameHeight: _uprightH),
     ], spec));
   }
 
