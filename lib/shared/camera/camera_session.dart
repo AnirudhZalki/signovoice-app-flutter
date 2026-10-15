@@ -1,6 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show DeviceOrientation;
+import 'package:flutter/services.dart' show DeviceOrientation, SystemChrome;
 
 import '../../core/services/permission_service.dart';
 
@@ -91,6 +91,13 @@ class CameraSession extends ChangeNotifier {
         imageFormatGroup: ImageFormatGroup.yuv420,
       );
       await c.initialize();
+      // The screen and the preview stay portrait while the camera is open; the frames sent to the hand detector are
+      // rotated for that same portrait view. Following the physical phone angle instead made the detected skeleton
+      // point a different way from the hand shown on screen.
+      try {
+        await SystemChrome.setPreferredOrientations(const [DeviceOrientation.portraitUp]);
+        await c.lockCaptureOrientation(DeviceOrientation.portraitUp);
+      } catch (_) {/* not supported on this device: rotation below still uses portrait */}
       if (_disposed) {
         await c.dispose();
         return;
@@ -100,7 +107,7 @@ class CameraSession extends ChangeNotifier {
             cameraRotationDegrees(
               sensorOrientation: cam.sensorOrientation,
               front: cam.lensDirection == CameraLensDirection.front,
-              device: c.value.deviceOrientation,
+              device: DeviceOrientation.portraitUp,
             ),
           ));
       controller = c;
@@ -160,6 +167,9 @@ class CameraSession extends ChangeNotifier {
   Future<void> disposeSession() async {
     _disposed = true;
     await _release();
+    try {
+      await SystemChrome.setPreferredOrientations(const []);
+    } catch (_) {}
     super.dispose();
   }
 }
