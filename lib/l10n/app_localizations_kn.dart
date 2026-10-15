@@ -688,6 +688,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get flipCamera => 'ಕ್ಯಾಮೆರಾ ತಿರುಗಿಸಿ';
 
   @override
+  String get fixSkeletonDirection => 'ಕೈ ಅಸ್ಥಿಪಂಜರದ ದಿಕ್ಕನ್ನು ಸರಿಪಡಿಸಿ';
+
+  @override
   String get flashOn => 'ಫ್ಲ್ಯಾಶ್ ಆನ್ ಮಾಡಿ';
 
   @override

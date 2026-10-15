@@ -60,7 +60,7 @@ class _PracticeViewState extends ConsumerState<_PracticeView> with WidgetsBindin
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _controller = ref.read(practiceProvider.notifier);
-    _camera = CameraSession(permissions: ref.read(permissionServiceProvider), onImage: _controller.onCameraImage)..addListener(_onCamera);
+    _camera = CameraSession(permissions: ref.read(permissionServiceProvider), onImage: _controller.onCameraImage, store: ref.read(keyValueStoreProvider))..addListener(_onCamera);
     _camera.start();
   }
 
@@ -114,7 +114,7 @@ class _PracticeViewState extends ConsumerState<_PracticeView> with WidgetsBindin
                         child: CameraOverlay(
                           overlay: _controller.source?.overlay,
                           scanning: s.phase == PracticePhase.idle && !s.handVisible,
-                          mirror: _camera.isFront,
+                          mirror: _camera.overlayMirror,
                         ),
                       ),
                     ])
@@ -138,12 +138,21 @@ class _PracticeViewState extends ConsumerState<_PracticeView> with WidgetsBindin
               Positioned(
                 top: 8,
                 right: 8,
-                child: IconButton.filled(
-                  tooltip: l.flipCamera,
-                  onPressed: _camera.flip,
-                  style: IconButton.styleFrom(backgroundColor: Colors.black.withValues(alpha: 0.6), foregroundColor: Colors.white),
-                  icon: const Icon(Icons.flip_camera_android_rounded),
-                ),
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
+                  IconButton.filled(
+                    tooltip: l.fixSkeletonDirection,
+                    onPressed: _camera.cycleDirectionFix,
+                    style: IconButton.styleFrom(backgroundColor: Colors.black.withValues(alpha: 0.6), foregroundColor: Colors.white),
+                    icon: const Icon(Icons.screen_rotation_alt_rounded),
+                  ),
+                  const SizedBox(width: 8),
+                  IconButton.filled(
+                    tooltip: l.flipCamera,
+                    onPressed: _camera.flip,
+                    style: IconButton.styleFrom(backgroundColor: Colors.black.withValues(alpha: 0.6), foregroundColor: Colors.white),
+                    icon: const Icon(Icons.flip_camera_android_rounded),
+                  ),
+                ]),
               ),
             ]),
           ),

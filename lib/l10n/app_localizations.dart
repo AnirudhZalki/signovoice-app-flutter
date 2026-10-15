@@ -1354,6 +1354,12 @@ abstract class AppLocalizations {
   /// **'Flip camera'**
   String get flipCamera;
 
+  /// No description provided for @fixSkeletonDirection.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix hand skeleton direction'**
+  String get fixSkeletonDirection;
+
   /// No description provided for @flashOn.
   ///
   /// In en, this message translates to:

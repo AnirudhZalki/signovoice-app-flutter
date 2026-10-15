@@ -250,6 +250,7 @@
   "replay": "Replay",
   "play": "Play",
   "flipCamera": "Flip camera",
+  "fixSkeletonDirection": "Fix hand skeleton direction",
   "flashOn": "Turn flash on",
   "flashOff": "Turn flash off",
   "historyTitle": "History",

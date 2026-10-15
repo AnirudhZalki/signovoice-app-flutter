@@ -16,6 +16,7 @@ stopSpeaking | Stop speaking | बोलना रोकें | ಮಾತು �
 replay | Replay | दोबारा चलाएं | ಮತ್ತೆ ಪ್ಲೇ ಮಾಡಿ
 play | Play | चलाएं | ಪ್ಲೇ
 flipCamera | Flip camera | कैमरा पलटें | ಕ್ಯಾಮೆರಾ ತಿರುಗಿಸಿ
+fixSkeletonDirection | Fix hand skeleton direction | हाथ के स्केलेटन की दिशा ठीक करें | ಕೈ ಅಸ್ಥಿಪಂಜರದ ದಿಕ್ಕನ್ನು ಸರಿಪಡಿಸಿ
 flashOn | Turn flash on | फ़्लैश चालू करें | ಫ್ಲ್ಯಾಶ್ ಆನ್ ಮಾಡಿ
 flashOff | Turn flash off | फ़्लैश बंद करें | ಫ್ಲ್ಯಾಶ್ ಆಫ್ ಮಾಡಿ
 historyTitle | History | इतिहास | ಇತಿಹಾಸ

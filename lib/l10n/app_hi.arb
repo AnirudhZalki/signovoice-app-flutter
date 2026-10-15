@@ -209,6 +209,7 @@
   "replay": "दोबारा चलाएं",
   "play": "चलाएं",
   "flipCamera": "कैमरा पलटें",
+  "fixSkeletonDirection": "हाथ के स्केलेटन की दिशा ठीक करें",
   "flashOn": "फ़्लैश चालू करें",
   "flashOff": "फ़्लैश बंद करें",
   "historyTitle": "इतिहास",

@@ -686,6 +686,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get flipCamera => 'Flip camera';
 
   @override
+  String get fixSkeletonDirection => 'Fix hand skeleton direction';
+
+  @override
   String get flashOn => 'Turn flash on';
 
   @override

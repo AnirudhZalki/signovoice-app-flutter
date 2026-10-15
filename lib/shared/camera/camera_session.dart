@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show DeviceOrientation, SystemChrome;
 
 import '../../core/services/permission_service.dart';
+import '../../core/services/storage.dart';
 
 /// Clockwise degrees to rotate a raw camera frame so it is upright for the current phone orientation
 /// (same rule as CameraX / Android docs): front = sensor + device, back = sensor - device.
@@ -26,7 +27,11 @@ class CameraSession extends ChangeNotifier {
     required this.permissions,
     required this.onImage,
     this.initialDirection = CameraLensDirection.front,
+    this.store,
   }) : direction = initialDirection;
+
+  /// Remembers the skeleton-direction fix per camera (see [cycleDirectionFix]).
+  final KeyValueStore? store;
 
   final PermissionService permissions;
   /// Called for every frame with the clockwise rotation (degrees) that makes it upright.
@@ -41,6 +46,28 @@ class CameraSession extends ChangeNotifier {
   bool _busy = false;
 
   bool get isFront => direction == CameraLensDirection.front;
+
+  /// Manual correction for devices whose hand skeleton comes out upside down or mirrored:
+  /// bit 0 = rotate the frames sent to the detector by 180°, bit 1 = mirror the drawn skeleton.
+  int directionFix = 0;
+
+  bool get overlayMirror => isFront != ((directionFix & 2) != 0);
+
+  String get _fixKey => 'camera_direction_fix_${direction.name}';
+
+  void _loadFix() => directionFix = (store?.getInt(_fixKey) ?? 0) & 3;
+
+  /// Steps through the four fixes (normal, upside down, mirrored, both) and remembers the choice.
+  Future<void> cycleDirectionFix() async {
+    directionFix = (directionFix + 1) & 3;
+    notifyListeners();
+    await store?.setInt(_fixKey, directionFix);
+  }
+
+  int _rotationFor(CameraDescription cam, DeviceOrientation d) {
+    final base = cameraRotationDegrees(sensorOrientation: cam.sensorOrientation, front: cam.lensDirection == CameraLensDirection.front, device: d);
+    return (directionFix & 1) != 0 ? (base + 180) % 360 : base;
+  }
   bool get canFlash => direction == CameraLensDirection.back && status == CameraStatus.ready;
 
   void _set(CameraStatus s) {
@@ -84,6 +111,7 @@ class CameraSession extends ChangeNotifier {
       if (cams.isEmpty) throw CameraException('noCamera', 'No camera available');
       final cam = cams.firstWhere((c) => c.lensDirection == direction, orElse: () => cams.first);
       direction = cam.lensDirection;
+      _loadFix();
       final c = CameraController(
         cam,
         ResolutionPreset.high, // 720p: finger detail matters for landmark accuracy
@@ -102,14 +130,7 @@ class CameraSession extends ChangeNotifier {
         await c.dispose();
         return;
       }
-      await c.startImageStream((image) => onImage(
-            image,
-            cameraRotationDegrees(
-              sensorOrientation: cam.sensorOrientation,
-              front: cam.lensDirection == CameraLensDirection.front,
-              device: DeviceOrientation.portraitUp,
-            ),
-          ));
+      await c.startImageStream((image) => onImage(image, _rotationFor(cam, DeviceOrientation.portraitUp)));
       controller = c;
       flashOn = false;
       _set(CameraStatus.ready);

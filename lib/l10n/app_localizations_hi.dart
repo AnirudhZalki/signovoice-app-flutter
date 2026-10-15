@@ -684,6 +684,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get flipCamera => 'कैमरा पलटें';
 
   @override
+  String get fixSkeletonDirection => 'हाथ के स्केलेटन की दिशा ठीक करें';
+
+  @override
   String get flashOn => 'फ़्लैश चालू करें';
 
   @override

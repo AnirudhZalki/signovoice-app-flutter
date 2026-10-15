@@ -44,6 +44,7 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
     _camera = CameraSession(
       permissions: ref.read(permissionServiceProvider),
       onImage: _controller.onCameraImage,
+      store: ref.read(keyValueStoreProvider),
     )..addListener(_onCameraChange);
     _camera.start();
   }
@@ -167,7 +168,7 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
                     child: CameraOverlay(
                       overlay: _controller.source?.overlay,
                       scanning: s.ready && !s.handVisible && !s.paused,
-                      mirror: _camera.isFront,
+                      mirror: _camera.overlayMirror,
                     ),
                   ),
                 ],
@@ -258,6 +259,12 @@ class _SignTranslationScreenState extends ConsumerState<SignTranslationScreen>
             tooltip: _camera.flashOn ? l.flashOff : l.flashOn,
             onPressed: _camera.toggleFlash,
           ),
+        const SizedBox(width: 8),
+        _RoundIconButton(
+          icon: Icons.screen_rotation_alt_rounded,
+          tooltip: l.fixSkeletonDirection,
+          onPressed: _camera.cycleDirectionFix,
+        ),
         const SizedBox(width: 8),
         _RoundIconButton(
           icon: Icons.flip_camera_android_rounded,
